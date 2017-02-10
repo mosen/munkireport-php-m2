@@ -20,7 +20,7 @@ class Machine extends Migration
             $table->string('hostname');
             $table->string('machine_model');
             $table->string('machine_desc');
-            $table->string('img_url');
+            $table->string('img_url')->nullable();
             $table->string('cpu');
             $table->string('current_processor_speed');
             $table->string('cpu_arch');

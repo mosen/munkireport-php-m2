@@ -6,15 +6,15 @@
             </div>
 
             <div class="list-group scroll-box">
-                <a id="b2g-b2g_ok" href="<?=url('/show/listing/backup2go')?>" class="list-group-item list-group-item-success hide">
+                <a id="b2g-b2g_ok" :href="url" class="list-group-item list-group-item-success hide">
                     <span class="badge">0</span>
                     <span data-i18n="widget.timemachine.b2g_ok"></span>
                 </a>
-                <a id="b2g-b2g_warning" href="<?=url('/show/listing/backup2go')?>" class="list-group-item list-group-item-warning hide">
+                <a id="b2g-b2g_warning" :href="url" class="list-group-item list-group-item-warning hide">
                     <span class="badge">0</span>
                     <span data-i18n="widget.timemachine.b2g_warning"></span>
                 </a>
-                <a id="b2g-b2g_danger" href="<?=url('/show/listing/backup2go')?>" class="list-group-item list-group-item-danger hide">
+                <a id="b2g-b2g_danger" :href="url" class="list-group-item list-group-item-danger hide">
                     <span class="badge">0</span>
                     <span data-i18n="widget.timemachine.b2g_danger"></span>
                 </a>
@@ -28,7 +28,7 @@
 export default {
     data() {
         return {
-
+            url: "/show/listing/backup2go"
         }
     }
 

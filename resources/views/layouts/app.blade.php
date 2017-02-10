@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="{{ asset('/app.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/css/app.css') }}" />
     <link rel="stylesheet" href="{{ asset('/themes/Default/nvd3.override.css') }}"
           id="nvd3-override-stylesheet"/>
 
@@ -27,15 +27,6 @@
 
     <!-- replaces conf('custom_css') and the $stylesheets var here -->
     @stack('stylesheets')
-
-    {{--<script>--}}
-      {{--var baseUrl = "<?php echo conf('subdirectory'); ?>",--}}
-        {{--appUrl = baseUrl + 'index.php?',--}}
-        {{--businessUnitsEnabled = <?php echo conf('enable_business_units') ? 'true' : 'false'; ?>;--}}
-      {{--isAdmin = <?php echo $_SESSION['role'] == 'admin' ? 'true' : 'false'; ?>;--}}
-      {{--isManager = <?php echo $_SESSION['role'] == 'manager' ? 'true' : 'false'; ?>;--}}
-    {{--</script>--}}
-
     <!-- replaces $scripts here -->
 
 </head>
@@ -51,7 +42,7 @@
 
     <div style="text-align: right; margin: 10px; color: #bbb; font-size: 80%;">
 
-        <i>MunkiReport <span data-i18n="version">Version</span> <?php echo $GLOBALS['version']; ?></i>
+        <i>MunkiReport <span data-i18n="version">Version</span> {version}</i>
 
     </div>
 
@@ -62,6 +53,7 @@
 <!-- foreach $GLOBALS['alerts']  shared.alert -->
 
 <!-- munkireport.js -->
+<script src="{{ asset('/js/app.js') }}" type="application/javascript"></script>
 @stack('scripts')
 </body>
 </html>

@@ -4,7 +4,7 @@ $factory->define(MrModule\Machine\Machine::class, function (Faker\Generator $fak
     $computerName = $faker->unique()->word;
 
     return [
-        'serial_number' => $faker->unique()->regexify(['[A-Z0-9]{12}']),
+        'serial_number' => $faker->unique()->regexify('[A-Z0-9]{12}'),
         'hostname' => $computerName . '.local',
         'machine_model' => $faker->randomElement([
             'MacBookPro6,1',
@@ -15,6 +15,9 @@ $factory->define(MrModule\Machine\Machine::class, function (Faker\Generator $fak
             'MacBookPro8,2',
             'MacPro6,1'
         ]),
+        'img_url' => '',
+        'os_version' => '10.12.0',
+        'buildversion' => '1',
         'machine_desc' => $faker->text,
         'cpu' => $faker->text,
         'current_processor_speed' => $faker->randomFloat(2, 1, 4) . " GHz",

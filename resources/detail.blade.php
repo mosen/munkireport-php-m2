@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('views.layouts.app')
 @section('title', 'Client Details')
 @push('stylesheets')
     <link rel="stylesheet" href="{{ asset('css/bootstrap-markdown.min.css') }}" />

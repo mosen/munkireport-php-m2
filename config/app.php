@@ -186,6 +186,7 @@ return [
         MrModule\Certificate\Providers\CertificateServiceProvider::class,
         MrModule\CrashPlan\Providers\CrashPlanServiceProvider::class,
         MrModule\DeployStudio\Providers\DeployStudioServiceProvider::class,
+        MrModule\DirectoryService\Providers\DirectoryServiceProvider::class,
         MrModule\DiskReport\Providers\DiskReportServiceProvider::class,
         MrModule\Display\Providers\DisplayServiceProvider::class,
         MrModule\FileVaultStatus\Providers\FileVaultStatusServiceProvider::class,
