@@ -8,5 +8,6 @@ class Backup2GoServiceProvider extends ServiceProvider
 {
     public function boot() {
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
+        $this->loadViewsFrom(__DIR__.'/../views', 'backup2go');
     }
 }
