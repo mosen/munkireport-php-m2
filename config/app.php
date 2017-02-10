@@ -177,6 +177,38 @@ return [
         Mr\Providers\EventServiceProvider::class,
         Mr\Providers\RouteServiceProvider::class,
 
+        /*
+         * MunkiReport v3 Module Providers
+         */
+        MrModule\ARD\Providers\ARDServiceProvider::class,
+        MrModule\Backup2Go\Providers\Backup2GoServiceProvider::class,
+        MrModule\Bluetooth\Providers\BluetoothServiceProvider::class,
+        MrModule\Certificate\Providers\CertificateServiceProvider::class,
+        MrModule\CrashPlan\Providers\CrashPlanServiceProvider::class,
+        MrModule\DeployStudio\Providers\DeployStudioServiceProvider::class,
+        MrModule\DiskReport\Providers\DiskReportServiceProvider::class,
+        MrModule\Display\Providers\DisplayServiceProvider::class,
+        MrModule\FileVaultStatus\Providers\FileVaultStatusServiceProvider::class,
+        MrModule\FindMyMac\Providers\FindMyMacServiceProvider::class,
+        MrModule\GSX\Providers\GSXServiceProvider::class,
+        MrModule\Inventory\Providers\InventoryServiceProvider::class,
+        MrModule\LocalAdmin\Providers\LocalAdminServiceProvider::class,
+        MrModule\Location\Providers\LocationServiceProvider::class,
+        MrModule\Machine\Providers\MachineServiceProvider::class,
+        MrModule\ManagedInstalls\Providers\ManagedInstallsServiceProvider::class,
+        MrModule\MunkiInfo\Providers\MunkiInfoServiceProvider::class,
+        MrModule\MunkiReport\Providers\MunkiReportServiceProvider::class,
+        MrModule\Network\Providers\NetworkServiceProvider::class,
+        MrModule\Power\Providers\PowerServiceProvider::class,
+        //MrModule\Printer\Providers\Pri
+        MrModule\Profile\Providers\ProfileServiceProvider::class,
+        MrModule\ReportData\Providers\ReportDataServiceProvider::class,
+        MrModule\SCCMStatus\Providers\SCCMStatusServiceProvider::class,
+        MrModule\Security\Providers\SecurityServiceProvider::class,
+        MrModule\Tag\Providers\TagServiceProvider::class,
+        MrModule\TimeMachine\Providers\TimeMachineServiceProvider::class,
+        MrModule\Warranty\Providers\WarrantyServiceProvider::class,
+        MrModule\Wifi\Providers\WifiServiceProvider::class,
     ],
 
     /*
