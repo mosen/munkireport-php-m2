@@ -10,3 +10,5 @@ Homestead.yaml
 
 .idea
 *.iml
+
+*.sqlite
