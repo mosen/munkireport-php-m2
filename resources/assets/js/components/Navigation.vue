@@ -97,13 +97,13 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li v-if="username">
-                                <a href="#">
+                                <a href="/logout">
                                     <span class="glyphicon glyphicon-log-out"></span>
                                     <span>{{ $t('nav.user.logout') }}</span>
                                 </a>
                             </li>
                             <li v-else>
-                                <a href="#">
+                                <a href="/login">
                                     <span class="glyphicon glyphicon-log-in"></span>
                                     <span>{{ $t('nav.user.login') }}</span>
                                 </a>
@@ -149,6 +149,8 @@
 
             },
             setLocale: function(code) {
+
+                console.dir(Vue.config);
                 Vue.locale(code, () => {
                     return this.axios.get(`/locale/${code}.json`).then((response) => {
                         if (Object.keys(response.data).length === 0) {
