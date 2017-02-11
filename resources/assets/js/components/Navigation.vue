@@ -86,7 +86,7 @@
                         </a>
                         <ul class="dropdown-menu locale">
                             <li v-for="locale in locales">
-                                <a href="#" @click="setLocale">{{ locale.name }}</a>
+                                <a href="#" @click="setLocale(locale.code)">{{ locale.name }}</a>
                             </li>
                         </ul>
                     </li>
@@ -118,7 +118,9 @@
 
 
 <script>
-    import dropdown from 'bootstrap-vue/components/dropdown.vue';
+    import Vue from 'vue';
+    // import dropdown from 'bootstrap-vue/components/dropdown.vue';
+    import 'bootstrap-sass/assets/javascripts/bootstrap/dropdown';
 
     export default {
         data: function() {
@@ -131,7 +133,7 @@
                     { code: 'de', name: 'Deutsch' },
                     { code: 'es', name: 'Espanol' },
                     { code: 'fr', name: 'Francais' },
-                    { code: 'nl', name: '' }
+                    { code: 'nl', name: 'Dutch' }
                 ],
                 admin: [],
                 listings: [],
@@ -146,12 +148,23 @@
             setTheme: function (event) {
 
             },
-            setLocale: function(event) {
-
+            setLocale: function(code) {
+                Vue.locale(code, () => {
+                    return this.axios.get(`/locale/${code}.json`).then((response) => {
+                        if (Object.keys(response.data).length === 0) {
+                            return Promise.reject(new Error(`Could not load locale ${code}`));
+                        }
+                        return response.data;
+                    }).then((data) => {
+                        return Promise.resolve(data);
+                    })
+                }, () => {
+                    Vue.config.lang = code;
+                });
             }
         },
         components: {
-            'b-dropdown': dropdown
+
         }
     }
 </script>
