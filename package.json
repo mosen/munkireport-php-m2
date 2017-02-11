@@ -26,6 +26,7 @@
   "dependencies": {
     "bootstrap-markdown": "^2.10.0",
     "bootstrap-tagsinput": "^0.7.1",
+    "bootstrap-vue": "^0.7.1",
     "marked": "^0.3.6",
     "typeahead": "^0.2.2",
     "vue": "^2.1.10",

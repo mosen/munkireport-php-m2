@@ -34,7 +34,7 @@
 <body>
 
 <!-- if authenticated show nav -->
-@include('shared.navigation')
+{{--@include('shared.navigation')--}}
 
 @yield('content')
 

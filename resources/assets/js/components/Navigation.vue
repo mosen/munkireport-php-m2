@@ -15,13 +15,13 @@
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="#">
-                            <i class="fa fa-th-large"></i>
+                            <span class="glyphicon glyphicon-th-large"></span>
                             <span class="visible-lg-inline">{{ $t('nav.main.dashboard') }}</span>
                         </a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-bar-chart-o"></i>
+                            <span class="glyphicon glyphicon-stats"></span>
                             <span>{{ $t('nav.main.reports') }}</span>
                             <b class="caret"></b>
                         </a>
@@ -34,7 +34,7 @@
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-list-alt"></i>
+                            <span class="glyphicon glyphicon-list"></span>
                             <span>{{ $t('nav.main.listings') }}</span>
                             <b class="caret"></b>
                         </a>
@@ -47,7 +47,7 @@
                     <!-- if admin and url admin/show/ -->
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-list-alt"></i>
+                            <span class="glyphicon glyphicon-list"></span>
                             <span>{{ $t('nav.main.admin') }}</span>
                             <b class="caret"></b>
                         </a>
@@ -69,10 +69,10 @@
                     </div>
                     <button type="submit" class="btn btn-default" @click="search">Submit</button>
                 </form>
-                <ul class="nav navbar-nav navbar-right">
+                <div class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-wrench"></i>
+                            <span class="glyphicon glyphicon-wrench"></span>
                         </a>
                         <ul class="dropdown-menu theme">
                             <li v-for="theme in themes">
@@ -82,30 +82,30 @@
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-globe"></i>
+                            <span class="glyphicon glyphicon-globe"></span>
                         </a>
                         <ul class="dropdown-menu locale">
                             <li v-for="locale in locales">
-                                <a href="#">{{ locale }}</a>
+                                <a href="#" @click="setLocale">{{ locale.name }}</a>
                             </li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-user"></i> {{username}}
+                            <span class="glyphicon glyphicon-user"></span> {{username}}
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
                             <li v-if="username">
                                 <a href="#">
-                                    <i class="fa fa-power-off"></i>
+                                    <span class="glyphicon glyphicon-log-out"></span>
                                     <span>{{ $t('nav.user.logout') }}</span>
                                 </a>
                             </li>
                             <li v-else>
                                 <a href="#">
-                                    <i class="fa fa-power-on"></i>
-                                    <span>{{ $('nav.user.login') }}</span>
+                                    <span class="glyphicon glyphicon-log-in"></span>
+                                    <span>{{ $t('nav.user.login') }}</span>
                                 </a>
                             </li>
                         </ul>
@@ -118,17 +118,40 @@
 
 
 <script>
+    import dropdown from 'bootstrap-vue/components/dropdown.vue';
+
     export default {
-        data () {
+        data: function() {
             return {
                 title: 'MunkiReport',
                 themes: ['Standard'],
                 username: null,
-                locales: [],
+                locales: [
+                    { code: 'en', name: 'English' },
+                    { code: 'de', name: 'Deutsch' },
+                    { code: 'es', name: 'Espanol' },
+                    { code: 'fr', name: 'Francais' },
+                    { code: 'nl', name: '' }
+                ],
                 admin: [],
                 listings: [],
                 reports: [],
             }
+        },
+
+        methods: {
+            search: function (event) {
+
+            },
+            setTheme: function (event) {
+
+            },
+            setLocale: function(event) {
+
+            }
+        },
+        components: {
+            'b-dropdown': dropdown
         }
     }
 </script>
