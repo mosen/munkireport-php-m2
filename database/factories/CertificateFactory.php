@@ -1,0 +1,10 @@
+<?php
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(MrModule\Certificate\Certificate::class, function (Faker\Generator $faker) {
+    return [
+        'serial_number' => $faker->unique()->regexify('[A-Z0-9]{12}'),
+        'cert_exp_time' => $faker->dateTimeThisDecade,
+        'cert_path' => '/path',
+        'cert_cn' => 'CN=name,OU=name,O=name,DC=name,DC=com'
+    ];
+});
