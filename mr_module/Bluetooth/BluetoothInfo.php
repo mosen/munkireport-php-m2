@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BluetoothInfo extends Model
 {
+    protected $table = 'bluetooth';
+
 
 }

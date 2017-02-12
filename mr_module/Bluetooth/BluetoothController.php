@@ -9,4 +9,16 @@ class BluetoothController extends Controller
         $results = BluetoothInfo::all();
         return response()->json($results);
     }
+
+    protected function show($id) {
+        $result = BluetoothInfo::findOrFail($id);
+        return response()->json($result);
+    }
+
+    protected function destroy($id) {
+        $result = BluetoothInfo::findOrFail($id);
+        $result->delete();
+
+        return response()->setStatusCode(204);
+    }
 }

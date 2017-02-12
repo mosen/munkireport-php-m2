@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class ARDInfo extends Model
 {
-
+    protected $table = 'ard';
 }
