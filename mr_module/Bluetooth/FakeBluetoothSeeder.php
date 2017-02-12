@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\Bluetooth;
 
 use Illuminate\Database\Seeder;
 
-class FakeCertificateSeeder extends Seeder
+class FakeBluetoothSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeCertificateSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\Certificate\Certificate::class, 50)->create();
+        factory(BluetoothInfo::class, 50)->create();
     }
 }

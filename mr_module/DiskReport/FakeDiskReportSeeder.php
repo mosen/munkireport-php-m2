@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\DiskReport;
 
 use Illuminate\Database\Seeder;
 
-class FakeCrashPlanSeeder extends Seeder
+class FakeDiskReportSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeCrashPlanSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\CrashPlan\CrashPlan::class, 50)->create();
+        factory(DiskReport::class, 50)->create();
     }
 }

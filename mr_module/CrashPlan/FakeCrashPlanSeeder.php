@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\CrashPlan;
 
 use Illuminate\Database\Seeder;
 
-class FakeARDSeeder extends Seeder
+class FakeCrashPlanSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeARDSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\ARD\ARDInfo::class, 50)->create();
+        factory(CrashPlan::class, 50)->create();
     }
 }

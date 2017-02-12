@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\DeployStudio;
 
 use Illuminate\Database\Seeder;
 
-class FakeDirectoryServiceSeeder extends Seeder
+class FakeDeployStudioSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeDirectoryServiceSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\DirectoryService\DirectoryService::class, 50)->create();
+        factory(DeployStudioInfo::class, 50)->create();
     }
 }

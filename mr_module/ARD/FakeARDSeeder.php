@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\ARD;
 
 use Illuminate\Database\Seeder;
 
-class FakeBluetoothSeeder extends Seeder
+class FakeARDSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeBluetoothSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\Bluetooth\BluetoothInfo::class, 50)->create();
+        factory(ARDInfo::class, 50)->create();
     }
 }

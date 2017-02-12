@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\Certificate;
 
 use Illuminate\Database\Seeder;
 
-class FakeCommentSeeder extends Seeder
+class FakeCertificateSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeCommentSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\Comment\Comment::class, 50)->create();
+        factory(Certificate::class, 50)->create();
     }
 }

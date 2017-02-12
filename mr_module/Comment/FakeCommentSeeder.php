@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\Comment;
 
 use Illuminate\Database\Seeder;
 
-class FakeDeployStudioSeeder extends Seeder
+class FakeCommentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeDeployStudioSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\DeployStudio\DeployStudioInfo::class, 50)->create();
+        factory(Comment::class, 50)->create();
     }
 }
