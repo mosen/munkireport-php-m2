@@ -190,6 +190,7 @@ return [
         MrModule\DirectoryService\Providers\DirectoryServiceProvider::class,
         MrModule\DiskReport\Providers\DiskReportServiceProvider::class,
         MrModule\Display\Providers\DisplayServiceProvider::class,
+        MrModule\Event\Providers\EventServiceProvider::class,
         MrModule\FileVaultStatus\Providers\FileVaultStatusServiceProvider::class,
         MrModule\FindMyMac\Providers\FindMyMacServiceProvider::class,
         MrModule\GSX\Providers\GSXServiceProvider::class,
