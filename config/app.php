@@ -184,6 +184,7 @@ return [
         MrModule\Backup2Go\Providers\Backup2GoServiceProvider::class,
         MrModule\Bluetooth\Providers\BluetoothServiceProvider::class,
         MrModule\Certificate\Providers\CertificateServiceProvider::class,
+        MrModule\Comment\Providers\CommentServiceProvider::class,
         MrModule\CrashPlan\Providers\CrashPlanServiceProvider::class,
         MrModule\DeployStudio\Providers\DeployStudioServiceProvider::class,
         MrModule\DirectoryService\Providers\DirectoryServiceProvider::class,
