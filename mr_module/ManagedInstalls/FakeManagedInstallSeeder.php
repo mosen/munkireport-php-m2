@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\ManagedInstalls;
 
 use Illuminate\Database\Seeder;
 
-class FakeTimeMachineSeeder extends Seeder
+class FakeManagedInstallSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeTimeMachineSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\TimeMachine\TimeMachine::class, 50)->create();
+        factory(ManagedInstall::class, 50)->create();
     }
 }

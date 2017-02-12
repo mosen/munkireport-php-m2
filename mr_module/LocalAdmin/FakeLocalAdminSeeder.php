@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\LocalAdmin;
 
 use Illuminate\Database\Seeder;
 
-class FakeWarrantySeeder extends Seeder
+class FakeLocalAdminSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeWarrantySeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\Warranty\Warranty::class, 50)->create();
+        factory(LocalAdmin::class, 50)->create();
     }
 }

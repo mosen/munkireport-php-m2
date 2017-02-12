@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\Printer;
 
 use Illuminate\Database\Seeder;
 
-class FakeNetworkSeeder extends Seeder
+class FakePrinterSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeNetworkSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\Network\Network::class, 50)->create();
+        factory(Printer::class, 50)->create();
     }
 }

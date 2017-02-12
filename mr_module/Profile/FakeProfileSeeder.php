@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\Profile;
 
 use Illuminate\Database\Seeder;
 
-class FakeTagSeeder extends Seeder
+class FakeProfileSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeTagSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\Tag\Tag::class, 50)->create();
+        factory(Profile::class, 50)->create();
     }
 }

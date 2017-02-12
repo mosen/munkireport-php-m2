@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\Inventory;
 
 use Illuminate\Database\Seeder;
 
-class FakeMachineSeeder extends Seeder
+class FakeInventoryItemSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeMachineSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\Machine\Machine::class, 50)->create();
+        factory(InventoryItem::class, 50)->create();
     }
 }

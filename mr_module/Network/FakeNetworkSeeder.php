@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\Network;
 
 use Illuminate\Database\Seeder;
 
-class FakeReportDataSeeder extends Seeder
+class FakeNetworkSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeReportDataSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\ReportData\ReportData::class, 50)->create();
+        factory(Network::class, 50)->create();
     }
 }

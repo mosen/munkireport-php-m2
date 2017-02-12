@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\MunkiInfo;
 
 use Illuminate\Database\Seeder;
 
-class FakeGSXSeeder extends Seeder
+class FakeMunkiInfoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeGSXSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\GSX\GSXInfo::class, 50)->create();
+        factory(MunkiInfo::class, 50)->create();
     }
 }

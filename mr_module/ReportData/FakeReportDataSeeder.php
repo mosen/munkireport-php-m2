@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\ReportData;
 
 use Illuminate\Database\Seeder;
 
-class FakeManagedInstallSeeder extends Seeder
+class FakeReportDataSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeManagedInstallSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\ManagedInstalls\ManagedInstall::class, 50)->create();
+        factory(ReportData::class, 50)->create();
     }
 }

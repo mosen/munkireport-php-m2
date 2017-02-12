@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\Warranty;
 
 use Illuminate\Database\Seeder;
 
-class FakeFindMyMacSeeder extends Seeder
+class FakeWarrantySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeFindMyMacSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\FindMyMac\FindMyMacInfo::class, 50)->create();
+        factory(Warranty::class, 50)->create();
     }
 }

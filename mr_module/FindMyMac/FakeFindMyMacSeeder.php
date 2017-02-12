@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\FindMyMac;
 
 use Illuminate\Database\Seeder;
 
-class FakeLocationSeeder extends Seeder
+class FakeFindMyMacSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeLocationSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\Location\Location::class, 50)->create();
+        factory(FindMyMacInfo::class, 50)->create();
     }
 }

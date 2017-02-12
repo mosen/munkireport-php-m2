@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\TimeMachine;
 
 use Illuminate\Database\Seeder;
 
-class FakeLocalAdminSeeder extends Seeder
+class FakeTimeMachineSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeLocalAdminSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\LocalAdmin\LocalAdmin::class, 50)->create();
+        factory(TimeMachine::class, 50)->create();
     }
 }

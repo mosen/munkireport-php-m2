@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\Machine;
 
 use Illuminate\Database\Seeder;
 
-class FakeMunkiReportSeeder extends Seeder
+class FakeMachineSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeMunkiReportSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\MunkiReport\MunkiReport::class, 50)->create();
+        factory(Machine::class, 50)->create();
     }
 }

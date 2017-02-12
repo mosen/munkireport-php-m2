@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\Power;
 
 use Illuminate\Database\Seeder;
 
-class FakeMunkiInfoSeeder extends Seeder
+class FakePowerSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakeMunkiInfoSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\MunkiInfo\MunkiInfo::class, 50)->create();
+        factory(Power::class, 50)->create();
     }
 }

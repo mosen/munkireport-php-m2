@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\Location;
 
 use Illuminate\Database\Seeder;
 
-class FakePowerSeeder extends Seeder
+class FakeLocationSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakePowerSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\Power\Power::class, 50)->create();
+        factory(Location::class, 50)->create();
     }
 }

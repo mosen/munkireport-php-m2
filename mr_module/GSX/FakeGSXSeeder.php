@@ -1,8 +1,9 @@
 <?php
+namespace MrModule\GSX;
 
 use Illuminate\Database\Seeder;
 
-class FakePrinterSeeder extends Seeder
+class FakeGSXSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class FakePrinterSeeder extends Seeder
      */
     public function run()
     {
-        factory(MrModule\Printer\Printer::class, 50)->create();
+        factory(GSXInfo::class, 50)->create();
     }
 }
