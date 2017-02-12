@@ -2,9 +2,9 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(MrModule\DirectoryService\DirectoryService::class, function (Faker\Generator $faker) {
     return [
-        'serial_number' => $faker->unique()->regexify(['[A-Z0-9]{12}']),
+        'serial_number' => $faker->unique()->regexify('[A-Z0-9]{12}'),
         'which_directory_service' => $faker->randomElement(['Local', 'Active Directory', 'LDAPv3']),
-        'directory_service_comments' => $faker->words,
+        'directory_service_comments' => $faker->text,
         'adforest' => $faker->domainName,
         'addomain' => $faker->word,
         'computeraccount' => $faker->word . '$',

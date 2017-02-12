@@ -6,7 +6,7 @@ $factory->define(MrModule\CrashPlan\CrashPlan::class, function (Faker\Generator 
         'destination' => $faker->word,
         'last_success' => $faker->dateTimeThisDecade,
         'duration' => $faker->randomNumber(4),
-        'last_failure' => $faker->dateTimeThisDecate,
-        'reason' => $faker->words
+        'last_failure' => $faker->dateTimeThisDecade,
+        'reason' => $faker->text
     ];
 });

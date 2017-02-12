@@ -2,7 +2,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(MrModule\DiskReport\DiskReport::class, function (Faker\Generator $faker) {
     return [
-        'serial_number' => $faker->unique()->regexify(['[A-Z0-9]{12}']),
+        'serial_number' => $faker->unique()->regexify('[A-Z0-9]{12}'),
         'TotalSize' => $faker->randomNumber(7),
         'FreeSpace' => $faker->randomNumber(7),
         'Percentage' => $faker->numberBetween(0, 100),

@@ -1,12 +1,12 @@
 <?php
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(MrModule\ARD\ARDInfo::class, function (Faker\Generator $faker) {
+$factory->define(MrModule\Inventory\InventoryItem::class, function (Faker\Generator $faker) {
     return [
         'serial_number' => $faker->unique()->regexify('[A-Z0-9]{12}'),
-        'name' => $faker->words,
+        'name' => $faker->sentence,
         'version' => $faker->numerify('#.#.#'),
         'bundleid' => $faker->domainName,
-        'bundlename' => $faker->words,
+        'bundlename' => $faker->sentence,
         'path' => '/path/to/app'
     ];
 });

@@ -5,7 +5,7 @@ $factory->define(MrModule\Location\Location::class, function (Faker\Generator $f
         'serial_number' => $faker->unique()->regexify('[A-Z0-9]{12}'),
         'address' => $faker->address,
         'altitude' => $faker->randomNumber(3),
-        'currentstatus' => $faker->words,
+        'currentstatus' => $faker->text,
         'ls_enabled' => $faker->boolean,
         'lastlocationrun' => $faker->dateTimeThisDecade,
         'lastrun' => $faker->dateTimeThisDecade,
