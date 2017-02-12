@@ -5,5 +5,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class DiskReport extends Model
 {
-    
+    public $table = 'diskreport';
 }

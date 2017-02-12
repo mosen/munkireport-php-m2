@@ -9,3 +9,5 @@ PHP=$(which php)
 ${PHP} ./artisan db:seed --class=FakeCommentSeeder
 ${PHP} ./artisan db:seed --class=FakeCrashPlanSeeder
 ${PHP} ./artisan db:seed --class=FakeDeployStudioSeeder
+${PHP} ./artisan db:seed --class=FakeDirectoryServiceSeeder
+${PHP} ./artisan db:seed --class=FakeDiskReportSeeder
