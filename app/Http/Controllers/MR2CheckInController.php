@@ -5,7 +5,7 @@ namespace Mr\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-use Mr\CheckIn\CheckInRouter;
+use Mr\CheckIn\Router;
 use Mr\ReportData;
 use Mr\Hash;
 use Mr\Event;
@@ -18,7 +18,7 @@ use Mr\Event;
 class MR2CheckInController extends Controller
 {
     /**
-     * @var CheckInRouter
+     * @var Router
      */
     protected $ciRouter = null;
 
@@ -40,7 +40,7 @@ class MR2CheckInController extends Controller
         return $key;
     }
 
-    public function __construct(CheckInRouter $ciRouter) {
+    public function __construct(Router $ciRouter) {
         $this->ciRouter = $ciRouter;
     }
 
@@ -121,7 +121,7 @@ class MR2CheckInController extends Controller
 
             $module = $this->normalizedKey($name);
             
-            $didHandle = $this->ciRouter->route($module, $val);
+            $didHandle = $this->ciRouter->route($module, $request->serial, $val['data']);
             // $class = new $classname($_POST['serial']);
 //            $class->process($val['data']);
 //

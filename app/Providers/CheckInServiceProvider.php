@@ -3,8 +3,7 @@
 namespace Mr\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Mr\CheckIn\CheckInRouter;
-use MrLegacy\Http\Middleware\SafePHPUnserialize;
+use Mr\CheckIn\Router;
 
 class CheckInServiceProvider extends ServiceProvider
 {
@@ -25,8 +24,13 @@ class CheckInServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('CheckInRouter', function ($app) {
-            return new CheckInRouter();
+        $this->app->singleton('Mr\CheckIn\CheckInRouter', function ($app) {
+            return new Router();
         });
+
+        $this->app->bind(
+            'Mr\Contracts\CheckIn\Router',
+            'Mr\CheckIn\CheckInRouter'
+        );
     }
 }

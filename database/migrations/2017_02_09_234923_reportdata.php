@@ -20,9 +20,9 @@ class Reportdata extends Migration
             $table->string('console_user')->nullable();
             $table->string('long_username')->nullable();
             $table->ipAddress('remote_ip');
-            $table->integer('uptime')->nullable();
+            $table->integer('uptime')->nullable()->default(0);
             $table->timestamp('reg_timestamp')->nullable();
-            $table->string('machine_group')->nullable();
+            $table->string('machine_group')->nullable()->default(0);
 //            $table->timestamp('timestamp');
 
             $table->timestamps();

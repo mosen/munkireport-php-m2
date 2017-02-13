@@ -2,7 +2,7 @@
 namespace Mr\Contracts\CheckIn;
 
 
-interface CheckInHandler
+interface Handler
 {
     /**
      * Determine whether MunkiReport data with the given module name may be handled by this CheckInHandler.
@@ -17,5 +17,5 @@ interface CheckInHandler
      * @param $data array A hash of data to process.
      * @return mixed
      */
-    public function process($moduleName, $data);
+    public function process($moduleName, $serialNumber, $data);
 }
