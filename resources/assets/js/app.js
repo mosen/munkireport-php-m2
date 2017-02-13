@@ -10,6 +10,7 @@ import en from '../../../public/locale/en.json';
 Vue.use(VueI18n);
 Vue.use(VueAxios, axios);
 
+Vue.locale('en', en);
 Vue.config.lang = 'en';
 Vue.config.fallbackLang = 'en';
 
