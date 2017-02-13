@@ -14,6 +14,6 @@ class ReportData extends Model
      * @inheritDoc
      */
     protected $fillable = [
-        'serial_number' // Required for firstOrNew to work
+        'console_user', 'long_username', 'uptime', 'machine_group'
     ];
 }
