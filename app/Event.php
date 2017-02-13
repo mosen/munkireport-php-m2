@@ -1,6 +1,5 @@
 <?php
-namespace MrModule\Event;
-
+namespace Mr;
 
 use Illuminate\Database\Eloquent\Model;
 

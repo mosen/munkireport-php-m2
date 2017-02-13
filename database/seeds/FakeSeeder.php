@@ -11,6 +11,9 @@ class FakeSeeder extends Seeder
      */
     public function run()
     {
+        $this->call('FakeEventSeeder');
+        $this->call('FakeReportDataSeeder');
+
         //$this->call('MrModule\ARD\FakeARDSeeder');
         $this->call('MrModule\Bluetooth\FakeBluetoothSeeder');
         $this->call('MrModule\Certificate\FakeCertificateSeeder');
@@ -20,7 +23,6 @@ class FakeSeeder extends Seeder
         $this->call('MrModule\DirectoryService\FakeDirectoryServiceSeeder');
         $this->call('MrModule\DiskReport\FakeDiskReportSeeder');
         //$this->call('MrModule\Display\FakeDisplaySeeder');
-        $this->call('MrModule\Event\FakeEventSeeder');
         // FileVaultStatus
         $this->call('MrModule\FindMyMac\FakeFindMyMacSeeder');
         $this->call('MrModule\GSX\FakeGSXSeeder');
@@ -35,7 +37,6 @@ class FakeSeeder extends Seeder
         $this->call('MrModule\Power\FakePowerSeeder');
         // Printer
         $this->call('MrModule\Profile\FakeProfileSeeder');
-        $this->call('MrModule\ReportData\FakeReportDataSeeder');
         // SCCMStatus
         // Security
         $this->call('MrModule\Tag\FakeTagSeeder');

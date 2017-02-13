@@ -1,22 +1,23 @@
 <?php
-namespace MrModule\Event;
+namespace MrModule\CrashPlan;
 
 use Mr\Http\Controllers\Controller;
+use MrModule\CrashPlan\CrashPlan;
 
-class EventController extends Controller
+class CrashPlanController extends Controller
 {
     public function index() {
-        $results = Event::all();
+        $results = CrashPlan::all();
         return response()->json($results);
     }
 
     protected function show($id) {
-        $result = Event::findOrFail($id);
+        $result = CrashPlan::findOrFail($id);
         return response()->json($result);
     }
 
     protected function destroy($id) {
-        $result = Event::findOrFail($id);
+        $result = CrashPlan::findOrFail($id);
         $result->delete();
 
         return response()->setStatusCode(204);

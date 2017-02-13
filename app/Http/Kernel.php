@@ -56,5 +56,6 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \Mr\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'safephpunserialize' => \MrLegacy\Http\Middleware\SafePHPUnserialize::class,
     ];
 }

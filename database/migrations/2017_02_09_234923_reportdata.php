@@ -17,12 +17,12 @@ class Reportdata extends Migration
             $table->increments('id');
 
             $table->string('serial_number')->unique();
-            $table->string('console_user');
-            $table->string('long_username');
+            $table->string('console_user')->nullable();
+            $table->string('long_username')->nullable();
             $table->ipAddress('remote_ip');
-            $table->integer('uptime');
-            $table->timestamp('reg_timestamp');
-            $table->string('machine_group');
+            $table->integer('uptime')->nullable();
+            $table->timestamp('reg_timestamp')->nullable();
+            $table->string('machine_group')->nullable();
 //            $table->timestamp('timestamp');
 
             $table->timestamps();

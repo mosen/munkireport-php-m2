@@ -26,7 +26,8 @@
         ],
         "psr-4": {
             "Mr\\": "app/",
-            "MrModule\\": "mr_module/"
+            "MrModule\\": "mr_module/",
+            "MrLegacy\\": "mr_legacy/"
         }
     },
     "autoload-dev": {

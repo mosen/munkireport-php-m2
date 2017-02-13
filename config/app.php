@@ -173,6 +173,7 @@ return [
          */
         Mr\Providers\AppServiceProvider::class,
         Mr\Providers\AuthServiceProvider::class,
+        Mr\Providers\CheckInServiceProvider::class,
         // Mr\Providers\BroadcastServiceProvider::class,
         Mr\Providers\EventServiceProvider::class,
         Mr\Providers\RouteServiceProvider::class,
@@ -190,7 +191,6 @@ return [
         MrModule\DirectoryService\Providers\DirectoryServiceProvider::class,
         MrModule\DiskReport\Providers\DiskReportServiceProvider::class,
         MrModule\Display\Providers\DisplayServiceProvider::class,
-        MrModule\Event\Providers\EventServiceProvider::class,
         MrModule\FileVaultStatus\Providers\FileVaultStatusServiceProvider::class,
         MrModule\FindMyMac\Providers\FindMyMacServiceProvider::class,
         MrModule\GSX\Providers\GSXServiceProvider::class,
@@ -205,7 +205,6 @@ return [
         MrModule\Power\Providers\PowerServiceProvider::class,
         //MrModule\Printer\Providers\Pri
         MrModule\Profile\Providers\ProfileServiceProvider::class,
-        MrModule\ReportData\Providers\ReportDataServiceProvider::class,
         MrModule\SCCMStatus\Providers\SCCMStatusServiceProvider::class,
         MrModule\Security\Providers\SecurityServiceProvider::class,
         MrModule\Tag\Providers\TagServiceProvider::class,

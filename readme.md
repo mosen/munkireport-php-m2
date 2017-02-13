@@ -21,3 +21,11 @@ To build front end assets:
 
     $ npm run dev
     
+## Troubleshooting ##
+
+Laravel logs are normally available in the project directory at:
+
+    storage/logs/laravel.log
+    
+This will usually contain stack traces if any Exceptions had occurred.
+
