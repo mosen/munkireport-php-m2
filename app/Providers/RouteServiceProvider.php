@@ -37,6 +37,8 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
 
+        $this->mapLegacyRoutes();
+
         $this->mapWebRoutes();
 
         //
@@ -69,5 +71,17 @@ class RouteServiceProvider extends ServiceProvider
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
+    }
+
+    /**
+     * Define the legacy API routes for the application.
+     *
+     * These routes are stateless but the legacy API does not use a namespace prefix.
+     */
+    protected function mapLegacyRoutes()
+    {
+        Route::middleware('legacy')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/legacy.php'));
     }
 }

@@ -5,6 +5,7 @@ namespace Mr\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+use Mr\CheckIn\CheckInRouter;
 use Mr\ReportData;
 use Mr\Hash;
 use Mr\Event;
@@ -16,6 +17,11 @@ use Mr\Event;
  */
 class MR2CheckInController extends Controller
 {
+    /**
+     * @var CheckInRouter
+     */
+    protected $ciRouter = null;
+
     private function normalizedKey($key) {
         $key = strtolower($key);
 
@@ -34,6 +40,9 @@ class MR2CheckInController extends Controller
         return $key;
     }
 
+    public function __construct(CheckInRouter $ciRouter) {
+        $this->ciRouter = $ciRouter;
+    }
 
     /**
      * Hash check script for clients
@@ -111,7 +120,8 @@ class MR2CheckInController extends Controller
             }
 
             $module = $this->normalizedKey($name);
-
+            
+            $didHandle = $this->ciRouter->route($module, $val);
             // $class = new $classname($_POST['serial']);
 //            $class->process($val['data']);
 //

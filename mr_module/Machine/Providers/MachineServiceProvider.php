@@ -3,6 +3,7 @@ namespace MrModule\Machine\Providers;
 
 
 use Illuminate\Support\ServiceProvider;
+use MrModule\Machine\CheckInHandler;
 
 class MachineServiceProvider extends ServiceProvider
 {
@@ -13,5 +14,10 @@ class MachineServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../assets' => public_path('vendor/machine')
         ], 'public');
+    }
+
+    public function register() {
+        $router = $this->app['CheckInRouter'];
+        $router->handle('machine', CheckInHandler::class);
     }
 }
