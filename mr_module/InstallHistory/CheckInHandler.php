@@ -33,6 +33,8 @@ class CheckInHandler implements Handler
                 // Apple and third party tools
                 $item['packageIdentifiers'] = array_pop($item['packageIdentifiers']);
             }
+            
+            $item['serial_number'] = $serialNumber;
 
             $ih = InstallHistory::create($item);
         }

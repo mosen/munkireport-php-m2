@@ -16,7 +16,7 @@ class Installhistory extends Migration
         Schema::create('installhistory', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('serial_number')->unique();
+            $table->string('serial_number')->index();
             $table->dateTimeTz('date');
             $table->string('displayName');
             $table->string('displayVersion');
