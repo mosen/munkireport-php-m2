@@ -37,6 +37,9 @@ class Router implements CheckInRouterInterface
         ],
         'bluetooth' => [
             'MrModule\\Bluetooth\\CheckInHandler'
+        ],
+        'ard' => [
+            'MrModule\\ARD\\CheckInHandler'
         ]
     ];
 
