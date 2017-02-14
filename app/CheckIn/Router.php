@@ -28,6 +28,12 @@ class Router implements CheckInRouterInterface
         ],
         'installhistory' => [
             'MrModule\\InstallHistory\\CheckInHandler'
+        ],
+        'network' => [
+            'MrModule\\Network\\CheckInHandler'
+        ],
+        'disk_report' => [
+            'MrModule\\DiskReport\\CheckInHandler'
         ]
     ];
 

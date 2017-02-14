@@ -5,5 +5,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class DiskReport extends Model
 {
-    public $table = 'diskreport';
+    protected $table = 'diskreport';
+
+    protected $fillable = [
+
+    ];
 }

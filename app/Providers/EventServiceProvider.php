@@ -13,9 +13,12 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'Mr\Events\SomeEvent' => [
-            'Mr\Listeners\EventListener',
+        'MrModule\DiskReport\Events\SMARTFailureEvent' => [
+            'Mr\Listeners\SMARTFailureEventListener'
         ],
+        'MrModule\DiskReport\Events\LowFreeSpaceEvent' => [
+            'Mr\Listeners\LowFreeSpaceEventListener'
+        ]
     ];
 
     /**
