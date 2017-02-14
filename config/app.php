@@ -194,6 +194,7 @@ return [
         MrModule\FileVaultStatus\Providers\FileVaultStatusServiceProvider::class,
         MrModule\FindMyMac\Providers\FindMyMacServiceProvider::class,
         MrModule\GSX\Providers\GSXServiceProvider::class,
+        MrModule\InstallHistory\Providers\InstallHistoryServiceProvider::class,
         MrModule\Inventory\Providers\InventoryServiceProvider::class,
         MrModule\LocalAdmin\Providers\LocalAdminServiceProvider::class,
         MrModule\Location\Providers\LocationServiceProvider::class,

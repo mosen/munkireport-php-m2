@@ -22,6 +22,12 @@ class Router implements CheckInRouterInterface
         ],
         'reportdata' => [
             'Mr\\CheckIn\\ReportDataCheckInHandler'
+        ],
+        'warranty' => [
+            'MrModule\\Warranty\\CheckInHandler'
+        ],
+        'installhistory' => [
+            'MrModule\\InstallHistory\\CheckInHandler'
         ]
     ];
 
@@ -51,6 +57,8 @@ class Router implements CheckInRouterInterface
      * @return boolean False if route was not handled by any module.
      */
     public function route($moduleName, $serialNumber, $data) {
+        Log::debug($moduleName);
+
         if (isset($this->handlers[$moduleName])) {
             $dataObj = new CFPropertyList;
             $dataObj->parse($data);
