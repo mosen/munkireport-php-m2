@@ -2,7 +2,7 @@
 namespace Mr\CheckIn;
 
 use Illuminate\Support\Facades\Log;
-use Mr\Contracts\CheckIn\Router as CheckInRouterInterface;
+use Mr\Contracts\CheckIn\CheckInRouter as CheckInRouterInterface;
 use CFPropertyList\CFPropertyList;
 
 /**
@@ -11,7 +11,7 @@ use CFPropertyList\CFPropertyList;
  * 
  * @package Mr\CheckIn
  */
-class Router implements CheckInRouterInterface
+class CheckInRouter implements CheckInRouterInterface
 {
     /**
      * @var array
@@ -51,7 +51,7 @@ class Router implements CheckInRouterInterface
      * @param $className
      * @return null
      */
-    public function handle($moduleName, $className)
+    public function addHandler($moduleName, $className)
     {
         Log::debug("Registering handler ${className} for ${moduleName}");
         if (!isset($this->handlers[$moduleName])) {

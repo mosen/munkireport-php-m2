@@ -3,7 +3,7 @@
 namespace Mr\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Mr\CheckIn\Router;
+use Mr\CheckIn\CheckInRouter;
 
 class CheckInServiceProvider extends ServiceProvider
 {
@@ -25,11 +25,11 @@ class CheckInServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('Mr\CheckIn\CheckInRouter', function ($app) {
-            return new Router();
+            return new CheckInRouter();
         });
 
         $this->app->bind(
-            'Mr\Contracts\CheckIn\Router',
+            'Mr\Contracts\CheckIn\CheckInRouter',
             'Mr\CheckIn\CheckInRouter'
         );
     }

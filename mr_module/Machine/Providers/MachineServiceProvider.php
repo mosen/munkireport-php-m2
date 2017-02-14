@@ -2,7 +2,7 @@
 namespace MrModule\Machine\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Mr\Contracts\CheckIn\Router;
+use Mr\Contracts\CheckIn\CheckInRouter;
 use MrModule\Machine\CheckInHandler;
 use Illuminate\Support\Facades\Route;
 
@@ -10,7 +10,7 @@ class MachineServiceProvider extends ServiceProvider
 {
     protected $namespace = 'MrModule\Machine';
 
-    public function boot(Router $checkInRouter) {
+    public function boot(CheckInRouter $checkInRouter) {
         $this->mapApiRoutes();
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
 
@@ -18,7 +18,7 @@ class MachineServiceProvider extends ServiceProvider
             __DIR__.'/../assets' => public_path('vendor/machine')
         ], 'public');
 
-        $checkInRouter->handle('machine', CheckInHandler::class);
+        $checkInRouter->addHandler('machine', CheckInHandler::class);
     }
 
     protected function mapApiRoutes()

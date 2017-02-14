@@ -2,7 +2,7 @@
 namespace Mr\Contracts\CheckIn;
 
 
-interface Router
+interface CheckInRouter
 {
     /**
      * Handle registers a class implementing the CheckInHandler type to receive check in data for the
@@ -12,7 +12,7 @@ interface Router
      * @param $className
      * @return mixed
      */
-    public function handle($moduleName, $className);
+    public function addHandler($moduleName, $className);
 
     /**
      * Route an incoming request to the relevant checkin handler(s)
