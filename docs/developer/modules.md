@@ -33,3 +33,32 @@ The directory structure looks something like this, but may not include everythin
 *See also:* [Laravel Service Providers](https://laravel.com/docs/5.4/providers) for more information on how Service 
 Providers work.
 
+Migrations
+----------
+
+To load migrations from your module you must use the `loadMigrationsFrom()` method in the Service Provider's `boot()`
+method eg:
+
+    $this->loadMigrationsFrom(__DIR__.'/../migrations');
+    
+Usually i use `artisan make:migration <tablename>` to generate a migration in `app/database/migrations` and move it
+into the appropriate module directory.
+
+Routes
+------
+
+API / JSON based routes must be registered with the `xapi` prefix to distinguish module API's from core API's.
+
+In your service provider you can add a method specifically for registering your API routes eg:
+
+        // Required to resolve controllers
+        protected $namespace = 'MrModule\Modulename';
+
+        protected function mapApiRoutes()
+        {
+            Route::prefix('xapi')
+                ->middleware('api')
+                ->namespace($this->namespace)
+                ->group(base_path('mr_module/Modulename/routes.php'));
+        }
+
