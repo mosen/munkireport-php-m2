@@ -34,6 +34,9 @@ class Router implements CheckInRouterInterface
         ],
         'disk_report' => [
             'MrModule\\DiskReport\\CheckInHandler'
+        ],
+        'bluetooth' => [
+            'MrModule\\Bluetooth\\CheckInHandler'
         ]
     ];
 
