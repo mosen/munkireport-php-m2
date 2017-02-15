@@ -16,10 +16,10 @@ class Ard extends Migration
         Schema::create('ard', function (Blueprint $table) {
             $table->increments('id');
             $table->string('serial_number')->unique();
-            $table->text('Text1');
-            $table->text('Text2');
-            $table->text('Text3');
-            $table->text('Text4');
+            $table->text('Text1')->nullable();
+            $table->text('Text2')->nullable();
+            $table->text('Text3')->nullable();
+            $table->text('Text4')->nullable();
             $table->timestamps();
         });
     }

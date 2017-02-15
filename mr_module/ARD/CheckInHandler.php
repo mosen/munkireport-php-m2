@@ -1,7 +1,7 @@
 <?php
 namespace MrModule\ARD;
 
-
+use Illuminate\Support\Arr;
 use Mr\Contracts\CheckIn\Handler;
 
 class CheckInHandler implements Handler
@@ -27,10 +27,10 @@ class CheckInHandler implements Handler
     {
         $ard = ARDInfo::firstOrNew(['serial_number' => $serialNumber]);
         $ard->serial_number = $serialNumber;
-        $ard->Text1 = $data['Text1'];
-        $ard->Text2 = $data['Text2'];
-        $ard->Text3 = $data['Text3'];
-        $ard->Text4 = $data['Text4'];
+        $ard->Text1 = Arr::get($data, 'Text1', $ard->Text1);
+        $ard->Text2 = Arr::get($data, 'Text2', $ard->Text2);
+        $ard->Text3 = Arr::get($data, 'Text3', $ard->Text3);
+        $ard->Text4 = Arr::get($data, 'Text4', $ard->Text4);
         $ard->save();
     }
 }

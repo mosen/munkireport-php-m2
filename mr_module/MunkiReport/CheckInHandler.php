@@ -19,12 +19,14 @@ class CheckInHandler implements Handler
 
     /**
      * @param $moduleName string The short name of the class of data that needs to be handled.
+     * @param $serialNumber string The serial number of the client reporting the data.
      * @param $data array A hash of data to process.
      * @return mixed
      */
     public function process($moduleName, $serialNumber, $data)
     {
-        $mr = MunkiReport::firstOrCreate(['serial_number' => $serialNumber]);
+        $mr = MunkiReport::firstOrNew(['serial_number' => $serialNumber]);
+        $mr->serial_number = $serialNumber;
         $mr->version = $data['ManagedInstallVersion'];
         $mr->manifestname = $data['ManifestName'];
         $mr->runtype = $data['RunType'];
