@@ -13,12 +13,12 @@ class CheckInHandler implements Handler
      * @var array Hash of strings in the text submission and their respective database fields.
      */
     protected $translate = [
-        'Type = ' => 'type',
-        'Serial = ' => 'display_serial',
-        'Vendor = ' => 'vendor',
-        'Model = ' => 'model',
-        'Manufactured = ' => 'manufactured',
-        'Native = ' => 'native'
+        'Type' => 'type',
+        'Serial' => 'display_serial',
+        'Vendor' => 'vendor',
+        'Model' => 'model',
+        'Manufactured' => 'manufactured',
+        'Native' => 'native'
     ];
 
     /**
@@ -49,10 +49,10 @@ class CheckInHandler implements Handler
         Display::where(['serial_number' => $serialNumber])->delete();
 
         foreach ($this->parseTextRecords($data, '----------', " = ", $this->translate) as $attrs) {
-            if ($attrs['Type'] === 'Internal') {
-                $attrs['Type'] = Display::TYPE_INTERNAL;
-            } elseif ($attrs['Type'] === 'External') {
-                $attrs['Type'] = Display::TYPE_EXTERNAL;
+            if ($attrs['type'] === 'Internal') {
+                $attrs['type'] = Display::TYPE_INTERNAL;
+            } elseif ($attrs['type'] === 'External') {
+                $attrs['type'] = Display::TYPE_EXTERNAL;
             }
 
             $displayInfo = new Display;
