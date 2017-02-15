@@ -40,6 +40,9 @@ class CheckInRouter implements CheckInRouterInterface
         ],
         'ard' => [
             'MrModule\\ARD\\CheckInHandler'
+        ],
+        'munkireport' => [
+            'MrModule\\MunkiReport\\CheckInHandler'
         ]
     ];
 
@@ -53,7 +56,7 @@ class CheckInRouter implements CheckInRouterInterface
      */
     public function addHandler($moduleName, $className)
     {
-        Log::debug("Registering handler ${className} for ${moduleName}");
+        Log::debug("Registering handler {$className} for {$moduleName}");
         if (!isset($this->handlers[$moduleName])) {
             $this->handlers[$moduleName] = [$className];
         } else {
@@ -69,7 +72,7 @@ class CheckInRouter implements CheckInRouterInterface
      * @return boolean False if route was not handled by any module.
      */
     public function route($moduleName, $serialNumber, $data) {
-        Log::debug($moduleName);
+        Log::debug("Routing check in for {$moduleName}");
 
         if (isset($this->handlers[$moduleName])) {
             $dataObj = new CFPropertyList;
