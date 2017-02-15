@@ -14,3 +14,9 @@ ${PLUTIL} -insert ReportItems.directory_service -string "${CACHEPATH}/directorys
 
 ${PLUTIL} -remove ReportItems.disk_report /Library/Preferences/MunkiReport.plist
 ${PLUTIL} -insert ReportItems.disk_report -string "${CACHEPATH}/disk.plist" /Library/Preferences/MunkiReport.plist
+
+${PLUTIL} -remove ReportItems.displays_info /Library/Preferences/MunkiReport.plist
+${PLUTIL} -insert ReportItems.displays_info -string "${CACHEPATH}/displays.txt" /Library/Preferences/MunkiReport.plist
+
+${PLUTIL} -remove ReportItems.installhistory /Library/Preferences/MunkiReport.plist
+${PLUTIL} -insert ReportItems.installhistory -string "/Library/Receipts/InstallHistory.plist" /Library/Preferences/MunkiReport.plist
