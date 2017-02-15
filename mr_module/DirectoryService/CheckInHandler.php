@@ -12,30 +12,30 @@ class CheckInHandler implements Handler
      * @var array Hash of strings in the source text and their destination database fields.
      */
     protected $translate = [
-        'Directory Service = ' => 'which_directory_service',
-        'Active Directory Comments = ' => 'directory_service_comments',
-        'Active Directory Forest = ' => 'adforest',
-        'Active Directory Domain = ' => 'addomain',
-        'Computer Account = ' => 'computeraccount',
-        'Create mobile account at login = ' => 'createmobileaccount',
-        'Require confirmation = ' => 'requireconfirmation',
-        'Force home to startup disk = ' => 'forcehomeinstartup',
-        'Mount home as sharepoint = ' => 'mounthomeassharepoint',
-        'Use Windows UNC path for home = ' => 'usewindowsuncpathforhome',
-        'Network protocol to be used = ' => 'networkprotocoltobeused',
-        'Default user Shell = ' => 'defaultusershell',
-        'Mapping UID to attribute = ' => 'mappinguidtoattribute',
-        'Mapping user GID to attribute = ' => 'mappingusergidtoattribute',
-        'Mapping group GID to attribute = ' => 'mappinggroupgidtoattr',
-        'Generate Kerberos authority = ' => 'generatekerberosauth',
-        'Preferred Domain controller = ' => 'preferreddomaincontroller',
-        'Allowed admin groups = ' => 'allowedadmingroups',  // ARRAY alert
-        'Authentication from any domain = ' => 'authenticationfromanydomain',
-        'Packet signing = ' => 'packetsigning',
-        'Packet encryption = ' => 'packetencryption',
-        'Password change interval = ' => 'passwordchangeinterval',
-        'Restrict Dynamic DNS updates = ' => 'restrictdynamicdnsupdates',
-        'Namespace mode = ' => 'namespacemode'
+        'Directory Service' => 'which_directory_service',
+        'Active Directory Comments' => 'directory_service_comments',
+        'Active Directory Forest' => 'adforest',
+        'Active Directory Domain' => 'addomain',
+        'Computer Account' => 'computeraccount',
+        'Create mobile account at login' => 'createmobileaccount',
+        'Require confirmation' => 'requireconfirmation',
+        'Force home to startup disk' => 'forcehomeinstartup',
+        'Mount home as sharepoint' => 'mounthomeassharepoint',
+        'Use Windows UNC path for home' => 'usewindowsuncpathforhome',
+        'Network protocol to be used' => 'networkprotocoltobeused',
+        'Default user Shell' => 'defaultusershell',
+        'Mapping UID to attribute' => 'mappinguidtoattribute',
+        'Mapping user GID to attribute' => 'mappingusergidtoattribute',
+        'Mapping group GID to attribute' => 'mappinggroupgidtoattr',
+        'Generate Kerberos authority' => 'generatekerberosauth',
+        'Preferred Domain controller' => 'preferreddomaincontroller',
+        'Allowed admin groups' => 'allowedadmingroups',  // ARRAY alert
+        'Authentication from any domain' => 'authenticationfromanydomain',
+        'Packet signing' => 'packetsigning',
+        'Packet encryption' => 'packetencryption',
+        'Password change interval' => 'passwordchangeinterval',
+        'Restrict Dynamic DNS updates' => 'restrictdynamicdnsupdates',
+        'Namespace mode' => 'namespacemode'
     ];
 
     /**
