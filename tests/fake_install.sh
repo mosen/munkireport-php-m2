@@ -36,3 +36,9 @@ ${PLUTIL} -insert ReportItems.localadmin -string "${CACHEPATH}/localadmins.txt" 
 ${PLUTIL} -remove ReportItems.munkiinfo /Library/Preferences/MunkiReport.plist
 ${PLUTIL} -insert ReportItems.munkiinfo -string "${CACHEPATH}/munkiinfo.plist" /Library/Preferences/MunkiReport.plist
 cp ${MODULEDIR}/MunkiInfo/scripts/munkiinfo.py ${SCRIPTS}
+
+
+${PLUTIL} -remove ReportItems.network /Library/Preferences/MunkiReport.plist
+${PLUTIL} -insert ReportItems.network -string "${CACHEPATH}/networkinfo.txt" /Library/Preferences/MunkiReport.plist
+cp ${MODULEDIR}/Network/scripts/networkinfo.sh ${SCRIPTS}
+chmod a+x ${SCRIPTS}/networkinfo.sh

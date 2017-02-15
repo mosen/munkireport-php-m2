@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Network extends Model
 {
+    const STATUS_ENABLED = 1;
+    const STATUS_DISABLED = 0;
+
     protected $table = 'network';
 
     protected $fillable = [
@@ -22,5 +25,10 @@ class Network extends Model
         'ipv6ip',
         'ipv6prefixlen',
         'ipv6router'
+    ];
+
+    protected $casts = [
+        'order' => 'integer',
+        'ipv6prefixlen' => 'integer'
     ];
 }

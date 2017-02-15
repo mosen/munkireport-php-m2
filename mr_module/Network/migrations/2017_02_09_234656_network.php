@@ -16,20 +16,20 @@ class Network extends Migration
         Schema::create('network', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('serial_number')->unique();
+            $table->string('serial_number');
             $table->string('service');
             $table->integer('order');
             $table->integer('status');
             $table->macAddress('ethernet');
             $table->string('clientid');
             $table->string('ipv4conf');
-            $table->ipAddress('ipv4ip');
-            $table->ipAddress('ipv4mask');
-            $table->ipAddress('ipv4router');
+            $table->ipAddress('ipv4ip')->nullable();
+            $table->ipAddress('ipv4mask')->nullable();
+            $table->ipAddress('ipv4router')->nullable();
             $table->string('ipv6conf');
-            $table->string('ipv6ip');
-            $table->integer('ipv6prefixlen');
-            $table->string('ipv6router');
+            $table->string('ipv6ip')->nullable();
+            $table->integer('ipv6prefixlen')->nullable();
+            $table->string('ipv6router')->nullable();
 //            $table->integer('timestamp');
 
             $table->index(['serial_number', 'order']);
