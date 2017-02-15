@@ -2,10 +2,13 @@
 namespace MrModule\FindMyMac;
 
 
+use Mr\CheckIn\ParsesText;
 use Mr\Contracts\CheckIn\Handler;
 
 class CheckInHandler implements Handler
 {
+    use ParsesText;
+
     protected $translate
         = [
             'Status = ' => 'status',
@@ -43,15 +46,9 @@ class CheckInHandler implements Handler
         }
 
         $fmm = FindMyMacInfo::firstOrNew(['serial_number' => $serialNumber]);
+        $attrs = $this->parseTextRecord($data, " = ", $this->translate);
 
-        foreach (explode("\n", $data) as $line) {
-            $kv = explode(" = ", $data);
-            $value = trim($kv[1]);
-            $tkey = $this->translate[$kv[0]." = "];
-
-            $fmm->{$tkey} = $value;
-        }
-
+        $fmm->fill($attrs);
         $fmm->save();
     }
 }

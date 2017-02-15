@@ -2,6 +2,7 @@
 namespace MrModule\DiskReport;
 
 
+use CFPropertyList\CFPropertyList;
 use Illuminate\Support\Arr;
 use Mr\Contracts\CheckIn\Handler;
 use MrModule\DiskReport\Events\LowFreeSpaceEvent;

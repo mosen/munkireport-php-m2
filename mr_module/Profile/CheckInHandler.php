@@ -1,11 +1,13 @@
 <?php
 namespace MrModule\Profile;
 
-
+use Mr\CheckIn\ParsesText;
 use Mr\Contracts\CheckIn\Handler;
 
 class CheckInHandler implements Handler
 {
+    use ParsesText;
+
     protected $translate
         = [
             'ProfileUUID = ' => 'profile_uuid',
@@ -39,27 +41,11 @@ class CheckInHandler implements Handler
         if (empty($data)) return;
         if (strpos($data, "\n") === false) throw new \Exception('Invalid report data for Profile module');
 
-        $profile = Array();
-        foreach (explode("\n", $data) as $line) {
-            if ((strpos($line, '---------') === 0) && (!empty($profile))) {
-                $p = new Profile;
-                $p->serial_number = $serialNumber;
-                $p->fill($profile);
-                $p->save();
-
-                $profile = Array();
-                continue;
-            }
-
-            if (strpos($line, " = ") === false) continue;
-
-            $kv = explode(" = ", $line, 2);
-            $value = trim($kv[1]);
-
-            if (in_array($kv[0]." = ", array_keys($this->translate))) {
-                $tkey = $this->translate[$kv[0]." = "];
-                $profile[$tkey] = $value;
-            }
+        foreach ($this->parseTextRecords($data, '---------', " = ", $this->translate) as $attrs) {
+            $p = new Profile;
+            $p->serial_number = $serialNumber;
+            $p->fill($attrs);
+            $p->save();
         }
     }
 }

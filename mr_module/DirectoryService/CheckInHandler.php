@@ -1,10 +1,13 @@
 <?php
 namespace MrModule\DirectoryService;
 
+use Mr\CheckIn\ParsesText;
 use Mr\Contracts\CheckIn\Handler;
 
 class CheckInHandler implements Handler
 {
+    use ParsesText;
+    
     /**
      * @var array Hash of strings in the source text and their destination database fields.
      */
@@ -50,6 +53,7 @@ class CheckInHandler implements Handler
      * @param $moduleName string The short name of the class of data that needs to be handled.
      * @param $serialNumber
      * @param $data array A hash of data to process.
+     * @return mixed|void
      * @throws \Exception
      */
     public function process($moduleName, $serialNumber, $data)
@@ -61,27 +65,16 @@ class CheckInHandler implements Handler
         $directoryService = DirectoryService::firstOrNew(['serial_number' => $serialNumber]);
         $directoryService->serial_number = $serialNumber;
 
-        foreach (explode("\n", $data) as $line) {
-            // Translate standard entries
-            foreach ($this->translate as $search => $field) {
-                if (strpos($line, $search) === 0) {
-                    $value = substr($line, strlen($search));
-
-                    // use bool when possible
-                    if (strpos($value, 'Enabled') === 0) {
-                        $directoryService->$field = true;
-                        break;
-                    } elseif (strpos($value, 'Disabled') === 0) {
-                        $directoryService->$field = false;
-                        break;
-                    }
-
-                    $directoryService->$field = $value;
-                    break;
-                }
+        $attrs = $this->parseTextRecord($data, " = ", $this->translate);
+        foreach ($attrs as $k => $v) {
+            if ($v === 'Enabled') {
+                $attrs[$k] = true;
+            } elseif ($v === 'Disabled') {
+                $attrs[$k] = false;
             }
         }
 
+        $directoryService->fill($attrs);
         $directoryService->save();
     }
 }

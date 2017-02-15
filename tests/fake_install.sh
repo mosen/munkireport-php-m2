@@ -51,3 +51,8 @@ ${PLUTIL} -remove ReportItems.profile /Library/Preferences/MunkiReport.plist
 ${PLUTIL} -insert ReportItems.profile -string "${CACHEPATH}/profile.txt" /Library/Preferences/MunkiReport.plist
 cp ${MODULEDIR}/Profile/scripts/profile.py ${SCRIPTS}
 
+${PLUTIL} -remove ReportItems.power /Library/Preferences/MunkiReport.plist
+${PLUTIL} -insert ReportItems.power -string "${CACHEPATH}/powerinfo.txt" /Library/Preferences/MunkiReport.plist
+cp ${MODULEDIR}/Power/scripts/power.sh ${SCRIPTS}
+chmod a+x ${SCRIPTS}/power.sh
+

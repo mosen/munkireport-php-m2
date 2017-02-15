@@ -1,10 +1,13 @@
 <?php
 namespace MrModule\Printer;
 
+use Mr\CheckIn\ParsesText;
 use Mr\Contracts\CheckIn\Handler;
 
 class CheckInHandler implements Handler
 {
+    use ParsesText;
+
     /**
      * @var array Hash of strings to match and their respective database fields.
      */
