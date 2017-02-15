@@ -77,13 +77,14 @@ trait ParsesText
             $kv = explode($separator, $line, 2);
             $value = trim($kv[1]);
 
-            if (in_array($kv[0].$separator, $keyMap)) {
-                $key = $keyMap[$kv[0].$separator];
+            if (array_key_exists($kv[0], $keyMap)) {
+                $key = $keyMap[$kv[0]];
             } else {
                 $key = $kv[0];
             }
 
             $result[$key] = $value;
+            
         }
     }
 }
