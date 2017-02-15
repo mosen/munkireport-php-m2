@@ -18,15 +18,15 @@ class Location extends Migration
 
             $table->string('serial_number')->unique();
             $table->string('address');
-            $table->integer('altitude');
+            $table->integer('altitude')->default(0);
             $table->string('currentstatus');
-            $table->boolean('ls_enabled');
+            $table->boolean('ls_enabled')->default(false);
             $table->string('lastlocationrun');
             $table->string('lastrun');
-            $table->double('latitude');
-            $table->integer('latitudeaccuracy');
-            $table->double('longitude');
-            $table->integer('longitudeaccuracy');
+            $table->double('latitude')->default(0.0);
+            $table->integer('latitudeaccuracy')->default(0);
+            $table->double('longitude')->default(0.0);
+            $table->integer('longitudeaccuracy')->default(0);
             $table->string('stalelocation');
 
             $table->timestamps();
