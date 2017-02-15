@@ -60,33 +60,5 @@ class CheckInHandler implements Handler
             $displayInfo->fill($attrs);
             $displayInfo->save();
         }
-        
-//        $displayInfo = new Display;
-//        $displayInfo->serial_number = $serialNumber;
-//
-//        foreach (explode("\n", $data) as $line) {
-//            $kv = explode(" = ", $line);
-//            $value = trim($kv[1]);
-//
-//            if ((strpos($line, '----------') === 0) && !$displayInfo->isClean()) {
-//                $displayInfo->save();
-//
-//                $displayInfo = new Display;
-//                $displayInfo->serial_number = $serialNumber;
-//                continue;
-//            }
-//
-//            if (array_key_exists($kv[0]." = ", $this->translate)) {
-//                if ($kv[0] === 'Type') {
-//                    if ($value === 'Internal') {
-//                        $displayInfo->type = Display::TYPE_INTERNAL;
-//                    } elseif ($value === 'External') {
-//                        $displayInfo->type = Display::TYPE_EXTERNAL;
-//                    }
-//                } else {
-//                    $displayInfo->{$kv[0]} = $value;
-//                }
-//            }
-//        }
     }
 }

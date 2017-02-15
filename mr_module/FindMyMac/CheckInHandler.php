@@ -11,11 +11,11 @@ class CheckInHandler implements Handler
 
     protected $translate
         = [
-            'Status = ' => 'status',
-            'OwnerDisplayName = ' => 'ownerdisplayname',
-            'Email = ' => 'email',
-            'personID = ' => 'personid',
-            'hostname = ' => 'hostname'
+            'Status' => 'status',
+            'OwnerDisplayName' => 'ownerdisplayname',
+            'Email' => 'email',
+            'personID' => 'personid',
+            'hostname' => 'hostname'
         ];
 
     /**

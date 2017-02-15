@@ -12,13 +12,13 @@ class CheckInHandler implements Handler
      * @var array Hash of strings to match and their respective database fields.
      */
     protected $translate = [
-        'Name: ' => 'name',
-        'PPD: ' => 'ppd',
-        'Driver Version: ' => 'driver_version',
-        'URL: ' => 'url',
-        'Default Set: ' => 'default_set',
-        'Printer Status: ' => 'printer_status',
-        'Printer Sharing: ' => 'printer_sharing'
+        'Name' => 'name',
+        'PPD' => 'ppd',
+        'Driver Version' => 'driver_version',
+        'URL' => 'url',
+        'Default Set' => 'default_set',
+        'Printer Status' => 'printer_status',
+        'Printer Sharing' => 'printer_sharing'
     ];
 
     /**
@@ -55,11 +55,11 @@ class CheckInHandler implements Handler
             $kv = explode(": ", $line, 2);
             $value = trim($kv[1]);
 
-            if (in_array($kv[0].": ", array_keys($this->translate))) {
-                $p->{$this->translate[$kv[0].": "]} = $value;
+            if (array_key_exists($kv[0], $this->translate)) {
+                $p->{$this->translate[$kv[0]]} = $value;
             }
 
-            if ($this->translate[$kv[0].": "] === 'printer_sharing') {
+            if ($this->translate[$kv[0]] === 'printer_sharing') {
                 $p->save();
                 $p = new Printer;
                 $p->serial_number = $serialNumber;
