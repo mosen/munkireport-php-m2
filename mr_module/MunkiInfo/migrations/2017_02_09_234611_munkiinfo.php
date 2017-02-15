@@ -16,7 +16,7 @@ class Munkiinfo extends Migration
         Schema::create('munkiinfo', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('serial_number')->unique();
+            $table->string('serial_number');
             $table->string('munkiinfo_key');
             $table->string('munkiinfo_value');
 

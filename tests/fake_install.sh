@@ -31,3 +31,8 @@ ${PLUTIL} -insert ReportItems.installhistory -string "/Library/Receipts/InstallH
 
 ${PLUTIL} -remove ReportItems.localadmin /Library/Preferences/MunkiReport.plist
 ${PLUTIL} -insert ReportItems.localadmin -string "${CACHEPATH}/localadmins.txt" /Library/Preferences/MunkiReport.plist
+
+
+${PLUTIL} -remove ReportItems.munkiinfo /Library/Preferences/MunkiReport.plist
+${PLUTIL} -insert ReportItems.munkiinfo -string "${CACHEPATH}/munkiinfo.plist" /Library/Preferences/MunkiReport.plist
+cp ${MODULEDIR}/MunkiInfo/scripts/munkiinfo.py ${SCRIPTS}
