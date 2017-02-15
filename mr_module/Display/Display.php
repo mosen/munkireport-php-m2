@@ -9,7 +9,7 @@ class Display extends Model
     const TYPE_INTERNAL = 0;
     const TYPE_EXTERNAL = 1;
 
-    protected $table = 'display';
+    protected $table = 'displays';
 
     protected $fillable = [
         'type',
