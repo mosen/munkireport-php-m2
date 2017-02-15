@@ -10,12 +10,12 @@ class CheckInHandler implements Handler
 
     protected $translate
         = [
-            'ProfileUUID = ' => 'profile_uuid',
-            'ProfileName = ' => 'profile_name',
-            'ProfileRemovalDisallowed = ' => 'profile_removal_allowed',
-            'PayloadName = ' => 'payload_name',
-            'PayloadDisplayName = ' => 'payload_display',
-            'PayloadData = ' => 'payload_data'
+            'ProfileUUID' => 'profile_uuid',
+            'ProfileName' => 'profile_name',
+            'ProfileRemovalDisallowed' => 'profile_removal_allowed',
+            'PayloadName' => 'payload_name',
+            'PayloadDisplayName' => 'payload_display',
+            'PayloadData' => 'payload_data'
         ];
 
     /**
