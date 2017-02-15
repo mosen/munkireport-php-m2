@@ -42,3 +42,7 @@ ${PLUTIL} -remove ReportItems.network /Library/Preferences/MunkiReport.plist
 ${PLUTIL} -insert ReportItems.network -string "${CACHEPATH}/networkinfo.txt" /Library/Preferences/MunkiReport.plist
 cp ${MODULEDIR}/Network/scripts/networkinfo.sh ${SCRIPTS}
 chmod a+x ${SCRIPTS}/networkinfo.sh
+
+${PLUTIL} -remove ReportItems.printer /Library/Preferences/MunkiReport.plist
+${PLUTIL} -insert ReportItems.printer -string "${CACHEPATH}/printer.txt" /Library/Preferences/MunkiReport.plist
+cp ${MODULEDIR}/Printer/scripts/printer.py ${SCRIPTS}

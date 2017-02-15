@@ -16,7 +16,7 @@ class Printer extends Migration
         Schema::create('printer', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('serial_number')->unique();
+            $table->string('serial_number');
             $table->string('name');
             $table->string('ppd');
             $table->string('driver_version');
@@ -24,6 +24,8 @@ class Printer extends Migration
             $table->string('default_set');
             $table->string('printer_status');
             $table->string('printer_sharing');
+
+            $table->index(['serial_number', 'name']);
 
             $table->timestamps();
         });

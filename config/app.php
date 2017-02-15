@@ -204,7 +204,7 @@ return [
         MrModule\MunkiReport\Providers\MunkiReportServiceProvider::class,
         MrModule\Network\Providers\NetworkServiceProvider::class,
         MrModule\Power\Providers\PowerServiceProvider::class,
-        //MrModule\Printer\Providers\Pri
+        MrModule\Printer\Providers\PrinterServiceProvider::class,
         MrModule\Profile\Providers\ProfileServiceProvider::class,
         MrModule\SCCMStatus\Providers\SCCMStatusServiceProvider::class,
         MrModule\Security\Providers\SecurityServiceProvider::class,
