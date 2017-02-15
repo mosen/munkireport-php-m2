@@ -7,16 +7,20 @@ class CheckInHandler implements Handler
 {
     public function process($moduleName, $serialNumber, $data)
     {
+        $dataObj = new CFPropertyList;
+        $dataObj->parse($data);
+        $dataArr = $dataObj->toArray();
+
         $machine = Machine::firstOrNew(['serial_number' => $serialNumber]);
         $machine->serial_number = $serialNumber;
         
-        if (isset($data['physical_memory'])) {
-            $machine->physical_memory = intval($data['physical_memory']);
+        if (isset($dataArr['physical_memory'])) {
+            $machine->physical_memory = intval($dataArr['physical_memory']);
         }
 
         // Convert OS version to int
-        if (isset($data['os_version'])) {
-            $digits = explode('.', $data['os_version']);
+        if (isset($dataArr['os_version'])) {
+            $digits = explode('.', $dataArr['os_version']);
             $mult = 10000;
             $mylist['os_version'] = 0;
             foreach ($digits as $digit) {
@@ -26,11 +30,11 @@ class CheckInHandler implements Handler
         }
 
         // Dirify buildversion
-        if (isset($data['buildversion'])) {
-            $data['buildversion'] = preg_replace('/[^A-Za-z0-9]/', '', $data['buildversion']);
+        if (isset($dataArr['buildversion'])) {
+            $dataArr['buildversion'] = preg_replace('/[^A-Za-z0-9]/', '', $dataArr['buildversion']);
         }
 
-        $machine->fill($data);
+        $machine->fill($dataArr);
         $machine->save();
     }
 

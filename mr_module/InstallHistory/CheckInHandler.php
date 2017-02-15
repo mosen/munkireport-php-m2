@@ -2,6 +2,7 @@
 namespace MrModule\InstallHistory;
 
 
+use CFPropertyList\CFPropertyList;
 use Mr\Contracts\CheckIn\Handler;
 
 class CheckInHandler implements Handler
@@ -24,9 +25,13 @@ class CheckInHandler implements Handler
      */
     public function process($moduleName, $serialNumber, $data)
     {
+        $dataObj = new CFPropertyList;
+        $dataObj->parse($data);
+        $dataArr = $dataObj->toArray();
+        
         InstallHistory::where('serial_number', $serialNumber)->delete();
 
-        foreach ($data as $item) {
+        foreach ($dataArr as $item) {
             if (!empty($item['packageIdentifiers'])) {
                 // PackageIdentifiers is an array, so we only retain one
                 // packageidentifier so we can differentiate between

@@ -20,3 +20,6 @@ ${PLUTIL} -insert ReportItems.displays_info -string "${CACHEPATH}/displays.txt" 
 
 ${PLUTIL} -remove ReportItems.installhistory /Library/Preferences/MunkiReport.plist
 ${PLUTIL} -insert ReportItems.installhistory -string "/Library/Receipts/InstallHistory.plist" /Library/Preferences/MunkiReport.plist
+
+${PLUTIL} -remove ReportItems.localadmin /Library/Preferences/MunkiReport.plist
+${PLUTIL} -insert ReportItems.localadmin -string "${CACHEPATH}/localadmins.txt" /Library/Preferences/MunkiReport.plist

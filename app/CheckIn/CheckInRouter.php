@@ -75,14 +75,10 @@ class CheckInRouter implements CheckInRouterInterface
         Log::debug("Routing check in for {$moduleName}");
 
         if (isset($this->handlers[$moduleName])) {
-            $dataObj = new CFPropertyList;
-            $dataObj->parse($data);
-            $dataArr = $dataObj->toArray();
-
             foreach ($this->handlers[$moduleName] as $h) {
                 $cls = app($h);
                 Log::debug("Executing check-in handler ${h}");
-                $cls->process($moduleName, $serialNumber, $dataArr);
+                $cls->process($moduleName, $serialNumber, $data);
             }
             return true;
         }

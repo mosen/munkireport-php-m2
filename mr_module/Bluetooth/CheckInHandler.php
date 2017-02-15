@@ -1,6 +1,7 @@
 <?php
 namespace MrModule\Bluetooth;
 
+use CFPropertyList\CFPropertyList;
 use Mr\Contracts\CheckIn\Handler;
 
 class CheckInHandler implements Handler
@@ -23,9 +24,13 @@ class CheckInHandler implements Handler
      */
     public function process($moduleName, $serialNumber, $data)
     {
+        $dataObj = new CFPropertyList;
+        $dataObj->parse($data);
+        $dataArr = $dataObj->toArray();
+
         BluetoothInfo::where('serial_number', $serialNumber)->delete();
 
-        foreach ($data as $key => $value) {
+        foreach ($dataArr as $key => $value) {
             $bt = new BluetoothInfo;
             $bt->serial_number = $serialNumber;
             $bt->device_type = strtolower($key);

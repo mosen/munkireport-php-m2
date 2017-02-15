@@ -29,18 +29,22 @@ class CheckInHandler implements Handler
      */
     public function process($moduleName, $serialNumber, $data)
     {
-        if (empty($data)) {
+        $dataObj = new CFPropertyList;
+        $dataObj->parse($data);
+        $dataArr = $dataObj->toArray();
+        
+        if (empty($dataArr)) {
             throw new \Exception('No disks in report');
         }
 
         // Convert old style reports from not migrated clients
-        if (isset($data['DeviceIdentifier'])) {
-            $data = array($data);
+        if (isset($dataArr['DeviceIdentifier'])) {
+            $dataArr = array($dataArr);
         }
 
         DiskReport::where('serial_number', $serialNumber)->delete();
 
-        foreach ($data as $disk) {
+        foreach ($dataArr as $disk) {
             // Calculate percentage
             if (isset($disk['TotalSize']) && isset($disk['FreeSpace'])) {
                 $disk['Percentage'] = round(($disk['TotalSize'] - $disk['FreeSpace']) /

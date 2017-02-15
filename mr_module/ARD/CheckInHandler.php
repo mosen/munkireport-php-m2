@@ -1,6 +1,7 @@
 <?php
 namespace MrModule\ARD;
 
+use CFPropertyList\CFPropertyList;
 use Illuminate\Support\Arr;
 use Mr\Contracts\CheckIn\Handler;
 
@@ -25,12 +26,16 @@ class CheckInHandler implements Handler
      */
     public function process($moduleName, $serialNumber, $data)
     {
+        $dataObj = new CFPropertyList;
+        $dataObj->parse($data);
+        $dataArr = $dataObj->toArray();
+
         $ard = ARDInfo::firstOrNew(['serial_number' => $serialNumber]);
         $ard->serial_number = $serialNumber;
-        $ard->Text1 = Arr::get($data, 'Text1', $ard->Text1);
-        $ard->Text2 = Arr::get($data, 'Text2', $ard->Text2);
-        $ard->Text3 = Arr::get($data, 'Text3', $ard->Text3);
-        $ard->Text4 = Arr::get($data, 'Text4', $ard->Text4);
+        $ard->Text1 = Arr::get($dataArr, 'Text1', $ard->Text1);
+        $ard->Text2 = Arr::get($dataArr, 'Text2', $ard->Text2);
+        $ard->Text3 = Arr::get($dataArr, 'Text3', $ard->Text3);
+        $ard->Text4 = Arr::get($dataArr, 'Text4', $ard->Text4);
         $ard->save();
     }
 }
