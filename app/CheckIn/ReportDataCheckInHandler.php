@@ -1,6 +1,7 @@
 <?php
 namespace Mr\CheckIn;
 
+use CFPropertyList\CFPropertyList;
 use Mr\Contracts\CheckIn\Handler;
 use Mr\ReportData;
 
@@ -24,10 +25,14 @@ class ReportDataCheckInHandler implements Handler
      */
     public function process($moduleName, $serialNumber, $data)
     {
+        $dataObj = new CFPropertyList;
+        $dataObj->parse($data);
+        $dataArr = $dataObj->toArray();
+
         $rdata = ReportData::firstOrNew(['serial_number' => $serialNumber]);
         $rdata->serial_number = $serialNumber;
 
-        $rdata->fill($data);
+        $rdata->fill($dataArr);
         $rdata->save();
     }
 }

@@ -1,6 +1,7 @@
 <?php
 namespace MrModule\Machine;
 
+use CFPropertyList\CFPropertyList;
 use Mr\Contracts\CheckIn\Handler;
 
 class CheckInHandler implements Handler
@@ -22,9 +23,9 @@ class CheckInHandler implements Handler
         if (isset($dataArr['os_version'])) {
             $digits = explode('.', $dataArr['os_version']);
             $mult = 10000;
-            $mylist['os_version'] = 0;
+            $dataArr['os_version'] = 0;
             foreach ($digits as $digit) {
-                $data['os_version'] += $digit * $mult;
+                $dataArr['os_version'] += $digit * $mult;
                 $mult = $mult / 100;
             }
         }

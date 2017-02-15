@@ -43,6 +43,9 @@ class CheckInRouter implements CheckInRouterInterface
         ],
         'munkireport' => [
             'MrModule\\MunkiReport\\CheckInHandler'
+        ],
+        'directory_service' => [
+            'MrModule\\DirectoryService\\CheckInHandler'
         ]
     ];
 
