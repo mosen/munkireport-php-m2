@@ -17,6 +17,10 @@ class DisplayServiceProvider extends ServiceProvider
     }
 
     public function boot() {
+        $this->publishes([
+            __DIR__.'/../config/mr_displays.php' => config_path('mr_displays.php')
+        ], 'config');
+
         $this->mapApiRoutes();
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
     }

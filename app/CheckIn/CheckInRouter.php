@@ -46,6 +46,9 @@ class CheckInRouter implements CheckInRouterInterface
         ],
         'directory_service' => [
             'MrModule\\DirectoryService\\CheckInHandler'
+        ],
+        'displays_info' => [
+            'MrModule\\Display\\CheckInHandler'
         ]
     ];
 

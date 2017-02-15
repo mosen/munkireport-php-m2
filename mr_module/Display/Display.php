@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Display extends Model
 {
+    const TYPE_INTERNAL = 0;
+    const TYPE_EXTERNAL = 1;
+
     protected $table = 'display';
 
     protected $fillable = [
@@ -15,5 +18,10 @@ class Display extends Model
         'model',
         'manufactured',
         'native'
+    ];
+
+    protected $casts = [
+        'type' => 'integer',
+        'manufactured' => 'date'
     ];
 }

@@ -24,6 +24,7 @@ ${PLUTIL} -insert ReportItems.disk_report -string "${CACHEPATH}/disk.plist" /Lib
 
 ${PLUTIL} -remove ReportItems.displays_info /Library/Preferences/MunkiReport.plist
 ${PLUTIL} -insert ReportItems.displays_info -string "${CACHEPATH}/displays.txt" /Library/Preferences/MunkiReport.plist
+cp ${MODULEDIR}/Display/scripts/displays.py ${SCRIPTS}
 
 ${PLUTIL} -remove ReportItems.installhistory /Library/Preferences/MunkiReport.plist
 ${PLUTIL} -insert ReportItems.installhistory -string "/Library/Receipts/InstallHistory.plist" /Library/Preferences/MunkiReport.plist
