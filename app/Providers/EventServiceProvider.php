@@ -18,6 +18,12 @@ class EventServiceProvider extends ServiceProvider
         ],
         'MrModule\DiskReport\Events\LowFreeSpaceEvent' => [
             'Mr\Listeners\LowFreeSpaceEventListener'
+        ],
+        'MrModule\Certificate\Events\CertExpiredEvent' => [
+            'Mr\Listeners\CertExpiredEventListener'
+        ],
+        'MrModule\Certificate\Events\CertExpiryWarningEvent' => [
+            'Mr\Listeners\CertExpiryWarningEventListener'
         ]
     ];
 
