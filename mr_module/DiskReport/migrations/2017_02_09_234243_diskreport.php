@@ -16,7 +16,7 @@ class Diskreport extends Migration
         Schema::create('diskreport', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('serial_number')->unique();
+            $table->string('serial_number');
             $table->bigInteger('TotalSize');
             $table->bigInteger('FreeSpace');
             $table->bigInteger('Percentage');
@@ -28,6 +28,8 @@ class Diskreport extends Migration
             $table->string('VolumeName');
             $table->boolean('CoreStorageEncrypted');
 //            $table->string('timestamp');
+
+            $table->index('serial_number');
 
             $table->timestamps();
         });

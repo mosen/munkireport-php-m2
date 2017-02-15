@@ -17,12 +17,11 @@ class MrEvent extends Migration
         Schema::create('mr_event', function (Blueprint $table) {
             $table->increments('id');
 
-
             $table->string('serial_number');
             $table->string('type');
             $table->string('module');
             $table->string('msg');
-            $table->string('data');
+            $table->string('data')->nullable();
 //            $table->integer('timestamp');
 
             $table->timestamps();
@@ -36,6 +35,6 @@ class MrEvent extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('mr_event');
     }
 }

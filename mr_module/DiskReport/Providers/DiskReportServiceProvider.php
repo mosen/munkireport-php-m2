@@ -17,6 +17,10 @@ class DiskReportServiceProvider extends ServiceProvider
     }
 
     public function boot() {
+        $this->publishes([
+            __DIR__.'/../config/mr_disk_report.php' => config_path('mr_disk_report.php')
+        ], 'config');
+        
         $this->mapApiRoutes();
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
     }

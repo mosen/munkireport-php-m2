@@ -2,6 +2,7 @@
 namespace MrModule\DiskReport;
 
 
+use Illuminate\Support\Arr;
 use Mr\Contracts\CheckIn\Handler;
 use MrModule\DiskReport\Events\LowFreeSpaceEvent;
 use MrModule\DiskReport\Events\SMARTFailureEvent;
@@ -65,8 +66,8 @@ class CheckInHandler implements Handler
             $diskModel->serial_number = $serialNumber;
             $diskModel->fill($disk);
             // Typecast Boolean values
-            $diskModel->Internal = (bool)$disk['Internal'];
-            $diskModel->CoreStorageEncrypted = (bool)$disk['CoreStorageEncrypted'];
+            $diskModel->Internal = (bool)Arr::get($disk, 'Internal', false);
+            $diskModel->CoreStorageEncrypted = (bool)Arr::get($disk, 'CoreStorageEncrypted', false);
 
             $diskModel->save();
 
