@@ -106,3 +106,29 @@ To build, just run:
     
 See [Laravel mix](https://laravel.com/docs/5.4/mix) for more information. Mix is essentially a specialised webpack setup.
 
+Configure
+---------
+
+Your configuration is stored in a file called .env, there is already a .env.example that you should copy to .env. Check out the contents of .env and adjust where necessary. If you comment out DB_DATABASE, it will fall back to the default location for SQLite, which is `database/database.sqlite`
+
+The next thing you should do after installing Laravel is set your application key to a random string, just run:
+
+    $ php artisan key:generate command.
+
+this will generate a key and add it to .env
+
+Set up the database
+-------------------
+
+If you're using SQLite you first create an empty database file. The easiest way to do that is to run:
+
+    $ touch database/database.sqlite
+
+or some other path that you defined in .env
+
+To set up the database tables, you need to run
+
+    $ php artisan migrate
+
+Note that the previous behavior of munkireport, where it auto-created the tables does not work in v3.
+
