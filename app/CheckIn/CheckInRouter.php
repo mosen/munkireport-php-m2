@@ -52,6 +52,9 @@ class CheckInRouter implements CheckInRouterInterface
         ],
         'printer' => [
             'MrModule\\Printer\\CheckInHandler'
+        ],
+        'profile' => [
+            'MrModule\\Profile\\CheckInHandler'
         ]
     ];
 

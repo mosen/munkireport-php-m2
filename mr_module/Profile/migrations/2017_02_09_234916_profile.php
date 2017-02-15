@@ -16,7 +16,7 @@ class Profile extends Migration
         Schema::create('profile', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('serial_number')->unique();
+            $table->string('serial_number');
             $table->uuid('profile_uuid');
             $table->string('profile_name');
             $table->string('profile_removal_allowed');
