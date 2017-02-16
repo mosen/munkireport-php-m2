@@ -13,6 +13,7 @@ class FakeSeeder extends Seeder
     {
         $this->call('FakeEventSeeder');
         $this->call('FakeReportDataSeeder');
+        $this->call('FakeMachineSeeder');
         $this->call('FakeCommentSeeder');
         $this->call('FakeTagSeeder');
 
@@ -31,7 +32,6 @@ class FakeSeeder extends Seeder
         $this->call('MrModule\Inventory\FakeInventoryItemSeeder');
         $this->call('MrModule\LocalAdmin\FakeLocalAdminSeeder');
         $this->call('MrModule\Location\FakeLocationSeeder');
-        $this->call('MrModule\Machine\FakeMachineSeeder');
         $this->call('MrModule\ManagedInstalls\FakeManagedInstallSeeder');
         $this->call('MrModule\MunkiInfo\FakeMunkiInfoSeeder');
         $this->call('MrModule\MunkiReport\FakeMunkiReportSeeder');

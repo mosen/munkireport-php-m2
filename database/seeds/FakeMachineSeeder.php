@@ -1,6 +1,4 @@
 <?php
-namespace MrModule\Machine;
-
 use Illuminate\Database\Seeder;
 
 class FakeMachineSeeder extends Seeder

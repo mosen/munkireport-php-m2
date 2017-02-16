@@ -18,7 +18,7 @@ class CheckInRouter implements CheckInRouterInterface
      */
     protected $handlers = [
         'machine' => [
-            'MrModule\\Machine\\CheckInHandler'
+            'Mr\\CheckIn\\MachineCheckInHandler'
         ],
         'reportdata' => [
             'Mr\\CheckIn\\ReportDataCheckInHandler'

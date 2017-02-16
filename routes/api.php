@@ -18,3 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('event', 'EventController');
+Route::resource('machine', 'MachineController');
+

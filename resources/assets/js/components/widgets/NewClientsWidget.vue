@@ -35,7 +35,7 @@
 
         methods: {
           url (client) {
-            return `/clients/detail/${client.serial_number}`;
+            return `/client/detail/${client.serial_number}`;
           },
           age (client) {
             return moment(client.created_at).fromNow();

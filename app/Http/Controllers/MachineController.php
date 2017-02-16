@@ -2,6 +2,7 @@
 namespace MrModule\Machine;
 
 use Mr\Http\Controllers\Controller;
+use Mr\Machine;
 
 class MachineController extends Controller
 {

@@ -1,8 +1,9 @@
 <?php
-namespace MrModule\Machine;
+namespace Mr\CheckIn;
 
 use CFPropertyList\CFPropertyList;
 use Mr\Contracts\CheckIn\Handler;
+use Mr\Machine;
 
 class CheckInHandler implements Handler
 {
