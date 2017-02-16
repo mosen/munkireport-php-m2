@@ -8,6 +8,9 @@ install:
   - npm install
 cache:
   directories:
-    - vendor
     - node_modules
-    
+# deploy:
+#   provider: s3
+#   access_key_id: AKIAIDS6STMDWHL7TLQA
+#   secret_access_key: BLAH
+#   bucket: "au.id.eb.munkireport3"
