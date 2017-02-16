@@ -1,5 +1,5 @@
 <?php
-namespace MrModule\Comment;
+namespace Mr;
 
 
 use Illuminate\Database\Eloquent\Model;

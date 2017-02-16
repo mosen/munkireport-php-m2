@@ -13,11 +13,12 @@ class FakeSeeder extends Seeder
     {
         $this->call('FakeEventSeeder');
         $this->call('FakeReportDataSeeder');
+        $this->call('FakeCommentSeeder');
 
         //$this->call('MrModule\ARD\FakeARDSeeder');
         $this->call('MrModule\Bluetooth\FakeBluetoothSeeder');
         $this->call('MrModule\Certificate\FakeCertificateSeeder');
-        $this->call('MrModule\Comment\FakeCommentSeeder');
+
         $this->call('MrModule\CrashPlan\FakeCrashPlanSeeder');
         $this->call('MrModule\DeployStudio\FakeDeployStudioSeeder');
         $this->call('MrModule\DirectoryService\FakeDirectoryServiceSeeder');

@@ -1,6 +1,4 @@
 <?php
-namespace MrModule\Comment;
-
 use Illuminate\Database\Seeder;
 
 class FakeCommentSeeder extends Seeder
