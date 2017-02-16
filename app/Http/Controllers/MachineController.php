@@ -1,7 +1,6 @@
 <?php
-namespace MrModule\Machine;
+namespace Mr\Http\Controllers;
 
-use Mr\Http\Controllers\Controller;
 use Mr\Machine;
 
 class MachineController extends Controller

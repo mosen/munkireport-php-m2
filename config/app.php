@@ -197,7 +197,6 @@ return [
         MrModule\Inventory\Providers\InventoryServiceProvider::class,
         MrModule\LocalAdmin\Providers\LocalAdminServiceProvider::class,
         MrModule\Location\Providers\LocationServiceProvider::class,
-        MrModule\Machine\Providers\MachineServiceProvider::class,
         MrModule\ManagedInstalls\Providers\ManagedInstallsServiceProvider::class,
         MrModule\MunkiInfo\Providers\MunkiInfoServiceProvider::class,
         MrModule\MunkiReport\Providers\MunkiReportServiceProvider::class,

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import NewClientsWidget from '../../../../mr_module/Machine/assets/js/components/NewClientsWidget.vue';
+    import NewClientsWidget from './widgets/NewClientsWidget.vue';
 
     export default {
         components: {
