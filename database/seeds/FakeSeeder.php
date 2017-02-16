@@ -14,6 +14,7 @@ class FakeSeeder extends Seeder
         $this->call('FakeEventSeeder');
         $this->call('FakeReportDataSeeder');
         $this->call('FakeCommentSeeder');
+        $this->call('FakeTagSeeder');
 
         //$this->call('MrModule\ARD\FakeARDSeeder');
         $this->call('MrModule\Bluetooth\FakeBluetoothSeeder');
@@ -40,7 +41,7 @@ class FakeSeeder extends Seeder
         $this->call('MrModule\Profile\FakeProfileSeeder');
         // SCCMStatus
         // Security
-        $this->call('MrModule\Tag\FakeTagSeeder');
+
         $this->call('MrModule\TimeMachine\FakeTimeMachineSeeder');
         $this->call('MrModule\Warranty\FakeWarrantySeeder');
     }
