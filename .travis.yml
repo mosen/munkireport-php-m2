@@ -1,11 +1,13 @@
 language: php
 php:
-  - '5.6'
-  - '7.0'
   - '7.1'
 node_js:
   - '7'
 install:
   - composer install
   - npm install
-  
+cache:
+  directories:
+    - vendor
+    - node_modules
+    
