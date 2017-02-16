@@ -6,9 +6,11 @@ node_js:
 install:
   - composer install
   - npm install
-cache:
-  directories:
-    - node_modules
+script:
+  - npm run dev
+#cache:
+#  directories:
+#    - node_modules
 # deploy:
 #   provider: s3
 #   access_key_id: AKIAIDS6STMDWHL7TLQA
