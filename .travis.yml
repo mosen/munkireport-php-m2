@@ -1,18 +1,18 @@
 language: php
 php:
-  - '5.6'
+- '5.6'
 before_install:
-  - nvm install 6.9.5
+- nvm install 6.9.5
 install:
-  - composer install
-  - npm install
+- composer install
+- npm install
 script:
-  - npm run dev
-#cache:
-#  directories:
-#    - node_modules
-# deploy:
-#   provider: s3
-#   access_key_id: AKIAIDS6STMDWHL7TLQA
-#   secret_access_key: BLAH
-#   bucket: "au.id.eb.munkireport3"
+- npm run dev
+deploy:
+  provider: s3
+  access_key_id: AKIAIDS6STMDWHL7TLQA
+  bucket: "au.id.eb.munkireport3"
+  secret_access_key:
+    secure: EeccR9ZsB7v9kuDIh9tcgnuyrwBj1InsKif6pNWz7seaesMtTscg/XJVLG1tJfxidxiBXc4ELgZ0zdOFl50L25dg84xW8wTF6yyKhLSdjyVvutrcG1hy69XuNvOnMaAvMxdKKIQU3bF9FBQBlpYPDryuf4IKDB95f8dB9kj9DFumXCDjy6mGL0IpgGaRfevrcwoGxs6/whEc7Ah5eqjeyyCACdqpu9uynls8cjgVUPNEmoRmlFk0ZFOnUFkNWse1mZ0OZ+tQhe5lxiga4rfeo+TnGktdWTgb1RoiTVEDAdo6xUE6t935TMXfHlO/gTpVv2Lf0gaCRWPBa1LZbRieUObQTWPrt/rgB4KiLEKzgwYAV0TKjsQhIFc/NBJuIzLotuHDtuO9STRm9UwuchBNODmlMLF8U0aBbcKzGFF/stsclimard0FMsoV92ytJNJL19jPW2v7iIjJR2nIXerF8qpIDcSWd3QDoX92YSo55cjvhzZWJEMKib7/buTQaufK9p2ORlSePAUJAlpvU5c4rk2jeR9939ChPKyR2NNLE/xGAGhdBqVfZMvYlptrKGl8TN+vfBOk4iRAIYnucI6Ne68KbvjQQkeQtMyvxaFv93vlhhCpKKmbFI+icOThhlDoCeCKaVH1yJXXsYC7fl0AmqWTkkYZKsLA7vG7UUjuRmw=
+  upload-dir: travis-builds
+  
