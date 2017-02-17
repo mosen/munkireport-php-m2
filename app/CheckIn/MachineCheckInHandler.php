@@ -5,7 +5,7 @@ use CFPropertyList\CFPropertyList;
 use Mr\Contracts\CheckIn\Handler;
 use Mr\Machine;
 
-class CheckInHandler implements Handler
+class MachineCheckInHandler implements Handler
 {
     public function process($moduleName, $serialNumber, $data)
     {
