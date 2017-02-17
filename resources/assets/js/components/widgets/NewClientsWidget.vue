@@ -29,7 +29,7 @@
         },
 
         created () {
-          this.axios.get(`${API_ROOT}/machine?filter[created_at]=recent`).then((response) => {
+          this.axios.get(`${API_ROOT}/machines?filter[created_at]=recent`).then((response) => {
             this.clients = response.data;
           })
         },
