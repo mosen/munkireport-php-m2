@@ -5,6 +5,7 @@ use Illuminate\Support\ServiceProvider;
 
 use Illuminate\Support\Facades\Route;
 use Mr\Module\ModuleManager;
+use MrModule\ARD\CheckInHandler;
 
 class ARDServiceProvider extends ServiceProvider
 {
@@ -29,12 +30,17 @@ class ARDServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
 
-        $moduleManager->add('ard')
-            ->installs('install.sh')
-            ->uninstalls('uninstall.sh');
+        $moduleManager->add('ard', dirname(__DIR__))
+            ->installs('scripts/install.sh')
+            ->uninstalls('scripts/uninstall.sh');
         
     }
 
     public function register() {
+        $this->app->bind('MrModule\ARD\CheckInHandler', function ($app) {
+            return new CheckInHandler();
+        });
+
+        $this->app->tag('MrModule\ARD\CheckInHandler', 'checkin');
     }
 }

@@ -1,6 +1,7 @@
 <?php
 namespace Mr\Module;
 
+use Illuminate\Support\Collection;
 
 /**
  * The Metadata class contains information about an extension module.
@@ -17,6 +18,11 @@ class Metadata
     protected $name = 'undefined';
 
     /**
+     * @var null|string Path to the module root, used to resolve non-code resources.
+     */
+    protected $path = null;
+    
+    /**
      * @var array An array of scripts used to install this module.
      */
     protected $installScripts = [];
@@ -26,8 +32,24 @@ class Metadata
      */
     protected $uninstallScripts = [];
 
-    public function __construct($moduleName) {
+    /**
+     * Metadata constructor.
+     * 
+     * @param string $moduleName The short name of the module as per the check-in key.
+     * @param string $modulePath The directory where the module is installed. Used to calculate paths to non-code assets.
+     */
+    public function __construct($moduleName, $modulePath) {
         $this->name = $moduleName;
+        $this->path = $modulePath;
+    }
+
+    /**
+     * Get the module short name.
+     *
+     * @return string
+     */
+    public function getName() {
+        return $this->name;
     }
 
     /**
@@ -39,6 +61,24 @@ class Metadata
     public function installs($scriptName) {
         $this->installScripts[] = $scriptName;
         return $this;
+    }
+
+    /**
+     * Get a list of install scripts for this module.
+     *
+     * @param bool $relative Return path relative to scripts directory only. Default is false.
+     * @return array
+     */
+    public function getInstalls($relative = false) {
+        if ($relative) {
+            return $this->installScripts;
+        } else {
+            $scripts = [];
+            foreach ($this->installScripts as $script) {
+                $scripts[] = $this->path . DIRECTORY_SEPARATOR . $script;
+            }
+            return $scripts;
+        }
     }
 
     /**

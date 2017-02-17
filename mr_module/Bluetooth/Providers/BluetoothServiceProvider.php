@@ -4,6 +4,7 @@ namespace MrModule\Bluetooth\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
 use Mr\Contracts\CheckIn\CheckInRouter;
+use Mr\Module\ModuleManager;
 use MrModule\Bluetooth\CheckInHandler;
 
 class BluetoothServiceProvider extends ServiceProvider
@@ -18,9 +19,14 @@ class BluetoothServiceProvider extends ServiceProvider
             ->group(base_path('mr_module/Bluetooth/routes.php'));
     }
 
-    public function boot(CheckInRouter $router) {
+    public function boot(ModuleManager $moduleManager) {
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
-        $router->addHandler('bluetooth', CheckInHandler::class);
+
+        $moduleManager->add('bluetooth', dirname(__DIR__))
+            ->installs('scripts/install.sh')
+            ->uninstalls('scripts/uninstall.sh');
+
+
         $this->mapApiRoutes();
     }
 }
