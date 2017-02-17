@@ -3,7 +3,7 @@
 $factory->define(MrModule\MunkiReport\MunkiReport::class, function (Faker\Generator $faker) {
     return [
         'serial_number' => $faker->unique()->regexify('[A-Z0-9]{12}'),
-        'runtype' => $faker->words,
+        'runtype' => $faker->text,
         'version' => $faker->numerify('#.#.#'),
         'errors' => $faker->randomDigit,
         'warnings' => $faker->randomDigit,

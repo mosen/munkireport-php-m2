@@ -5,6 +5,6 @@ $factory->define(MrModule\Warranty\Warranty::class, function (Faker\Generator $f
         'serial_number' => $faker->unique()->regexify('[A-Z0-9]{12}'),
         'purchase_date' => $faker->dateTimeThisDecade,
         'end_date' => $faker->dateTimeThisDecade,
-        'status' => $faker->words
+        'status' => $faker->word
     ];
 });

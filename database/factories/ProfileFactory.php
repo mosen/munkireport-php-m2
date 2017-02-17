@@ -7,7 +7,7 @@ $factory->define(MrModule\Profile\Profile::class, function (Faker\Generator $fak
         'profile_name' => $faker->word,
         'profile_removal_allowed' => $faker->boolean,
         'payload_name' => $faker->word,
-        'payload_display' => $faker->words,
+        'payload_display' => $faker->text,
         'payload_data' => ''
     ];
 });

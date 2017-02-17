@@ -5,7 +5,7 @@ $factory->define(MrModule\TimeMachine\TimeMachine::class, function (Faker\Genera
         'serial_number' => $faker->unique()->regexify('[A-Z0-9]{12}'),
         'last_success' => $faker->dateTimeThisDecade,
         'last_failure' => $faker->dateTimeThisDecade,
-        'last_failure_msg' => $faker->words,
+        'last_failure_msg' => $faker->text,
         'duration' => $faker->numberBetween(0, 100000)
     ];
 });

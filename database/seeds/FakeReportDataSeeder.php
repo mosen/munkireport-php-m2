@@ -1,6 +1,4 @@
 <?php
-namespace MrModule\ReportData;
-
 use Illuminate\Database\Seeder;
 
 class FakeReportDataSeeder extends Seeder

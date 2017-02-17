@@ -1,7 +1,6 @@
 <?php
-namespace MrModule\Event;
-
 use Illuminate\Database\Seeder;
+use Mr\Event;
 
 class FakeEventSeeder extends Seeder
 {

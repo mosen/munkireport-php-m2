@@ -4,6 +4,6 @@ $factory->define(MrModule\MunkiInfo\MunkiInfo::class, function (Faker\Generator 
     return [
         'serial_number' => $faker->unique()->regexify('[A-Z0-9]{12}'),
         'munkiinfo_key' => $faker->word,
-        'munkiinfo_value' => $faker->words
+        'munkiinfo_value' => $faker->text
     ];
 });
