@@ -31,6 +31,7 @@ $factory->define(Mr\Machine::class, function (Faker\Generator $faker) {
         'computer_name' => $computerName,
         'l2_cache' => $faker->randomDigit . ' MB',
         'machine_name' => 'iMac',
-        'packages' => 1
+        'packages' => 1,
+        'created_at' => $faker->dateTimeThisMonth
     ];
 });

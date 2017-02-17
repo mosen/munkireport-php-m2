@@ -12,10 +12,10 @@ use Mr\Event;
 class EventController extends Controller
 {
     public function index(Request $request) {
-        $query = Event::all();
-
         if ($request->has('filter')) {
             $filterRules = $request->input('filter');
+        } else {
+            $query = Event::with('machine');
         }
 
         if ($request->has('sort')) {
@@ -29,15 +29,16 @@ class EventController extends Controller
             }
         }
 
-        if ($request->has('limit')) {
-            $query = $query->take($request->input('limit'));
-        }
+
 
 //        if ($request->has('offset')) {
 //            $query = $query-
 //        }
+        if ($request->has('limit')) {
+            $query = $query->limit($request->input('limit'));
+        }
 
-        return $query->toArray();
+        return $query->get();
     }
 
     protected function show($id) {
