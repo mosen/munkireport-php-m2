@@ -22,11 +22,12 @@ class InstallController extends Controller
      */
     public function index() {
         $installScripts = $this->moduleManager->installScripts();
+        $uninstallScripts = $this->moduleManager->uninstallScripts();
 
         return response()
             ->view('install.script', [
                 'install_scripts' => $installScripts,
-                'uninstall_scripts' => []
+                'uninstall_scripts' => $uninstallScripts
             ])
             ->header('Content-Type', 'text/plain');
     }

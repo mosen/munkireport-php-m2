@@ -3,6 +3,7 @@ namespace MrModule\Power\Providers;
 
 
 use Illuminate\Support\ServiceProvider;
+use Mr\Module\ModuleManager;
 
 class PowerServiceProvider extends ServiceProvider
 {

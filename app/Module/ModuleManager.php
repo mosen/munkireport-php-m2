@@ -33,8 +33,25 @@ class ModuleManager
         $scripts = [];
         foreach ($this->modules as $m) {
             $moduleInstallScripts = $m->getInstalls();
-            if (count($moduleInstallScripts > 0)) {
+            if (count($moduleInstallScripts) > 0) {
                 $scripts[$m->getName()] = $moduleInstallScripts[0];
+            }
+        }
+
+        return $scripts;
+    }
+
+    /**
+     * Get a hash containing all uninstall scripts keyed by their module name.
+     *
+     * @return array
+     */
+    public function uninstallScripts() {
+        $scripts = [];
+        foreach ($this->modules as $m) {
+            $moduleUninstallScripts = $m->getUninstalls();
+            if (count($moduleUninstallScripts) > 0) {
+                $scripts[$m->getName()] = $moduleUninstallScripts[0];
             }
         }
 

@@ -92,4 +92,17 @@ class Metadata
         return $this;
     }
 
+    // TODO: DRY
+    public function getUninstalls($relative = false) {
+        if ($relative) {
+            return $this->uninstallScripts;
+        } else {
+            $scripts = [];
+            foreach ($this->uninstallScripts as $script) {
+                $scripts[] = $this->path . DIRECTORY_SEPARATOR . $script;
+            }
+            return $scripts;
+        }
+    }
+
 }
