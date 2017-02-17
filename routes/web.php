@@ -14,6 +14,7 @@
 Route::get('/', 'DashboardController@index');
 
 Route::get('client/detail/{serialNumber}', 'ClientController@detail');
+Route::get('install', 'InstallController@index');
 
 Auth::routes();
 
