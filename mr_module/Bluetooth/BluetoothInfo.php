@@ -12,4 +12,15 @@ class BluetoothInfo extends Model
         'battery_percent',
         'device_type',
     ];
+
+    //// RELATIONSHIPS
+
+    /**
+     * Retrieve the machine associated with this bluetooth information.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function machine() {
+        return $this->belongsTo('Mr\Machine', 'serial_number', 'serial_number');
+    }
 }

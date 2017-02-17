@@ -37,7 +37,7 @@ class EventController extends Controller
 //            $query = $query-
 //        }
 
-        return $query->get();
+        return $query->toArray();
     }
 
     protected function show($id) {
