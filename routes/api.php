@@ -20,5 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('events', 'EventController');
 Route::resource('machines', 'MachineController');
 Route::resource('report_data', 'ReportDataController');
+
 Route::get('stats/report_data', 'ReportDataController@stats');
+Route::get('stats/uptime', 'ReportDataController@uptime');
 

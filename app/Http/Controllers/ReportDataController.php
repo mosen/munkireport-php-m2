@@ -81,4 +81,28 @@ class ReportDataController extends Controller
             'inactive_three_months' => $inactiveThreeMonth
         ];
     }
+
+    /**
+     * Retrieve statistics about client uptime.
+     */
+    public function uptime() {
+        $day = new \DateInterval('P1D');
+        $week = new \DateInterval('P1W');
+
+        $oneDay = ReportData::where('uptime', '<=', $day->format('%s'))
+            ->where('uptime', '>', 0)
+            ->count();
+        $oneWeek = ReportData::whereBetween('uptime', [$day->format('%s'), $week->format('%s')])
+            ->where('uptime', '>', 0)
+            ->count();
+        $oneWeekPlus = ReportData::where('uptime', '>=', $week->format('%s'))
+            ->where('uptime', '>', 0)
+            ->count();
+
+        return [
+            'oneday' => $oneDay,
+            'oneweek' => $oneWeek,
+            'oneweekplus' => $oneWeekPlus
+        ];
+    }
 }

@@ -21,4 +21,11 @@ class CertificateController extends Controller
 
         return response()->setStatusCode(204);
     }
+
+    /**
+     * Get counters for different certificate expiry statuses.
+     */
+    public function stats() {
+        
+    }
 }
