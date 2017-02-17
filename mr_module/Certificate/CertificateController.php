@@ -26,6 +26,19 @@ class CertificateController extends Controller
      * Get counters for different certificate expiry statuses.
      */
     public function stats() {
+        $now = new \DateTime();
         
+        $inThreeMonths = new \DateTime();
+        $inThreeMonths->add(new \DateInterval('P3M'));
+
+        $expired = Certificate::where('cert_exp_time', '<', $now)->count();
+        $soon = Certificate::whereBetween('cert_exp_time', [$now, $inThreeMonths])->count();
+        $ok = Certificate::where('cert_exp_time', '>', $inThreeMonths)->count();
+
+        return [
+            'expired' => $expired,
+            'soon' => $soon,
+            'ok' => $ok
+        ];
     }
 }

@@ -38,6 +38,19 @@
             total: function() {
                 return this.ok + this.expire_soon + this.expired;
             }
+        },
+        mounted () {
+            this.axios.get(`/xapi/stats/certificate`).then((response) => {
+                this.ok = response.data.ok;
+                this.expire_soon = response.data.expire_soon;
+                this.expired = response.data.expired;
+            }).catch((response) => {
+                this.error = true;
+                this.errorDetails = {
+                    status: response.status,
+                    message: response.message
+                };
+            });
         }
     }
 </script>
