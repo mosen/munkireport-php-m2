@@ -177,6 +177,7 @@ return [
         Mr\Providers\CheckInServiceProvider::class,
         Mr\Providers\EventServiceProvider::class,
         Mr\Providers\RouteServiceProvider::class,
+        Mr\Providers\ModuleManagerServiceProvider::class,
 
         /*
          * MunkiReport v3 Module Providers

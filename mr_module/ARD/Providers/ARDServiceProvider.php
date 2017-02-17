@@ -4,6 +4,7 @@ namespace MrModule\ARD\Providers;
 use Illuminate\Support\ServiceProvider;
 
 use Illuminate\Support\Facades\Route;
+use Mr\Module\ModuleManager;
 
 class ARDServiceProvider extends ServiceProvider
 {
@@ -24,8 +25,16 @@ class ARDServiceProvider extends ServiceProvider
             ->group(base_path('mr_module/ARD/routes.php'));
     }
 
-    public function boot() {
+    public function boot(ModuleManager $moduleManager) {
         $this->mapApiRoutes();
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
+
+        $moduleManager->add('ard')
+            ->installs('install.sh')
+            ->uninstalls('uninstall.sh');
+        
+    }
+
+    public function register() {
     }
 }
