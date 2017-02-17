@@ -3,8 +3,7 @@ namespace MrModule\Certificate\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
-use Mr\Contracts\CheckIn\CheckInRouter;
-use MrModule\Certificate\CheckInHandler;
+use Mr\Module\ModuleManager;
 
 class CertificateServiceProvider extends ServiceProvider
 {
@@ -18,13 +17,16 @@ class CertificateServiceProvider extends ServiceProvider
             ->group(base_path('mr_module/Certificate/routes.php'));
     }
 
-    public function boot(CheckInRouter $router) {
+    public function boot(ModuleManager $moduleManager) {
         $this->publishes([
             __DIR__.'/../config/mr_certificate.php' => config_path('mr_certificate.php')
         ], 'config');
         
         $this->mapApiRoutes();
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
-        $router->addHandler('certificate', CheckInHandler::class);
+
+        $moduleManager->add('certificate', dirname(__DIR__))
+            ->installs('scripts/install.sh')
+            ->uninstalls('scripts/uninstall.sh');
     }
 }

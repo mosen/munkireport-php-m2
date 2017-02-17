@@ -4,6 +4,7 @@ namespace MrModule\CrashPlan\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use Mr\Module\ModuleManager;
 
 class CrashPlanServiceProvider extends ServiceProvider
 {
@@ -17,8 +18,12 @@ class CrashPlanServiceProvider extends ServiceProvider
             ->group(base_path('mr_module/CrashPlan/routes.php'));
     }
 
-    public function boot() {
+    public function boot(ModuleManager $moduleManager) {
         $this->mapApiRoutes();
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
+
+//        $moduleManager->add('crashplan', dirname(__DIR__))
+//            ->installs('scripts/install.sh')
+//            ->uninstalls('scripts/uninstall.sh');
     }
 }

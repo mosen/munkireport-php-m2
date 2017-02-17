@@ -3,6 +3,7 @@ namespace MrModule\DirectoryService\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use Mr\Module\ModuleManager;
 
 class DirectoryServiceProvider extends ServiceProvider
 {
@@ -16,7 +17,11 @@ class DirectoryServiceProvider extends ServiceProvider
             ->group(base_path('mr_module/DirectoryService/routes.php'));
     }
 
-    public function boot() {
+    public function boot(ModuleManager $moduleManager) {
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
+
+        $moduleManager->add('directory_service', dirname(__DIR__))
+            ->installs('scripts/install.sh')
+            ->uninstalls('scripts/uninstall.sh');
     }
 }

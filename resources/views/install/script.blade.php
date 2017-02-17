@@ -187,7 +187,7 @@ resetreportpref
 @foreach($install_scripts AS $scriptname => $filepath)
 ## {{ $scriptname }} ##
 echo '+ Installing {{ $scriptname }}'
-{{ file_get_contents($filepath) }}
+{!! file_get_contents($filepath) !!}
 @endforeach
 
 # Store munkipath when building a package
@@ -203,7 +203,7 @@ read -r -d '' UNINSTALLS << EOF
 @foreach ($uninstall_scripts as $scriptname => $filepath)
 ## {{ $scriptname }} ##
 echo '- Uninstalling {{ $scriptname }}'
-{{ file_get_contents($filepath) }}
+{!! file_get_contents($filepath) !!}
 @endforeach
 EOF
 
