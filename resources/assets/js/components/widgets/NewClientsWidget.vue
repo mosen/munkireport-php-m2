@@ -19,7 +19,8 @@
 
 <script>
     import moment from 'moment';
-    
+    import { API_ROOT } from '../../constants';
+
     export default {
         data () {
           return {
@@ -28,7 +29,7 @@
         },
 
         created () {
-          this.axios.get(`/xapi/machine?filter[created_at]=recent`).then((response) => {
+          this.axios.get(`${API_ROOT}/machine?filter[created_at]=recent`).then((response) => {
             this.clients = response.data;
           })
         },
