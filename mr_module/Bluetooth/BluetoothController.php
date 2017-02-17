@@ -23,10 +23,10 @@ class BluetoothController extends Controller
 
                 switch ($filterRules) {
                     case "low":
-                        $query = BluetoothInfo::where(
+                        $query = $query->where(
                             'battery_percent',
                             '<=', config('bluetooth.battery_threshold', 15)
-                        )->andWhere(
+                        )->where(
                             'device_type', '!=', 'bluetooth_power'
                         );
                 }

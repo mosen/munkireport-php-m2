@@ -4,6 +4,7 @@
         <clientactivity></clientactivity>
         <eventmessages></eventmessages>
         <uptime></uptime>
+        <bluetooth></bluetooth>
     </div>
 </template>
 
@@ -14,12 +15,15 @@
     import EventMessagesWidget from './widgets/EventMessagesWidget.vue';
     import UptimeWidget from './widgets/UptimeWidget.vue';
 
+    import BluetoothBatteryWidget from '../../../../mr_module/Bluetooth/assets/js/components/BluetoothBatteryWidget.vue';
+
     export default {
         components: {
           'newclientswidget': NewClientsWidget,
           'clientactivity': ClientActivityWidget,
             'eventmessages': EventMessagesWidget,
-            'uptime': UptimeWidget
+            'uptime': UptimeWidget,
+            'bluetooth': BluetoothBatteryWidget
         }
     }
 </script>
