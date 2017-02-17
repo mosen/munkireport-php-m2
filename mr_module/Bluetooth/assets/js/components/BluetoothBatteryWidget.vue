@@ -37,5 +37,8 @@
                 };
             });
         },
+        computed: {
+            
+        }
     }
 </script>

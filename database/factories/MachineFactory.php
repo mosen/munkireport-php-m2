@@ -1,6 +1,6 @@
 <?php
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(MrModule\Machine\Machine::class, function (Faker\Generator $faker) {
+$factory->define(Mr\Machine::class, function (Faker\Generator $faker) {
     $computerName = $faker->unique()->word;
 
     return [

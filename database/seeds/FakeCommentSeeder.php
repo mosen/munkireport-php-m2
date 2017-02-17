@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
+use Mr\Comment;
 
 class FakeCommentSeeder extends Seeder
 {

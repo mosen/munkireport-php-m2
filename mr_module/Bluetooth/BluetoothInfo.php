@@ -13,6 +13,10 @@ class BluetoothInfo extends Model
         'device_type',
     ];
 
+    protected $casts = [
+        'battery_percent' => 'integer'
+    ];
+
     //// RELATIONSHIPS
 
     /**

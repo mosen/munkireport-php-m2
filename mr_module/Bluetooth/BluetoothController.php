@@ -14,8 +14,6 @@ class BluetoothController extends Controller
      */
     public function index(Request $request)
     {
-        $query = BluetoothInfo::all();
-
         if ($request->has('filter')) {
             $filterRules = $request->input('filter');
             if (!is_array($filterRules)) {
@@ -23,14 +21,16 @@ class BluetoothController extends Controller
 
                 switch ($filterRules) {
                     case "low":
-                        $query = $query->where(
+                        $query = BluetoothInfo::where(
                             'battery_percent',
                             '<=', config('bluetooth.battery_threshold', 15)
                         )->where(
                             'device_type', '!=', 'bluetooth_power'
-                        );
+                        )->with('machine');
                 }
             }
+        } else {
+            $query = BluetoothInfo::where();
         }
 
         if ($request->has('sort')) {
@@ -48,7 +48,7 @@ class BluetoothController extends Controller
             $query = $query->take($request->input('limit'));
         }
 
-        return $query->toArray();
+        return $query->get()->toArray();
     }
 
     protected function show($id)

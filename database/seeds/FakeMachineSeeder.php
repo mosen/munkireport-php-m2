@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
+use Mr\Machine;
 
 class FakeMachineSeeder extends Seeder
 {

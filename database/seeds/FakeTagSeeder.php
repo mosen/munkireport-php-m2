@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
+use Mr\Tag;
 
 class FakeTagSeeder extends Seeder
 {

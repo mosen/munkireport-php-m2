@@ -1,6 +1,6 @@
 <?php
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(MrModule\Comment\Comment::class, function (Faker\Generator $faker) {
+$factory->define(Mr\Comment::class, function (Faker\Generator $faker) {
     return [
         'serial_number' => $faker->unique()->regexify('[A-Z0-9]{12}'),
         'section' => $faker->word,

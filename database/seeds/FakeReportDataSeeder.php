@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
+use Mr\ReportData;
 
 class FakeReportDataSeeder extends Seeder
 {

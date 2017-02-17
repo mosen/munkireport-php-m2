@@ -11,11 +11,11 @@ class FakeSeeder extends Seeder
      */
     public function run()
     {
-        //$this->call('FakeEventSeeder');
-        //$this->call('FakeReportDataSeeder');
-        //$this->call('FakeMachineSeeder');
-        //$this->call('FakeCommentSeeder');
-        //$this->call('FakeTagSeeder');
+        $this->call(FakeEventSeeder::class);
+        //$this->call(FakeReportDataSeeder::class);
+        $this->call(FakeMachineSeeder::class);
+        $this->call(FakeCommentSeeder::class);
+        $this->call(FakeTagSeeder::class);
 
         //$this->call('MrModule\ARD\FakeARDSeeder');
         $this->call('MrModule\Bluetooth\FakeBluetoothSeeder');
