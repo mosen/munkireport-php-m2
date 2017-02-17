@@ -5,6 +5,7 @@
         <eventmessages></eventmessages>
         <uptime></uptime>
         <bluetooth></bluetooth>
+        <backup2go></backup2go>
     </div>
 </template>
 
@@ -16,6 +17,7 @@
     import UptimeWidget from './widgets/UptimeWidget.vue';
 
     import BluetoothBatteryWidget from '../../../../mr_module/Bluetooth/assets/js/components/BluetoothBatteryWidget.vue';
+    import Backup2GoWidget from '../../../../mr_module/Backup2Go/assets/js/components/Backup2GoWidget.vue';
 
     export default {
         components: {
@@ -23,7 +25,8 @@
           'clientactivity': ClientActivityWidget,
             'eventmessages': EventMessagesWidget,
             'uptime': UptimeWidget,
-            'bluetooth': BluetoothBatteryWidget
+            'bluetooth': BluetoothBatteryWidget,
+            'backup2go': Backup2GoWidget
         }
     }
 </script>
