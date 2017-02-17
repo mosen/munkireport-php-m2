@@ -27,8 +27,31 @@ class InstallController extends Controller
         return response()
             ->view('install.script', [
                 'install_scripts' => $installScripts,
-                'uninstall_scripts' => $uninstallScripts
+                'uninstall_scripts' => []
             ])
             ->header('Content-Type', 'text/plain');
+    }
+
+    /**
+     * Download a script from a module directory.
+     *
+     * @param string $moduleName
+     * @param string $scriptName
+     * 
+     * @return Response script content.
+     */
+    public function script($query) {
+        $modulePath = $this->moduleManager->get($moduleName);
+        if ($modulePath === null) abort(404);
+        if (strpos($scriptName, '.') !== false) abort(400); // Very rudimentary security
+
+        $scriptPath = $modulePath . "/scripts/" . $scriptName;
+        if (file_exists($scriptPath)) {
+            return response()
+                ->setContent(file_get_contents($scriptPath))
+                ->header('Content-Type', 'text/plain');
+        } else {
+            abort(404);
+        }
     }
 }

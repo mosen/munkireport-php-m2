@@ -6,3 +6,5 @@ Route::group(['prefix' => '/report', 'middleware' => 'safephpunserialize'], func
     Route::post('check_in', 'MR2CheckInController@check_in');
     Route::post('broken_client', 'MR2CheckInController@broken_client');
 });
+
+Route::get('legacy/{query}', '\MrLegacy\Http\Controllers\LegacyModuleController@script');

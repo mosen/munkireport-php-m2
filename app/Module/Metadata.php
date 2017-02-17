@@ -53,6 +53,15 @@ class Metadata
     }
 
     /**
+     * Get the module root path.
+     *
+     * @return null|string
+     */
+    public function getPath() {
+        return $this->path;
+    }
+
+    /**
      * Add an installer script to this module.
      *
      * @param string $scriptName Name of the script eg. install.sh

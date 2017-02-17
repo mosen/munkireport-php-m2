@@ -6,7 +6,7 @@ use Log;
 class ModuleManager
 {
     /**
-     * @var array Array of Metadata instances
+     * @var array Array of Metadata instances keyed by the module short checkin name
      */
     protected $modules = [];
 
@@ -19,9 +19,23 @@ class ModuleManager
      */
     public function add($moduleName, $modulePath) {
         $module = new Metadata($moduleName, $modulePath);
-        $this->modules[] = $module;
+        $this->modules[$moduleName] = $module;
         Log::debug("Registered module: {$moduleName}");
         return $module;
+    }
+
+    /**
+     * Get module metadata by registered name.
+     *
+     * @param $moduleName
+     * @return mixed|null
+     */
+    public function get($moduleName) {
+        if (isset($this->modules[$moduleName])) {
+            return $this->modules[$moduleName];
+        } else {
+            return null;
+        }
     }
 
     /**
@@ -31,10 +45,10 @@ class ModuleManager
      */
     public function installScripts() {
         $scripts = [];
-        foreach ($this->modules as $m) {
+        foreach ($this->modules as $name => $m) {
             $moduleInstallScripts = $m->getInstalls();
             if (count($moduleInstallScripts) > 0) {
-                $scripts[$m->getName()] = $moduleInstallScripts[0];
+                $scripts[$name] = $moduleInstallScripts[0];
             }
         }
 
@@ -48,10 +62,10 @@ class ModuleManager
      */
     public function uninstallScripts() {
         $scripts = [];
-        foreach ($this->modules as $m) {
+        foreach ($this->modules as $name => $m) {
             $moduleUninstallScripts = $m->getUninstalls();
             if (count($moduleUninstallScripts) > 0) {
-                $scripts[$m->getName()] = $moduleUninstallScripts[0];
+                $scripts[$name] = $moduleUninstallScripts[0];
             }
         }
 
