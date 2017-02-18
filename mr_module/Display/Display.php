@@ -22,6 +22,6 @@ class Display extends Model
 
     protected $casts = [
         'type' => 'integer',
-        'manufactured' => 'date'
+        'manufactured' => 'integer'
     ];
 }
