@@ -21,4 +21,14 @@ class DirectoryServiceController extends Controller
 
         return response()->setStatusCode(204);
     }
+
+    public function stats() {
+        $bound = DirectoryService::bound()->count();
+        $unbound = DirectoryService::unbound()->count();
+
+        return [
+            'bound' => $bound,
+            'unbound' => $unbound
+        ];
+    }
 }

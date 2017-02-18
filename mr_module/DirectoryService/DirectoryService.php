@@ -5,6 +5,7 @@ namespace MrModule\DirectoryService;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\Builder;
 
 class DirectoryService extends Model
 {
@@ -47,4 +48,20 @@ class DirectoryService extends Model
         'generatekerberosauth' => 'boolean',
         'authenticationfromanydomain' => 'boolean'
     ];
+
+    //// RELATIONSHIPS
+
+    public function machine() {
+        return $this->belongsTo('Mr\Machine', 'serial_number', 'serial_number');
+    }
+
+    //// SCOPES
+
+    public function scopeBound(Builder $query) {
+        return $query->whereIn('which_directory_service', ['Active Directory', 'LDAPv3']);
+    }
+
+    public function scopeUnbound(Builder $query) {
+        return $query->whereNotIn('which_directory_service', ['Active Directory', 'LDAPv3']);
+    }
 }
