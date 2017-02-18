@@ -19,4 +19,15 @@ class DiskReport extends Model
         'VolumeName',
         'CoreStorageEncrypted'
     ];
+
+    //// RELATIONSHIPS
+
+    /**
+     * Get the machine model associated with this disk report.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function machine() {
+        return $this->belongsTo('Mr\Machine', 'serial_number', 'serial_number');
+    }
 }

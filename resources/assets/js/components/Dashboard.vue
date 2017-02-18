@@ -9,6 +9,7 @@
         <certificate></certificate>
         <crashplan></crashplan>
         <dirbound></dirbound>
+        <diskreport></diskreport>
     </div>
 </template>
 
@@ -26,6 +27,7 @@
     import CertificateWidget from '../../../../mr_module/Certificate/assets/js/components/CertificateWidget.vue';
     import CrashPlanWidget from '../../../../mr_module/CrashPlan/assets/js/components/CrashPlanWidget.vue';
     import BoundWidget from '../../../../mr_module/DirectoryService/assets/js/components/BoundWidget.vue';
+    import DiskReportWidget from '../../../../mr_module/DiskReport/assets/js/components/DiskReportWidget.vue';
 
     export default {
         components: {
@@ -37,7 +39,8 @@
             'backup2go': Backup2GoWidget,
             'certificate': CertificateWidget,
             'crashplan': CrashPlanWidget,
-            'dirbound': BoundWidget
+            'dirbound': BoundWidget,
+            'diskreport': DiskReportWidget
         }
     }
 </script>
