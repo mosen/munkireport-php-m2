@@ -28,7 +28,7 @@ class ModuleManager
      * Get module metadata by registered name.
      *
      * @param $moduleName
-     * @return mixed|null
+     * @return Metadata|null
      */
     public function get($moduleName) {
         if (isset($this->modules[$moduleName])) {
