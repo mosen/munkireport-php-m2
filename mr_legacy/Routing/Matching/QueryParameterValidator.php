@@ -19,19 +19,6 @@ class QueryParameterValidator implements ValidatorInterface
      */
     public function matches(Route $route, Request $request)
     {
-        foreach ($route->wheres as $name => $expression) {
-            if ($name[0] !== '?') continue;
-
-            $sanitisedName = substr($name, 1);
-            if (in_array($sanitisedName, $request->query->keys())) {
-                // No match expression means key presence is enough to match the route.
-                if ($expression === 'EMPTY') return true;
-
-                // TODO: expression validation
-                return false;
-            }
-        }
-
-        return false;
+        return true;
     }
 }

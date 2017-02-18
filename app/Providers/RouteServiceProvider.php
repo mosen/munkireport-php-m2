@@ -2,8 +2,15 @@
 
 namespace Mr\Providers;
 
+use Illuminate\Routing\Matching\HostValidator;
+use Illuminate\Routing\Matching\MethodValidator;
+use Illuminate\Routing\Matching\SchemeValidator;
+use Illuminate\Routing\Matching\UriValidator;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Routing\Route as IlluminateRoute;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use MrLegacy\Routing\Matching\QueryParameterValidator;
+use Symfony\Component\HttpFoundation\Request;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -24,6 +31,14 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+
+//        IlluminateRoute::$validators = [
+//            new QueryParameterValidator,
+//            new UriValidator, new MethodValidator,
+//            new SchemeValidator, new HostValidator
+//        ];
+
+        //Request::setFactory([\MrLegacy\Request::class, 'factory']);
 
         parent::boot();
     }
