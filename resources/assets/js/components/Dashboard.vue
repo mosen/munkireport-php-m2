@@ -7,6 +7,7 @@
         <bluetooth></bluetooth>
         <backup2go></backup2go>
         <certificate></certificate>
+        <crashplan></crashplan>
     </div>
 </template>
 
@@ -20,6 +21,7 @@
     import BluetoothBatteryWidget from '../../../../mr_module/Bluetooth/assets/js/components/BluetoothBatteryWidget.vue';
     import Backup2GoWidget from '../../../../mr_module/Backup2Go/assets/js/components/Backup2GoWidget.vue';
     import CertificateWidget from '../../../../mr_module/Certificate/assets/js/components/CertificateWidget.vue';
+    import CrashPlanWidget from '../../../../mr_module/CrashPlan/assets/js/components/CrashPlanWidget.vue';
 
     export default {
         components: {
@@ -29,7 +31,8 @@
             'uptime': UptimeWidget,
             'bluetooth': BluetoothBatteryWidget,
             'backup2go': Backup2GoWidget,
-            'certificate': CertificateWidget
+            'certificate': CertificateWidget,
+            'crashplan': CrashPlanWidget
         }
     }
 </script>

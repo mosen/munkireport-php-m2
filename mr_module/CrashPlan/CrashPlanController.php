@@ -22,4 +22,22 @@ class CrashPlanController extends Controller
 
         return response()->setStatusCode(204);
     }
+
+    public function stats() {
+        $lastDay = new \DateTime();
+        $lastDay->sub(new \DateInterval('P1D'));
+
+        $lastWeek = new \DateTime();
+        $lastWeek->sub(new \DateInterval('P1W'));
+
+        $todayCount = CrashPlan::where('last_success', '>', $lastDay)->count();
+        $lastWeekCount = CrashPlan::whereBetween('last_success', [$lastDay, $lastWeek])->count();
+        $earlierCount = CrashPlan::where('last_success', '<', $lastWeek)->count();
+
+        return [
+            'today' => $todayCount,
+            'lastweek' => $lastWeekCount,
+            'weekplus' => $earlierCount
+        ];
+    }
 }
