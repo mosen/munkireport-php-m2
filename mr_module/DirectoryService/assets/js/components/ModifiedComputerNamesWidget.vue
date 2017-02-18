@@ -1,0 +1,43 @@
+<template>
+    <div class="panel panel-default">
+        <div class="panel-heading" data-container="body" :title="$t('widget.modified_computernames.tooltip')">
+            <div class="panel-title">
+                <i class="fa fa-code-fork"></i>
+                <span data-i18n="widget.modified_computernames.title">{{ $t('widget.modified_computernames.title') }}</span>
+                <span class="counter badge pull-right">{{ items.length }}</span>
+            </div>
+        </div>
+        <div class="list-group scroll-box">
+            <a v-if="items.count > 0" v-for="item in items" href="#" class="list-group-item">
+                {{ item.computer_name }} != {{ item.computer_account_no_dollarsign }}
+            </a>
+            <span v-else class="list-group-item">{{ $t('no_clients') }}</span>
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        data() {
+            return {
+                items: [],
+                error: false,
+                errorDetails: {
+                    status: 200,
+                    message: ''
+                }
+            }
+        },
+        computed: {
+        },
+        mounted() {
+            this.axios.get(`/xapi/stats/directoryservice`).then((response) => {
+
+            }).catch((response) => {
+                this.error = true;
+                this.errorDetails.status = response.status;
+                this.errorDetails.message = response.message;
+            })
+        }
+    }
+</script>
