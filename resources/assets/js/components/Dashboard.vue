@@ -10,6 +10,8 @@
         <crashplan></crashplan>
         <dirbound></dirbound>
         <diskreport></diskreport>
+        <filevault></filevault>
+        <smartstatus></smartstatus>
     </div>
 </template>
 
@@ -28,6 +30,9 @@
     import CrashPlanWidget from '../../../../mr_module/CrashPlan/assets/js/components/CrashPlanWidget.vue';
     import BoundWidget from '../../../../mr_module/DirectoryService/assets/js/components/BoundWidget.vue';
     import DiskReportWidget from '../../../../mr_module/DiskReport/assets/js/components/DiskReportWidget.vue';
+    import FileVaultStatusWidget from '../../../../mr_module/DiskReport/assets/js/components/FileVaultStatusWidget.vue';
+    import SMARTStatusWidget from '../../../../mr_module/DiskReport/assets/js/components/SMARTStatusWidget.vue';
+
 
     export default {
         components: {
@@ -40,7 +45,9 @@
             'certificate': CertificateWidget,
             'crashplan': CrashPlanWidget,
             'dirbound': BoundWidget,
-            'diskreport': DiskReportWidget
+            'diskreport': DiskReportWidget,
+            'filevault': FileVaultStatusWidget,
+            'smartstatus': SMARTStatusWidget
         }
     }
 </script>

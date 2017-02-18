@@ -38,4 +38,30 @@ class DiskReportController extends Controller
             'dangerThreshold' => $dangerThreshold
         ];
     }
+
+    public function stats_filevault_status() {
+        $encryptedCount = DiskReport::where('CoreStorageEncrypted', '=', true)
+            ->where('MountPoint', '=', '/')
+            ->count();
+        $unencryptedCount = DiskReport::where('CoreStorageEncrypted', '=', false)
+            ->where('MountPoint', '=', '/')
+            ->count();
+
+        return [
+            'encrypted' => $encryptedCount,
+            'unencrypted' => $unencryptedCount
+        ];
+    }
+
+    public function stats_smart_status() {
+        $failingCount = DiskReport::where('SMARTStatus', '=', DiskReport::SMART_FAILING)->count();
+        $verifiedCount = DiskReport::where('SMARTStatus', '=', DiskReport::SMART_VERIFIED)->count();
+        $unsupportedCount = DiskReport::where('SMARTStatus', '=', DiskReport::SMART_UNSUPPORTED)->count();
+
+        return [
+            'failing' => $failingCount,
+            'verified' => $verifiedCount,
+            'unsupported' => $unsupportedCount
+        ];
+    }
 }

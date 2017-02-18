@@ -6,7 +6,7 @@ $factory->define(MrModule\DiskReport\DiskReport::class, function (Faker\Generato
         'TotalSize' => $faker->randomNumber(7),
         'FreeSpace' => $faker->numberBetween(0, 20), // Low range to show warning/danger thresholds
         'Percentage' => $faker->numberBetween(0, 100),
-        'SMARTStatus' => $faker->randomElement(['Not Supported', 'Verified']),
+        'SMARTStatus' => $faker->randomElement(['Not Supported', 'Verified', 'Failing']),
         'VolumeType' => $faker->randomElement(['ssd', 'hdd']),
         'BusProtocol' => $faker->randomElement(['PCI', 'SATA']),
         'Internal' => $faker->boolean,

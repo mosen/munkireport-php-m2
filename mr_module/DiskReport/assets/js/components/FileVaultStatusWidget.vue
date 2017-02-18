@@ -43,8 +43,8 @@
         },
         mounted() {
             this.axios.get(`/xapi/stats/diskreport/filevault_status`).then((response) => {
-                this.danger = response.data.encrypted;
-                this.warning = response.data.unencrypted;
+                this.encrypted = response.data.encrypted;
+                this.unencrypted = response.data.unencrypted;
             }).catch((response) => {
                 this.error = true;
                 this.errorDetails.status = response.status;
