@@ -31,7 +31,7 @@ class CrashPlanController extends Controller
         $lastWeek->sub(new \DateInterval('P1W'));
 
         $todayCount = CrashPlan::where('last_success', '>', $lastDay)->count();
-        $lastWeekCount = CrashPlan::whereBetween('last_success', [$lastDay, $lastWeek])->count();
+        $lastWeekCount = CrashPlan::whereBetween('last_success', [$lastWeek, $lastDay])->count();
         $earlierCount = CrashPlan::where('last_success', '<', $lastWeek)->count();
 
         return [
