@@ -8,6 +8,7 @@
         <backup2go></backup2go>
         <certificate></certificate>
         <crashplan></crashplan>
+        <timemachine></timemachine>
         <dirbound></dirbound>
         <diskreport></diskreport>
         <filevault></filevault>
@@ -29,6 +30,7 @@
     import Backup2GoWidget from '../../../../mr_module/Backup2Go/assets/js/components/Backup2GoWidget.vue';
     import CertificateWidget from '../../../../mr_module/Certificate/assets/js/components/CertificateWidget.vue';
     import CrashPlanWidget from '../../../../mr_module/CrashPlan/assets/js/components/CrashPlanWidget.vue';
+    import TimemachineWidget from '../../../../mr_module/TimeMachine/assets/js/components/TimeMachineWidget.vue';
     import BoundWidget from '../../../../mr_module/DirectoryService/assets/js/components/BoundWidget.vue';
     import DiskReportWidget from '../../../../mr_module/DiskReport/assets/js/components/DiskReportWidget.vue';
     import FileVaultStatusWidget from '../../../../mr_module/DiskReport/assets/js/components/FileVaultStatusWidget.vue';
@@ -45,6 +47,7 @@
             'backup2go': Backup2GoWidget,
             'certificate': CertificateWidget,
             'crashplan': CrashPlanWidget,
+            'timemachine': TimemachineWidget,
             'dirbound': BoundWidget,
             'diskreport': DiskReportWidget,
             'filevault': FileVaultStatusWidget,
