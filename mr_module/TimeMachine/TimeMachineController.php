@@ -31,7 +31,7 @@ class TimeMachineController extends Controller
         $lastWeek->sub(new \DateInterval('P1W'));
 
         $todayCount = TimeMachine::where('last_success', '>', $lastDay)->count();
-        $lastWeekCount = TimeMachine::whereBetween('last_success', [$lastDay, $lastWeek])->count();
+        $lastWeekCount = TimeMachine::whereBetween('last_success', [$lastWeek, $lastDay])->count();
         $earlierCount = TimeMachine::where('last_success', '<', $lastWeek)->count();
 
         return [
