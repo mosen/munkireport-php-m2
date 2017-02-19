@@ -12,6 +12,7 @@
         <diskreport></diskreport>
         <filevault></filevault>
         <smartstatus></smartstatus>
+        <findmymac></findmymac>
     </div>
 </template>
 
@@ -32,7 +33,7 @@
     import DiskReportWidget from '../../../../mr_module/DiskReport/assets/js/components/DiskReportWidget.vue';
     import FileVaultStatusWidget from '../../../../mr_module/DiskReport/assets/js/components/FileVaultStatusWidget.vue';
     import SMARTStatusWidget from '../../../../mr_module/DiskReport/assets/js/components/SMARTStatusWidget.vue';
-
+    import FindMyMacWidget from '../../../../mr_module/FindMyMac/assets/js/components/FindMyMacWidget.vue';
 
     export default {
         components: {
@@ -47,7 +48,8 @@
             'dirbound': BoundWidget,
             'diskreport': DiskReportWidget,
             'filevault': FileVaultStatusWidget,
-            'smartstatus': SMARTStatusWidget
+            'smartstatus': SMARTStatusWidget,
+            'findmymac': FindMyMacWidget
         }
     }
 </script>

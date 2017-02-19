@@ -23,11 +23,13 @@ class Request
 {
     public static function factory(array $query = array(), array $request = array(), array $attributes = array(), array $cookies = array(), array $files = array(), array $server = array(), $content = null) {
         $query_keys = array_keys($query);
-        if (count($query_keys) > 0 && strlen($query_keys[0]) > 0 && $query_keys[0][0] === '/') {
+        if (count($query_keys) > 0 &&
+            strlen($query_keys[0]) > 0 &&
+            $query_keys[0][0] === '/') {
+
             $server['REQUEST_URI'] = $query_keys[0];
-            return new SymfonyRequest($query, $request, $attributes, $cookies, $files, $server, $content);
-        } else {
-            return new SymfonyRequest($query, $request, $attributes, $cookies, $files, $server, $content);
         }
+
+        return new SymfonyRequest($query, $request, $attributes, $cookies, $files, $server, $content);
     }
 }

@@ -28,6 +28,8 @@ class ScriptController extends Controller
         $scriptPath = $mod->getPath() . '/scripts/' . $script;
         if (file_exists($scriptPath)) {
             return file_get_contents($scriptPath);
+        } else {
+            abort(404, 'No such script exists at' . $scriptPath);
         }
     }
 }

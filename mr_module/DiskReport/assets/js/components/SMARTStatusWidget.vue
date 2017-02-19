@@ -34,6 +34,8 @@
                 verified: 0,
                 unsupported: 0,
 
+                url: '',
+
                 error: false,
                 errorDetails: {
                     status: 200,
