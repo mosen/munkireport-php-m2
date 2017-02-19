@@ -6,6 +6,7 @@ This document outlines the module structure.
 Each module is part of the `MrModule` namespace. Only core parts of the application are part of the `Mr` namespace.
 
 Each module exists as a [Laravel package](https://laravel.com/docs/5.4/packages) inside the `mr_module` directory.
+Although normally those packages would be registered separately in packagist/composer, they are part of the main project.
 
 The directory structure looks something like this, but may not include everything listed here:
 
@@ -44,6 +45,22 @@ method eg:
 Usually i use `artisan make:migration <tablename>` to generate a migration in `app/database/migrations` and move it
 into the appropriate module directory.
 
+Faker Factory and Seeds
+-----------------------
+
+It can be helpful to have demo data for testing.
+
+I have created a Factory class in `/database/factories` for every available class.
+For each faker factory there is also a seeder class which inserts these fake records.
+
+Add your seeder to `FakeSeeder.php` so that your fake data is seeded with the rest.
+
+You can seed fake data using the artisan command:
+
+    $ php artisan db:seed --class=FakeSeeder
+    
+Note that the intention of having a Faker class for your model is to use it within unit tests.
+
 Routes
 ------
 
@@ -61,4 +78,51 @@ In your service provider you can add a method specifically for registering your 
                 ->namespace($this->namespace)
                 ->group(base_path('mr_module/Modulename/routes.php'));
         }
+
+Aggregate information such as the type used for widgets like counts usually comes under the `/xapi/stats/<modulename>`
+prefix.
+
+Scripts
+-------
+
+Install and Uninstall scripts are defined using the `ModuleManager` instance available in the service container.
+If you type hint it within the `boot()` method you can add your module install and uninstall scripts.
+
+I18n
+----
+
+All of the i18n is performed client side using [vue-i18n](https://kazupon.github.io/vue-i18n/).
+
+This means that you can usually translate strings within VueJS components by calling the `$t()` function to look up
+the string from the current locale.
+
+At the moment locales are only located within the core app.
+
+Ajax
+----
+
+The client side ajax library is [Axios](https://github.com/mzabriskie/axios) along with 
+[vue-axios](https://github.com/imcvampire/vue-axios) to make **axios** available as a property on each VueJS component.
+
+Widgets
+-------
+
+Widgets are [VueJS](https://vuejs.org) components.
+
+Specifically they are files with the **.vue** extension which are 
+[Single File Components](https://vuejs.org/v2/guide/single-file-components.html)
+
+### Fetching data ###
+
+Use the axios instance available at `this.axios` to perform ajax requests.
+
+### Error handling ###
+
+Two properties are defined on widgets to store state information about errors that happened during the data fetch
+process:
+
+- `error`: true or false
+- `errorDetails`: contains a message property which explains the last transport error.
+    also contains a status property with the HTTP status code.
+ 
 
