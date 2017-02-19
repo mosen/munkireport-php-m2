@@ -54,7 +54,15 @@ class CheckInHandler implements Handler
             } elseif ($attrs['type'] === 'External') {
                 $attrs['type'] = Display::TYPE_EXTERNAL;
             }
-
+            
+            // Convert to year.
+            if (preg_match('/^(\d{4}).*/', $attrs['manufactured'], $matches)) {
+                $attrs['manufactured'] = $matches[1];
+            }
+            else {
+                $attrs['manufactured'] = 0;
+            }
+            
             $displayInfo = new Display;
             $displayInfo->serial_number = $serialNumber;
             $displayInfo->fill($attrs);
