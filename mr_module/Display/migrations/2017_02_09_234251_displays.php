@@ -21,7 +21,7 @@ class Displays extends Migration
             $table->string('serial_number');
             $table->string('vendor');
             $table->string('model');
-            $table->string('manufactured');
+            $table->integer('manufactured');
             $table->string('native');
 //            $table->integer('timestamp');
 
