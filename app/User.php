@@ -47,6 +47,7 @@ class User extends Authenticatable
      * Retrieve a list of business units where this User has the `manager` role.
      *
      * @param Builder $query Eloquent query builder
+     * @return Builder
      */
     public function scopeManagerOfBusinessUnits(Builder $query) {
         $query->joinWhere('business_unit', 'property', '=', BusinessUnit::PROP_MANAGER)
@@ -57,6 +58,7 @@ class User extends Authenticatable
      * Retrieve a list of business units where this User has the `user` role.
      *
      * @param Builder $query Eloquent query builder
+     * @return Builder
      */
     public function scopeUserOfBusinessUnits(Builder $query) {
         $query->joinWhere('business_unit', 'property', '=', BusinessUnit::PROP_USER)

@@ -40,7 +40,9 @@ class ReportData extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function machineGroupKeyVals() {
-        return $this->belongsToMany('Mr\MachineGroup', 'machine_group', 'groupid');
+        return $this->hasMany(
+            'Mr\MachineGroup', 'groupid', 'machine_group'
+        );
     }
 
     //// SCOPES

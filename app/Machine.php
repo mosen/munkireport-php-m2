@@ -60,7 +60,7 @@ class Machine extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function comment()
+    public function comments()
     {
         return $this->hasMany('Mr\Comment', 'serial_number', 'serial_number');
     }
@@ -73,11 +73,8 @@ class Machine extends Model
     public function machineGroupKeyVals()
     {
         return $this->hasManyThrough(
-            'Mr\MachineGroup',
-            'Mr\ReportData', 
-            'serial_number',
-            'groupid',
-            'serial_number'
+            'Mr\MachineGroup', 'Mr\ReportData',
+            'serial_number', 'groupid', 'serial_number'
         );
     }
 

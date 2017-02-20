@@ -3,6 +3,7 @@
 namespace Mr;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use Webpatser\Uuid\Uuid;
 
 class MachineGroup extends Model
@@ -13,6 +14,7 @@ class MachineGroup extends Model
     protected $table = 'machine_group';
 
     protected $fillable = [
+        'groupid',
         'property',
         'value'
     ];
@@ -47,6 +49,18 @@ class MachineGroup extends Model
         ];
     }
 
+    /**
+     * Convert a collection of MachineGroup properties and values to a hash structure.
+     *
+     * @param Collection $machineGroupRows The collection of rows to convert.
+     * @return array
+     */
+    public static function hash(Collection $machineGroupRows) {
+        return $machineGroupRows->reduce(function($carry, $item) {
+            $carry[$item->property] = $item->value;
+        }, []);
+    }
+
     //// RELATIONSHIPS
 
     /**
@@ -68,4 +82,22 @@ class MachineGroup extends Model
     {
         return $this->hasManyThrough('Mr\ReportData', 'Mr\Machine');
     }
+
+    /**
+     * Retrieve all BusinessUnits that contain this machine group.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function businessUnits()
+    {
+        return $this->morphMany(
+            'Mr\BusinessUnit',
+            'businessUnitable',
+            'property',
+            'value',
+            'groupid'
+        );
+    }
+
+    //// SCOPES
 }
