@@ -29,13 +29,31 @@ class User extends Authenticatable
     ];
 
     /**
-     * TODO: Placeholder method to evaluate whether this user model has a particular role.
+     * Retrieve business units where this user is a member (manager or normal user).
      *
-     * @param $name
-     * @return bool
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function hasRole($name) {
-        return true;
+    public function memberOfBusinessUnits() {
+        return $this->belongsToMany('Mr\BusinessUnit');
+    }
+
+    /**
+     * Retrieve business units where this user is a manager of the business unit.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function managerOfBusinessUnits() {
+        return $this->memberOfBusinessUnits()->wherePivot('role', 'manager');
+    }
+
+    /**
+     * Retrieve business units where this user has a basic user role in the business
+     * unit.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function userOfBusinessUnits() {
+        return $this->memberOfBusinessUnits()->wherePivot('role', 'user');
     }
     
 }
