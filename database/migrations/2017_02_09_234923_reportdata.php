@@ -22,8 +22,10 @@ class Reportdata extends Migration
             $table->ipAddress('remote_ip');
             $table->integer('uptime')->nullable()->default(0);
             $table->timestamp('reg_timestamp')->nullable();
-            $table->string('machine_group')->nullable()->default(0);
-//            $table->timestamp('timestamp');
+            $table->integer('machine_group')->nullable()->default(0);
+
+            // NOTE: the `timestamp` field has been replaced by Laravel's `updated_at`.
+            $table->timestamp('timestamp')->nullable();
 
             $table->timestamps();
         });

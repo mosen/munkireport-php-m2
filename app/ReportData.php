@@ -23,6 +23,18 @@ class ReportData extends Model
         'machine_group'
     ];
 
+    //// RELATIONSHIPS
+
+    /**
+     * Retrieve the machine model associated with this report data.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function machine() {
+        return $this->belongsTo('Mr\Machine', 'serial_number', 'serial_number');
+    }
+
+
     //// SCOPES
 
     use UpdatedSinceScope;
