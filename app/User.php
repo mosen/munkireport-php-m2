@@ -41,6 +41,22 @@ class User extends Authenticatable
 
     //// RELATIONSHIPS
 
+    /**
+     * Retrieve all BusinessUnits that contain this user as either a `manager` or `user` role.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function businessUnits()
+    {
+        return $this->morphMany(
+            'Mr\BusinessUnit',
+            'businessUnitable',
+            'property',
+            'value',
+            'name'
+        );
+    }
+
     //// SCOPES
 
     /**
