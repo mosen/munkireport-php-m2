@@ -261,6 +261,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        // 3rd Party
+        'Uuid' => Webpatser\Uuid\Uuid::class,
     ],
 
 ];

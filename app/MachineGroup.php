@@ -3,6 +3,7 @@
 namespace Mr;
 
 use Illuminate\Database\Eloquent\Model;
+use Webpatser\Uuid\Uuid;
 
 class MachineGroup extends Model
 {
@@ -19,7 +20,33 @@ class MachineGroup extends Model
     protected $casts = [
         'groupid' => 'integer'
     ];
-    
+
+    /**
+     * Create a machine group by passing the values for the `name` and `key` properties.
+     *
+     * @param int $machineGroupId The machine group id to use.
+     * @param string $machineGroupName The name of the machine group.
+     * @param null|string $machineGroupKey The machine group key you want to use, omit for auto generated key.
+     * @return array A hash containing keys that correspond to the properties that were created. Each points to an
+     *  Eloquent model.
+     */
+    public static function createWithParameters($machineGroupId, $machineGroupName, $machineGroupKey = null) {
+        if ($machineGroupKey === null) {
+            $machineGroupKey = Uuid::generate();
+        }
+
+        $nameRow = MachineGroup::create(
+            ['property' => MachineGroup::PROP_NAME, 'value' => $machineGroupName, 'groupid' => $machineGroupId]);
+
+        $keyRow = MachineGroup::create(
+            ['property' => MachineGroup::PROP_KEY, 'value' => $machineGroupKey, 'groupid' => $machineGroupId]);
+
+        return [
+            'name' => $nameRow,
+            'key' => $keyRow
+        ];
+    }
+
     //// RELATIONSHIPS
 
     /**

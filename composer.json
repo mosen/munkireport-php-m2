@@ -9,7 +9,8 @@
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "rodneyrehm/plist": "^2.0",
-        "sroutier/eloquent-ldap": "^0.1.10"
+        "sroutier/eloquent-ldap": "^0.1.10",
+        "webpatser/laravel-uuid": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
