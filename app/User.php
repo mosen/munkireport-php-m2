@@ -2,6 +2,7 @@
 
 namespace Mr;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -26,4 +27,28 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    //// RELATIONSHIPS
+
+    //// SCOPES
+
+    /**
+     * Retrieve a list of business units where this User has the `manager` role.
+     *
+     * @param Builder $query Eloquent query builder
+     */
+    public function scopeManagerOfBusinessUnits(Builder $query) {
+        $query->joinWhere('business_unit', 'property', '=', BusinessUnit::PROP_MANAGER)
+            ->where('value', '=', $this->name);
+    }
+
+    /**
+     * Retrieve a list of business units where this User has the `user` role.
+     *
+     * @param Builder $query Eloquent query builder
+     */
+    public function scopeUserOfBusinessUnits(Builder $query) {
+        $query->joinWhere('business_unit', 'property', '=', BusinessUnit::PROP_USER)
+            ->where('value', '=', $this->name);
+    }
 }
