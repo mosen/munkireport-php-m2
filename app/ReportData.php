@@ -34,6 +34,14 @@ class ReportData extends Model
         return $this->belongsTo('Mr\Machine', 'serial_number', 'serial_number');
     }
 
+    /**
+     * Retrieve all MachineGroup values for the machine group ID associated with this ReportData.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function machineGroupKeyVals() {
+        return $this->belongsToMany('Mr\MachineGroup', 'machine_group', 'groupid');
+    }
 
     //// SCOPES
 

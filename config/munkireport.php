@@ -6,5 +6,7 @@ return [
     "--silent",
     "--show-error"],
 
-    'version' => '3.0a1'
+    'version' => '3.0a1',
+
+    'enable_business_units' => false
 ];

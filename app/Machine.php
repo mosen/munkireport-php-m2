@@ -65,10 +65,22 @@ class Machine extends Model
         return $this->hasMany('Mr\Comment', 'serial_number', 'serial_number');
     }
 
-    //// SCOPES
-
-    public function scopeDuplicate($query)
+    /**
+     * Get MachineGroup key/value rows associated with this machine through the `report_data` table.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+     */
+    public function machineGroupKeyVals()
     {
-        return $query;
+        return $this->hasManyThrough(
+            'Mr\MachineGroup',
+            'Mr\ReportData', 
+            'serial_number',
+            'groupid',
+            'serial_number'
+        );
     }
+
+    //// SCOPES
+    
 }
