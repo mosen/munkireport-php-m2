@@ -1,9 +1,9 @@
 <?php
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Mr\MachineGroup::class, function (Faker\Generator $faker) {
+$factory->define(MrLegacy\MachineGroup::class, function (Faker\Generator $faker) {
     $properties = [
-        \Mr\MachineGroup::PROP_NAME,
-        \Mr\MachineGroup::PROP_KEY
+        \MrLegacy\MachineGroup::PROP_NAME,
+        \MrLegacy\MachineGroup::PROP_KEY
     ];
 
     return [

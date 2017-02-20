@@ -1,6 +1,6 @@
 <?php
 
-namespace Mr;
+namespace MrLegacy;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
