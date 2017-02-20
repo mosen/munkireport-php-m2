@@ -33,14 +33,11 @@ class MachinePolicy
         if ($user->hasRole('admin')) return true;
         if ($user->hasRole('nobody')) return false;
 
-        
+        $mgKv = $machine->machineGroupKeyVals()->get();
+        if (count($mgKv) === 0) return false; // TODO: just denying here if machine is not part of a group.
 
-        // Manager and user may view within their own BU
-        $managerOf = $user->managerOfBusinessUnits();
-        $userOf = $user->userOfBusinessUnits();
+        $machineBusinessUnits = $mgKv[0]->businessUnits()->get();
 
-        $mgKv = $machine->machineGroupKeyVals();
-        $machineGroup = MachineGroup::hash($mgKv);
     }
 
     /**
