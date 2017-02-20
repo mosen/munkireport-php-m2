@@ -65,6 +65,19 @@ class Machine extends Model
         return $this->hasMany('Mr\Comment', 'serial_number', 'serial_number');
     }
 
+    /**
+     * Get a list of machine groups this machine is part of through the
+     * `report_data` table.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+     */
+    public function machineGroups() {
+        return $this->hasManyThrough(
+            'Mr\MachineGroup', 'Mr\ReportData',
+            'serial_number', 'id', 'serial_number'
+        );
+    }
+
     //// SCOPES
     
 }

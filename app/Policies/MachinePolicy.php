@@ -2,6 +2,7 @@
 
 namespace Mr\Policies;
 
+use Illuminate\Support\Facades\DB;
 use Mr\MachineGroup;
 use Mr\User;
 use Mr\Machine;
@@ -30,37 +31,10 @@ class MachinePolicy
     {
         // user must be admin or manager
         if (!config('munkireport.enable_business_units', false)) return true;
-        if ($user->hasRole('admin')) return true;
-        if ($user->hasRole('nobody')) return false;
+        if ($user->is_admin) return true;
 
-        $mgKv = $machine->machineGroupKeyVals()->get();
-        if (count($mgKv) === 0) return false; // TODO: just denying here if machine is not part of a group.
-
-        $machineBusinessUnits = $mgKv[0]->businessUnits()->get();
-
-    }
-
-    /**
-     * Determine whether the user can create machines.
-     *
-     * @param  \Mr\User  $user
-     * @return mixed
-     */
-    public function create(User $user)
-    {
-        //
-    }
-
-    /**
-     * Determine whether the user can update the machine.
-     *
-     * @param  \Mr\User  $user
-     * @param  \Mr\Machine  $machine
-     * @return mixed
-     */
-    public function update(User $user, Machine $machine)
-    {
-        //
+        // TODO: BU
+        return false;
     }
 
     /**
@@ -72,6 +46,30 @@ class MachinePolicy
      */
     public function delete(User $user, Machine $machine)
     {
-        // TODO: user role false
+        if ($user->is_admin) return true;
+
+        $managerOfBusinessUnits = $user->managerOfBusinessUnits()->get('business_units.id');
+        
+        $managesMachineBusinessUnit = DB::table('machine')
+            ->join(
+                'reportdata',
+                'machine.serial_number', '=', 'reportdata.serial_number'
+            )
+            ->join(
+                'machine_groups',
+                'reportdata.machine_group', '=', 'machine_groups.id'
+            )
+            ->join(
+                'business_units',
+                'machine_groups.business_unit_id', '=', 'business_units.id'
+            )
+            ->where('machine.id', '=', $machine->id)
+            ->whereIn('business_units.id', $managerOfBusinessUnits);
+
+        if ($managesMachineBusinessUnit->count() > 0) {
+            return true;
+        }
+
+        return false;
     }
 }
