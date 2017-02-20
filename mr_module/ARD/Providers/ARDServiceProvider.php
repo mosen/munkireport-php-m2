@@ -18,17 +18,33 @@ class ARDServiceProvider extends ServiceProvider
      */
     protected $namespace = 'MrModule\ARD';
 
+    protected function mapWebRoutes()
+    {
+        Route::group([
+            'prefix' => 'x',
+            'middleware' => 'web',
+            'namespace' => $this->namespace
+        ], function () {
+            Route::get('ards', 'ARDController@listing');
+        });
+    }
+
     protected function mapApiRoutes()
     {
-        Route::prefix('xapi')
-            ->middleware('api')
-            ->namespace($this->namespace)
-            ->group(base_path('mr_module/ARD/routes.php'));
+        Route::group([
+            'prefix' => 'xapi',
+            'middleware' => 'api',
+            'namespace' => $this->namespace
+        ], function () {
+            Route::resource('ard', 'ARDController');
+        });
     }
 
     public function boot(ModuleManager $moduleManager) {
+        $this->mapWebRoutes();
         $this->mapApiRoutes();
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
+        $this->loadViewsFrom(__DIR__.'/../views', 'ard');
 
         $moduleManager->add('ard', dirname(__DIR__))
             ->installs('scripts/install.sh')

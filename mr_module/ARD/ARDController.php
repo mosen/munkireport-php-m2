@@ -26,4 +26,8 @@ class ARDController extends Controller
 
         return response()->setStatusCode(204);
     }
+
+    public function listing() {
+        return view('ard::index');
+    }
 }

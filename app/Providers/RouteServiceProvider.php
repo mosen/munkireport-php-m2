@@ -30,16 +30,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
-//        IlluminateRoute::$validators = [
-//            new QueryParameterValidator,
-//            new UriValidator, new MethodValidator,
-//            new SchemeValidator, new HostValidator
-//        ];
-
-        //Request::setFactory([\MrLegacy\Request::class, 'factory']);
-
         parent::boot();
     }
 
