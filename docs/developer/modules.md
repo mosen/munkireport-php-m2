@@ -22,9 +22,8 @@ The directory structure looks something like this, but may not include everythin
         
         Events/*.php - Events fired by this module
         
-        Providers
-             ModulenameServiceProvider.php - Service Provider, the main extension point.
-          
+
+        ModulenameServiceProvider.php - Service Provider, the main extension point.  
         Modulemodel.php - Eloquent model
         FakeModulenameSeeder.php - Optional fake data seeder for testing rows of fake data.
         CheckInHandler.php - The check in handler which processes reports sent from the client.
@@ -111,6 +110,9 @@ Widgets are [VueJS](https://vuejs.org) components.
 
 Specifically they are files with the **.vue** extension which are 
 [Single File Components](https://vuejs.org/v2/guide/single-file-components.html)
+
+More information about the `.vue` component format can be found in the vue-loader docs
+[Vue Component Spec](http://vue-loader.vuejs.org/en/start/spec.html)
 
 ### Fetching data ###
 

@@ -21,6 +21,7 @@
     "webpack": "^2.2.1"
   },
   "dependencies": {
+    "babel-loader": "^6.3.2",
     "bootstrap-markdown": "^2.10.0",
     "bootstrap-tagsinput": "^0.7.1",
     "bootstrap-vue": "^0.7.1",
@@ -32,6 +33,7 @@
     "vue": "^2.1.10",
     "vue-axios": "^1.2.2",
     "vue-i18n": "^5.0.0",
+    "vue-loader": "^11.1.0",
     "vue-tables-2": "^0.4.33"
   }
 }
