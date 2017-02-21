@@ -16,7 +16,7 @@
                 <widget-installs-pending-apple/>
             </div>
             <div class="col-lg-4 col-md-6">
-                Pending Installs
+                <widget-installs-pending-munki/>
             </div>
         </div>
         <div class="row">
@@ -31,11 +31,25 @@
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col-lg-4 col-md-6">
                 <widget-bluetooth-battery />
+            </div>
+            <div class="col-lg-4 col-md-6">
                 <widget-backup2go />
+            </div>
+            <div class="col-lg-4 col-md-6">
                 <widget-certificate />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
                 <widget-crashplan />
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <widget-timemachine />
+            </div>
+            <div class="col-lg-4 col-md-6">
+               
             </div>
         </div>
     </div>

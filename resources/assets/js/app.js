@@ -12,6 +12,7 @@ import '../../../mr_module/CrashPlan/assets/js/widgets';
 import '../../../mr_module/DirectoryService/assets/js/widgets';
 import '../../../mr_module/DiskReport/assets/js/widgets';
 import '../../../mr_module/ManagedInstalls/assets/js/widgets';
+import '../../../mr_module/TimeMachine/assets/js/widgets';
 
 import en from '../../../public/locale/en.json';
 
