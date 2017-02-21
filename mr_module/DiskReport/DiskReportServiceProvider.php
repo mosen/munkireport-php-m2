@@ -9,12 +9,29 @@ class DiskReportServiceProvider extends ServiceProvider
 {
     protected $namespace = 'MrModule\DiskReport';
 
+    protected function mapWebRoutes()
+    {
+        Route::group([
+            'prefix' => 'x',
+            'middleware' => 'web',
+            'namespace' => $this->namespace
+        ], function () {
+            Route::get('diskreports', 'DiskReportController@listing');
+        });
+    }
+
     protected function mapApiRoutes()
     {
-        Route::prefix('xapi')
-            ->middleware('api')
-            ->namespace($this->namespace)
-            ->group(base_path('mr_module/DiskReport/routes.php'));
+        Route::group([
+            'prefix' => 'xapi',
+            'middleware' => 'api',
+            'namespace' => $this->namespace
+        ], function () {
+            Route::resource('diskreport', 'DiskReportController');
+            Route::get('stats/diskreport/free_space', 'DiskReportController@stats_free_space');
+            Route::get('stats/diskreport/filevault_status', 'DiskReportController@stats_filevault_status');
+            Route::get('stats/diskreport/smart_status', 'DiskReportController@stats_smart_status');
+        });
     }
 
     public function boot(ModuleManager $moduleManager) {

@@ -9,12 +9,27 @@ class CertificateServiceProvider extends ServiceProvider
 {
     protected $namespace = 'MrModule\Certificate';
 
+    protected function mapWebRoutes()
+    {
+        Route::group([
+            'prefix' => 'x',
+            'middleware' => 'web',
+            'namespace' => $this->namespace
+        ], function () {
+            Route::get('certificates', 'CertificateController@listing');
+        });
+    }
+
     protected function mapApiRoutes()
     {
-        Route::prefix('xapi')
-            ->middleware('api')
-            ->namespace($this->namespace)
-            ->group(base_path('mr_module/Certificate/routes.php'));
+        Route::group([
+            'prefix' => 'xapi',
+            'middleware' => 'api',
+            'namespace' => $this->namespace
+        ], function () {
+            Route::resource('certificate', 'CertificateController');
+            Route::get('stats/certificate', 'CertificateController@stats');
+        });
     }
 
     public function boot(ModuleManager $moduleManager) {
@@ -23,6 +38,7 @@ class CertificateServiceProvider extends ServiceProvider
         ], 'config');
         
         $this->mapApiRoutes();
+        $this->mapWebRoutes();
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
 
         $moduleManager->add('certificate', dirname(__DIR__))

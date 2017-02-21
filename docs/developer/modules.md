@@ -64,19 +64,37 @@ Routes
 ------
 
 API / JSON based routes must be registered with the `xapi` prefix to distinguish module API's from core API's.
+Normally rendered pages eg. with blade templates should use the `x` prefix.
 
-In your service provider you can add a method specifically for registering your API routes eg:
+In your service provider you should add two methods for registering routes `mapApiRoutes()` and `mapWebRoutes()` eg:
 
         // Required to resolve controllers
         protected $namespace = 'MrModule\Modulename';
 
         protected function mapApiRoutes()
         {
-            Route::prefix('xapi')
-                ->middleware('api')
-                ->namespace($this->namespace)
-                ->group(base_path('mr_module/Modulename/routes.php'));
+            Route::group([
+                'prefix' => 'xapi',
+                'middleware' => 'api',
+                'namespace' => $this->namespace
+            ], function () {
+                Route::resource('ard', 'ARDController');
+            });
         }
+        
+        protected function mapWebRoutes()
+        {
+            Route::group([
+                'prefix' => 'x',
+                'middleware' => 'web',
+                'namespace' => $this->namespace
+            ], function () {
+                Route::get('ards', 'ARDController@listing');
+            });
+        }
+
+For simplicity, routes are added in the service provider, but you can create a separate `routes.php` if you feel like
+the service provider is getting too large to manage.
 
 Aggregate information such as the type used for widgets like counts usually comes under the `/xapi/stats/<modulename>`
 prefix.

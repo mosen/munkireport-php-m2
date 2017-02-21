@@ -11,12 +11,26 @@ class BluetoothServiceProvider extends ServiceProvider
 {
     protected $namespace = 'MrModule\Bluetooth';
 
+    protected function mapWebRoutes()
+    {
+        Route::group([
+            'prefix' => 'x',
+            'middleware' => 'web',
+            'namespace' => $this->namespace
+        ], function () {
+            Route::get('bluetooth', 'BluetoothController@listing');
+        });
+    }
+
     protected function mapApiRoutes()
     {
-        Route::prefix('xapi')
-            ->middleware('api')
-            ->namespace($this->namespace)
-            ->group(base_path('mr_module/Bluetooth/routes.php'));
+        Route::group([
+            'prefix' => 'xapi',
+            'middleware' => 'api',
+            'namespace' => $this->namespace
+        ], function () {
+            Route::resource('bluetooth', 'BluetoothController');
+        });
     }
 
     public function boot(ModuleManager $moduleManager) {
@@ -28,5 +42,6 @@ class BluetoothServiceProvider extends ServiceProvider
 
 
         $this->mapApiRoutes();
+        $this->mapWebRoutes();
     }
 }

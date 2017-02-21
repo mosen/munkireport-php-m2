@@ -9,12 +9,26 @@ class DisplayServiceProvider extends ServiceProvider
 {
     protected $namespace = 'MrModule\Display';
 
+    protected function mapWebRoutes()
+    {
+        Route::group([
+            'prefix' => 'x',
+            'middleware' => 'web',
+            'namespace' => $this->namespace
+        ], function () {
+            Route::get('displays', 'DisplayController@listing');
+        });
+    }
+
     protected function mapApiRoutes()
     {
-        Route::prefix('xapi')
-            ->middleware('api')
-            ->namespace($this->namespace)
-            ->group(base_path('mr_module/Display/routes.php'));
+        Route::group([
+            'prefix' => 'xapi',
+            'middleware' => 'api',
+            'namespace' => $this->namespace
+        ], function () {
+            Route::resource('display', 'DisplayController');
+        });
     }
 
     public function boot(ModuleManager $moduleManager) {
@@ -23,9 +37,10 @@ class DisplayServiceProvider extends ServiceProvider
         ], 'config');
 
         $this->mapApiRoutes();
+        $this->mapWebRoutes();
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
 
-        $moduleManager->add('disk_report', dirname(__DIR__))
+        $moduleManager->add('display', dirname(__DIR__))
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }
