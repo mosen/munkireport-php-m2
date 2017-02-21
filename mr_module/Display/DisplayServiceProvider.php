@@ -38,7 +38,7 @@ class DisplayServiceProvider extends ServiceProvider
 
         $this->mapApiRoutes();
         $this->mapWebRoutes();
-        $this->loadMigrationsFrom(__DIR__.'/../migrations');
+        $this->loadMigrationsFrom(__DIR__.'/migrations');
 
         $moduleManager->add('display', dirname(__DIR__))
             ->installs('scripts/install.sh')

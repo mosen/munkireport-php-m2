@@ -8,7 +8,7 @@ use MrModule\MunkiReport\CheckInHandler;
 class MunkiReportServiceProvider extends ServiceProvider
 {
     public function boot(CheckInRouter $router) {
-        $this->loadMigrationsFrom(__DIR__.'/../migrations');
+        $this->loadMigrationsFrom(__DIR__.'/migrations');
         $router->addHandler('munkireport', CheckInHandler::class);
     }
 }

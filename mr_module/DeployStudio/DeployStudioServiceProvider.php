@@ -33,6 +33,6 @@ class DeployStudioServiceProvider extends ServiceProvider
     public function boot() {
         $this->mapApiRoutes();
         $this->mapWebRoutes();
-        $this->loadMigrationsFrom(__DIR__.'/../migrations');
+        $this->loadMigrationsFrom(__DIR__.'/migrations');
     }
 }

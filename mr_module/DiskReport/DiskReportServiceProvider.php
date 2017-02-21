@@ -36,11 +36,11 @@ class DiskReportServiceProvider extends ServiceProvider
 
     public function boot(ModuleManager $moduleManager) {
         $this->publishes([
-            __DIR__.'/../config/mr_disk_report.php' => config_path('mr_disk_report.php')
+            __DIR__.'/config/mr_disk_report.php' => config_path('mr_disk_report.php')
         ], 'config');
         
         $this->mapApiRoutes();
-        $this->loadMigrationsFrom(__DIR__.'/../migrations');
+        $this->loadMigrationsFrom(__DIR__.'/migrations');
 
         $moduleManager->add('displays_info', dirname(__DIR__))
             ->installs('scripts/install.sh')

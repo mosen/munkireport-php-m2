@@ -36,7 +36,7 @@ class CrashPlanServiceProvider extends ServiceProvider
     public function boot(ModuleManager $moduleManager) {
         $this->mapApiRoutes();
         $this->mapWebRoutes();
-        $this->loadMigrationsFrom(__DIR__.'/../migrations');
+        $this->loadMigrationsFrom(__DIR__.'/migrations');
 
 //        $moduleManager->add('crashplan', dirname(__DIR__))
 //            ->installs('scripts/install.sh')

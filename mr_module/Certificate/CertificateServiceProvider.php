@@ -34,12 +34,12 @@ class CertificateServiceProvider extends ServiceProvider
 
     public function boot(ModuleManager $moduleManager) {
         $this->publishes([
-            __DIR__.'/../config/mr_certificate.php' => config_path('mr_certificate.php')
+            __DIR__.'/config/mr_certificate.php' => config_path('mr_certificate.php')
         ], 'config');
         
         $this->mapApiRoutes();
         $this->mapWebRoutes();
-        $this->loadMigrationsFrom(__DIR__.'/../migrations');
+        $this->loadMigrationsFrom(__DIR__.'/migrations');
 
         $moduleManager->add('certificate', dirname(__DIR__))
             ->installs('scripts/install.sh')

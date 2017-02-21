@@ -136,7 +136,9 @@
                     { code: 'nl', name: 'Dutch' }
                 ],
                 admin: [],
-                listings: [],
+                listings: [
+                  { url: '/x/ards', name: 'Apple Remote Desktop' }
+                ],
                 reports: [],
             }
         },

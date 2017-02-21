@@ -35,7 +35,7 @@ class DirectoryServiceProvider extends ServiceProvider
     public function boot(ModuleManager $moduleManager) {
         $this->mapApiRoutes();
         $this->mapWebRoutes();
-        $this->loadMigrationsFrom(__DIR__.'/../migrations');
+        $this->loadMigrationsFrom(__DIR__.'/migrations');
 
         $moduleManager->add('directory_service', dirname(__DIR__))
             ->installs('scripts/install.sh')

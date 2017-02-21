@@ -43,8 +43,8 @@ class ARDServiceProvider extends ServiceProvider
     public function boot(ModuleManager $moduleManager) {
         $this->mapWebRoutes();
         $this->mapApiRoutes();
-        $this->loadMigrationsFrom(__DIR__.'/../migrations');
-        $this->loadViewsFrom(__DIR__.'/../views', 'ard');
+        $this->loadMigrationsFrom(__DIR__.'/migrations');
+        $this->loadViewsFrom(__DIR__.'/views', 'ard');
 
         $moduleManager->add('ard', dirname(__DIR__))
             ->installs('scripts/install.sh')
