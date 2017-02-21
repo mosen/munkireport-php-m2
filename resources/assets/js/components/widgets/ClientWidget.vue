@@ -7,10 +7,17 @@
             </h3>
         </div>
         <div class="panel-body">
-            <vn-pie donut="true" showLabels="false"></vn-pie>
+            <vn-pie
+                    height="258"
+                    width="258"
+                    :model="[active, inactive]"
+                    donutRatio="0.45"
+                    donut="true"
+                    showLabels="false"
+            ></vn-pie>
             <div class="text-muted text-center">
                 <span>{{ $t('client.total') }}</span>:
-                <span class="total-clients">{{ total }}</span>
+                <span class="total-clients">{{ stats.total }}</span>
                 <span class="total-change"></span>
                 |
                 <span>{{ $t('client.hour') }}</span>:
@@ -28,8 +35,11 @@
 
   export default {
     data () {
+      // NOTE: these stats are not exclusive, so a client can be seen last day + last hour + last week etc.
+      // so we cannot use the sum of all to equal the total value.
       return {
         stats: {
+          total: 0,
           inactive_month: 0,
           inactive_three_months: 0,
           inactive_week: 0,
@@ -41,19 +51,22 @@
       }
     },
     computed: {
-      total: function () {
-        return this.stats.inactive_month +
-          this.stats.inactive_three_months +
-          this.stats.inactive_week +
-          this.stats.seen_last_day +
-          this.stats.seen_last_hour +
-          this.stats.seen_last_month +
-          this.stats.seen_last_week;
+      active: function() {
+        return {
+          label: this.$t('active'),
+          value: this.stats.seen_last_month
+        };
+      },
+      inactive: function() {
+        return {
+          label: this.$t('inactive'),
+          value: this.stats.total - this.stats.seen_last_month
+        }
       }
     },
     created () {
       this.axios.get(`${API_ROOT}/stats/report_data`).then((response) => {
-        this.stats = response.data;
+        this.stats = Object.assign({}, this.stats, response.data);
        }).catch((response) => {
         this.error = true;
         this.errorDetails.status = response.status;

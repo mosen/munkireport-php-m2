@@ -62,6 +62,8 @@ class ReportDataController extends Controller
      * @return array
      */
     public function stats() {
+        $total = ReportData::all()->count();
+
         $lastHour = ReportData::updatedSince(new \DateInterval('PT1H'))->count();
         $lastDay = ReportData::updatedSince(new \DateInterval('P1D'))->count();
         $lastWeek = ReportData::updatedSince(new \DateInterval('P1W'))->count();
@@ -72,6 +74,7 @@ class ReportDataController extends Controller
         $inactiveThreeMonth = ReportData::notUpdatedFor(new \DateInterval('P3M'))->count();
 
         return [
+            'total' => $total,
             'seen_last_hour' => $lastHour,
             'seen_last_day' => $lastDay,
             'seen_last_week' => $lastWeek,

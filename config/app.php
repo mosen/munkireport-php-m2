@@ -173,7 +173,7 @@ return [
          */
         Mr\Providers\AppServiceProvider::class,
         Mr\Providers\AuthServiceProvider::class,
-        // Mr\Providers\BroadcastServiceProvider::class,
+        Mr\Providers\BroadcastServiceProvider::class,
         Mr\Providers\CheckInServiceProvider::class,
         Mr\Providers\EventServiceProvider::class,
         Mr\Providers\RouteServiceProvider::class,
