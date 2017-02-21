@@ -13,7 +13,7 @@ const { mix } = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
   .sourceMaps()
-  .extract(['vue', 'axios', 'd3', 'bootstrap-vue', 'vue-axios', 'vue-i18n', 'vue-tables-2']);
+  .extract(['vue', 'axios', 'd3', 'bootstrap-vue', 'vue-axios', 'vue-i18n', 'vue-tables-2', 'vue-d3', 'vue-nvd3']);
 
 mix.sass('resources/assets/sass/app.scss', 'public/css');
 

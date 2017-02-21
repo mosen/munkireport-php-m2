@@ -7,13 +7,15 @@
             </h3>
         </div>
         <div class="panel-body">
-            <svg id="test1" class="center-block"></svg>
+            <vn-pie donut="true" showLabels="false"></vn-pie>
             <div class="text-muted text-center">
-                <span>{{ $t('client.total') }}</span>: <span class="total-clients"></span> <span
-                    class="total-change"></span>
+                <span>{{ $t('client.total') }}</span>:
+                <span class="total-clients">{{ total }}</span>
+                <span class="total-change"></span>
                 |
-                <span>{{ $t('client.hour') }}</span>: <span class="hour-clients"></span> <span
-                    class="lasthour-change"></span>
+                <span>{{ $t('client.hour') }}</span>:
+                <span class="hour-clients">{{ stats.seen_last_hour }}</span>
+                <span class="lasthour-change"></span>
             </div>
 
         </div>
@@ -22,10 +24,8 @@
 </template>
 
 <script>
-  import { API_ROOT } from '../../constants';
-  import nv from 'nvd3';
-  import d3 from 'd3';
-  
+  import {API_ROOT} from '../../constants';
+
   export default {
     data () {
       return {
@@ -40,11 +40,26 @@
         }
       }
     },
-
+    computed: {
+      total: function () {
+        return this.stats.inactive_month +
+          this.stats.inactive_three_months +
+          this.stats.inactive_week +
+          this.stats.seen_last_day +
+          this.stats.seen_last_hour +
+          this.stats.seen_last_month +
+          this.stats.seen_last_week;
+      }
+    },
     created () {
       this.axios.get(`${API_ROOT}/stats/report_data`).then((response) => {
-        this.stats = response;
-      })
+        this.stats = response.data;
+       }).catch((response) => {
+        this.error = true;
+        this.errorDetails.status = response.status;
+        this.errorDetails.message = response.message;
+       });
+      
     }
   }
 </script>

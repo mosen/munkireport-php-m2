@@ -2,6 +2,8 @@ import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
+import VueD3 from 'vue-d3';
+import VueNVD3 from 'vue-nvd3';
 
 import Root from './components/Root.vue';
 
@@ -18,6 +20,8 @@ import en from '../../../public/locale/en.json';
 
 Vue.use(VueI18n);
 Vue.use(VueAxios, axios);
+Vue.use(VueD3);
+Vue.use(VueNVD3);
 
 Vue.locale('en', en);
 Vue.config.lang = 'en';
