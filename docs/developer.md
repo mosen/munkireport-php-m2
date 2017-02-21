@@ -132,3 +132,9 @@ To set up the database tables, you need to run
 
 Note that the previous behavior of munkireport, where it auto-created the tables does not work in v3.
 
+
+Links to Vendor Documentation
+-----------------------------
+
+- [Vue.js Guide](https://vuejs.org/v2/guide/)
+- [vue-loader (en)](http://vue-loader.vuejs.org/en/)

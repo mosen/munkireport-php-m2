@@ -1,7 +1,11 @@
 <template>
     <div class="panel panel-default">
         <div class="panel-heading" data-container="body" :title="$t('widget.new_clients.tooltip')">
-            <div class="panel-title"><i class="fa fa-star-o"></i> <span>{{ $t('widget.new_clients.title') }}</span> <span class="counter badge pull-right"></span></div>
+            <div class="panel-title">
+                <i class="glyphicon glyphicon-star-empty"></i>
+                <span>{{ $t('widget.new_clients.title') }}</span>
+                <span class="counter badge pull-right">{{ clients.length }}</span>
+            </div>
         </div>
 
         <div class="list-group scroll-box">
@@ -13,8 +17,7 @@
             </template>
             <span v-else class="list-group-item"><span>{{ $t('widget.new_clients.no_new_clients') }}</span></span>
         </div>
-
-    </div><!-- /panel -->
+    </div>
 </template>
 
 <script>

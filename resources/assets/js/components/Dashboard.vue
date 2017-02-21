@@ -1,58 +1,67 @@
 <template>
-    <div>
-        <newclientswidget></newclientswidget>
-        <clientactivity></clientactivity>
-        <eventmessages></eventmessages>
-        <uptime></uptime>
-        <bluetooth></bluetooth>
-        <backup2go></backup2go>
-        <certificate></certificate>
-        <crashplan></crashplan>
-        <timemachine></timemachine>
-        <dirbound></dirbound>
-        <diskreport></diskreport>
-        <filevault></filevault>
-        <smartstatus></smartstatus>
-        <findmymac></findmymac>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <widget-client-activity />
+            </div>
+            <div class="col-lg-8 col-md-6">
+                <widget-events />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <widget-new-clients />
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <widget-installs-pending-apple/>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                Pending Installs
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                Munki
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <widget-diskreport />
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <widget-uptime />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <widget-bluetooth-battery />
+                <widget-backup2go />
+                <widget-certificate />
+                <widget-crashplan />
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
-    // Hard coding these dependencies is temporary
+//
+//    const MODULE_DIR = '../../../../mr_module';
+//
+
+
+//    import TimemachineWidget from '../../../../mr_module/TimeMachine/assets/js/components/TimeMachineWidget.vue';
+
+
     import NewClientsWidget from './widgets/NewClientsWidget.vue';
     import ClientActivityWidget from './widgets/ClientWidget.vue';
     import EventMessagesWidget from './widgets/EventMessagesWidget.vue';
     import UptimeWidget from './widgets/UptimeWidget.vue';
 
-    const MODULE_DIR = '../../../../mr_module';
-
-    import BluetoothBatteryWidget from '../../../../mr_module/Bluetooth/assets/js/components/BluetoothBatteryWidget.vue';
-    import Backup2GoWidget from '../../../../mr_module/Backup2Go/assets/js/components/Backup2GoWidget.vue';
-    import CertificateWidget from '../../../../mr_module/Certificate/assets/js/components/CertificateWidget.vue';
-    import CrashPlanWidget from '../../../../mr_module/CrashPlan/assets/js/components/CrashPlanWidget.vue';
-    import TimemachineWidget from '../../../../mr_module/TimeMachine/assets/js/components/TimeMachineWidget.vue';
-    import BoundWidget from '../../../../mr_module/DirectoryService/assets/js/components/BoundWidget.vue';
-    import DiskReportWidget from '../../../../mr_module/DiskReport/assets/js/components/DiskReportWidget.vue';
-    import FileVaultStatusWidget from '../../../../mr_module/DiskReport/assets/js/components/FileVaultStatusWidget.vue';
-    import SMARTStatusWidget from '../../../../mr_module/DiskReport/assets/js/components/SMARTStatusWidget.vue';
-    import FindMyMacWidget from '../../../../mr_module/FindMyMac/assets/js/components/FindMyMacWidget.vue';
-
     export default {
+        // Only built-in widgets need to be in this scope, because they are always available.
         components: {
-          'newclientswidget': NewClientsWidget,
-          'clientactivity': ClientActivityWidget,
-            'eventmessages': EventMessagesWidget,
-            'uptime': UptimeWidget,
-            'bluetooth': BluetoothBatteryWidget,
-            'backup2go': Backup2GoWidget,
-            'certificate': CertificateWidget,
-            'crashplan': CrashPlanWidget,
-            'timemachine': TimemachineWidget,
-            'dirbound': BoundWidget,
-            'diskreport': DiskReportWidget,
-            'filevault': FileVaultStatusWidget,
-            'smartstatus': SMARTStatusWidget,
-            'findmymac': FindMyMacWidget
+          'widget-new-clients': NewClientsWidget,
+          'widget-client-activity': ClientActivityWidget,
+          'widget-events': EventMessagesWidget,
+          'widget-uptime': UptimeWidget
         }
     }
 </script>

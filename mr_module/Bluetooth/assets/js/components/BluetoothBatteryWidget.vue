@@ -40,5 +40,5 @@
         computed: {
             
         }
-    }
+    };
 </script>

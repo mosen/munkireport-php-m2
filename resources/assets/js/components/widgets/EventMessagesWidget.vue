@@ -1,7 +1,10 @@
 <template>
     <div class="panel panel-default" id="events-widget">
         <div class="panel-heading" data-container="body" :title="$t('events.widget_title')">
-            <h3 class="panel-title"><i class="fa fa-bullhorn"></i> <span>{{ $t('event_plural') }}</span></h3>
+            <h3 class="panel-title">
+                <i class="glyphicon glyphicon-volume-up"></i>
+                <span>{{ $t('event_plural') }}</span>
+            </h3>
         </div>
         <div class="list-group scroll-box" style="max-height: 308px">
             <span v-if="items.length == 0" class="list-group-item">No messages</span>

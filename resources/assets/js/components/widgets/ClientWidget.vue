@@ -1,7 +1,8 @@
 <template>
     <div class="panel panel-default" id="client-widget">
         <div class="panel-heading">
-            <h3 class="panel-title"><i class="fa fa-group"></i>
+            <h3 class="panel-title">
+                <i class="glyphicon glyphicon-stats"></i>
                 <span>{{ $t('client.activity') }}</span>
             </h3>
         </div>
