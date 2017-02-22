@@ -1,8 +1,8 @@
 <?php
 namespace MrModule\Certificate;
 
-
 use Illuminate\Database\Eloquent\Model;
+use Mr\RelatedBySerialNumber;
 
 class Certificate extends Model
 {
@@ -17,4 +17,8 @@ class Certificate extends Model
         'cert_path',
         'cert_cn'
     ];
+
+    //// RELATIONSHIPS
+
+    use RelatedBySerialNumber;
 }

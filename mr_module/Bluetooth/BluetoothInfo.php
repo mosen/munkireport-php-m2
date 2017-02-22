@@ -1,8 +1,8 @@
 <?php
 namespace MrModule\Bluetooth;
 
-
 use Illuminate\Database\Eloquent\Model;
+use Mr\RelatedBySerialNumber;
 
 class BluetoothInfo extends Model
 {
@@ -19,21 +19,5 @@ class BluetoothInfo extends Model
 
     //// RELATIONSHIPS
     
-    /**
-     * Fetch the ReportData model associated with this BluetoothInfo
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function reportData() {
-        return $this->belongsTo('Mr\ReportData', 'serial_number', 'serial_number');
-    }
-
-    /**
-     * Fetch the Machine model associated with this BluetoothInfo
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function machine() {
-        return $this->belongsTo('Mr\Machine', 'serial_number', 'serial_number');
-    }
+    use RelatedBySerialNumber;
 }
