@@ -1,10 +1,9 @@
 <?php
 namespace MrModule\Bluetooth;
 
-use Illuminate\Database\Eloquent\Model;
-use Mr\RelatedBySerialNumber;
+use Mr\SerialNumberModel;
 
-class BluetoothInfo extends Model
+class BluetoothInfo extends SerialNumberModel
 {
     protected $table = 'bluetooth';
 
@@ -18,6 +17,4 @@ class BluetoothInfo extends Model
     ];
 
     //// RELATIONSHIPS
-    
-    use RelatedBySerialNumber;
 }

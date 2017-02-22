@@ -1,13 +1,18 @@
 <?php
 namespace Mr;
 
+use Illuminate\Database\Eloquent\Model;
+
 /**
- * Apply this trait to Eloquent models that have a `serial_number` column to automatically have relationships
- * defined for `machine` and `reportdata`.
- * 
+ * The SerialNumberModel class is a base class for all models
+ * with a `serial_number` column that can be directly related back to
+ * a machine or reportdata entry.
+ *
+ * It exists to add scopes and relationships that are generic to most models.
+ *
  * @package Mr
  */
-trait RelatedBySerialNumber
+class SerialNumberModel extends Model
 {
     /**
      * Fetch the ReportData model associated with this model.

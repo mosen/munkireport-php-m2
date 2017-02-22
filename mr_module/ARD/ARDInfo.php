@@ -1,10 +1,9 @@
 <?php
 namespace MrModule\ARD;
 
-use Illuminate\Database\Eloquent\Model;
-use Mr\RelatedBySerialNumber;
+use Mr\SerialNumberModel;
 
-class ARDInfo extends Model
+class ARDInfo extends SerialNumberModel
 {
     protected $table = 'ard';
 
@@ -17,6 +16,4 @@ class ARDInfo extends Model
     ];
 
     //// RELATIONSHIPS
-
-    use RelatedBySerialNumber;
 }

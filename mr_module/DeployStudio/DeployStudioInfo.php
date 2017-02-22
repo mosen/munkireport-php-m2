@@ -1,10 +1,9 @@
 <?php
 namespace MrModule\DeployStudio;
 
+use Mr\SerialNumberModel;
 
-use Illuminate\Database\Eloquent\Model;
-
-class DeployStudioInfo extends Model
+class DeployStudioInfo extends SerialNumberModel
 {
     protected $table = 'deploystudio';
 }

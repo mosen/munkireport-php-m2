@@ -1,9 +1,9 @@
 <?php
 namespace MrModule\Backup2Go;
 
-use Illuminate\Database\Eloquent\Model;
+use Mr\SerialNumberModel;
 
-class Backup2Go extends Model
+class Backup2Go extends SerialNumberModel
 {
     protected $table = 'backup2go';
 
