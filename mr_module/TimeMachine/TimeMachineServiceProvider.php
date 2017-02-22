@@ -37,6 +37,8 @@ class TimeMachineServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
         $this->mapWebRoutes();
         $this->loadMigrationsFrom(__DIR__.'/migrations');
-
+        $moduleManager->add('timemachine', dirname(__DIR__))
+            ->installs('scripts/install.sh')
+            ->uninstalls('scripts/uninstall.sh');
     }
 }

@@ -3,6 +3,7 @@ namespace MrModule\DeployStudio;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use Mr\Module\ModuleManager;
 
 class DeployStudioServiceProvider extends ServiceProvider
 {
@@ -30,9 +31,12 @@ class DeployStudioServiceProvider extends ServiceProvider
         });
     }
 
-    public function boot() {
+    public function boot(ModuleManager $moduleManager) {
         $this->mapApiRoutes();
         $this->mapWebRoutes();
         $this->loadMigrationsFrom(__DIR__.'/migrations');
+        $moduleManager->add('deploystudio', dirname(__DIR__))
+            ->installs('scripts/install.sh')
+            ->uninstalls('scripts/uninstall.sh');
     }
 }
