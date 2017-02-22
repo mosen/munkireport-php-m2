@@ -24,7 +24,7 @@ class ARDController extends Controller
         }
 
         if ($request->has('orderBy')) {
-            $order = $request->get('ascending', 0) === 1 ? 'ASC' : 'DESC';
+            $order = (int)$request->input('ascending', 0) === 1 ? 'ASC' : 'DESC';
             $query = $query->orderBy($request->input('orderBy'), $order);
         }
 

@@ -32,7 +32,7 @@
         data() {
             return {
                 items: [],
-                limit: 50,
+                limit: 10,
                 error: false
             }
         },

@@ -27,12 +27,13 @@
     export default {
         data () {
           return {
-            clients: []
+            clients: [],
+            limit: 10
           }
         },
 
         created () {
-          this.axios.get(`${API_ROOT}/machines?filter[created_at]=recent`).then((response) => {
+          this.axios.get(`${API_ROOT}/machines?limit=${this.limit}&filter[created_at]=recent`).then((response) => {
             this.clients = response.data;
           })
         },
