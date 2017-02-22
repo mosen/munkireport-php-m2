@@ -16,7 +16,7 @@ class DirectoryServiceProvider extends ServiceProvider
             'middleware' => 'web',
             'namespace' => $this->namespace
         ], function () {
-            Route::get('directoryservices', 'DirectoryServiceController@listing');
+            Route::get('directoryservice/listing', 'DirectoryServiceController@listing');
         });
     }
 
@@ -36,6 +36,7 @@ class DirectoryServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
         $this->mapWebRoutes();
         $this->loadMigrationsFrom(__DIR__.'/migrations');
+        $this->loadViewsFrom(__DIR__.'/views', 'directoryservice');
 
         $moduleManager->add('directory_service', dirname(__DIR__))
             ->installs('scripts/install.sh')
