@@ -109,11 +109,15 @@ See [Laravel mix](https://laravel.com/docs/5.4/mix) for more information. Mix is
 Configure
 ---------
 
-Your configuration is stored in a file called .env, there is already a .env.example that you should copy to .env. Check out the contents of .env and adjust where necessary. If you comment out DB_DATABASE, it will fall back to the default location for SQLite, which is `database/database.sqlite`
+Your configuration is stored in a file called .env, there is already a .env.example that you should copy to .env. 
+
+    $ cp .env.example .env
+
+Check out the contents of .env and adjust where necessary. If you comment out DB_DATABASE, it will fall back to the default location for SQLite, which is `database/database.sqlite`
 
 The next thing you should do after installing Laravel is set your application key to a random string, just run:
 
-    $ php artisan key:generate command.
+    $ php artisan key:generate
 
 this will generate a key and add it to .env
 
