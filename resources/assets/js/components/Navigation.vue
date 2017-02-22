@@ -15,7 +15,7 @@
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">
+                        <a href="/">
                             <span class="glyphicon glyphicon-th-large"></span>
                             <span class="visible-lg-inline">{{ $t('nav.main.dashboard') }}</span>
                         </a>
@@ -132,9 +132,9 @@
         locales: [
           {code: 'en', name: 'English'},
           {code: 'de', name: 'Deutsch'},
-          {code: 'es', name: 'Espanol'},
-          {code: 'fr', name: 'Francais'},
-          {code: 'nl', name: 'Dutch'}
+          {code: 'es', name: 'Español'},
+          {code: 'fr', name: 'Français'},
+          {code: 'nl', name: 'Nederlands'}
         ],
         admin: [],
         listings: [
@@ -152,8 +152,6 @@
 
       },
       setLocale: function (code) {
-
-        console.dir(Vue.config);
         Vue.locale(code, () => {
           return this.axios.get(`/locale/${code}.json`).then((response) => {
             if (Object.keys(response.data).length === 0) {

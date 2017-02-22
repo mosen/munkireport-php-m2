@@ -24,8 +24,9 @@
     <div id="app">
         @yield('content')
     </div>
-    <script src="{{ mix('/js/manifest.js') }}"></script>
-    <script src="{{ mix('/js/vendor.js') }}"></script>
+    <script src="/js/manifest.js"></script>
+    <script src="/js/vendor.js"></script>
+    <script src="/js/navigation.js"></script>
     @stack('scripts')
 </body>
 </html>

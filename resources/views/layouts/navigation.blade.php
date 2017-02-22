@@ -5,3 +5,7 @@
     @yield('main')
 </div>
 @endsection
+
+{{--@push('scripts')--}}
+{{--<script src="{{ asset('js/navigation.js') }}"></script>--}}
+{{--@endpush--}}

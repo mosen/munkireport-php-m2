@@ -11,9 +11,28 @@ const { mix } = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-  .sourceMaps()
-  .extract(['vue', 'axios', 'd3', 'bootstrap-vue', 'vue-axios', 'vue-i18n', 'vue-tables-2', 'vue-d3', 'vue-nvd3']);
+const vendor = [
+  'vue',
+  'axios',
+  'd3',
+  'bootstrap-vue',
+  'vue-axios',
+  'vue-i18n',
+  'vue-tables-2',
+  'vue-d3',
+  'vue-nvd3'
+];
+
+mix.js([
+  'resources/assets/js/app.js'
+], 'public/js')
+  .sourceMaps();
+  // .extract(vendor);
+
+mix.js('resources/assets/js/navigation.js', 'public/js');
+
+// TODO: temporary, should be dynamically determined.
+mix.js('mr_module/ARD/assets/js/listing.js', 'public/js/x/ard');
 
 mix.sass('resources/assets/sass/app.scss', 'public/css');
 

@@ -1,17 +1,12 @@
 <template>
-    <div>
-        <navigation></navigation>
-        <dashboard></dashboard>
-    </div>
+    <dashboard></dashboard>
 </template>
 
 <script>
-    import Navigation from './Navigation.vue';
     import Dashboard from './Dashboard.vue';
 
     export default {
         components: {
-            'navigation': Navigation,
             'dashboard': Dashboard
         }
     }

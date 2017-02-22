@@ -8,12 +8,12 @@
         </div>
         <div class="panel-body">
             <vn-pie
-                    height="258"
-                    width="258"
+                    :height="chart.height"
+                    :width="chart.width"
                     :model="[active, inactive]"
-                    donutRatio="0.45"
-                    donut="true"
-                    showLabels="false"
+                    :donutRatio="chart.donutRatio"
+                    :donut="chart.donut"
+                    :showLabels="chart.showLabels"
             ></vn-pie>
             <div class="text-muted text-center">
                 <span>{{ $t('client.total') }}</span>:
@@ -38,6 +38,13 @@
       // NOTE: these stats are not exclusive, so a client can be seen last day + last hour + last week etc.
       // so we cannot use the sum of all to equal the total value.
       return {
+        chart: {
+          height: 258,
+          width: 258,
+          donutRatio: 0.45,
+          donut: true,
+          showLabels: false
+        },
         stats: {
           total: 0,
           inactive_month: 0,

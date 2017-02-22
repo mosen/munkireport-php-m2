@@ -1,9 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.navigation')
 @section('title', 'ARD Listing')
 @push('scripts')
-<script src="{{ asset('x/ard/listing.js') }}" type="application/javascript"></script>
+<script src="{{ asset('js/x/ard/manifest.js') }}" type="application/javascript"></script>
+<script src="{{ asset('js/x/ard/vendor.js') }}" type="application/javascript"></script>
+<script src="{{ asset('js/x/ard/listing.js') }}" type="application/javascript"></script>
 @endpush
-@section('content')
+@section('main')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
