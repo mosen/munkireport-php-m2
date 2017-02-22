@@ -33,6 +33,7 @@ mix.js('resources/assets/js/navigation.js', 'public/js');
 
 // TODO: temporary, should be dynamically determined.
 mix.js('mr_module/ARD/assets/js/listing.js', 'public/js/x/ard');
+mix.js('mr_module/Bluetooth/assets/js/listing.js', 'public/js/x/bluetooth');
 
 mix.sass('resources/assets/sass/app.scss', 'public/css');
 

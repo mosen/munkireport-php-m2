@@ -18,9 +18,18 @@ class BluetoothInfo extends Model
     ];
 
     //// RELATIONSHIPS
+    
+    /**
+     * Fetch the ReportData model associated with this BluetoothInfo
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function reportData() {
+        return $this->belongsTo('Mr\ReportData', 'serial_number', 'serial_number');
+    }
 
     /**
-     * Retrieve the machine associated with this bluetooth information.
+     * Fetch the Machine model associated with this BluetoothInfo
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

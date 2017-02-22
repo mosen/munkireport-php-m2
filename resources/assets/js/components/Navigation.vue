@@ -138,7 +138,8 @@
         ],
         admin: [],
         listings: [
-          {url: '/x/ard/listing', name: 'Apple Remote Desktop'}
+          {url: '/x/ard/listing', name: 'Apple Remote Desktop'},
+          {url: '/x/bluetooth/listing', name: 'Bluetooth' }
         ],
         reports: [],
       }
