@@ -25,7 +25,7 @@ class ARDServiceProvider extends ServiceProvider
             'middleware' => 'web',
             'namespace' => $this->namespace
         ], function () {
-            Route::get('ards', 'ARDController@listing');
+            Route::get('ard/listing', 'ARDController@listing');
         });
     }
 
@@ -45,6 +45,10 @@ class ARDServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
         $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->loadViewsFrom(__DIR__.'/views', 'ard');
+
+        $this->publishes([
+            __DIR__.'/public' => public_path('x/ard'),
+        ], 'public');
 
         $moduleManager->add('ard', dirname(__DIR__))
             ->installs('scripts/install.sh')

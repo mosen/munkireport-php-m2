@@ -4,8 +4,8 @@ module.exports = {
   entry: "./assets/js/ard.js",
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'ard-bundle.js',
-    publicPath: '/xassets/ARD/'
+    filename: 'bundle.js',
+    publicPath: '/x/ard/'
   },
   module: {
     rules: [
@@ -18,6 +18,9 @@ module.exports = {
   resolve: {
     modules: [
       path.resolve(__dirname, "..", "..", "node_modules")
-    ]
+    ],
+    alias: {
+      'vue': 'vue/dist/vue.js'
+    }
   }
 };

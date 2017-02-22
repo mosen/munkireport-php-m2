@@ -1,18 +1,18 @@
 <template>
     <v-server-table
-            url="/xapi/ards"
+            url="/xapi/ard"
             :columns="columns"
-            :options="options"></v-server-table>
+            :options="options"
+            @loaded="onLoaded"
+    ></v-server-table>
 </template>
 
 <script>
-    import {ServerTable} from 'vue-tables-2';
-
     export default {
         data() {
             return {
                 columns: [
-                    'name',
+                    'computer_name',
                     'serial_number',
                     'username',
                     'Text1',
@@ -20,11 +20,26 @@
                     'Text3',
                     'Text4'
                 ],
-                options: []
+                options: {
+                    pagination: {
+                      dropdown: true
+                    },
+                  templates: {
+                      computer_name: function(h, row) {
+                        return h('span', {}, row.machine.computer_name);
+                      },
+                      username: function(h, row) {
+                        return h('span', {}, row.reportdata.long_username);
+                      }
+                  }
+                    // TODO: texts and i18n
+                }
             }
         },
-        components: {
-            'v-server-table': ServerTable
+        methods: {
+          onLoaded: function() {
+            
+          }
         }
     }
 </script>

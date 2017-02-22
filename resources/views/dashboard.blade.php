@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.navigation')
 @section('title', 'Dashboard')
 
 @push('scripts')
-<script src="/js/app.js"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 @endpush
 
-@section('content')
+@section('main')
 <div id="root"></div>
 @endsection
 

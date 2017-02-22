@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "babel-loader": "^6.3.2",
+    "babel-plugin-transform-vue-jsx": "^3.3.0",
     "bootstrap-markdown": "^2.10.0",
     "bootstrap-tagsinput": "^0.7.1",
     "bootstrap-vue": "^0.7.1",

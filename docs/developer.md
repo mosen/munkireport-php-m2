@@ -132,6 +132,19 @@ To set up the database tables, you need to run
 
 Note that the previous behavior of munkireport, where it auto-created the tables does not work in v3.
 
+Publish config files and assets
+-------------------------------
+
+In the production build this won't be necessary, but to copy assets and config files from each module into your
+app directory you must run:
+
+    $ php artisan vendor:publish --tag=public
+    
+For assets, and 
+
+    $ php artisan vendor:publish --tag=config
+
+For config files.
 
 Links to Vendor Documentation
 -----------------------------

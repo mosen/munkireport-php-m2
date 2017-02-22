@@ -2,7 +2,8 @@
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -69,7 +70,8 @@
                     </div>
                     <button type="submit" class="btn btn-default" @click="search">Submit</button>
                 </form>
-                <div class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right">
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="glyphicon glyphicon-wrench"></span>
@@ -118,57 +120,54 @@
 
 
 <script>
-    import Vue from 'vue';
-    // import dropdown from 'bootstrap-vue/components/dropdown.vue';
-    import 'bootstrap-sass/assets/javascripts/bootstrap/dropdown';
+  import Vue from 'vue';
+  import 'bootstrap-sass/assets/javascripts/bootstrap/dropdown';
 
-    export default {
-        data: function() {
-            return {
-                title: 'MunkiReport',
-                themes: ['Standard'],
-                username: null,
-                locales: [
-                    { code: 'en', name: 'English' },
-                    { code: 'de', name: 'Deutsch' },
-                    { code: 'es', name: 'Espanol' },
-                    { code: 'fr', name: 'Francais' },
-                    { code: 'nl', name: 'Dutch' }
-                ],
-                admin: [],
-                listings: [
-                  { url: '/x/ards', name: 'Apple Remote Desktop' }
-                ],
-                reports: [],
+  export default {
+    data: function () {
+      return {
+        title: 'MunkiReport',
+        themes: ['Standard'],
+        username: null,
+        locales: [
+          {code: 'en', name: 'English'},
+          {code: 'de', name: 'Deutsch'},
+          {code: 'es', name: 'Espanol'},
+          {code: 'fr', name: 'Francais'},
+          {code: 'nl', name: 'Dutch'}
+        ],
+        admin: [],
+        listings: [
+          {url: '/x/ard/listing', name: 'Apple Remote Desktop'}
+        ],
+        reports: [],
+      }
+    },
+
+    methods: {
+      search: function (event) {
+
+      },
+      setTheme: function (event) {
+
+      },
+      setLocale: function (code) {
+
+        console.dir(Vue.config);
+        Vue.locale(code, () => {
+          return this.axios.get(`/locale/${code}.json`).then((response) => {
+            if (Object.keys(response.data).length === 0) {
+              return Promise.reject(new Error(`Could not load locale ${code}`));
             }
-        },
-
-        methods: {
-            search: function (event) {
-
-            },
-            setTheme: function (event) {
-
-            },
-            setLocale: function(code) {
-
-                console.dir(Vue.config);
-                Vue.locale(code, () => {
-                    return this.axios.get(`/locale/${code}.json`).then((response) => {
-                        if (Object.keys(response.data).length === 0) {
-                            return Promise.reject(new Error(`Could not load locale ${code}`));
-                        }
-                        return response.data;
-                    }).then((data) => {
-                        return Promise.resolve(data);
-                    })
-                }, () => {
-                    Vue.config.lang = code;
-                });
-            }
-        },
-        components: {
-
-        }
-    }
+            return response.data;
+          }).then((data) => {
+            return Promise.resolve(data);
+          })
+        }, () => {
+          Vue.config.lang = code;
+        });
+      }
+    },
+    components: {}
+  }
 </script>

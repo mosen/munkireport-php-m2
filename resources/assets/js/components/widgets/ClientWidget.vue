@@ -72,7 +72,6 @@
         this.errorDetails.status = response.status;
         this.errorDetails.message = response.message;
        });
-      
     }
   }
 </script>

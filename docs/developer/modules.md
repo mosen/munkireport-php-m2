@@ -129,6 +129,15 @@ Widgets are [VueJS](https://vuejs.org) components.
 Specifically they are files with the **.vue** extension which are 
 [Single File Components](https://vuejs.org/v2/guide/single-file-components.html)
 
+When you are writing components, you would normally compose them by importing dependencies and then specifying that
+inside your `components` property as described in [Components](https://vuejs.org/v2/guide/components.html).
+
+We don't want to create a dependency between the main application and each module. Our app shouldn't know about modules
+until runtime, so there's a slightly different procedure.
+
+We still use single file components, but in addition, we can use `Vue.component()` to register them into the 
+**GLOBAL** scope. You can see how this is performed by looking at the `widget.js` file in each module.
+
 More information about the `.vue` component format can be found in the vue-loader docs
 [Vue Component Spec](http://vue-loader.vuejs.org/en/start/spec.html)
 
