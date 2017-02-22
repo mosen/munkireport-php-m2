@@ -1,14 +1,11 @@
 <?php
 namespace MrModule\Certificate;
 
-use Mr\Http\Controllers\Controller;
+use Mr\Http\Controllers\TableController;
 
-class CertificateController extends Controller
+class CertificateController extends TableController
 {
-    public function index() {
-        $results = Certificate::all();
-        return response()->json($results);
-    }
+    protected $tableModel = '\MrModule\Certificate\Certificate';
 
     protected function show($id) {
         $result = Certificate::findOrFail($id);
@@ -40,5 +37,9 @@ class CertificateController extends Controller
             'soon' => $soon,
             'ok' => $ok
         ];
+    }
+
+    public function listing() {
+        return view('certificate::listing');
     }
 }

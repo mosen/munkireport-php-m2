@@ -16,7 +16,7 @@ class CertificateServiceProvider extends ServiceProvider
             'middleware' => 'web',
             'namespace' => $this->namespace
         ], function () {
-            Route::get('certificates', 'CertificateController@listing');
+            Route::get('certificate/listing', 'CertificateController@listing');
         });
     }
 
@@ -40,6 +40,7 @@ class CertificateServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
         $this->mapWebRoutes();
         $this->loadMigrationsFrom(__DIR__.'/migrations');
+        $this->loadViewsFrom(__DIR__.'/views', 'certificate');
 
         $moduleManager->add('certificate', dirname(__DIR__))
             ->installs('scripts/install.sh')

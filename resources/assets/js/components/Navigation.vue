@@ -138,9 +138,10 @@
         ],
         admin: [],
         listings: [
-          {url: '/x/ard/listing', name: 'Apple Remote Desktop'},
-          {url: '/x/bluetooth/listing', name: 'Bluetooth' },
-          {url: '/x/directoryservice/listing', name: 'Directory Services' }
+          {url: '/x/ard/listing', name: this.$t('nav.listings.ard')},
+          {url: '/x/bluetooth/listing', name: this.$t('nav.listings.bluetooth') },
+          {url: '/x/certificate/listing', name: this.$t('nav.listings.certificate') },
+          {url: '/x/directoryservice/listing', name: this.$t('nav.listings.directoryservice') }
         ],
         reports: [],
       }

@@ -1,10 +1,9 @@
 <?php
 namespace MrModule\Certificate;
 
-use Illuminate\Database\Eloquent\Model;
-use Mr\RelatedBySerialNumber;
+use Mr\SerialNumberModel;
 
-class Certificate extends Model
+class Certificate extends SerialNumberModel
 {
     protected $table = 'certificate';
 
@@ -19,6 +18,4 @@ class Certificate extends Model
     ];
 
     //// RELATIONSHIPS
-
-    use RelatedBySerialNumber;
 }
