@@ -1,10 +1,9 @@
 <?php
 namespace MrModule\MunkiReport;
 
+use Mr\SerialNumberModel;
 
-use Illuminate\Database\Eloquent\Model;
-
-class MunkiReport extends Model
+class MunkiReport extends SerialNumberModel
 {
     protected $table = 'munkireport';
 

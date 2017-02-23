@@ -1,0 +1,280 @@
+{
+  "en": {
+    "nav": {
+      "admin": {
+        "business_units": "Manage Business Units"
+      },
+      "lang": {
+        "de": "Deutsch",
+        "en": "English",
+        "es": "Español",
+        "fr": "Francais",
+        "nl": "Nederlands",
+        "ru": "Русский"
+      },
+      "listings": {
+        "ard": "Apple Remote Desktop",
+        "bluetooth": "Bluetooth",
+        "backup2go": "Archiware Backup2Go",
+        "clients": "Clients",
+        "certificate": "Certificates",
+        "deploystudio": "DeployStudio",
+        "directoryservice": "Directory Service",
+        "disk": "Disk",
+        "displays": "Displays",
+        "findmymac": "Find My Mac",
+        "gsx": "GSX",
+        "hardware": "Hardware",
+        "inventory": "Inventory",
+        "location": "Location",
+        "munki": "Munki",
+        "network": "Network",
+        "power": "Power",
+        "printers": "Printers",
+        "profile": "Profiles",
+        "sccm_status": "SCCM Status",
+        "security": "Security",
+        "timemachine": "Time Machine",
+        "warranty": "Warranty",
+        "wifi": "WiFi"
+      },
+      "main": {
+        "dashboard": "Dashboard",
+        "reports": "Reports",
+        "listings": "Listings",
+        "admin": "Admin"
+      },
+      "reports": {
+        "appVersions": "App Versions Report",
+        "backup": "Backup Report",
+        "clients": "Client Report",
+        "configuration": "Configuration Report",
+        "findmymac": "Find My Mac Report",
+        "hardware": "Hardware Report",
+        "location": "Location Report",
+        "munki": "Munki Report",
+        "network": "Network Report",
+        "power": "Power Report",
+        "backup2go": "Backup2go"
+      },
+      "user": {
+        "logout": "Sign Off"
+      }
+    }
+  },
+  "de": {
+    "nav": {
+      "admin": {
+        "business_units": "Geschäftsbereiche verwalten"
+      },
+      "lang": {
+        "de": "Deutsch",
+        "en": "English",
+        "es": "Español",
+        "fr": "Francais",
+        "nl": "Nederlands",
+        "ru": "Русский"
+      },
+      "listings": {
+        "ard": "Apple Remote Desktop",
+        "bluetooth": "Bluetooth",
+        "clients": "Clients",
+        "certificate": "Zertifikate",
+        "deploystudio": "DeployStudio",
+        "directoryservice": "Verzeichnisdienste",
+        "disk": "Festplatten",
+        "displays": "Displays",
+        "findmymac": "Meinen Mac suchen",
+        "gsx": "GSX",
+        "hardware": "Hardware",
+        "inventory": "Inventar",
+        "location": "Location",
+        "munki": "Munki",
+        "network": "Netzwerk",
+        "power": "Strom",
+        "printers": "Printers",
+        "profile": "Profile",
+        "sccm_status": "SCCM Status",
+        "security": "Sicherheit",
+        "timemachine": "Time Machine",
+        "warranty": "Garantie",
+        "wifi": "WiFi"
+      },
+      "main": {
+        "dashboard": "Dashboard",
+        "reports": "Reports",
+        "listings": "Listen",
+        "admin": "Admin"
+      },
+      "reports": {
+        "appVersions": "App Versions Report",
+        "backup": "Backup-Bericht",
+        "clients": "Client-Bericht",
+        "configuration": "Konfigurations-Bericht",
+        "findmymac": "Meinen Mac suchen Bericht",
+        "hardware": "Hardware-Bericht",
+        "location": "Standort-Bericht",
+        "munki": "Munki-Bericht",
+        "network": "Netzwerk-Bericht",
+        "power": "Strom-Bericht"
+      },
+      "user": {
+        "logout": "Abmelden"
+      }
+    }
+  },
+  "nl": {
+    "nav": {
+      "admin": {
+        "business_units": "Manage Business Units"
+      },
+      "lang": {
+        "de": "Deutsch",
+        "en": "English",
+        "es": "Español",
+        "fr": "Francais",
+        "nl": "Nederlands",
+        "ru": "Русский"
+      },
+      "listings": {
+        "ard": "Apple Remote Desktop",
+        "bluetooth": "Bluetooth",
+        "clients": "Clients",
+        "certificate": "Certificaten",
+        "directoryservice": "Directoryservice",
+        "disk": "Schijf",
+        "displays": "Beeldschermen",
+        "hardware": "Hardware",
+        "inventory": "Inventaris",
+        "location": "Location",
+        "munki": "Munki",
+        "network": "Netwerk",
+        "power": "Power",
+        "printers": "Printers",
+        "profile": "Profiles",
+        "security": "Beveiliging",
+        "timemachine": "Timemachine",
+        "warranty": "Garantie"
+      },
+      "main": {
+        "dashboard": "Dashboard",
+        "reports": "Rapporten",
+        "listings": "Lijsten",
+        "admin": "Admin"
+      },
+      "reports": {
+        "backup": "Backup Rapport",
+        "clients": "Client rapport",
+        "configuration": "Configuratie rapport",
+        "hardware": "Hardware rapport",
+        "munki": "Munki rapport",
+        "network": "Netwerk rapport",
+        "power": "Vermogen rapport"
+      },
+      "user": {
+        "logout": "Log uit"
+      }
+    }
+  },
+  "es": {
+
+  },
+  "fr": {
+    "nav": {
+      "admin": {
+        "business_units": "Gérer les divisions de l'entreprise"
+      },
+      "lang": {
+        "de": "Deutsch",
+        "en": "English",
+        "es": "Español",
+        "fr": "Francais",
+        "nl": "Nederlands",
+        "ru": "Русский"
+      },
+      "listings": {
+        "ard": "Apple Remote Desktop",
+        "bluetooth": "Bluetooth",
+        "backup2go": "Archiware Backup2Go",
+        "clients": "Clients",
+        "certificate": "Certificats",
+        "deploystudio": "DeployStudio",
+        "directoryservice": "Service d'annuaire",
+        "disk": "Disque",
+        "displays": "Moniteurs",
+        "findmymac": "Find My Mac",
+        "gsx": "GSX",
+        "hardware": "Matériel",
+        "inventory": "Inventaire",
+        "location": "Localisation",
+        "munki": "Munki",
+        "network": "Réseau",
+        "power": "Alimentation",
+        "printers": "Imprimantes",
+        "profile": "Profils",
+        "sccm_status": "Etat SCCM",
+        "security": "Sécurité",
+        "timemachine": "Time Machine",
+        "warranty": "Garantie",
+        "wifi": "WiFi"
+      },
+      "main": {
+        "dashboard": "Tableau de bord",
+        "reports": "Rapports",
+        "listings": "Listings",
+        "admin": "Admin"
+      },
+      "reports": {
+        "appVersions": "Versions des Apps",
+        "backup": "Sauvegarde",
+        "clients": "Client",
+        "configuration": "Configuration",
+        "findmymac": "FindMyMac",
+        "hardware": "Matériel",
+        "location": "Localisation",
+        "munki": "Munki",
+        "network": "Réseau",
+        "power": "Alimentation",
+        "backup2go" : "Backup2go"
+      },
+      "user": {
+        "logout": "Se déconnecter"
+      }
+    }
+  },
+  "ru": {
+    "nav": {
+      "listings": {
+        "ard": "Apple Remote Desktop",
+        "bluetooth": "Bluetooth",
+        "clients": "Клиенты",
+        "directoryservice": "Служба Каталогов",
+        "disk": "Диск",
+        "displays": "Мониторы",
+        "hardware": "Аппаратные средства",
+        "inventory": "Инвентарь",
+        "location": "Location",
+        "munki": "Munki",
+        "network": "Сеть",
+        "security": "Безопасность",
+        "warranty": "Гарантия"
+      },
+      "main": {
+        "dashboard": "Панель приборов",
+        "reports": "Отчеты",
+        "listings": "Списки"
+      },
+      "reports": {
+        "clients": "Клиентский отчет",
+        "configuration": "Отчет о Конфигурации",
+        "hardware": "Аппаратный отчет",
+        "munki": "Отчет по Munki",
+        "network": "Сетевой отчет",
+        "power": "Очет по Питанию"
+      },
+      "user": {
+        "logout": "Выйти"
+      }
+    }
+  }
+}

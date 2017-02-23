@@ -1,0 +1,69 @@
+{
+  "en": {
+    "munki": {
+      "error": "Munki error: __error__",
+      "error_plural": "__count__ Munki errors",
+      "errors_and_warnings": "Errors and Warnings",
+      "package_installed": "__pkg__ installed",
+      "package_installed_plural": "__count__ packages installed",
+      "panel_title": "Munki statistics this week",
+      "munkiprotocol": "Munki Protocol",
+      "run_type": "Run Type",
+      "version": "Munki Version",
+      "warning": "Munki warning: __warning__",
+      "warning_plural": "__count__ Munki warnings",
+      "additional_info": "Additional Munki Info"
+    }
+  },
+  "de": {
+    "munki": {
+      "error": "Munki-Fehler: __error__",
+      "error_plural": "__count__ Munki-Fehler",
+      "errors_and_warnings": "Fehler und Warnungen",
+      "package_installed": "__pkg__ installiert",
+      "package_installed_plural": "__count__ Pakete installiert",
+      "panel_title": "Munki Statistik diese Woche",
+      "munkiprotocol": "Munki Protokoll",
+      "run_type": "Run Type",
+      "version": "Munki Version",
+      "warning": "Munki-Warnung: __warning__",
+      "warning_plural": "__count__ Munki-Warnungen",
+      "additional_info": "Weitere Munki Infos"
+    }
+  },
+  "fr": {
+    "munki": {
+      "error": "Erreur de Munki : __error__",
+      "error_plural": "__count__ Erreurs de Munki",
+      "errors_and_warnings": "Erreurs et Alertes",
+      "package_installed": "__pkg__ installé",
+      "package_installed_plural": "__count__ paquets installés",
+      "panel_title": "Statistique de Munki cette semaine",
+      "munkiprotocol": "Protocole Munki",
+      "run_type": "Type d'évènement",
+      "version": "Version de Munki",
+      "warning": "Alerte de Munki : __warning__",
+      "warning_plural": "__count__ Alertes de Munki",
+      "additional_info": "Informations additionnelles Munki"
+    }
+  },
+  "es": {
+
+  },
+  "nl": {
+    "munki": {
+      "error": "Munki fout: __error__",
+      "error_plural": "__count__ Munki fouten",
+      "package_installed": "__pkg__ geïnstalleerd",
+      "package_installed_plural": "__count__ pakketten geïnstalleerd",
+      "panel_title": "Munki statistics this week",
+      "run_type": "Run Type",
+      "version": "Munki Version",
+      "warning": "Munki warning: __warning__",
+      "warning_plural": "__count__ Munki warnings"
+    }
+  },
+  "ru": {
+    
+  }
+}

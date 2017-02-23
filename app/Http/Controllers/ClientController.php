@@ -3,7 +3,7 @@
 namespace Mr\Http\Controllers;
 
 use Illuminate\Http\Request;
-use MrModule\Machine\Machine;
+use Mr\Machine;
 
 class ClientController extends Controller
 {
@@ -17,5 +17,9 @@ class ClientController extends Controller
         return view('client.detail', [
             'machine' => $machine
         ]);
+    }
+
+    public function listing() {
+        return view('client.listing');
     }
 }

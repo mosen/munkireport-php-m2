@@ -87,8 +87,8 @@
                             <span class="glyphicon glyphicon-globe"></span>
                         </a>
                         <ul class="dropdown-menu locale">
-                            <li v-for="locale in locales">
-                                <a href="#" @click="setLocale(locale.code)">{{ locale.name }}</a>
+                            <li v-for="code in localecodes">
+                                <a href="#" @click="setLocale(code)">{{ $t('nav.lang.' + code) }}</a>
                             </li>
                         </ul>
                     </li>
@@ -122,6 +122,9 @@
 <script>
   import Vue from 'vue';
   import 'bootstrap-sass/assets/javascripts/bootstrap/dropdown';
+  import locales from './Navigation.i18n.json';
+
+  Vue.config.lang = 'en';
 
   export default {
     data: function () {
@@ -129,27 +132,25 @@
         title: 'MunkiReport',
         themes: ['Standard'],
         username: null,
-        locales: [
-          {code: 'en', name: 'English'},
-          {code: 'de', name: 'Deutsch'},
-          {code: 'es', name: 'Español'},
-          {code: 'fr', name: 'Français'},
-          {code: 'nl', name: 'Nederlands'}
-        ],
         admin: [],
+        localecodes: [
+            'en', 'de', 'nl', 'fr', 'es', 'ru'
+        ],
         listings: [
           {url: '/x/ard/listing', name: this.$t('nav.listings.ard')},
           {url: '/x/bluetooth/listing', name: this.$t('nav.listings.bluetooth') },
           {url: '/x/certificate/listing', name: this.$t('nav.listings.certificate') },
-          {url: '/client/listing', name: this.$t('nav.listings.client') },
+          {url: '/client/listing', name: this.$t('nav.listings.clients') },
           {url: '/x/directoryservice/listing', name: this.$t('nav.listings.directoryservice') },
           {url: '/x/diskreport/listing', name: this.$t('nav.listings.disk') },
-          {url: '/x/display/listing', name: this.$t('nav.listings.display') }
+          {url: '/x/display/listing', name: this.$t('nav.listings.displays') },
+          {url: '/machine/listing', name: this.$t('nav.listings.hardware') },
+          {url: '/x/munkireport/listing', name: this.$t('nav.listings.munki')}
         ],
-        reports: [],
+        reports: []
       }
     },
-
+    locales: locales,
     methods: {
       search: function (event) {
 

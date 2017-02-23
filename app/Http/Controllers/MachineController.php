@@ -37,4 +37,8 @@ class MachineController extends Controller
         $result = Machine::findOrFail($id);
         return response()->json($result);
     }
+
+    public function listing() {
+        return view('machine.listing');
+    }
 }
