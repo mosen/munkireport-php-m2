@@ -1,14 +1,11 @@
 <?php
 namespace MrModule\Display;
 
-use Mr\Http\Controllers\Controller;
+use Mr\Http\Controllers\TableController;
 
-class DisplayController extends Controller
+class DisplayController extends TableController
 {
-    public function index() {
-        $results = Display::all();
-        return response()->json($results);
-    }
+    protected $tableModel = '\MrModule\Display\Display';
 
     protected function show($id) {
         $result = Display::findOrFail($id);
@@ -20,5 +17,9 @@ class DisplayController extends Controller
         $result->delete();
 
         return response()->setStatusCode(204);
+    }
+
+    public function listing() {
+        return view('display::listing');
     }
 }

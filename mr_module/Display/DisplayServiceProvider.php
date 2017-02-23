@@ -16,7 +16,7 @@ class DisplayServiceProvider extends ServiceProvider
             'middleware' => 'web',
             'namespace' => $this->namespace
         ], function () {
-            Route::get('displays', 'DisplayController@listing');
+            Route::get('display/listing', 'DisplayController@listing');
         });
     }
 
@@ -39,6 +39,7 @@ class DisplayServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
         $this->mapWebRoutes();
         $this->loadMigrationsFrom(__DIR__.'/migrations');
+        $this->loadViewsFrom(__DIR__.'/views', 'display');
 
         $moduleManager->add('display', dirname(__DIR__))
             ->installs('scripts/install.sh')

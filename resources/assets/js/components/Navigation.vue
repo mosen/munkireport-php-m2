@@ -143,7 +143,8 @@
           {url: '/x/certificate/listing', name: this.$t('nav.listings.certificate') },
           {url: '/client/listing', name: this.$t('nav.listings.client') },
           {url: '/x/directoryservice/listing', name: this.$t('nav.listings.directoryservice') },
-          {url: '/x/diskreport/listing', name: this.$t('nav.listings.disk') }
+          {url: '/x/diskreport/listing', name: this.$t('nav.listings.disk') },
+          {url: '/x/display/listing', name: this.$t('nav.listings.display') }
         ],
         reports: [],
       }

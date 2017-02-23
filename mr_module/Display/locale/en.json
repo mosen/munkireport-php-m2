@@ -1,0 +1,14 @@
+{
+	"displays": {
+		"displays": "Displays",
+		"widget_info": "Total number of known external displays",
+		"widget_title": "External Displays Count",
+		"type": "Type",
+		"vendor": "Vendor",
+		"model": "Model",
+		"display_serial": "Serial Number",
+		"manufactured": "Manufactured",
+		"native": "Native resolution",
+		"updated_at": "Detected"
+	}
+}

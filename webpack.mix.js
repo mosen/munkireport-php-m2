@@ -37,6 +37,7 @@ mix.js('mr_module/Bluetooth/assets/js/listing.js', 'public/js/x/bluetooth');
 mix.js('mr_module/Certificate/assets/js/listing.js', 'public/js/x/certificate');
 mix.js('mr_module/DirectoryService/assets/js/listing.js', 'public/js/x/directoryservice');
 mix.js('mr_module/DiskReport/assets/js/listing.js', 'public/js/x/diskreport');
+mix.js('mr_module/Display/assets/js/listing.js', 'public/js/x/display');
 
 mix.sass('resources/assets/sass/app.scss', 'public/css');
 
