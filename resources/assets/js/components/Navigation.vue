@@ -141,7 +141,9 @@
           {url: '/x/ard/listing', name: this.$t('nav.listings.ard')},
           {url: '/x/bluetooth/listing', name: this.$t('nav.listings.bluetooth') },
           {url: '/x/certificate/listing', name: this.$t('nav.listings.certificate') },
-          {url: '/x/directoryservice/listing', name: this.$t('nav.listings.directoryservice') }
+          {url: '/client/listing', name: this.$t('nav.listings.client') },
+          {url: '/x/directoryservice/listing', name: this.$t('nav.listings.directoryservice') },
+          {url: '/x/diskreport/listing', name: this.$t('nav.listings.disk') }
         ],
         reports: [],
       }

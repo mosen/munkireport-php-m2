@@ -16,7 +16,7 @@ class DiskReportServiceProvider extends ServiceProvider
             'middleware' => 'web',
             'namespace' => $this->namespace
         ], function () {
-            Route::get('diskreports', 'DiskReportController@listing');
+            Route::get('diskreport/listing', 'DiskReportController@listing');
         });
     }
 
@@ -40,7 +40,9 @@ class DiskReportServiceProvider extends ServiceProvider
         ], 'config');
         
         $this->mapApiRoutes();
+        $this->mapWebRoutes();
         $this->loadMigrationsFrom(__DIR__.'/migrations');
+        $this->loadViewsFrom(__DIR__.'/views', 'diskreport');
 
         $moduleManager->add('displays_info', dirname(__DIR__))
             ->installs('scripts/install.sh')

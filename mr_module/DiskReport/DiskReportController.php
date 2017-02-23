@@ -1,15 +1,12 @@
 <?php
 namespace MrModule\DiskReport;
 
-use Mr\Http\Controllers\Controller;
+use Mr\Http\Controllers\TableController;
 
-class DiskReportController extends Controller
+class DiskReportController extends TableController
 {
-    public function index() {
-        $results = DiskReport::all();
-        return response()->json($results);
-    }
-
+    protected $tableModel = '\MrModule\DiskReport\DiskReport';
+    
     protected function show($id) {
         $result = DiskReport::findOrFail($id);
         return response()->json($result);
@@ -63,5 +60,9 @@ class DiskReportController extends Controller
             'verified' => $verifiedCount,
             'unsupported' => $unsupportedCount
         ];
+    }
+
+    public function listing() {
+        return view('diskreport::listing');
     }
 }

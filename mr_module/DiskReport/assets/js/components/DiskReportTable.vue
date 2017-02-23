@@ -1,6 +1,6 @@
 <template>
     <v-server-table
-            url="/xapi/ard"
+            url="/xapi/diskreport"
             :columns="columns"
             :options="options"
             @loaded="onLoaded"
@@ -15,10 +15,12 @@
           'computer_name',
           'serial_number',
           'username',
-          'Text1',
-          'Text2',
-          'Text3',
-          'Text4'
+          'mountpoint',
+          'volume_type',
+          'percentage',
+          'free',
+          'total_size',
+          'smartstatus'
         ],
         options: {
           texts: {
@@ -28,23 +30,16 @@
             'computer_name': this.$t('listing.computername'),
             'serial_number': this.$t('serial'),
             'username': this.$t('listing.username'),
-            'Text1': this.$t('text'),
-            'Text2': this.$t('text'),
-            'Text3': this.$t('text'),
-            'Text4': this.$t('text')
+            'mountpoint': this.$t('storage.mountpoint'),
+            'volume_type': this.$t('storage.volume_type'),
+            'percentage': this.$t('storage.percentage'),
+            'free': this.$t('storage.free'),
+            'total_size': this.$t('storage.total_size'),
+            'smartstatus': this.$t('storage.smartstatus')
           },
           pagination: {
             dropdown: true
-          },
-          templates: {
-            computer_name: function (h, row) {
-              return h('span', {}, row.machine.computer_name);
-            },
-            username: function (h, row) {
-              return h('span', {}, row.reportdata.long_username);
-            }
           }
-          // TODO: texts and i18n
         }
       }
     },
