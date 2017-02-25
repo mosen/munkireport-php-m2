@@ -166,9 +166,11 @@ return [
         /*
          * Package Service Providers...
          */
+        Laravel\Socialite\SocialiteServiceProvider::class,
         Laravel\Tinker\TinkerServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
-        
+        Adldap\Laravel\AdldapServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -264,6 +266,8 @@ return [
 
         // 3rd Party
         'Uuid' => Webpatser\Uuid\Uuid::class,
+        'Adldap' => Adldap\Laravel\Facades\Adldap::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];
