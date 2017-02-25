@@ -9,13 +9,16 @@ Supported Providers:
 
 - Eloquent/Database (Built-in)
 - Active Directory/LDAP (via [Adldap2-laravel](https://github.com/Adldap2/Adldap2-laravel))
+- Many many 3rd party sites via [Socialite](https://github.com/laravel/socialite).
+  *Not included in distribution*
+  
+## Local Users and Groups
 
-Via [Socialite](https://github.com/laravel/socialite):
+This is the default method of authentication so you won't need to add any special
+configuration. You are responsible for adding users and groups to MunkiReport.
 
-*NOTE*: list of all Socialite providers is [here](https://socialiteproviders.github.io)
+## Active Directory
 
-The most common IDaaS providers:
-
-- Google
-- [Okta](https://packagist.org/packages/tequilarapido/socialite-okta)
+AD configuration options are listed in `.env.example` which you can add to your `.env`
+file. You can see descriptions of the configuration options within the `config/adldap.php` file.
 
