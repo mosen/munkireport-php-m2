@@ -56,4 +56,12 @@ class User extends Authenticatable
         return $this->memberOfBusinessUnits()->wherePivot('role', 'user');
     }
     
+    /**
+     * Get the group(s) that this user is a member of.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function groups() {
+        return $this->belongsToMany('Mr\Group');
+    }
 }
