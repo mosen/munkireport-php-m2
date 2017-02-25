@@ -11,13 +11,15 @@
 |
 */
 
-Route::get('/', 'DashboardController@index');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', 'DashboardController@index');
+    Route::get('client/detail/{serialNumber}', 'ClientController@detail');
 
-Route::get('client/detail/{serialNumber}', 'ClientController@detail');
+    Route::get('client/listing', 'ClientController@listing');
+    Route::get('machine/listing', 'MachineController@listing');
+});
+
 Route::get('install', 'InstallController@index');
-
-Route::get('client/listing', 'ClientController@listing');
-Route::get('machine/listing', 'MachineController@listing');
 
 Auth::routes();
 
