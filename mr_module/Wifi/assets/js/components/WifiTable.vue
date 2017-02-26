@@ -9,6 +9,7 @@
 
 <script>
     import locales from './WifiTable.i18n.json';
+    import texts from 'vue-table-i18n.json';
 
     export default {
         data() {
@@ -30,9 +31,7 @@
                     'mcs'
                 ],
                 options: {
-                    texts: {
-                        loading: this.$t('listing.loading')
-                    },
+                    texts: texts,
                     headings: {
                         'machine.computer_name': this.$t('listing.computername'),
                         'serial_number': this.$t('serial'),

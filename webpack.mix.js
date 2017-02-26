@@ -1,4 +1,5 @@
 const { mix } = require('laravel-mix');
+const path = require('path');
 
 /*
  |--------------------------------------------------------------------------
@@ -23,7 +24,15 @@ const vendor = [
   'vue-nvd3'
 ];
 
-
+// We provide aliases to some reusable parts of the core app so that including them in a module doesn't require
+// a very long relative path.
+mix.webpackConfig({
+  resolve: {
+    alias: {
+      "vue-table-i18n.json": path.resolve("./resources/assets/locale/vue-table-i18n.json")
+    }
+  }
+});
 
 mix.js('resources/assets/js/navigation.js', 'public/js');
 
@@ -41,6 +50,7 @@ mix.js('mr_module/Printer/assets/js/listing.js', 'public/js/x/printer');
 mix.js('mr_module/Security/assets/js/listing.js', 'public/js/x/security');
 mix.js('mr_module/TimeMachine/assets/js/listing.js', 'public/js/x/timemachine');
 mix.js('mr_module/Warranty/assets/js/listing.js', 'public/js/x/warranty');
+mix.js('mr_module/Wifi/assets/js/listing.js', 'public/js/x/wifi');
 
 mix.js([
     'resources/assets/js/app.js'
