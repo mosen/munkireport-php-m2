@@ -134,24 +134,24 @@
         username: null,
         admin: [],
         localecodes: [
-            'en', 'de', 'nl', 'fr', 'es', 'ru'
+          'en', 'de', 'nl', 'fr', 'es', 'ru'
         ],
         listings: [
           {url: '/x/ard/listing', name: this.$t('nav.listings.ard')},
-          {url: '/x/bluetooth/listing', name: this.$t('nav.listings.bluetooth') },
-          {url: '/x/certificate/listing', name: this.$t('nav.listings.certificate') },
-          {url: '/client/listing', name: this.$t('nav.listings.clients') },
-          {url: '/x/directoryservice/listing', name: this.$t('nav.listings.directoryservice') },
-          {url: '/x/diskreport/listing', name: this.$t('nav.listings.disk') },
-          {url: '/x/display/listing', name: this.$t('nav.listings.displays') },
-          {url: '/machine/listing', name: this.$t('nav.listings.hardware') },
-          {url: '/x/munkireport/listing', name: this.$t('nav.listings.munki') },
-            {url: '/x/network/listing', name: this.$t('nav.listings.network') },
-            {url: '/x/power/listing', name: this.$t('nav.listings.power') },
-            {url: '/x/printer/listing', name: this.$t('nav.listings.printers') },
-            {url: '/x/timemachine/listing', name: this.$t('nav.listings.timemachine') },
-            {url: '/x/warranty/listing', name: this.$t('nav.listings.warranty') },
-            {url: '/x/wifi/listing', name: this.$t('nav.listings.wifi') }
+          {url: '/x/bluetooth/listing', name: this.$t('nav.listings.bluetooth')},
+          {url: '/x/certificate/listing', name: this.$t('nav.listings.certificate')},
+          {url: '/client/listing', name: this.$t('nav.listings.clients')},
+          {url: '/x/directoryservice/listing', name: this.$t('nav.listings.directoryservice')},
+          {url: '/x/diskreport/listing', name: this.$t('nav.listings.disk')},
+          {url: '/x/display/listing', name: this.$t('nav.listings.displays')},
+          {url: '/machine/listing', name: this.$t('nav.listings.hardware')},
+          {url: '/x/munkireport/listing', name: this.$t('nav.listings.munki')},
+          {url: '/x/network/listing', name: this.$t('nav.listings.network')},
+          {url: '/x/power/listing', name: this.$t('nav.listings.power')},
+          {url: '/x/printer/listing', name: this.$t('nav.listings.printers')},
+          {url: '/x/timemachine/listing', name: this.$t('nav.listings.timemachine')},
+          {url: '/x/warranty/listing', name: this.$t('nav.listings.warranty')},
+          {url: '/x/wifi/listing', name: this.$t('nav.listings.wifi')}
         ],
         reports: []
       }
