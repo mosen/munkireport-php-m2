@@ -42,6 +42,7 @@ mix.js('mr_module/MunkiReport/assets/js/listing.js', 'public/js/x/munkireport');
 mix.js('mr_module/Network/assets/js/listing.js', 'public/js/x/network');
 mix.js('mr_module/Power/assets/js/listing.js', 'public/js/x/power');
 mix.js('mr_module/Printer/assets/js/listing.js', 'public/js/x/printer');
+mix.js('mr_module/Security/assets/js/listing.js', 'public/js/x/security');
 
 mix.sass('resources/assets/sass/app.scss', 'public/css');
 
