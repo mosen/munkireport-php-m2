@@ -1,0 +1,11 @@
+{
+  "en": {
+    "listing": {
+      "warranty": {
+        "status": "Warranty Status",
+        "purchase_date": "Purchased",
+        "end_date": "Warranty Expires"
+      }
+    }
+  }
+}

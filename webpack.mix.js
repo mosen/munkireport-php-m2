@@ -23,11 +23,7 @@ const vendor = [
   'vue-nvd3'
 ];
 
-mix.js([
-  'resources/assets/js/app.js'
-], 'public/js')
-  .sourceMaps();
-  // .extract(vendor);
+
 
 mix.js('resources/assets/js/navigation.js', 'public/js');
 
@@ -44,6 +40,13 @@ mix.js('mr_module/Power/assets/js/listing.js', 'public/js/x/power');
 mix.js('mr_module/Printer/assets/js/listing.js', 'public/js/x/printer');
 mix.js('mr_module/Security/assets/js/listing.js', 'public/js/x/security');
 mix.js('mr_module/TimeMachine/assets/js/listing.js', 'public/js/x/timemachine');
+mix.js('mr_module/Warranty/assets/js/listing.js', 'public/js/x/warranty');
+
+mix.js([
+    'resources/assets/js/app.js'
+], 'public/js')
+    .sourceMaps()
+    .extract(vendor);
 
 mix.sass('resources/assets/sass/app.scss', 'public/css');
 

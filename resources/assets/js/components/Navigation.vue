@@ -150,6 +150,7 @@
             {url: '/x/power/listing', name: this.$t('nav.listings.power') },
             {url: '/x/printer/listing', name: this.$t('nav.listings.printer') },
             {url: '/x/timemachine/listing', name: this.$t('nav.listings.timemachine') },
+            {url: '/x/warranty/listing', name: this.$t('nav.listings.warranty') },
         ],
         reports: []
       }
