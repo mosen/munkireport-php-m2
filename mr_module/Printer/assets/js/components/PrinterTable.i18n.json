@@ -1,0 +1,56 @@
+{
+  "en": {
+    "printer": {
+      "default_set": "Default Set",
+      "driver_version": "Driver Version",
+      "name": "Printer Name",
+      "ppd": "PPD",
+      "printer_sharing": "Printer Sharing",
+      "printer_status": "Printer Status",
+      "tab_title": "Installed Printers",
+      "url": "URL"
+    }
+  },
+  "de": {
+    "printer": {
+      "default_set": "Standarddrucker",
+      "driver_version": "Treiberversion",
+      "name": "Druckername",
+      "ppd": "PPD",
+      "printer_sharing": "Printer Sharing",
+      "printer_status": "Druckerstatus",
+      "tab_title": "Installierte Drucker",
+      "url": "URL"
+    }
+  },
+  "es": {
+
+  },
+  "fr": {
+    "printer": {
+      "default_set": "Ensemble par défaut",
+      "driver_version": "Version du pilote",
+      "name": "Nom de l'imprimante",
+      "ppd": "PPD",
+      "printer_sharing": "Partage d'imprimantes",
+      "printer_status": "État de l'imprimante",
+      "tab_title": "Imprimantes installées",
+      "url": "URL"
+    }
+  },
+  "nl": {
+    "printer": {
+      "default_set": "Default Aan",
+      "driver_version": "Driver Versie",
+      "name": "Printer Naam",
+      "ppd": "PPD",
+      "printer_sharing": "Printer Delen",
+      "printer_status": "Printer Status",
+      "tab_title": "Geïnstalleerde Printers",
+      "url": "URL"
+    }
+  },
+  "ru": {
+    
+  }
+}
