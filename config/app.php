@@ -170,6 +170,7 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
         Adldap\Laravel\AdldapServiceProvider::class,
+        TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
 
         /*
          * Application Service Providers...

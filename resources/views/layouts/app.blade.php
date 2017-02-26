@@ -19,6 +19,11 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
+    <script>
+        window.Auth = {!! json_encode([
+            'id' => Auth::id(),
+        ]) !!};
+    </script>
 </head>
 <body>
     <div id="app">
