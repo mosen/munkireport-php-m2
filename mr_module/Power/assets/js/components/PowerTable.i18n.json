@@ -1,0 +1,18 @@
+{
+  "en": {
+    "listing": {
+      "power": {
+        "design_capacity": "Designed (mAh)",
+        "max_capacity": "Capacity (mAh)",
+        "cycle_count": "Cycles",
+        "max_percent": "Health %",
+        "condition": "Condition",
+        "current_capacity": "Current (mAh)",
+        "current_percent": "Charged %",
+        "temperature": "Temp",
+        "manufacture_date": "Manufactured",
+        "updated_at": "Check-In"
+      }
+    }
+  }
+}
