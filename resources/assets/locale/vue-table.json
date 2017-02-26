@@ -1,0 +1,43 @@
+{
+  "en": {
+    "count": "Showing {from} to {to} of {count} records|{count} records|One record",
+    "filter": "Filter Results:",
+    "filterPlaceholder": "Search query",
+    "limit": "Records:",
+    "noResults": "No matching records",
+    "page": "Page:",
+    "filterBy": "Filter by {column}",
+    "loading": "Loading...",
+    "defaultOption": "Select {column}"
+  },
+  "es": {
+    "count": "Mostrando registros del {from} al {to} de un total de {count} registros",
+    "filterPlaceholder": "Buscar",
+    "noResults": "No se encontraron resultados",
+    "loading": "Cargando..."
+  },
+  "de": {
+    "count": "{from} bis {to} von {count} Einträgen",
+    "filterPlaceholder": "Suchen",
+    "noResults": "Keine Einträge vorhanden.",
+    "loading": "Wird geladen..."
+  },
+  "fr": {
+    "count": "Afficher {from} à {to} de {count} enregistrements",
+    "filterPlaceholder": "Rechercher",
+    "noResults": "Aucun enregistrement correspondant trouvé",
+    "loading": "Chargement..."
+  },
+  "nl": {
+    "count": "{from} tot {to} van {count} resultaten",
+    "filterPlaceholder": "Zoeken",
+    "noResults": "Geen resultaten gevonden",
+    "loading": "Een moment geduld aub - bezig met laden..."
+  },
+  "ru": {
+    "count": "Отображение с {from} по {to} из {count} записей",
+    "filterPlaceholder": "Поиск",
+    "noResults": "Подходящие записи не найдены.",
+    "loading": "Загрузка записей..."
+  }
+}

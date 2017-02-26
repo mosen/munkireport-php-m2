@@ -1,0 +1,49 @@
+{
+  "en": {
+    "listing": {
+      "wifi": {
+        "apmode": "AP Mode",
+        "authtype": "802.11X Auth Type",
+        "channel": "Channel",
+        "lasttx": "Last Tx Rate (Mbps)",
+        "linkauthtype": "Link Auth Type",
+        "maxtx": "Max Tx Rate (Mbps)",
+        "noise": "Noise",
+        "state": "WiFi State"
+      }
+    }
+  },
+  "de": {
+    "listing": {
+      "wifi": {
+        "apmode": "AP Modus",
+        "authtype": "802.11X Authentifizierungstyp",
+        "channel": "Kanal",
+        "lasttx": "Letzte Empfangsrate (Mbps)",
+        "linkauthtype": "Link Auth Typ",
+        "maxtx": "Max Senderate (Mbps)",
+        "noise": "Störsignal",
+        "state": "WiFi Status"
+      }
+    }
+  },
+  "fr": {
+    "listing": {
+      "wifi": {
+        "apmode": "Mode AP",
+        "authtype": "Type Auth 802.11X",
+        "channel": "Canal",
+        "lasttx": "Dernière taux Tx (Mbps)",
+        "linkauthtype": "Lien type Auth",
+        "maxtx": "Taux Max Tx(Mbps)",
+        "noise": "Bruit",
+        "state": "Etat WiFi"
+      }
+    }
+  },
+  "nl": {
+    "listing": {
+
+    }
+  }
+}
