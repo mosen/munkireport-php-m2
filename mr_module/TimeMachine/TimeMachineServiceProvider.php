@@ -17,7 +17,7 @@ class TimeMachineServiceProvider extends ServiceProvider
             'middleware' => 'web',
             'namespace' => $this->namespace
         ], function () {
-            Route::get('timemachine', 'TimeMachineController@listing');
+            Route::get('timemachine/listing', 'TimeMachineController@listing');
         });
     }
 

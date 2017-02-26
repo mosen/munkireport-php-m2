@@ -148,7 +148,8 @@
           {url: '/x/munkireport/listing', name: this.$t('nav.listings.munki') },
             {url: '/x/network/listing', name: this.$t('nav.listings.network') },
             {url: '/x/power/listing', name: this.$t('nav.listings.power') },
-            {url: '/x/printer/listing', name: this.$t('nav.listings.printer') }
+            {url: '/x/printer/listing', name: this.$t('nav.listings.printer') },
+            {url: '/x/timemachine/listing', name: this.$t('nav.listings.timemachine') },
         ],
         reports: []
       }

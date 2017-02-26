@@ -2,14 +2,12 @@
 namespace MrModule\TimeMachine;
 
 use Mr\Http\Controllers\Controller;
+use Mr\Http\Controllers\TableController;
 use MrModule\TimeMachine\TimeMachine;
 
-class TimeMachineController extends Controller
+class TimeMachineController extends TableController
 {
-    public function index() {
-        $results = TimeMachine::all();
-        return response()->json($results);
-    }
+    protected $tableModel = '\MrModule\TimeMachine\TimeMachine';
 
     protected function show($id) {
         $result = TimeMachine::findOrFail($id);
@@ -39,5 +37,9 @@ class TimeMachineController extends Controller
             'lastweek' => $lastWeekCount,
             'weekplus' => $earlierCount
         ];
+    }
+
+    public function listing() {
+        return view('timemachine::listing');
     }
 }

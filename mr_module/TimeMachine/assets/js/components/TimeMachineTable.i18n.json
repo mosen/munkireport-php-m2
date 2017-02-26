@@ -1,0 +1,41 @@
+{
+  "en": {
+    "backup":{
+      "destination": "Backup Destination",
+      "duration": "Backup duration",
+      "last_failure": "Last failed backup",
+      "last_failure_msg": "Message",
+      "last_success": "Last successful backup"
+    }
+  },
+  "de": {
+    "backup": {
+      "destination": "Backupziel",
+      "duration": "Dauer des Backups",
+      "last_failure": "Letztes Fehlgeschlagenes Backup",
+      "last_failure_msg": "Fehlermeldung",
+      "last_success": "Letztes Erfolgreiches Backup"
+    }
+  },
+  "fr": {
+    "backup": {
+      "destination": "Destination de sauvegarde",
+      "duration": "Durée de sauvegarde",
+      "last_failure": "Dernière sauvegarde échouée",
+      "last_failure_msg": "Message",
+      "last_success": "Dernière sauvegarde réussie"
+    }
+  },
+  "nl": {
+    "backup": {
+      "destination": "Backup bestemming",
+      "duration": "Backup duration",
+      "last_failure": "Last failed backup",
+      "last_failure_msg": "Boodschap",
+      "last_success": "Last successful backup"
+    }
+  },
+  "ru": {
+    
+  }
+}
