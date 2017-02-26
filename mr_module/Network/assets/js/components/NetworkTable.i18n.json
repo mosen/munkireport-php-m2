@@ -1,0 +1,14 @@
+{
+  "en": {
+    "listing": {
+      "network": {
+        "service": "Service",
+        "status": "Status",
+        "ethernet": "Ethernet",
+        "ipv4ip": "IP Address",
+        "ipv4router": "Router",
+        "ipv4mask": "Mask"
+      }
+    }
+  }
+}

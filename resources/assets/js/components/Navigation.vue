@@ -145,7 +145,8 @@
           {url: '/x/diskreport/listing', name: this.$t('nav.listings.disk') },
           {url: '/x/display/listing', name: this.$t('nav.listings.displays') },
           {url: '/machine/listing', name: this.$t('nav.listings.hardware') },
-          {url: '/x/munkireport/listing', name: this.$t('nav.listings.munki')}
+          {url: '/x/munkireport/listing', name: this.$t('nav.listings.munki') },
+            {url: '/x/network/listing', name: this.$t('nav.listings.network') }
         ],
         reports: []
       }

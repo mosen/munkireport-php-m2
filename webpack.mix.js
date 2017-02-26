@@ -39,6 +39,7 @@ mix.js('mr_module/DirectoryService/assets/js/listing.js', 'public/js/x/directory
 mix.js('mr_module/DiskReport/assets/js/listing.js', 'public/js/x/diskreport');
 mix.js('mr_module/Display/assets/js/listing.js', 'public/js/x/display');
 mix.js('mr_module/MunkiReport/assets/js/listing.js', 'public/js/x/munkireport');
+mix.js('mr_module/Network/assets/js/listing.js', 'public/js/x/network');
 
 mix.sass('resources/assets/sass/app.scss', 'public/css');
 

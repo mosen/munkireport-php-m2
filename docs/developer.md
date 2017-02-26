@@ -22,7 +22,8 @@ tackling older versions of PHP and/or trying to sort out the right permissions.
 Also, to fetch dependencies for PHP and for JavaScript components you will need:
 
 - [composer](https://getcomposer.org/)
-- [nodejs](https://nodejs.org)
+- [nodejs](https://nodejs.org) Preferably not Version 7 because you will run into
+bugs with webpack-dev-server.
 
 Example: nginx + php-fpm
 ------------------------

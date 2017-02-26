@@ -13,7 +13,14 @@ The directory structure looks something like this, but may not include everythin
     mr_module/Modulename
         assets - Frontend assets
             js - Javascript
+              listing.js - Entry point for listing
+              widgets.js - Global registration of all widgets
+              
               components - VueJS components
+                ModulenameTable.vue - Listing table component
+                ModulenameTable.i18n.json - Listing table i18n
+                SomethingWidget.vue - A widget component
+                
             scss - SASS stylesheets
             images
            
