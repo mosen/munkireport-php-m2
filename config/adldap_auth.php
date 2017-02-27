@@ -205,5 +205,6 @@ return [
     'sync_attributes' => [
         'email' => 'userprincipalname',
         'name' => 'cn',
+        'provider_system_guid' => 'objectGUID'
     ],
 ];
