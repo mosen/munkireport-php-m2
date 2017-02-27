@@ -1,5 +1,5 @@
 <?php
-namespace MrModule\Printer;
+namespace MrModule\Security;
 
 use Mr\Http\Controllers\TableController;
 

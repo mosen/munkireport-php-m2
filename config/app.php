@@ -172,6 +172,7 @@ return [
         Adldap\Laravel\AdldapServiceProvider::class,
         Adldap\Laravel\AdldapAuthServiceProvider::class,
         TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
+        CloudCreativity\LaravelJsonApi\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -270,6 +271,7 @@ return [
         'Uuid' => Webpatser\Uuid\Uuid::class,
         'Adldap' => Adldap\Laravel\Facades\Adldap::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'JsonApi' => CloudCreativity\LaravelJsonApi\Facade::class,
     ],
 
 ];
