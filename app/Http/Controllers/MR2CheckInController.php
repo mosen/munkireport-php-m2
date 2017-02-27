@@ -130,7 +130,6 @@ class MR2CheckInController extends Controller
             $didHandle = $this->ciRouter->route($module, $request->serial, $val['data']);
 
             $hash = Hash::firstOrNew(['serial' => $request->serial, 'name' => $module]);
-            $hash->name = $name;
             $hash->hash = $val['hash'];
             $hash->save();
         }
