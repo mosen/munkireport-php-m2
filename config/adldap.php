@@ -121,7 +121,7 @@ return [
                 |
                 */
 
-                'domain_controllers' => explode(' ', env('ADLDAP_CONTROLLERS', 'corp-dc1.corp.acme.org corp-dc2.corp.acme.org')),
+                'domain_controllers' => explode(',', env('ADLDAP_CONTROLLERS', 'corp-dc1.corp.acme.org,corp-dc2.corp.acme.org')),
 
                 /*
                 |--------------------------------------------------------------------------
