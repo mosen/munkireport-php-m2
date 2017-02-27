@@ -20,8 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->boolean('is_admin')->default(false);
             $table->rememberToken();
-            $table->string('provider'); // Class name of the user provider if this user is synced with another system
-            $table->string('provider_system_guid'); // Used to store the foreign system GUID if authenticating via LDAP
+            $table->string('provider')->nullable(); // Class name of the user provider if this user is synced with another system
+            $table->uuid('provider_system_uuid')->nullable(); // Used to store the foreign system GUID if authenticating via LDAP
             $table->timestamps();
         });
     }

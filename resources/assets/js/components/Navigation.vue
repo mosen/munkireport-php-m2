@@ -98,7 +98,7 @@
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li v-if="username">
+                            <li v-if="user && user.id">
                                 <a href="/logout">
                                     <span class="glyphicon glyphicon-log-out"></span>
                                     <span>{{ $t('nav.user.logout') }}</span>
@@ -131,7 +131,6 @@
       return {
         title: 'MunkiReport',
         themes: ['Standard'],
-        username: null,
         admin: [],
         localecodes: [
           'en', 'de', 'nl', 'fr', 'es', 'ru'
@@ -157,6 +156,22 @@
       }
     },
     locales: locales,
+    computed: {
+      user: function () {
+        if (window.Auth && window.Auth.user) {
+          return window.Auth.user;
+        } else {
+          return null;
+        }
+      },
+      username: function () {
+        if (this.user && this.user.name) {
+          return this.user.name;
+        } else {
+          return 'Not logged in';
+        }
+      }
+    },
     methods: {
       search: function (event) {
 

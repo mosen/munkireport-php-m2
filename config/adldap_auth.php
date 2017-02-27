@@ -93,6 +93,7 @@ return [
     'scopes' => [
         // Only allows users with a user principal name to authenticate.
         Adldap\Laravel\Scopes\UpnScope::class,
+        Mr\Scopes\ADGroupMembership::class,
     ],
     'usernames' => [
         /*
@@ -205,6 +206,6 @@ return [
     'sync_attributes' => [
         'email' => 'userprincipalname',
         'name' => 'cn',
-        'provider_system_guid' => 'objectGUID'
+        'provider_system_uuid' => 'objectGUID'
     ],
 ];

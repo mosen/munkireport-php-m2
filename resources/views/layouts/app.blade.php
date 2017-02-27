@@ -22,6 +22,7 @@
     <script>
         window.Auth = {!! json_encode([
             'id' => Auth::id(),
+            'user' => Auth::user()
         ]) !!};
     </script>
 </head>
