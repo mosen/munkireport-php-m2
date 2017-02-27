@@ -122,14 +122,11 @@ class MR2CheckInController extends Controller
             $module = $this->normalizedKey($name);
             
             $didHandle = $this->ciRouter->route($module, $request->serial, $val['data']);
-            // $class = new $classname($_POST['serial']);
-//            $class->process($val['data']);
-//
-//            // Store hash
-//            $hash = new Hash($_POST['serial'], $module);
-//            $hash->hash = $val['hash'];
-//            $hash->timestamp = time();
-//            $hash->save();
+
+            $hash = new Hash($request->serial);
+            $hash->name = $name;
+            $hash->hash = $val['hash'];
+            $hash->save();
         }
     }
 
