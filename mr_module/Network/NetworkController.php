@@ -10,4 +10,8 @@ class NetworkController extends TableController
     public function listing() {
         return view('network::listing');
     }
+
+    public function report() {
+        return view('network::report');
+    }
 }

@@ -10,4 +10,8 @@ class MunkiReportController extends TableController
     public function listing() {
         return view('munkireport::listing');
     }
+
+    public function report() {
+        return view('munkireport::report');
+    }
 }
