@@ -3,7 +3,6 @@
             url="/xapi/wifi"
             :columns="columns"
             :options="options"
-            @loaded="onLoaded"
     ></v-server-table>
 </template>
 
@@ -54,11 +53,6 @@
                 }
             }
         },
-        locales: locales,
-        methods: {
-            onLoaded: function () {
-
-            }
-        }
+        locales: locales
     }
 </script>

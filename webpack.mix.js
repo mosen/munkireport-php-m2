@@ -29,7 +29,8 @@ const vendor = [
 mix.webpackConfig({
   resolve: {
     alias: {
-      "vue-table-i18n.json": path.resolve("./resources/assets/locale/vue-table-i18n.json")
+      "vue-table-i18n.json": path.resolve("./resources/assets/locale/vue-table-i18n.json"),
+        "core-components": path.resolve(__dirname, "resources/assets/js/components/")
     }
   }
 });

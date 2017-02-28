@@ -1,8 +1,6 @@
 @extends('layouts.navigation')
 @section('title', 'Wifi Listing')
 @push('scripts')
-<script src="{{ asset('js/x/wifi/manifest.js') }}" type="application/javascript"></script>
-<script src="{{ asset('js/x/wifi/vendor.js') }}" type="application/javascript"></script>
 <script src="{{ asset('js/x/wifi/listing.js') }}" type="application/javascript"></script>
 @endpush
 @section('main')
