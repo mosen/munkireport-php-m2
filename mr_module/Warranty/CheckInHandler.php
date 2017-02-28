@@ -37,16 +37,16 @@ class CheckInHandler implements Handler
      */
     public function process($moduleName, $serialNumber, $data)
     {
-        $dataObj = new CFPropertyList;
-        $dataObj->parse($data);
-        $dataArr = $dataObj->toArray();
-
-        $warranty = Warranty::firstOrNew(['serial_number' => $serialNumber]);
-        $warranty->serial_number = $serialNumber;
-
-        // TODO: not actually implemented
-
-        $warranty->fill($dataArr);
-        $warranty->save();
+//        $dataObj = new CFPropertyList;
+//        $dataObj->parse($data);
+//        $dataArr = $dataObj->toArray();
+//
+//        $warranty = Warranty::firstOrNew(['serial_number' => $serialNumber]);
+//        $warranty->serial_number = $serialNumber;
+//
+//        // TODO: not actually implemented
+//
+//        $warranty->fill($dataArr);
+//        $warranty->save();
     }
 }

@@ -33,7 +33,7 @@ class CheckInHandler implements Handler
         $mr = MunkiReport::firstOrNew(['serial_number' => $serialNumber]);
         $mr->serial_number = $serialNumber;
         $mr->version = $dataArr['ManagedInstallVersion'];
-        $mr->manifestname = $dataArr['ManifestName'];
+        $mr->manifestname = array_get($dataArr, 'ManifestName', null);
         $mr->runtype = $dataArr['RunType'];
         $mr->starttime = $dataArr['StartTime'];
         $mr->endtime = $dataArr['EndTime'];

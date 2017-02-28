@@ -16,20 +16,20 @@ class ScriptController extends Controller
      * Download a module script.
      *
      * @param $moduleName
-     * @param $script
+     * @param $scriptName
      */
-    public function get($moduleName, $script) {
-        $mod = $this->moduleManager->get($moduleName);
-        if ($mod === null) {
-            abort(404);
-        }
+    public function get($moduleName, $scriptName) {
+        $m = $this->moduleManager->get($moduleName);
+        if ($m->getPath() === null) abort(400);
+        if (strpos($scriptName, '.') !== false) abort(400); // Very rudimentary security
 
-        // TODO: need to check for insecure relative paths etc.
-        $scriptPath = $mod->getPath() . '/scripts/' . $script;
+        $scriptName = preg_replace('/_(sh|py)/', '.$1', $scriptName);
+
+        $scriptPath = $m->getPath() . "/scripts/" . $scriptName;
         if (file_exists($scriptPath)) {
             return file_get_contents($scriptPath);
         } else {
-            abort(404, 'No such script exists at' . $scriptPath);
+            abort(404);
         }
     }
 }

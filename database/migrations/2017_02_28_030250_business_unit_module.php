@@ -16,7 +16,7 @@ class BusinessUnitModule extends Migration
         Schema::create('business_unit_module', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('business_unit_id')->unsigned();
-            $table->integer('group_id')->unsigned();
+            $table->integer('module_id')->unsigned();
 
             $table->foreign('business_unit_id')
                 ->references('id')
