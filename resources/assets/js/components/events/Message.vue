@@ -19,11 +19,12 @@ export default {
         'msg',
         'type',
         'data',
-        'updated'
+        'updated',
+        'urlPrefix'
     ],
     computed: {
         url: function () {
-            return `/client/details/${this.serial}`;
+            return `${this.urlPrefix}${this.serial}`;
         },
         relativeTime: function () {
             if (this.updated_at) {

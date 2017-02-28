@@ -37,7 +37,7 @@ class FindMyMacServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
         $this->mapWebRoutes();
 
-        $moduleManager->add('findmymac', dirname(__DIR__))
+        $moduleManager->add('findmymac', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }

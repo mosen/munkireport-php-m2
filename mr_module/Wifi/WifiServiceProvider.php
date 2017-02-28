@@ -38,7 +38,7 @@ class WifiServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->loadViewsFrom(__DIR__.'/views', 'wifi');
         
-        $moduleManager->add('wifi', dirname(__DIR__))
+        $moduleManager->add('wifi', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }

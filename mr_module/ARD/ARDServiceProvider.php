@@ -50,7 +50,7 @@ class ARDServiceProvider extends ServiceProvider
             __DIR__.'/public' => public_path('x/ard'),
         ], 'public');
 
-        $moduleManager->add('ard', dirname(__DIR__))
+        $moduleManager->add('ard', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
         

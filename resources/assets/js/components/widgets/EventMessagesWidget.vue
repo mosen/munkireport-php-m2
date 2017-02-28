@@ -16,6 +16,7 @@
                          v-bind:msg="item.msg"
                          v-bind:data="item.data"
                          v-bind:updated="item.updated_at"
+                         v-bind:urlPrefix="urlPrefix"
                 ></message>
             </template>
             <span v-if="error" class="list-group-item list-group-item-danger">Request Failed</span>
@@ -29,6 +30,7 @@
     import Message from '../events/Message.vue';
 
     export default {
+        props: ['urlPrefix'],
         data() {
             return {
                 items: [],
@@ -43,7 +45,7 @@
         },
         methods: {
             url: function (serialNumber) {
-                return `/clients/detail/${serialNumber}`;
+                return `${this.urlPrefix}${serialNumber}`;
             },
             fromNow: function (relativeDate) {
                 return moment(relativeDate).fromNow();

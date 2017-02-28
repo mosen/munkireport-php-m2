@@ -41,7 +41,7 @@ class DisplayServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->loadViewsFrom(__DIR__.'/views', 'display');
 
-        $moduleManager->add('display', dirname(__DIR__))
+        $moduleManager->add('display', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }

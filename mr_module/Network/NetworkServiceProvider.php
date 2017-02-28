@@ -37,7 +37,7 @@ class NetworkServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->loadViewsFrom(__DIR__.'/views', 'network');
 
-        $moduleManager->add('network', dirname(__DIR__))
+        $moduleManager->add('network', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }

@@ -40,7 +40,7 @@ class InstallController extends Controller
      * 
      * @return Response script content.
      */
-    public function script($query) {
+    public function script($moduleName, $scriptName) {
         $modulePath = $this->moduleManager->get($moduleName);
         if ($modulePath === null) abort(404);
         if (strpos($scriptName, '.') !== false) abort(400); // Very rudimentary security

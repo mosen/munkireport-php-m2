@@ -13,7 +13,7 @@
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'DashboardController@index');
-    Route::get('client/detail/{serialNumber}', 'ClientController@detail');
+    Route::get('clients/{serialNumber}', 'ClientController@show');
 
     Route::get('client/listing', 'ClientController@listing');
     Route::get('machine/listing', 'MachineController@listing');

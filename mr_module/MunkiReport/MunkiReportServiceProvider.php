@@ -39,7 +39,7 @@ class MunkiReportServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->loadViewsFrom(__DIR__.'/views', 'munkireport');
 
-        $moduleManager->add('munkireport', dirname(__DIR__))
+        $moduleManager->add('munkireport', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }

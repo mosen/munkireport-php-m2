@@ -10,7 +10,7 @@ class ProfileServiceProvider extends ServiceProvider
     public function boot(ModuleManager $moduleManager) {
         $this->loadMigrationsFrom(__DIR__.'/migrations');
 
-        $moduleManager->add('profile', dirname(__DIR__))
+        $moduleManager->add('profile', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }

@@ -36,7 +36,7 @@ class BluetoothServiceProvider extends ServiceProvider
     public function boot(ModuleManager $moduleManager) {
         $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->loadViewsFrom(__DIR__.'/views', 'bluetooth');
-        $moduleManager->add('bluetooth', dirname(__DIR__))
+        $moduleManager->add('bluetooth', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
 

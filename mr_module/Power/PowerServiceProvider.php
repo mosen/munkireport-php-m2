@@ -37,7 +37,7 @@ class PowerServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->loadViewsFrom(__DIR__.'/views', 'power');
 
-        $moduleManager->add('power', dirname(__DIR__))
+        $moduleManager->add('power', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }

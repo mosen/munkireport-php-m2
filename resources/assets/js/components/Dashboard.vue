@@ -5,7 +5,7 @@
                 <widget-client-activity />
             </div>
             <div class="col-lg-8 col-md-6">
-                <widget-events />
+                <widget-events urlPrefix="/clients/" />
             </div>
         </div>
         <div class="row">

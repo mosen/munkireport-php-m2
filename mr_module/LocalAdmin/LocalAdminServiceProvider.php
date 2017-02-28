@@ -10,7 +10,7 @@ class LocalAdminServiceProvider extends ServiceProvider
     public function boot(ModuleManager $moduleManager) {
         $this->loadMigrationsFrom(__DIR__.'/migrations');
         
-        $moduleManager->add('localadmin', dirname(__DIR__))
+        $moduleManager->add('localadmin', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }

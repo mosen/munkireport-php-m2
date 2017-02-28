@@ -42,7 +42,7 @@ class CertificateServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->loadViewsFrom(__DIR__.'/views', 'certificate');
 
-        $moduleManager->add('certificate', dirname(__DIR__))
+        $moduleManager->add('certificate', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }

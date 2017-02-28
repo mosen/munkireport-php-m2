@@ -8,7 +8,7 @@ class InstallHistoryServiceProvider extends ServiceProvider
 {
     public function boot(ModuleManager $moduleManager) {
         $this->loadMigrationsFrom(__DIR__.'/migrations');
-        $moduleManager->add('installhistory', dirname(__DIR__))
+        $moduleManager->add('installhistory', __DIR__)
             ->installs('scripts/install.sh');
     }
 }

@@ -37,7 +37,7 @@ class SecurityServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->loadViewsFrom(__DIR__.'/views', 'security');
 
-        $moduleManager->add('security', dirname(__DIR__))
+        $moduleManager->add('security', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }

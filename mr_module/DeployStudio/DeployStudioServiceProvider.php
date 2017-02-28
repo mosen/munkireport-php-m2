@@ -35,7 +35,7 @@ class DeployStudioServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
         $this->mapWebRoutes();
         $this->loadMigrationsFrom(__DIR__.'/migrations');
-        $moduleManager->add('deploystudio', dirname(__DIR__))
+        $moduleManager->add('deploystudio', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }

@@ -9,7 +9,7 @@ class InventoryServiceProvider extends ServiceProvider
 {
     public function boot(ModuleManager $moduleManager) {
         $this->loadMigrationsFrom(__DIR__.'/migrations');
-        $moduleManager->add('inventory', dirname(__DIR__))
+        $moduleManager->add('inventory', __DIR__)
             ->installs('scripts/install.sh');
     }
 }

@@ -38,7 +38,7 @@ class DirectoryServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->loadViewsFrom(__DIR__.'/views', 'directoryservice');
 
-        $moduleManager->add('directory_service', dirname(__DIR__))
+        $moduleManager->add('directory_service', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }

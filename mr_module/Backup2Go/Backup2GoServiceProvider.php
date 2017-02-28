@@ -37,7 +37,7 @@ class Backup2GoServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
         $this->mapWebRoutes();
 
-        $moduleManager->add('backup2go', dirname(__DIR__))
+        $moduleManager->add('backup2go', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }

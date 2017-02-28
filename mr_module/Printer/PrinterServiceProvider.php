@@ -37,7 +37,7 @@ class PrinterServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->loadViewsFrom(__DIR__.'/views', 'printer');
 
-        $moduleManager->add('printer', dirname(__DIR__))
+        $moduleManager->add('printer', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }

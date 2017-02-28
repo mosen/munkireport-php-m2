@@ -12,7 +12,7 @@ class MunkiInfoServiceProvider extends ServiceProvider
     public function boot(ModuleManager $moduleManager) {
         $this->loadMigrationsFrom(__DIR__.'/migrations');
 
-        $moduleManager->add('munkiinfo', dirname(__DIR__))
+        $moduleManager->add('munkiinfo', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }
