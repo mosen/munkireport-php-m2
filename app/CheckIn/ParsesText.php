@@ -34,15 +34,16 @@ trait ParsesText
             if (strpos($line, $separator) === false) continue;
 
             $kv = explode($separator, $line, 2);
+            $key = trim($kv[0]);
             $value = trim($kv[1]);
 
-            if (array_key_exists($kv[0].$separator, $keyMap)) {
-                $key = $keyMap[$kv[0].$separator];
+            if (array_key_exists($key, $keyMap)) {
+                $xkey = $keyMap[$key];
             } else {
-                $key = $kv[0];
+                $xkey = $key;
             }
 
-            $result[$key] = $value;
+            $result[$xkey] = $value;
         }
 
         return $result;

@@ -55,6 +55,33 @@ class CheckInRouter implements CheckInRouterInterface
         ],
         'profile' => [
             'MrModule\\Profile\\CheckInHandler'
+        ],
+        'certificate' => [
+            'MrModule\\Certificate\\CheckInHandler'
+        ],
+        'security' => [
+            'MrModule\\Security\\CheckInHandler'
+        ],
+        'wifi' => [
+            'MrModule\\Wifi\\CheckInHandler'
+        ],
+        'munkiinfo' => [
+            'MrModule\\MunkiInfo\\CheckInHandler'
+        ],
+        'power' => [
+            'MrModule\\Power\\CheckInHandler'
+        ],
+        'localadmin' => [
+            'MrModule\\LocalAdmin\\CheckInHandler'
+        ],
+        'timemachine' => [
+            'MrModule\\TimeMachine\\CheckInHandler'
+        ],
+        'findmymac' => [
+            'MrModule\\FindMyMac\\CheckInHandler'
+        ],
+        'managedinstalls' => [
+            'MrModule\\ManagedInstalls\\CheckInHandler'
         ]
     ];
 
