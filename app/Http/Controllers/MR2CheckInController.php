@@ -40,6 +40,15 @@ class MR2CheckInController extends Controller
         return $key;
     }
 
+    private function getHashList($serial)
+    {
+        $hashList = [];
+        foreach(Hash::where('serial', '=', $serial)->get() as $entry){
+            $hashList[$entry->name] = $entry->hash;
+        }
+        return $hashList;
+    }
+
     public function __construct(CheckInRouter $ciRouter) {
         $this->ciRouter = $ciRouter;
     }
@@ -65,26 +74,23 @@ class MR2CheckInController extends Controller
         }
 
         $itemarr = array('error' => '', 'info' => '');
-        
+
         $report = ReportData::firstOrNew(['serial_number' => $request->serial]);
         $report->serial_number = $request->serial;
         $report->remote_ip = $request->getClientIp();
         $report->save();
-        
+
         $reqItems = $request->unserialized_items;
 
         // Messages_model did not exist in source?
 
+        // Get all hashes for serial
+        $hashList = $this->getHashList($request->serial);
+
         foreach ($reqItems as $name => $val) {
             $lkey = $this->normalizedKey($name);
 
-            $existingHash = Hash::where(['serial' => $request->serial, 'name' => $lkey])->first();
-            if (!$existingHash) {
-                $itemarr[$name] = 1;
-                continue;
-            }
-
-            if ($existingHash->hash !== $val['hash']) {
+            if( ! array_key_exists($lkey, $hashList) or $hashList[$lkey] != $val['hash']){
                 $itemarr[$name] = 1;
             }
         }
@@ -120,11 +126,10 @@ class MR2CheckInController extends Controller
             }
 
             $module = $this->normalizedKey($name);
-            
+
             $didHandle = $this->ciRouter->route($module, $request->serial, $val['data']);
 
-            $hash = new Hash($request->serial);
-            $hash->name = $name;
+            $hash = Hash::firstOrNew(['serial' => $request->serial, 'name' => $module]);
             $hash->hash = $val['hash'];
             $hash->save();
         }
