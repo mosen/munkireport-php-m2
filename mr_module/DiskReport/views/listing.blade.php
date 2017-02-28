@@ -1,8 +1,6 @@
 @extends('layouts.navigation')
 @section('title', 'Disk Report Listing')
 @push('scripts')
-<script src="{{ asset('js/x/diskreport/manifest.js') }}" type="application/javascript"></script>
-<script src="{{ asset('js/x/diskreport/vendor.js') }}" type="application/javascript"></script>
 <script src="{{ asset('js/x/diskreport/listing.js') }}" type="application/javascript"></script>
 @endpush
 @section('main')

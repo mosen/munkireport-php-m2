@@ -9,6 +9,7 @@
 
 <script>
     import DisplayName from './DisplayName.vue';
+    import locales from './ExternalDisplaysTable.i18n.json';
 
   export default {
     data() {
@@ -45,6 +46,7 @@
         }
       }
     },
+      locales: locales,
     methods: {
       onLoaded: function () {
 

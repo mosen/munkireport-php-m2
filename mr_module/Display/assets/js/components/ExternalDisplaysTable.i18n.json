@@ -1,0 +1,13 @@
+{
+  "en": {
+    "displays": {
+      "type": "Type",
+      "vendor": "Vendor",
+      "model": "Model",
+      "display_serial": "Serial number",
+      "manufactured": "Manufactured",
+      "native": "Native resolution",
+      "timestamp": "Detected"
+    }
+  }
+}

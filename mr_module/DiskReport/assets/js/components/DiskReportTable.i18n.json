@@ -1,0 +1,86 @@
+{
+  "en": {
+    "storage": {
+      "bus_protocol": "BUS Protocol",
+      "encrypted": "Encrypted",
+      "encryption_status": "Encryption Status",
+      "external": "External",
+      "free": "Free",
+      "internal": "Internal",
+      "mountpoint": "Mount Point",
+      "not_encrypted": "Not Encrypted",
+      "percentage": "Percentage",
+      "size": "Disk Size",
+      "smartstatus": "SMART Status",
+      "smartstatus_failing": "SMART Status failing",
+      "storage": "Storage",
+      "total_size": "Size",
+      "type": "Storage Type",
+      "used": "Used",
+      "volume_type": "Volume Type"
+    }
+  },
+  "de": {
+    "storage": {
+      "bus_protocol": "BUS Protokoll",
+      "encrypted": "Verschlüsselt",
+      "encryption_status": "Verschlüsselungsstatus",
+      "external": "Extern",
+      "free": "Frei",
+      "internal": "Intern",
+      "mountpoint": "Mount Point",
+      "not_encrypted": "Nicht verschlüsselt",
+      "percentage": "Prozent",
+      "size": "Festplattengöße",
+      "smartstatus": "SMART status",
+      "smartstatus_failing": "SMART Status Fehler",
+      "storage": "Massenspeicher",
+      "total_size": "Größe",
+      "type": "Massenspeichertyp",
+      "used": "Benutzt",
+      "volume_type": "Volumetyp"
+    }
+  },
+  "fr": {
+    "storage": {
+      "bus_protocol": "Protocole BUS",
+      "encrypted": "Chiffré",
+      "encryption_status": "État du chiffrement",
+      "external": "Externe",
+      "free": "Libre",
+      "internal": "Interne",
+      "mountpoint": "Point de montage",
+      "not_encrypted": "Non chiffré",
+      "percentage": "Pourcentage",
+      "size": "Taille du disque",
+      "smartstatus": "État SMART",
+      "smartstatus_failing": "Échec de l'état SMART",
+      "storage": "Stockage",
+      "total_size": "Taille",
+      "type": "Type de stockage",
+      "used": "Utilisé",
+      "volume_type": "Type de Volume"
+    }
+  },
+  "nl": {
+    "storage": {
+      "bus_protocol": "BUS Protocol",
+      "encrypted": "Encrypted",
+      "encryption_status": "Encryptie Status",
+      "external": "Extern",
+      "free": "Free",
+      "internal": "Intern",
+      "mountpoint": "Mount Point",
+      "not_encrypted": "Not Encrypted",
+      "percentage": "Percentage",
+      "size": "Disk Size",
+      "smartstatus": "SMART Status",
+      "smartstatus_failing": "SMART Status failing",
+      "storage": "Opslag",
+      "total_size": "Grootte",
+      "type": "Opslag Type",
+      "used": "Gebruikt",
+      "volume_type": "Volume Type"
+    }
+  }
+}

@@ -1,8 +1,6 @@
 @extends('layouts.navigation')
 @section('title', 'Certificate Listing')
 @push('scripts')
-<script src="{{ asset('js/x/certificate/manifest.js') }}" type="application/javascript"></script>
-<script src="{{ asset('js/x/certificate/vendor.js') }}" type="application/javascript"></script>
 <script src="{{ asset('js/x/certificate/listing.js') }}" type="application/javascript"></script>
 @endpush
 @section('main')
