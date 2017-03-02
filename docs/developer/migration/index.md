@@ -20,6 +20,11 @@ You need to create the following directory structure to start:
       views/
       
 
+## Procedure
+
+- database-migrations.md
+- models.md
+
 
 
 
