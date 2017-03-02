@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">{{ title }}</a>
+                <router-link :to="{ name: 'home' }" class="navbar-brand">{{ title }}</router-link>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
@@ -99,16 +99,16 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li v-if="user && user.id">
-                                <a href="/logout">
+                                <router-link :to="{ name: 'logout' }">
                                     <span class="glyphicon glyphicon-log-out"></span>
                                     <span>{{ $t('nav.user.logout') }}</span>
-                                </a>
+                                </router-link>
                             </li>
                             <li v-else>
-                                <a href="/login">
+                                <router-link :to="{ name: 'login' }">
                                     <span class="glyphicon glyphicon-log-in"></span>
                                     <span>{{ $t('nav.user.login') }}</span>
-                                </a>
+                                </router-link>
                             </li>
                         </ul>
                     </li>
@@ -120,10 +120,9 @@
 
 
 <script>
-  import Vue from 'vue';
   import 'bootstrap-sass/assets/javascripts/bootstrap/dropdown';
   import locales from './Navigation.i18n.json';
-
+  import { mapGetters, mapActions } from 'vuex';
   Vue.config.lang = 'en';
 
   export default {
