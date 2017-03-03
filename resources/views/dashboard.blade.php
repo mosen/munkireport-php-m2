@@ -4,6 +4,7 @@
 @push('scripts')
 @endpush
 
-@section('main')
+@section('content')
+    <app></app>
 @endsection
 

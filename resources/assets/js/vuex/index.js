@@ -7,6 +7,8 @@ import * as getters from './getters';
 import * as mutations from './mutations';
 import * as state from './state';
 
+import auth from '../app/auth/vuex'
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -15,6 +17,8 @@ export default new Vuex.Store({
     mutations,
     state,
     modules: {
-        i18n: vuexI18n.store
+        i18n: vuexI18n.store,
+        auth
     }
-})
+});
+

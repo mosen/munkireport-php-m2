@@ -1,10 +1,10 @@
 export default {
     locale: 'en',
+    locales: [
+        'en', 'de', 'nl', 'fr', 'es', 'ru'
+    ],
     navigation: {
         title: 'MunkiReport',
-        locales: [
-            'en', 'de', 'nl', 'fr', 'es', 'ru'
-        ],
         admin: [
             {url: '/business_units/manage', name: 'nav.admin.business_units'}
         ],
@@ -47,6 +47,9 @@ export default {
             {url: '/x/network/report', name: 'nav.reports.network'},
             {url: '/x/power/report', name: 'nav.reports.power'},
             {url: '/x/backup2go/report', name: 'nav.reports.backup2go'},
+        ],
+        themes: [
+            'standard'
         ]
     }
 }
