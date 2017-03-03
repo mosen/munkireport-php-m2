@@ -120,103 +120,17 @@
 
 
 <script>
-  import 'bootstrap-sass/assets/javascripts/bootstrap/dropdown';
-  import locales from './Navigation.i18n.json';
-  import { mapGetters, mapActions } from 'vuex';
-  Vue.config.lang = 'en';
+    import 'bootstrap-sass/assets/javascripts/bootstrap/dropdown';
+    import locales from './Navigation.i18n.json';
+    import {mapGetters, mapActions} from 'vuex';
 
-  export default {
-    data: function () {
-      return {
-        title: 'MunkiReport',
-        themes: ['Standard'],
-        admin: [
-          {url: '/business_units/manage', name: this.$t('nav.admin.business_units') }
-        ],
-        localecodes: [
-          'en', 'de', 'nl', 'fr', 'es', 'ru'
-        ],
-        listings: [
-          {url: '#', name: this.$t('nav.listings.appusagereport')},
-          {url: '/x/ard/listing', name: this.$t('nav.listings.ard')},
-          {url: '#', name: this.$t('nav.listings.backup2go')},
-          {url: '/x/bluetooth/listing', name: this.$t('nav.listings.bluetooth')},
-          {url: '#', name: this.$t('nav.listings.caching')},
-          {url: '/x/certificate/listing', name: this.$t('nav.listings.certificate')},
-          {url: '/client/listing', name: this.$t('nav.listings.clients')},
-          {url: '#', name: this.$t('nav.listings.deploystudio')},
-          {url: '/x/directoryservice/listing', name: this.$t('nav.listings.directoryservice')},
-          {url: '/x/diskreport/listing', name: this.$t('nav.listings.disk')},
-          {url: '/x/display/listing', name: this.$t('nav.listings.displays')},
-          {url: '/x/findmymac/listing', name: this.$t('nav.listings.findmymac')},
-          {url: '/x/gsx/listing', name: this.$t('nav.listings.gsx')},
-          {url: '/machine/listing', name: this.$t('nav.listings.hardware')},
-          {url: '#', name: this.$t('nav.listings.inventory')},
-          {url: '#', name: this.$t('nav.listings.location')},
-          {url: '/x/munkireport/listing', name: this.$t('nav.listings.munki')},
-          {url: '/x/network/listing', name: this.$t('nav.listings.network')},
-          {url: '/x/power/listing', name: this.$t('nav.listings.power')},
-          {url: '/x/printer/listing', name: this.$t('nav.listings.printers')},
-          {url: '#', name: this.$t('nav.listings.profile')},
-          {url: '#', name: this.$t('nav.listings.sccm_status')},
-          {url: '#', name: this.$t('nav.listings.security')},
-          {url: '/x/timemachine/listing', name: this.$t('nav.listings.timemachine')},
-          {url: '/x/warranty/listing', name: this.$t('nav.listings.warranty')},
-          {url: '/x/wifi/listing', name: this.$t('nav.listings.wifi')}
-        ],
-        reports: [
-          {url: '/reports/backup', name: this.$t('nav.reports.backup')},
-          {url: '/reports/clients', name: this.$t('nav.reports.clients')},
-          {url: '/reports/configuration', name: this.$t('nav.reports.configuration')},
-          {url: '/x/findmymac/report', name: this.$t('nav.reports.findmymac')},
-          {url: '/reports/hardware', name: this.$t('nav.reports.hardware')},
-          {url: '/x/location/report', name: this.$t('nav.reports.location')},
-          {url: '/x/munkireport/report', name: this.$t('nav.reports.munki')},
-          {url: '/x/network/report', name: this.$t('nav.reports.network')},
-          {url: '/x/power/report', name: this.$t('nav.reports.power')},
-          {url: '/x/backup2go/report', name: this.$t('nav.reports.backup2go')},
-        ]
-      }
-    },
-    locales: locales,
-    computed: {
-      user: function () {
-        if (window.Auth && window.Auth.user) {
-          return window.Auth.user;
-        } else {
-          return null;
-        }
-      },
-      username: function () {
-        if (this.user && this.user.name) {
-          return this.user.name;
-        } else {
-          return 'Not logged in';
-        }
-      }
-    },
-    methods: {
-      search: function (event) {
-
-      },
-      setTheme: function (event) {
-
-      },
-      setLocale: function (code) {
-        Vue.locale(code, () => {
-          return this.axios.get(`/locale/${code}.json`).then((response) => {
-            if (Object.keys(response.data).length === 0) {
-              return Promise.reject(new Error(`Could not load locale ${code}`));
-            }
-            return response.data;
-          }).then((data) => {
-            return Promise.resolve(data);
-          })
-        }, () => {
-          Vue.config.lang = code;
-        });
-      }
-    },
-    components: {}
-  }
+    export default {
+        locales: locales,
+        computed: mapGetters({
+            user: 'auth/user'
+        }),
+        methods: mapActions({
+            logout: 'auth/logout'
+        })
+    }
 </script>

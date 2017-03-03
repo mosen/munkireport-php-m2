@@ -19,12 +19,6 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
-    <script>
-        window.Auth = {!! json_encode([
-            'id' => Auth::id(),
-            'user' => Auth::user()
-        ]) !!};
-    </script>
 </head>
 <body>
     <div id="app">
@@ -32,7 +26,7 @@
     </div>
     <script src="/js/manifest.js"></script>
     <script src="/js/vendor.js"></script>
-    <script src="/js/navigation.js"></script>
+    <script src="/js/app.js"></script>
     @stack('scripts')
 </body>
 </html>

@@ -1,5 +1,5 @@
-import { isEmpty } from 'lodash'
 import { setHttpToken } from '../../../helpers';
+import axios from 'axios';
 import localforage from 'localforage';
 
 export const register = ({ dispatch }, { payload, context }) => {
@@ -36,7 +36,7 @@ export const logout = ({ dispatch }) => {
 };
 
 export const setToken = ({ commit, dispatch }, token) => {
-    if (isEmpty(token)) {
+    if (!token) {
         return dispatch('checkTokenExists').then((token) => {
             setHttpToken(token);
         })
@@ -48,7 +48,7 @@ export const setToken = ({ commit, dispatch }, token) => {
 
 export const checkTokenExists = ({ commit, dispatch }, token) => {
     return localforage.getItem('authtoken').then((token) => {
-        if (isEmpty(token)) {
+        if (!token) {
             return Promise.reject('NO_STORAGE_TOKEN');
         }
 

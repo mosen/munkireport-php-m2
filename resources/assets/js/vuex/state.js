@@ -1,0 +1,52 @@
+export default {
+    locale: 'en',
+    navigation: {
+        title: 'MunkiReport',
+        locales: [
+            'en', 'de', 'nl', 'fr', 'es', 'ru'
+        ],
+        admin: [
+            {url: '/business_units/manage', name: 'nav.admin.business_units'}
+        ],
+        listings: [
+            {url: '#', name: 'nav.listings.appusagereport'},
+            {url: '/x/ard/listing', name: 'nav.listings.ard'},
+            {url: '#', name: 'nav.listings.backup2go'},
+            {url: '/x/bluetooth/listing', name: 'nav.listings.bluetooth'},
+            {url: '#', name: 'nav.listings.caching'},
+            {url: '/x/certificate/listing', name: 'nav.listings.certificate'},
+            {url: '/client/listing', name: 'nav.listings.clients'},
+            {url: '#', name: 'nav.listings.deploystudio'},
+            {url: '/x/directoryservice/listing', name: 'nav.listings.directoryservice'},
+            {url: '/x/diskreport/listing', name: 'nav.listings.disk'},
+            {url: '/x/display/listing', name: 'nav.listings.displays'},
+            {url: '/x/findmymac/listing', name: 'nav.listings.findmymac'},
+            {url: '/x/gsx/listing', name: 'nav.listings.gsx'},
+            {url: '/machine/listing', name: 'nav.listings.hardware'},
+            {url: '#', name: 'nav.listings.inventory'},
+            {url: '#', name: 'nav.listings.location'},
+            {url: '/x/munkireport/listing', name: 'nav.listings.munki'},
+            {url: '/x/network/listing', name: 'nav.listings.network'},
+            {url: '/x/power/listing', name: 'nav.listings.power'},
+            {url: '/x/printer/listing', name: 'nav.listings.printers'},
+            {url: '#', name: 'nav.listings.profile'},
+            {url: '#', name: 'nav.listings.sccm_status'},
+            {url: '#', name: 'nav.listings.security'},
+            {url: '/x/timemachine/listing', name: 'nav.listings.timemachine'},
+            {url: '/x/warranty/listing', name: 'nav.listings.warranty'},
+            {url: '/x/wifi/listing', name: 'nav.listings.wifi'}
+        ],
+        reports: [
+            {url: '/reports/backup', name: 'nav.reports.backup'},
+            {url: '/reports/clients', name: 'nav.reports.clients'},
+            {url: '/reports/configuration', name: 'nav.reports.configuration'},
+            {url: '/x/findmymac/report', name: 'nav.reports.findmymac'},
+            {url: '/reports/hardware', name: 'nav.reports.hardware'},
+            {url: '/x/location/report', name: 'nav.reports.location'},
+            {url: '/x/munkireport/report', name: 'nav.reports.munki'},
+            {url: '/x/network/report', name: 'nav.reports.network'},
+            {url: '/x/power/report', name: 'nav.reports.power'},
+            {url: '/x/backup2go/report', name: 'nav.reports.backup2go'},
+        ]
+    }
+}

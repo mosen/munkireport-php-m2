@@ -15,6 +15,7 @@
         "predis/predis": "^1.1",
         "rodneyrehm/plist": "^2.0",
         "teamtnt/laravel-scout-tntsearch-driver": "^2.0",
+        "tymon/jwt-auth": "^0.5.10",
         "webpatser/laravel-uuid": "^2.0"
     },
     "require-dev": {
