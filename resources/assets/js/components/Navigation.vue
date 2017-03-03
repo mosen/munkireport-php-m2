@@ -22,12 +22,12 @@
                     </li>
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <span class="glyphicon glyphicon-stats"></span>
                             <span>{{ $t('nav.main.reports') }}</span>
                             <b class="caret"></b>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" role="menu">
                             <li v-for="report in reports">
                                 <router-link :to="{ path: 'reports' }">{{ report.name }}</router-link>
                             </li>
@@ -35,12 +35,12 @@
                     </li>
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <span class="glyphicon glyphicon-list"></span>
                             <span>{{ $t('nav.main.listings') }}</span>
                             <b class="caret"></b>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" role="menu">
                             <li v-for="listing in listings">
                                 <router-link :to="{ path: 'lists' }">{{ listing.name }}</router-link>
                             </li>
@@ -48,12 +48,12 @@
                     </li>
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <span class="glyphicon glyphicon-list"></span>
                             <span>{{ $t('nav.main.admin') }}</span>
                             <b class="caret"></b>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" role="menu">
                             <li v-for="admin in admins">
                                 <router-link :to="{ path: 'admin' }">{{ admin.name }}</router-link>
                             </li>
@@ -66,25 +66,24 @@
                         </a>
                     </li>
                 </ul>
-
                 
                 <ul class="nav navbar-nav navbar-right">
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <span class="glyphicon glyphicon-wrench"></span>
                         </a>
-                        <ul class="dropdown-menu theme">
+                        <ul class="dropdown-menu theme" role="menu">
                             <li v-for="theme in themes">
                                 <a href="#">{{ theme }}</a>
                             </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <span class="glyphicon glyphicon-globe"></span>
                         </a>
-                        <ul class="dropdown-menu locale">
+                        <ul class="dropdown-menu locale" role="menu">
                             <li v-for="code in locales">
                                 <a href="#">{{ $t('nav.lang.' + code) }}</a>
                             </li>
