@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>com.github.mosen.munkireport3.webapp</string>
+        <key>displayName</key>
+        <string>MunkiReport v3</string>
+        <key>includeFiles</key>
+        <array>
+            <!-- Include files are activated in virtual host when webapp is started -->
+            <string>/Library/Server/Web/Config/apache2/httpd_munkireport3.conf</string>
+        </array>
+        <key>sslPolicy</key>
+        <integer>0</integer>
+    </dict>
+</plist>

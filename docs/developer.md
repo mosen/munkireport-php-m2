@@ -78,8 +78,11 @@ Note that you have to alter the `fastcgi_params` location to suit Homebrew.
         }
     }
     
-Note that the host `munkireport3.dev` won't resolve for you. I use dnsmasq to make *.dev resolve to localhost but now
-we are way outside the scope of this document!
+Note that the host `munkireport3.dev` won't resolve for you. I use [dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) 
+to make *.dev resolve to localhost but now we are way outside the scope of this document! 
+
+For an example, see: https://passingcuriosity.com/2013/dnsmasq-dev-osx/
+
 
 Clone and Fetch Dependencies
 ----------------------------
