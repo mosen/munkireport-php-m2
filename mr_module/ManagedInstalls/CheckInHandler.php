@@ -33,16 +33,16 @@ class CheckInHandler implements Handler
 
         foreach ($dataArr as $name => $props) {
             $mi = new ManagedInstall;
-            
+
             $mi->serial_number = $serialNumber;
             $mi->name = $name;
             $mi->display_name = array_get($props, 'display_name', null);
-            $mi->version = array_get($props, 'version', null);
-            $mi->size = array_get($props, 'size', null);
+            $mi->version = array_get($props, 'installed_version', null);
+            $mi->size = array_get($props, 'installed_size', null);
             $mi->installed = array_get($props, 'installed', null);
             $mi->status = array_get($props, 'status', null);
             $mi->type = array_get($props, 'type', null);
-            
+
             $mi->save();
         }
     }
