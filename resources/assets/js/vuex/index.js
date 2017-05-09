@@ -8,6 +8,7 @@ import * as mutations from './mutations';
 import * as state from './state';
 
 import auth from '../app/auth/vuex'
+import stats from '../app/stats/vuex'
 
 Vue.use(Vuex);
 
@@ -18,7 +19,20 @@ export default new Vuex.Store({
     state,
     modules: {
         i18n: vuexI18n.store,
-        auth
+        auth,
+        stats
     }
 });
 
+if (module.hot) {
+  // accept actions and mutations as hot modules
+  module.hot.accept(['./mutations'], () => {
+    // require the updated modules
+    // have to add .default here due to babel 6 module output
+    const newMutations = require('./mutations').default
+    // swap in the new actions and mutations
+    store.hotUpdate({
+      mutations: newMutations
+    })
+  })
+}

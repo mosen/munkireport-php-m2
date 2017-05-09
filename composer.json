@@ -31,7 +31,10 @@
             "Mr\\": "app/",
             "MrModule\\": "mr_module/",
             "MrLegacy\\": "mr_legacy/"
-        }
+        },
+        "files": [
+            "app/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

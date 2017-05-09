@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'MunkiReport') }}</title>
 
     <!-- Styles -->
-    <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ mixp('/css/app.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -24,9 +24,9 @@
     <div id="app">
         @yield('content')
     </div>
-    <script src="/js/manifest.js"></script>
-    <script src="/js/vendor.js"></script>
-    <script src="/js/app.js"></script>
+    <script src="{{ mixp('/js/manifest.js' ) }}"></script>
+    <script src="{{ mixp('/js/vendor.js' ) }}"></script>
+    <script src="{{ mixp('/js/app.js' ) }}"></script>
     @stack('scripts')
 </body>
 </html>

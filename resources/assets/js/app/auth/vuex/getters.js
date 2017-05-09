@@ -1,3 +1,2 @@
-export const user = (state) => {
-    return state.user
-};
+export const user = state => state.user;
+
