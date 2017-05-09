@@ -24,8 +24,8 @@ class ModuleManagerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('Mr\Module\ModuleManager', function ($app) {
-            return new ModuleManager();
+        $this->app->singleton(ModuleManager::class, function ($app) {
+            return new ModuleManager($app->tagged('modules'));
         });
     }
 }

@@ -3,7 +3,6 @@ namespace Mr\CheckIn;
 
 use Illuminate\Support\Facades\Log;
 use Mr\Contracts\CheckIn\CheckInRouter as CheckInRouterInterface;
-use CFPropertyList\CFPropertyList;
 
 /**
  * The CheckInRouter class examines each section of a check in request and passes off data structures to modules
@@ -14,76 +13,12 @@ use CFPropertyList\CFPropertyList;
 class CheckInRouter implements CheckInRouterInterface
 {
     /**
-     * @var array
+     * CheckInRouter constructor.
+     * @param array $handlers An array of objects implementing the CheckIn\Handler interface.
      */
-    protected $handlers = [
-        'machine' => [
-            'Mr\\CheckIn\\MachineCheckInHandler'
-        ],
-        'reportdata' => [
-            'Mr\\CheckIn\\ReportDataCheckInHandler'
-        ],
-        'warranty' => [
-            'MrModule\\Warranty\\CheckInHandler'
-        ],
-        'installhistory' => [
-            'MrModule\\InstallHistory\\CheckInHandler'
-        ],
-        'network' => [
-            'MrModule\\Network\\CheckInHandler'
-        ],
-        'disk_report' => [
-            'MrModule\\DiskReport\\CheckInHandler'
-        ],
-        'bluetooth' => [
-            'MrModule\\Bluetooth\\CheckInHandler'
-        ],
-        'ard' => [
-            'MrModule\\ARD\\CheckInHandler'
-        ],
-        'munkireport' => [
-            'MrModule\\MunkiReport\\CheckInHandler'
-        ],
-        'directory_service' => [
-            'MrModule\\DirectoryService\\CheckInHandler'
-        ],
-        'displays_info' => [
-            'MrModule\\Display\\CheckInHandler'
-        ],
-        'printer' => [
-            'MrModule\\Printer\\CheckInHandler'
-        ],
-        'profile' => [
-            'MrModule\\Profile\\CheckInHandler'
-        ],
-        'certificate' => [
-            'MrModule\\Certificate\\CheckInHandler'
-        ],
-        'security' => [
-            'MrModule\\Security\\CheckInHandler'
-        ],
-        'wifi' => [
-            'MrModule\\Wifi\\CheckInHandler'
-        ],
-        'munkiinfo' => [
-            'MrModule\\MunkiInfo\\CheckInHandler'
-        ],
-        'power' => [
-            'MrModule\\Power\\CheckInHandler'
-        ],
-        'localadmin' => [
-            'MrModule\\LocalAdmin\\CheckInHandler'
-        ],
-        'timemachine' => [
-            'MrModule\\TimeMachine\\CheckInHandler'
-        ],
-        'findmymac' => [
-            'MrModule\\FindMyMac\\CheckInHandler'
-        ],
-        'managedinstalls' => [
-            'MrModule\\ManagedInstalls\\CheckInHandler'
-        ]
-    ];
+    public function __construct(array $handlers) {
+        
+    }
 
     /**
      * Register a CheckIn Handler

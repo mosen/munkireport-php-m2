@@ -10,6 +10,10 @@ class ModuleManager
      */
     protected $modules = [];
 
+    public function __construct($moduleProviders) {
+        print_r($moduleProviders);
+    }
+
     /**
      * Register a new module with the module manager.
      *

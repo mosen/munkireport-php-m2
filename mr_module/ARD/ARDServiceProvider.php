@@ -62,5 +62,10 @@ class ARDServiceProvider extends ServiceProvider
         });
 
         $this->app->tag('MrModule\ARD\CheckInHandler', 'checkin');
+
+        $this->app->bind(Metadata::class, function ($app) {
+            return new Metadata;
+        });
+        $this->app->tag(Metadata::class, 'modules');
     }
 }
