@@ -9,6 +9,7 @@ import * as state from './state';
 
 import auth from '../app/auth/vuex'
 import stats from '../app/stats/vuex'
+import dashboard from '../app/dashboard/vuex';
 
 Vue.use(Vuex);
 
@@ -20,7 +21,8 @@ export default new Vuex.Store({
     modules: {
         i18n: vuexI18n.store,
         auth,
-        stats
+        stats,
+        dashboard
     }
 });
 

@@ -13,30 +13,30 @@ const path = require('path');
  */
 
 const vendor = [
-    'vue',
-    'axios',
-    'd3',
-    'bootstrap-vue',
-    'vue-axios',
-    'vue-i18n',
-    'vue-tables-2',
-    'vue-d3',
-    'vue-nvd3'
+  'vue',
+  'axios',
+  'd3',
+  'vue-strap',
+  'vue-axios',
+  'vue-i18n',
+  'vue-tables-2',
+  'vue-d3',
+  'vue-nvd3'
 ];
 
 // We provide aliases to some reusable parts of the core app so that including them in a module doesn't require
 // a very long relative path.
 mix.webpackConfig({
-    resolve: {
-        alias: {
-            "vue-table-i18n.json": path.resolve("./resources/assets/locale/vue-table-i18n.json"),
-            "core-components": path.resolve(__dirname, "resources/assets/js/components/")
-        }
-    },
-    devServer: {
-        port: 8089,
-      publicPath: 'http://localhost:8089/'
+  resolve: {
+    alias: {
+      "vue-table-i18n.json": path.resolve("./resources/assets/locale/vue-table-i18n.json"),
+      "core-components": path.resolve(__dirname, "resources/assets/js/components/")
     }
+  },
+  devServer: {
+    port: 8089,
+    publicPath: 'http://localhost:8089/'
+  }
 });
 
 // mix.js('resources/assets/js/navigation.js', 'public/js');
@@ -58,13 +58,13 @@ mix.webpackConfig({
 // mix.js('mr_module/Wifi/assets/js/listing.js', 'public/js/x/wifi');
 
 mix.js([
-    'resources/assets/js/app.js'
+  'resources/assets/js/app.js'
 ], 'public/js')
-    .sourceMaps()
-    .extract(vendor);
+  .sourceMaps()
+  .extract(vendor);
 
 mix.sass('resources/assets/sass/app.scss', 'public/css');
 
 if (mix.config.inProduction) {
-    mix.version();
+  mix.version();
 }

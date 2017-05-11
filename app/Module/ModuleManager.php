@@ -11,7 +11,7 @@ class ModuleManager
     protected $modules = [];
 
     public function __construct($moduleProviders) {
-        print_r($moduleProviders);
+        //print_r($moduleProviders);
     }
 
     /**
