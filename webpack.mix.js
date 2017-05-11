@@ -1,6 +1,8 @@
 const {mix} = require('laravel-mix');
 const path = require('path');
 
+mix.disableNotifications();
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management

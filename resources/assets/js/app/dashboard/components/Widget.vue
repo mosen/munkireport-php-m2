@@ -5,7 +5,17 @@
 </template>
 
 <script>
-    export default {
+    import './Widget.scss';
+    const names = {
+        'core.uptime': ''
+    };
 
+    export default {
+        render: function(createElement) {
+          return createElement(
+            '<span>',
+            this.$slots.default
+          )
+        }
     }
 </script>
