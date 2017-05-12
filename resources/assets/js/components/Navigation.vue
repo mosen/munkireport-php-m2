@@ -12,19 +12,19 @@
 
         <dropdown :text="$t('nav.main.reports')">
             <li v-for="report in reports">
-                <router-link :to="{ path: 'reports' }">{{ report.name }}</router-link>
+                <router-link :to="{ path: report.url }">{{ $t(report.name) }}</router-link>
             </li>
         </dropdown>
 
         <dropdown :text="$t('nav.main.listings')">
             <li v-for="listing in listings">
-                <router-link :to="{ path: 'lists' }">{{ listing.name }}</router-link>
+                <router-link :to="{ path: listing.url }">{{ $t(listing.name) }}</router-link>
             </li>
         </dropdown>
 
         <dropdown :text="$t('nav.main.admin')">
             <li v-for="admin in admins">
-                <router-link :to="{ path: 'admin' }">{{ admin.name }}</router-link>
+                <router-link :to="{ path: admin.url }">{{ $t(admin.name) }}</router-link>
             </li>
         </dropdown>
 
