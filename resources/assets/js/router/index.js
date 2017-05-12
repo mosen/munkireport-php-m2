@@ -11,6 +11,7 @@ import display from 'MrModules/Display/assets/js/routes';
 import munkireport from 'MrModules/MunkiReport/assets/js/routes';
 import network from 'MrModules/Network/assets/js/routes';
 import power from 'MrModules/Power/assets/js/routes';
+import printer from 'MrModules/Printer/assets/js/routes';
 
 Vue.use(Router);
 
@@ -25,7 +26,8 @@ const router = new Router({
     ...display,
     ...munkireport,
     ...network,
-    ...power
+    ...power,
+    ...printer
   ]
 });
 

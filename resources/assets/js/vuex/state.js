@@ -28,7 +28,7 @@ export default {
             {url: '/x/munki_reports', name: 'nav.listings.munki'},
             {url: '/x/networks', name: 'nav.listings.network'},
             {url: '/x/power/listing', name: 'nav.listings.power'},
-            {url: '/x/printer/listing', name: 'nav.listings.printers'},
+            {url: '/x/printers', name: 'nav.listings.printers'},
             {url: '#', name: 'nav.listings.profile'},
             {url: '#', name: 'nav.listings.sccm_status'},
             {url: '#', name: 'nav.listings.security'},

@@ -1,5 +1,6 @@
 <template>
     <v-server-table
+            name="printer_table"
             url="/xapi/printer"
             :columns="columns"
             :options="options"
