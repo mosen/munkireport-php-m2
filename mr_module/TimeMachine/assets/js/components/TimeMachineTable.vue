@@ -1,5 +1,6 @@
 <template>
     <v-server-table
+            name="timemachine_table"
             url="/xapi/timemachine"
             :columns="columns"
             :options="options"

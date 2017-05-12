@@ -13,6 +13,7 @@ import network from 'MrModules/Network/assets/js/routes';
 import power from 'MrModules/Power/assets/js/routes';
 import printer from 'MrModules/Printer/assets/js/routes';
 import security from 'MrModules/Security/assets/js/routes';
+import timemachine from 'MrModules/TimeMachine/assets/js/routes';
 
 Vue.use(Router);
 
@@ -29,7 +30,8 @@ const router = new Router({
     ...network,
     ...power,
     ...printer,
-    ...security
+    ...security,
+    ...timemachine
   ]
 });
 
