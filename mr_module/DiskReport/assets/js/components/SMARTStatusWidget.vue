@@ -1,58 +1,66 @@
 <template>
-    <div class="panel panel-default" id="smart-status-widget">
-        <div class="panel-heading" data-container="body">
-            <h3 class="panel-title">
-                <i class="glyphicon glyphicon-exclamation-sign"></i>
-                <span>{{ $t('storage.smartstatus') }}</span>
-            </h3>
+    <panel>
+        <i slot="title" class="glyphicon glyphicon-exclamation-sign"></i>
+        <span slot="title">{{ $t('storage.smartstatus') }}</span>
+
+        <div class="widget-status">
+            <div class="widget-status-item widget-danger widget-padded">
+                <a :href="url + '#failing'">
+                    <span class="bigger-150">{{ failing }}</span>
+                    <br>
+                    {{ $t('failing') }}
+                </a>
+            </div>
+            <div class="widget-status-item widget-success widget-padded">
+                <a :href="url + '#verified'">
+                    <span class="bigger-150">{{ verified }}</span>
+                    <br>
+                    {{ $t('verified') }}
+                </a>
+            </div>
+            <div class="widget-status-item widget-ok widget-padded">
+                <a :href="url + '#not supported'">
+                    <span class="bigger-150">{{ unsupported }}</span>
+                    <br>
+                    {{ $t('unsupported') }}
+                </a>
+            </div>
         </div>
-        <div class="panel-body text-center">
-            <a v-if="failing > 0" :href="url + '#failing'" class="btn btn-danger">
-                <span class="bigger-150">{{ failing }}</span>
-                <br>
-                {{ $t('failing') }}
-            </a>
-            <a v-if="verified > 0" :href="url + '#verified'" class="btn btn-success">
-                <span class="bigger-150">{{ verified }}</span>
-                <br>
-                {{ $t('verified') }}
-            </a>
-            <a v-if="unsupported > 0" :href="url + '#not supported'" class="btn btn-info">
-                <span class="bigger-150">{{ unsupported }}</span>
-                <br>
-                {{ $t('unsupported') }}
-            </a>
-        </div>
-    </div>
+    </panel>
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                failing: 0,
-                verified: 0,
-                unsupported: 0,
+  import panel from 'CoreDashboard/components/WidgetPanel.vue';
 
-                url: '',
+  export default {
+    data() {
+      return {
+        failing: 0,
+        verified: 0,
+        unsupported: 0,
 
-                error: false,
-                errorDetails: {
-                    status: 200,
-                    message: ''
-                }
-            }
-        },
-        mounted() {
-            this.axios.get(`/xapi/stats/diskreport/smart_status`).then((response) => {
-                this.failing = response.data.failing;
-                this.verified = response.data.verified;
-                this.unsupported = response.data.unsupported;
-            }).catch((response) => {
-                this.error = true;
-                this.errorDetails.status = response.status;
-                this.errorDetails.message = response.message;
-            })
+        url: '',
+
+        error: false,
+        errorDetails: {
+          status: 200,
+          message: ''
         }
+      }
+    },
+    mounted() {
+      this.axios.get(`/xapi/stats/diskreport/smart_status`).then((response) => {
+        this.failing = response.data.failing;
+        this.verified = response.data.verified;
+        this.unsupported = response.data.unsupported;
+      }).catch((response) => {
+        this.error = true;
+        this.errorDetails.status = response.status;
+        this.errorDetails.message = response.message;
+      })
+    },
+    components: {
+      panel
     }
+  }
 </script>
