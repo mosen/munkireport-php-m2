@@ -1,5 +1,6 @@
 <template>
     <v-server-table
+            name="display_table"
             url="/xapi/display"
             :columns="columns"
             :options="options"

@@ -19,7 +19,7 @@ export default {
             {url: '#', name: 'nav.listings.deploystudio'},
             {url: '/x/directory_services', name: 'nav.listings.directoryservice'},
             {url: '/x/disks', name: 'nav.listings.disk'},
-            {url: '/x/display/listing', name: 'nav.listings.displays'},
+            {url: '/x/displays', name: 'nav.listings.displays'},
             {url: '/x/findmymac/listing', name: 'nav.listings.findmymac'},
             {url: '/x/gsx/listing', name: 'nav.listings.gsx'},
             {url: '/machine/listing', name: 'nav.listings.hardware'},
