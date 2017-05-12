@@ -8,6 +8,7 @@ import certificate from 'MrModules/Certificate/assets/js/routes.js';
 import ds from 'MrModules/DirectoryService/assets/js/routes';
 import diskreport from 'MrModules/DiskReport/assets/js/routes';
 import display from 'MrModules/Display/assets/js/routes';
+import munkireport from 'MrModules/MunkiReport/assets/js/routes';
 
 Vue.use(Router);
 
@@ -19,7 +20,8 @@ const router = new Router({
     ...certificate,
     ...ds,
     ...diskreport,
-    ...display
+    ...display,
+    ...munkireport
   ]
 });
 

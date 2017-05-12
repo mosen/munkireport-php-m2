@@ -1,5 +1,6 @@
 <template>
     <v-server-table
+            name="munkireport_table"
             url="/xapi/munkireport"
             :columns="columns"
             :options="options"

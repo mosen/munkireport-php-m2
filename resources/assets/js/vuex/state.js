@@ -25,7 +25,7 @@ export default {
             {url: '/machine/listing', name: 'nav.listings.hardware'},
             {url: '#', name: 'nav.listings.inventory'},
             {url: '#', name: 'nav.listings.location'},
-            {url: '/x/munkireport/listing', name: 'nav.listings.munki'},
+            {url: '/x/munki_reports', name: 'nav.listings.munki'},
             {url: '/x/network/listing', name: 'nav.listings.network'},
             {url: '/x/power/listing', name: 'nav.listings.power'},
             {url: '/x/printer/listing', name: 'nav.listings.printers'},
