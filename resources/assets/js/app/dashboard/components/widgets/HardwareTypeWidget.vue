@@ -10,7 +10,7 @@
 <script>
     // TODO: d3 graph unfinished
     
-    import Panel from '../bootstrap/Panel';
+    import Panel from '../WidgetPanel';
     export default {
         data() {
             return {

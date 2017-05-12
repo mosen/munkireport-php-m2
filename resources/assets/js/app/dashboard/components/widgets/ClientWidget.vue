@@ -1,12 +1,8 @@
 <template>
-    <div class="panel panel-default" id="client-widget">
-        <div class="panel-heading">
-            <h3 class="panel-title">
-                <i class="glyphicon glyphicon-stats"></i>
-                <span>{{ $t('client.activity') }}</span>
-            </h3>
-        </div>
-        <div class="panel-body">
+    <panel>
+        <i slot="title" class="glyphicon glyphicon-stats"></i>
+        <span slot="title">{{ $t('client.activity') }}</span>
+
             <vn-pie
                     :height="chart.height"
                     :width="chart.width"
@@ -24,14 +20,12 @@
                 <span class="hour-clients">{{ stats.seen_last_hour }}</span>
                 <span class="lasthour-change"></span>
             </div>
-
-        </div>
-
-    </div>
+    </panel>
 </template>
 
 <script>
-  import {API_ROOT} from '../../constants';
+  const API_ROOT = '/api';
+  import panel from '../WidgetPanel.vue';
 
   export default {
     data () {
@@ -79,6 +73,9 @@
         this.errorDetails.status = response.status;
         this.errorDetails.message = response.message;
        });
+    },
+    components: {
+      panel
     }
   }
 </script>

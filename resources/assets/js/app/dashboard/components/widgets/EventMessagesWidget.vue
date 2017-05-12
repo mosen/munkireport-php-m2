@@ -1,15 +1,13 @@
 <template>
-    <div class="panel panel-default" id="events-widget">
-        <div class="panel-heading" data-container="body" :title="$t('events.widget_title')">
-            <h3 class="panel-title">
-                <i class="glyphicon glyphicon-volume-up"></i>
-                <span>{{ $t('event_plural') }}</span>
-            </h3>
-        </div>
-        <div class="list-group scroll-box" style="max-height: 308px">
-            <span v-if="items.length == 0" class="list-group-item">No messages</span>
+    <panel>
+        <i slot="title" class="glyphicon glyphicon-volume-up"></i>
+        <span slot="title">{{ $t('event_plural') }}</span>
+
+        <div class="widget-padded" style="max-height: 308px">
+            <div v-if="items.length == 0" class="widget-list-item">No messages</div>
             <template v-else>
                 <message v-for="item in items"
+                         :key="item.updated_at"
                          v-bind:serial="item.serial_number"
                          v-bind:type="item.type"
                          v-bind:module="item.module"
@@ -21,13 +19,14 @@
             </template>
             <span v-if="error" class="list-group-item list-group-item-danger">Request Failed</span>
         </div>
-    </div>
+    </panel>
 </template>
 
 <script>
-    import {API_ROOT} from '../../constants';
+  const API_ROOT = '/api';
     import moment from 'moment';
     import Message from '../events/Message.vue';
+    import panel from '../WidgetPanel.vue';
 
     export default {
         props: ['urlPrefix'],
@@ -52,7 +51,8 @@
             }
         },
         components: {
-            'message': Message
+            'message': Message,
+          panel
         }
     }
 </script>

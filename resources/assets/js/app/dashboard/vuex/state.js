@@ -4,11 +4,18 @@ export default {
     title: 'main',
     widgets: [
       [
-        'core.clients',
-        'core.uptime',
-        'a',
-        'b',
-        'c'
+        'core-widget-client',
+        'core-widget-duplicatednames',
+        'core-widget-uptime'
+      ],
+      [
+        'core-widget-events',
+        'core-widget-hardwaremodel',
+        'core-widget-hardwaretype'
+      ],
+      [
+        'core-widget-installedmemory',
+        'core-widget-newclients'
       ]
     ]
   }]

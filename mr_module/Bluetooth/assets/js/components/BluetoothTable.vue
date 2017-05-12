@@ -1,6 +1,6 @@
 <template>
     <v-server-table
-            name="bluetooth"
+            name="bluetooth_table"
             url="/xapi/bluetooth"
             :columns="columns"
             :options="options"

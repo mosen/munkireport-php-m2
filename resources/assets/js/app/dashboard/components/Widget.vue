@@ -1,21 +1,15 @@
-<template>
-    <div class="widget">
-        <slot></slot>
-    </div>
-</template>
-
 <script>
-    import './Widget.scss';
-    const names = {
-        'core.uptime': ''
-    };
+  import './Widget.scss';
 
-    export default {
-        render: function(createElement) {
-          return createElement(
-            '<span>',
-            this.$slots.default
-          )
-        }
+  // Polymorphic widget component should just render a globally registered widget based on the name passed down on
+  // a prop
+  export default {
+    props: ['widget'],
+    render: function (createElement) {
+      return createElement(
+        this.widget,
+        this.$slots.default
+      )
     }
+  }
 </script>

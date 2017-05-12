@@ -1,7 +1,44 @@
-.widget {
+.widget-container {
   min-width: 320px;
-  min-height: 180px;
-  background-color: grey;
+  background-color: white;
   margin: 2rem;
   box-shadow: 4px 4px 15px 2px #ccc;
+
+  position: relative;
+}
+
+.widget-container:hover .widget-controls {
+  opacity: 1;
+}
+
+.widget-heading {
+  padding: 10px 15px;
+  font-size: 16px;
+}
+
+.widget-padded {
+  padding: 10px 15px;
+}
+
+.widget-controls {
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 400ms;
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  font-size: 125%;
+
+  .widget-close {
+    cursor: pointer;
+  }
+}
+//
+//.widget-list-item {
+//  width: 100%;
+//  border-top: 1px solid #ccc;
+//}
+
+.row {
+  justify-content: center;
 }

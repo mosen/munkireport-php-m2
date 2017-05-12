@@ -1,6 +1,6 @@
 <template>
     <panel>
-        <i slot="title" class="glyphicon glyphicon-warning-sign"></i>
+        <span slot="title" class="glyphicon glyphicon-warning-sign"></span>
         <span slot="title">{{ $t('widget.duplicate_computernames.title') }}</span>
 
         <template v-if="items.length > 0" v-for="item in items">
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-    import Panel from '../bootstrap/Panel.vue';
+    import panel from '../WidgetPanel.vue';
 
     export default {
         data() {
@@ -33,7 +33,7 @@
             }
         },
         components: {
-            'Panel': panel
+            panel
         },
         created() {
             this.axios.get(`/xapi/stats/machine/duplicate_computernames`).then((response) => {
