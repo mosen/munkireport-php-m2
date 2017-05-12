@@ -1,7 +1,7 @@
 .widget-container {
   min-width: 320px;
   background-color: white;
-  margin: 2rem;
+  margin: 1.5rem;
   box-shadow: 4px 4px 15px 2px #ccc;
 
   position: relative;
@@ -33,11 +33,41 @@
     cursor: pointer;
   }
 }
+
+
 //
 //.widget-list-item {
 //  width: 100%;
 //  border-top: 1px solid #ccc;
 //}
+
+// coloured buttons with red, amber, green
+.widget-status {
+  display: flex;
+  flex-direction: row;
+
+  .widget-status-item {
+    width: 100%;
+    color: white;
+    text-align: center;
+
+    a {
+      color: white;
+    }
+  }
+
+  .widget-danger {
+    background-color: #bf5329;
+  }
+
+  .widget-warning {
+    background-color: orange;
+  }
+
+  .widget-success {
+    background-color: green;
+  }
+}
 
 .row {
   justify-content: center;

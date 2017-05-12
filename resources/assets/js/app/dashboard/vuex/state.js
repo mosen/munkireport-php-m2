@@ -15,7 +15,23 @@ export default {
       ],
       [
         'core-widget-installedmemory',
-        'core-widget-newclients'
+        'core-widget-newclients',
+        'disk-widget-diskreport'
+      ],
+      [
+        'disk-widget-fvstatus',
+        'disk-widget-smartstatus',
+        'ds-widget-bound'
+      ],
+      [
+        'ds-widget-modifiedcomputernames',
+        'b2g-widget',
+        'bluetooth-widget-battery'
+      ],
+      [
+        'certificate-widget',
+        'crashplan-widget',
+        'display-widget-external'
       ]
     ]
   }]

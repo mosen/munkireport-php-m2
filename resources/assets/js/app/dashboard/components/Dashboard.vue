@@ -15,6 +15,16 @@
     import { mapGetters } from 'vuex';
     import Widget from './Widget';
     import * as Core from './widgets';
+
+    // TODO: dynamic inclusion/registration somehow
+    import * as Disk from 'MrModules/DiskReport/assets/js/widgets';
+    import * as DirSvc from 'MrModules/DirectoryService/assets/js/widgets';
+    import * as Btg from 'MrModules/Backup2Go/assets/js/widgets';
+    import * as Bt from 'MrModules/Bluetooth/assets/js/widgets';
+    import * as Cert from 'MrModules/Certificate/assets/js/widgets';
+    import * as Cp from 'MrModules/CrashPlan/assets/js/widgets';
+    import * as Disp from 'MrModules/Display/assets/js/widgets';
+
     import './Dashboard.scss';
 
     export default {

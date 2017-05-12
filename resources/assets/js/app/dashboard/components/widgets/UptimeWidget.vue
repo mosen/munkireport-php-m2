@@ -3,22 +3,30 @@
         <i slot="title" class="glyphicon glyphicon-off"></i>
         <span slot="title">{{ $t('widget.uptime.title') }}</span>
 
-        <div class="widget-padded">
-            <a :href="url" class="btn btn-danger">
-                <span class="bigger-150">{{ oneweekplus }}</span>
-                <br>
-                7 <span>{{ $t('date.day_plural') }}</span> +
-            </a>
-            <a :href="url" class="btn btn-warning">
-                <span class="bigger-150">{{ oneweek }}</span>
-                <br>
-                &lt; 7 <span>{{ $t('date.day_plural') }}</span>
-            </a>
-            <a :href="url" class="btn btn-success">
-                <span class="bigger-150">{{ oneday }}</span>
-                <br>
-                &lt; 1 <span>{{ $t('date.day') }}</span>
-            </a>
+        <div>
+            <div class="widget-status">
+                <div class="widget-status-item widget-danger widget-padded">
+                    <a :href="url">
+                        <span class="bigger-150">{{ oneweekplus }}</span>
+                        <br>
+                        7 <span>{{ $t('date.day_plural') }}</span> +
+                    </a>
+                </div>
+                <div class="widget-status-item widget-warning widget-padded">
+                    <a :href="url">
+                        <span class="bigger-150">{{ oneweek }}</span>
+                        <br>
+                        &lt; 7 <span>{{ $t('date.day_plural') }}</span>
+                    </a>
+                </div>
+                <div class="widget-status-item widget-success widget-padded">
+                    <a :href="url">
+                        <span class="bigger-150">{{ oneday }}</span>
+                        <br>
+                        &lt; 1 <span>{{ $t('date.day') }}</span>
+                    </a>
+                </div>
+            </div>
         </div>
 
     </panel>

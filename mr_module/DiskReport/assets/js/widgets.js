@@ -3,6 +3,6 @@ import DiskReportWidget from './components/DiskReportWidget.vue';
 import FileVaultStatusWidget from './components/FileVaultStatusWidget.vue';
 import SMARTStatusWidget from './components/SMARTStatusWidget.vue';
 
-Vue.component('widget-diskreport', DiskReportWidget);
-Vue.component('widget-fvstatus', FileVaultStatusWidget);
-Vue.component('widget-smartstatus', SMARTStatusWidget);
+Vue.component('disk-widget-diskreport', DiskReportWidget);
+Vue.component('disk-widget-fvstatus', FileVaultStatusWidget);
+Vue.component('disk-widget-smartstatus', SMARTStatusWidget);
