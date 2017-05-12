@@ -24,6 +24,11 @@
     import * as Cert from 'MrModules/Certificate/assets/js/widgets';
     import * as Cp from 'MrModules/CrashPlan/assets/js/widgets';
     import * as Disp from 'MrModules/Display/assets/js/widgets';
+    import * as Fmm from 'MrModules/FindMyMac/assets/js/widgets';
+    import * as Mi from 'MrModules/ManagedInstalls/assets/js/widgets';
+    import * as Mr from 'MrModules/MunkiReport/assets/js/widgets';
+    import * as Tm from 'MrModules/TimeMachine/assets/js/widgets';
+    import * as Wifi from 'MrModules/Wifi/assets/js/widgets';
 
     import './Dashboard.scss';
 

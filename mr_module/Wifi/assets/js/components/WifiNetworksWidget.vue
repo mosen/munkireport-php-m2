@@ -7,7 +7,7 @@
             </h3>
         </div>
         <div class="list-group scroll-box">
-            <a v-if="items.length > 0" v-for="item in items" href="/show/listing/wifi/#{{ ssid }}" class="list-group-item">
+            <a v-if="items.length > 0" v-for="item in items" :href="'/show/listing/wifi/#' + ssid" class="list-group-item">
                 {{ item.ssid }}
                 <span class="badge pull-right">{{ item.count }}</span>
             </a>

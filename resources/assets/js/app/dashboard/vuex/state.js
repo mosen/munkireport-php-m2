@@ -32,6 +32,16 @@ export default {
         'certificate-widget',
         'crashplan-widget',
         'display-widget-external'
+      ],
+      [
+        'findmymac-widget',
+        'installs-widget-pending-apple',
+        'installs-widget-pending-munki'
+      ],
+      [
+        'munkireport-widget',
+        'timemachine-widget',
+        'wifi-widget-networks'
       ]
     ]
   }]
