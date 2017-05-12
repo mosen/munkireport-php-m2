@@ -1,5 +1,6 @@
 <template>
     <v-server-table
+            name="certificate"
             url="/xapi/certificate"
             :columns="columns"
             :options="options"
