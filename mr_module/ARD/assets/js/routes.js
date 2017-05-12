@@ -1,4 +1,4 @@
-import { Listing } from '../components';
+import { Listing } from './components';
 
 export default [
   {

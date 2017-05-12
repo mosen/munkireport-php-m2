@@ -1,5 +1,6 @@
 <template>
     <v-server-table
+            name="clients_table"
             url="/api/clients"
             :columns="columns"
             :options="options"

@@ -1,8 +1,9 @@
+import { Clients } from '../components'
 
 export default [
-    {
-        path: '/client/:serialNumber',
-        component: x,
-        name: 'client-detail'
-    }
+  {
+    path: '/clients',
+    name: 'client-listing',
+    component: Clients
+  }
 ]

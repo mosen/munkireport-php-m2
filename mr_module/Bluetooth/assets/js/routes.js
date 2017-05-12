@@ -1,10 +1,10 @@
-import { Listing } from '../components';
+import { Listing } from './components';
 
 export default [
   {
-    path: '/x/certificate/listing',
+    path: '/x/bluetooth/listing',
     component: Listing,
-    name: 'certificate-listing',
+    name: 'bluetooth-listing',
     meta: {
       guest: true,
       needsAuth: false

@@ -1,5 +1,6 @@
 <template>
     <v-server-table
+            name="directory_services_table"
             url="/xapi/directoryservice"
             :columns="columns"
             :options="options"
