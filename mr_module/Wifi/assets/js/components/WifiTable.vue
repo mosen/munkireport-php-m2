@@ -1,5 +1,6 @@
 <template>
     <v-server-table
+            name="wifi_table"
             url="/xapi/wifi"
             :columns="columns"
             :options="options"
@@ -8,7 +9,7 @@
 
 <script>
     import locales from './WifiTable.i18n.json';
-    import texts from 'vue-table-i18n.json';
+//    import texts from 'vue-table-i18n.json';
 
     export default {
         data() {
@@ -30,7 +31,6 @@
                     'mcs'
                 ],
                 options: {
-                    texts: texts,
                     headings: {
                         'machine.computer_name': this.$t('listing.computername'),
                         'serial_number': this.$t('serial'),

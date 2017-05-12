@@ -15,6 +15,7 @@ import printer from 'MrModules/Printer/assets/js/routes';
 import security from 'MrModules/Security/assets/js/routes';
 import timemachine from 'MrModules/TimeMachine/assets/js/routes';
 import warranty from 'MrModules/Warranty/assets/js/routes';
+import wifi from 'MrModules/Wifi/assets/js/routes';
 
 Vue.use(Router);
 
@@ -33,7 +34,8 @@ const router = new Router({
     ...printer,
     ...security,
     ...timemachine,
-    ...warranty
+    ...warranty,
+    ...wifi
   ]
 });
 
