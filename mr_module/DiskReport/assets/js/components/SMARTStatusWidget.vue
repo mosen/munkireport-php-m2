@@ -1,7 +1,10 @@
 <template>
     <panel>
-        <i slot="title" class="glyphicon glyphicon-exclamation-sign"></i>
-        <span slot="title">{{ $t('storage.smartstatus') }}</span>
+
+        <span slot="title">
+            <span class="glyphicon glyphicon-exclamation-sign"></span>
+            {{ $t('storage.smartstatus') }}
+        </span>
 
         <div class="widget-status">
             <div class="widget-status-item widget-danger widget-padded">

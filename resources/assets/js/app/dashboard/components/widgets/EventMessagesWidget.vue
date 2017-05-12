@@ -1,7 +1,10 @@
 <template>
     <panel>
-        <i slot="title" class="glyphicon glyphicon-volume-up"></i>
-        <span slot="title">{{ $t('event_plural') }}</span>
+
+        <span slot="title">
+            <i class="glyphicon glyphicon-volume-up"></i>
+            {{ $t('event_plural') }}
+        </span>
 
         <div class="widget-padded" style="max-height: 308px">
             <div v-if="items.length == 0" class="widget-list-item">No messages</div>

@@ -1,13 +1,13 @@
 <template>
-    <div class="panel panel-default">
-        <div class="panel-heading" data-container="body">
-            <h3 class="panel-title">
-                <i class="glyphicon glyphicon-time"></i>
-                <span>{{ $t('backup2go.widget.title') }}</span>
-            </h3>
-        </div>
+    <panel>
 
-        <div class="list-group scroll-box">
+        <span slot="title">
+            <span class="glyphicon glyphicon-time"></span>
+            {{ $t('backup2go.widget.title') }}
+        </span>
+
+        <div v-if="total === 0" id="b2g-nodata" class="panel-body text-center">{{ $t('no_clients') }}</div>
+        <div v-else class="widget-status">
             <a v-if="ok > 0" id="b2g-b2g_ok" :href="url" class="list-group-item list-group-item-success">
                 <span class="badge">{{ ok }}</span>
                 <span>{{ $t('widget.timemachine.b2g_ok') }}</span>
@@ -20,44 +20,48 @@
                 <span class="badge">{{ danger }}</span>
                 <span>{{ $t('widget.timemachine.b2g_danger') }}</span>
             </a>
-            <span v-if="total === 0" id="b2g-nodata" class="list-group-item">{{ $t('no_clients') }}</span>
-            <span v-if="error" class="list-group-item">Error fetching items</span>
         </div>
-    </div>
+    </panel>
 </template>
 
 <script>
-export default {
-    data() {
-        return {
-            url: "/backup2go",
-            ok: 0,
-            warning: 0,
-            danger: 0,
-            error: false,
-            errorDetails: {}
-        }
-    },
-    computed: {
-        total: function() {
-            return this.ok + this.warning + this.danger;
-        }
-    },
-    mounted() {
-        this.axios.get(`/xapi/backup2go/stats`).then((response) => {
-            if (response.data) {
-                this.ok = response.data.ok;
-                this.warning = response.data.warning;
-                this.danger = response.data.danger;
-            }
-        }).catch((response) => {
-            this.error = true;
-            this.errorDetails = {
-                status: response.status,
-                message: response.message
-            };
-        })
-    }
+    import panel from 'CoreDashboard/components/WidgetPanel.vue';
 
-}
+    export default {
+
+        data() {
+            return {
+                url: "/backup2go",
+                ok: 0,
+                warning: 0,
+                danger: 0,
+                error: false,
+                errorDetails: {}
+            }
+        },
+        computed: {
+            total: function () {
+                return this.ok + this.warning + this.danger;
+            }
+        },
+        mounted() {
+            this.axios.get(`/xapi/backup2go/stats`).then((response) => {
+                if (response.data) {
+                    this.ok = response.data.ok;
+                    this.warning = response.data.warning;
+                    this.danger = response.data.danger;
+                }
+            }).catch((response) => {
+                this.error = true;
+                this.errorDetails = {
+                    status: response.status,
+                    message: response.message
+                };
+            })
+        },
+        components: {
+            panel
+        }
+
+    }
 </script>

@@ -1,7 +1,9 @@
 <template>
     <panel>
-        <i slot="title" class="glyphicon glyphicon-stats"></i>
-        <span slot="title">{{ $t('client.activity') }}</span>
+        <span slot="title">
+            <span class="glyphicon glyphicon-stats"></span>
+            {{ $t('client.activity') }}
+        </span>
 
             <vn-pie
                     :height="chart.height"

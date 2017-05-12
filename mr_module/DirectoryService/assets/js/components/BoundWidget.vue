@@ -1,7 +1,10 @@
 <template>
     <panel>
-        <i slot="title" class="glyphicon glyphicon-link"></i>
-        <span slot="title">{{ $t('widget.bound_to_ds.title') }}</span>
+
+        <span slot="title">
+            <span class="glyphicon glyphicon-link"></span>
+            {{ $t('widget.bound_to_ds.title') }}
+        </span>
 
         <div class="widget-status">
             <div class="widget-status-item widget-danger widget-padded">

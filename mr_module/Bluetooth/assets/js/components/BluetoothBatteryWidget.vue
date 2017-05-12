@@ -1,14 +1,16 @@
 <template>
     <panel>
-        <span slot="title" class="glyphicon glyphicon-flash"></span>
-        <span slot="title">{{ $t('bluetooth.bluetooth_battery_widget') }}</span>
+        <span slot="title">
+            <span class="glyphicon glyphicon-flash"></span>
+            {{ $t('bluetooth.bluetooth_battery_widget') }}
+        </span>
         <span slot="title" class="counter badge pull-right">{{ count }}</span>
 
         <span v-if="error" class="list-group-item">error fetching bluetooth information: {{ errorDetails.message }}</span>
         <span v-if="data.length === 0 && !error" class="list-group-item">{{ $t('bluetooth.all_ok') }}</span>
-        <a v-else v-for="item in data" class="list-group-item" href="/clients">
-            {{ item.machine.computer_name }}
-        </a>
+        <div v-else v-for="item in data" class="widget-list-item" href="/clients">
+            <router-link :to="'/clients/' + item.machine.serial_number">{{ item.machine.computer_name }}</router-link>
+        </div>
     </panel>
 </template>
 

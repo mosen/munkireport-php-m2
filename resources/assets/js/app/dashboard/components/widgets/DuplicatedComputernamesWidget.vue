@@ -1,7 +1,10 @@
 <template>
     <panel>
-        <span slot="title" class="glyphicon glyphicon-warning-sign"></span>
-        <span slot="title">{{ $t('widget.duplicate_computernames.title') }}</span>
+
+        <span slot="title">
+            <span class="glyphicon glyphicon-warning-sign"></span>
+            {{ $t('widget.duplicate_computernames.title') }}
+        </span>
 
         <template v-if="items.length > 0" v-for="item in items">
             <a v-if="!item.computer_name" class="list-group-item">

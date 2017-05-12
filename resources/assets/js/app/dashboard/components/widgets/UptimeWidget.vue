@@ -1,7 +1,10 @@
 <template>
     <panel>
-        <i slot="title" class="glyphicon glyphicon-off"></i>
-        <span slot="title">{{ $t('widget.uptime.title') }}</span>
+
+        <span slot="title">
+            <span class="glyphicon glyphicon-off"></span>
+            {{ $t('widget.uptime.title') }}
+        </span>
 
         <div>
             <div class="widget-status">

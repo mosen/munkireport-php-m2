@@ -1,7 +1,10 @@
 <template>
     <panel>
-        <i slot="title" class="glyphicon glyphicon-lock"></i>
-        <span slot="title">{{ $t('filevault.widget.title') }}</span>
+
+        <span slot="title">
+            <span class="glyphicon glyphicon-lock"></span>
+            {{ $t('filevault.widget.title') }}
+        </span>
 
         <div class="panel-body text-center">
             <a v-if="unencrypted > 0" class="btn btn-danger">

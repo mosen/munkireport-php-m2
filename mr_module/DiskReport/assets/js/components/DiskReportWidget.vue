@@ -1,7 +1,10 @@
 <template>
     <panel>
-        <i slot="title" class="glyphicon glyphicon-hdd"></i>
-        <span slot="title">{{ $t('free_disk_space') }}</span>
+
+        <span slot="title">
+            <span class="glyphicon glyphicon-hdd"></span>
+            {{ $t('free_disk_space') }}
+        </span>
 
         <div v-if="total === 0 && !error" class="panel-body text-center">
             <span v-if="total === 0 && !error" id="disk-nodata">{{ $t('no_clients') }}</span>
