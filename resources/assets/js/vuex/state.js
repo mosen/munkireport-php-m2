@@ -26,7 +26,7 @@ export default {
             {url: '#', name: 'nav.listings.inventory'},
             {url: '#', name: 'nav.listings.location'},
             {url: '/x/munki_reports', name: 'nav.listings.munki'},
-            {url: '/x/network/listing', name: 'nav.listings.network'},
+            {url: '/x/networks', name: 'nav.listings.network'},
             {url: '/x/power/listing', name: 'nav.listings.power'},
             {url: '/x/printer/listing', name: 'nav.listings.printers'},
             {url: '#', name: 'nav.listings.profile'},

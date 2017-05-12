@@ -1,5 +1,6 @@
 <template>
     <v-server-table
+            name="network_table"
             url="/xapi/network"
             :columns="columns"
             :options="options"
