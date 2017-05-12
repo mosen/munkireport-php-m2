@@ -1,5 +1,6 @@
 <template>
     <v-server-table
+            name="security_table"
             url="/xapi/security"
             :columns="columns"
             :options="options"

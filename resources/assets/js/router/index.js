@@ -12,6 +12,7 @@ import munkireport from 'MrModules/MunkiReport/assets/js/routes';
 import network from 'MrModules/Network/assets/js/routes';
 import power from 'MrModules/Power/assets/js/routes';
 import printer from 'MrModules/Printer/assets/js/routes';
+import security from 'MrModules/Security/assets/js/routes';
 
 Vue.use(Router);
 
@@ -27,7 +28,8 @@ const router = new Router({
     ...munkireport,
     ...network,
     ...power,
-    ...printer
+    ...printer,
+    ...security
   ]
 });
 

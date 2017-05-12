@@ -31,7 +31,7 @@ export default {
             {url: '/x/printers', name: 'nav.listings.printers'},
             {url: '#', name: 'nav.listings.profile'},
             {url: '#', name: 'nav.listings.sccm_status'},
-            {url: '#', name: 'nav.listings.security'},
+            {url: '/x/security/listing', name: 'nav.listings.security'},
             {url: '/x/timemachine/listing', name: 'nav.listings.timemachine'},
             {url: '/x/warranty/listing', name: 'nav.listings.warranty'},
             {url: '/x/wifi/listing', name: 'nav.listings.wifi'}
