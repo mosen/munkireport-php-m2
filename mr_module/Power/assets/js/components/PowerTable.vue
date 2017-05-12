@@ -1,5 +1,6 @@
 <template>
     <v-server-table
+            name="power_table"
             url="/xapi/power"
             :columns="columns"
             :options="options"

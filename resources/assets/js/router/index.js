@@ -10,6 +10,7 @@ import diskreport from 'MrModules/DiskReport/assets/js/routes';
 import display from 'MrModules/Display/assets/js/routes';
 import munkireport from 'MrModules/MunkiReport/assets/js/routes';
 import network from 'MrModules/Network/assets/js/routes';
+import power from 'MrModules/Power/assets/js/routes';
 
 Vue.use(Router);
 
@@ -23,7 +24,8 @@ const router = new Router({
     ...diskreport,
     ...display,
     ...munkireport,
-    ...network
+    ...network,
+    ...power
   ]
 });
 
