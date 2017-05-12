@@ -29,6 +29,8 @@ import en from '../../../public/locale/en.json';
 Vue.i18n.add('en', en);
 Vue.i18n.set('en');
 
+import '../sass/app.scss';
+
 // store.dispatch('auth/setToken').then(() => {
 //     store.dispatch('auth/fetchUser').catch(() => {
 //         store.dispatch('auth/clearAuth');
