@@ -11,6 +11,11 @@ import auth from '../app/auth/vuex'
 import stats from '../app/stats/vuex'
 import dashboard from '../app/dashboard/vuex';
 
+// MrModules
+// TODO: Load dynamically
+
+import ard from 'MrModules/ARD/assets/js/vuex';
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -22,7 +27,8 @@ export default new Vuex.Store({
         i18n: vuexI18n.store,
         auth,
         stats,
-        dashboard
+        dashboard,
+        ard
     }
 });
 

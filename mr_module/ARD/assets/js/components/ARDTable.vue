@@ -1,5 +1,6 @@
 <template>
     <v-server-table
+            name="ard"
             url="/xapi/ard"
             :columns="columns"
             :options="options"

@@ -15,11 +15,13 @@ import axios from 'axios';
 import VueAxios from 'vue-axios';
 import VueD3 from 'vue-d3';
 import VueNVD3 from 'vue-nvd3';
+import {ServerTable, ClientTable, Event} from 'vue-tables-2';
 
 Vue.use(vuexI18n.plugin, store);
 Vue.use(VueAxios, axios);
 Vue.use(VueD3);
 Vue.use(VueNVD3);
+Vue.use(ServerTable, {}, true);
 
 Vue.component('app', require('./components/App.vue'));
 Vue.component('navigation', require('./components/Navigation.vue'));
