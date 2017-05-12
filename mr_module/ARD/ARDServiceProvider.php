@@ -44,7 +44,6 @@ class ARDServiceProvider extends ServiceProvider
         $this->mapWebRoutes();
         $this->mapApiRoutes();
         $this->loadMigrationsFrom(__DIR__.'/migrations');
-        $this->loadViewsFrom(__DIR__.'/views', 'ard');
 
         $this->publishes([
             __DIR__.'/public' => public_path('x/ard'),

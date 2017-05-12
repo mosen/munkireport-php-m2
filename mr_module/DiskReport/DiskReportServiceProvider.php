@@ -42,7 +42,6 @@ class DiskReportServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
         $this->mapWebRoutes();
         $this->loadMigrationsFrom(__DIR__.'/migrations');
-        $this->loadViewsFrom(__DIR__.'/views', 'diskreport');
 
         $moduleManager->add('displays_info', __DIR__)
             ->installs('scripts/install.sh')

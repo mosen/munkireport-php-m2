@@ -37,7 +37,6 @@ class MunkiReportServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
         $this->mapWebRoutes();
         $this->loadMigrationsFrom(__DIR__.'/migrations');
-        $this->loadViewsFrom(__DIR__.'/views', 'munkireport');
 
         $moduleManager->add('munkireport', __DIR__)
             ->installs('scripts/install.sh')

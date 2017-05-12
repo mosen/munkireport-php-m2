@@ -36,7 +36,7 @@ class WarrantyServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
         $this->mapWebRoutes();
         $this->loadMigrationsFrom(__DIR__.'/migrations');
-        $this->loadViewsFrom(__DIR__.'/views', 'warranty');
+
         $moduleManager->add('warranty', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');

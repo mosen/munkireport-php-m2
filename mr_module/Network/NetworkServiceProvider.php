@@ -35,7 +35,6 @@ class NetworkServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
         $this->mapWebRoutes();
         $this->loadMigrationsFrom(__DIR__.'/migrations');
-        $this->loadViewsFrom(__DIR__.'/views', 'network');
 
         $moduleManager->add('network', __DIR__)
             ->installs('scripts/install.sh')

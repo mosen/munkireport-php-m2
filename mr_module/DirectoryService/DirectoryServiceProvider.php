@@ -36,7 +36,6 @@ class DirectoryServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
         $this->mapWebRoutes();
         $this->loadMigrationsFrom(__DIR__.'/migrations');
-        $this->loadViewsFrom(__DIR__.'/views', 'directoryservice');
 
         $moduleManager->add('directory_service', __DIR__)
             ->installs('scripts/install.sh')

@@ -36,7 +36,6 @@ class WifiServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
         $this->mapWebRoutes();
         $this->loadMigrationsFrom(__DIR__.'/migrations');
-        $this->loadViewsFrom(__DIR__.'/views', 'wifi');
         
         $moduleManager->add('wifi', __DIR__)
             ->installs('scripts/install.sh')
