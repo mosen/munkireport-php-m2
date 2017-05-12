@@ -1,5 +1,6 @@
 <template>
     <v-server-table
+            name="warranty_table"
             url="/xapi/warranty"
             :columns="columns"
             :options="options"
