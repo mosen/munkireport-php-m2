@@ -2,9 +2,9 @@ import { Listing } from '../components';
 
 export default [
   {
-    path: '/x/ard/listing',
+    path: '/x/bluetooth/listing',
     component: Listing,
-    name: 'ard-listing',
+    name: 'bluetooth-listing',
     meta: {
       guest: true,
       needsAuth: false

@@ -12,3 +12,7 @@
 @import "~vue-nvd3/dist/vue-nvd3.css";
 
 
+// Required for fixed top navbar
+.App {
+  padding-top: 70px;
+}
