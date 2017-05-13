@@ -2,7 +2,7 @@
     <div class="panel panel-default">
         <div class="panel-heading" data-container="body" >
             <h3 class="panel-title">
-                <i class="fa fa-wifi"></i>
+                <span class="glyphicon glyphicon-signal"></span>
                 <span>{{ $t('wifi.networks') }}</span>
             </h3>
         </div>

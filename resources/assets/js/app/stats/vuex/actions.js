@@ -1,7 +1,9 @@
 import axios from 'axios';
 
-export const fetchStats = ({ commit, state }, stats = []) => {
-  return axios.get('/api/v1/stats').then((response) => {
+export const fetchStats = ({ commit, state }) => {
+  return axios.post('/api/v1/stats', {
+      ...state.stats.subscriptions
+  }).then((response) => {
     commit('')
   })
 };

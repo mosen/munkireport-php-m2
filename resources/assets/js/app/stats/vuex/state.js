@@ -1,3 +1,5 @@
 export default {
-  metrics: []
+  subscriptions: {
+    'topic': 1  // Ref count
+  }
 }

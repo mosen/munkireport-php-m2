@@ -3,7 +3,7 @@
         <div class="row" v-for="(row, ridx) in widgets(page)">
             <div class="widget-container" v-for="(widget, cidx) in row" :key="widget">
                 <div class="widget-controls">
-                    <span class="glyphicon glyphicon-remove widget-close" aria-hidden="true" @click="removeWidget(ridx, cidx)"></span>
+                    <span class="glyphicon glyphicon-remove widget-close" aria-hidden="true" @click.prevent="removeWidget(ridx, cidx)"></span>
                 </div>
                 <Widget :widget="widget" :row="ridx" :column="cidx"/>
             </div>
@@ -33,13 +33,15 @@
     import './Dashboard.scss';
 
     export default {
+        methods: {
+            ...mapMutations('dashboard', [
+                'removeWidget'
+            ])
+        },
         computed: {
             ...mapGetters('dashboard', [
                 'widgets',
                 'page'
-            ]),
-            ...mapMutations('dashboard', [
-                'removeWidget'
             ])
         },
         components: {
