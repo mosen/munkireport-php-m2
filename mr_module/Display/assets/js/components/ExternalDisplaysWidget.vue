@@ -1,22 +1,23 @@
 <template>
-    <div class="panel panel-default">
-        <div class="panel-heading" data-container="body" :title="$t('displays.widget_info')">
-            <h3 class="panel-title">
-                <i class="glyphicon glyphicon-expand"></i>
-                <span>{{ $t('displays.widget_title') }}</span>
-            </h3>
-        </div>
-        <div class="panel-body text-center">
-            <a href="/displays#external" class="btn btn-success">
-                <span class="bigger-150">{{ total }}</span>
+    <panel>
+        <span slot="title">
+            <span class="glyphicon glyphicon-expand"></span>
+            {{ $t('displays.widget_title') }}
+        </span>
+
+        <div class="widget-status">
+                <div class="widget-status-item widget-ok widget-padded">
+                    <h1>{{ total }}</h1>
                 <br>
                 {{ $t('displays.displays') }}
-            </a>
+                </div>
         </div>
-    </div>
+    </panel>
 </template>
 
 <script>
+    import panel from 'CoreDashboard/components/WidgetPanel.vue';
+    
     export default {
         data() {
             return {
@@ -36,6 +37,9 @@
                 this.errorDetails.status = response.status;
                 this.errorDetails.message = response.message;
             });
+        },
+        components: {
+            panel
         }
     }
 </script>
