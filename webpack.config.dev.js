@@ -1,12 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: {
     app: [
-      'webpack-dev-server/client?http://localhost:4000',
-      'webpack/hot/only-dev-server',
       './resources/assets/js/app.js'
     ]
   },
@@ -14,7 +11,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "..", "public"),
     filename: 'js/app.js',
-    publicPath: 'http://localhost:4000/'
   },
 
   resolve: {
@@ -86,8 +82,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    //  new BundleAnalyzerPlugin()
   ],
 
   devServer: {

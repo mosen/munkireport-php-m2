@@ -33,14 +33,23 @@ export default new Vuex.Store({
 });
 
 if (module.hot) {
-  // accept actions and mutations as hot modules
-  module.hot.accept(['./mutations'], () => {
-    // require the updated modules
-    // have to add .default here due to babel 6 module output
-    const newMutations = require('./mutations').default
-    // swap in the new actions and mutations
-    store.hotUpdate({
-      mutations: newMutations
+    // accept actions and mutations as hot modules
+    module.hot.accept(['./mutations', '../app/auth/vuex', '../app/stats/vuex', '../app/dashboard/vuex'], () => {
+        // require the updated modules
+        // have to add .default here due to babel 6 module output
+        const newMutations = require('./mutations').default;
+        const newAuth = require('../app/auth/vuex').default;
+        const newStats = require('../app/stats/vuex').default;
+        const newDashboard = require('../app/dashboard/vuex').default;
+
+        // swap in the new actions and mutations
+        store.hotUpdate({
+            mutations: newMutations,
+            modules: {
+                auth: newAuth,
+                stats: newStats,
+                dashboard: newDashboard
+            }
+        })
     })
-  })
 }
