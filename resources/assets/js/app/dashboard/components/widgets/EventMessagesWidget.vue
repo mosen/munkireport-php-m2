@@ -26,7 +26,7 @@
 </template>
 
 <script>
-    const API_ROOT = '/api';
+    import { mapMutations } from 'vuex';
     import moment from 'moment';
     import Message from '../events/Message.vue';
     import panel from '../WidgetPanel.vue';
@@ -40,15 +40,14 @@
                 error: false
             }
         },
-        created () {
-            this.axios.get(`${API_ROOT}/events?limit=${this.limit}`).then((response) => {
-                this.items = response.data;
-            });
+        mounted () {
+            this.subscribe({ topic: 'core.events' });
+        },
+        beforeDestroy () {
+            this.unsubscribe({ topic: 'core.events' });
         },
         methods: {
-            url: function (serialNumber) {
-                return `${this.urlPrefix}${serialNumber}`;
-            },
+            ...mapMutations('stats', ['subscribe', 'unsubscribe']),
             fromNow: function (relativeDate) {
                 return moment(relativeDate).fromNow();
             }

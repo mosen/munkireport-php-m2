@@ -15,6 +15,7 @@
 </template>
 
 <script>
+    import { mapMutations } from 'vuex';
     import panel from 'CoreDashboard/components/WidgetPanel.vue';
     
     export default {
@@ -26,20 +27,17 @@
                 data: []
             }
         },
-        created () {
-            this.axios.get(`/xapi/bluetooth?filter=low`).then((response) => {
-                this.count = response.data.count;
-                this.data = response.data.data;
-            }).catch((response) => {
-                this.error = true;
-                this.errorDetails = {
-                    status: response.status,
-                    message: response.message
-                };
-            });
+        mounted () {
+            this.subscribe({ topic: 'bluetooth.metrics' });
+        },
+        beforeDestroy () {
+            this.unsubscribe({ topic: 'bluetooth.metrics' });
         },
         computed: {
             
+        },
+        methods: {
+            ...mapMutations('stats', ['subscribe', 'unsubscribe'])
         },
         components: {
             panel

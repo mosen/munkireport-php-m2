@@ -36,44 +36,18 @@
 </template>
 
 <script>
-  import panel from 'CoreDashboard/components/WidgetPanel.vue';
+    import {mapMutations} from 'vuex';
+    import panel from 'CoreDashboard/components/WidgetPanel.vue';
 
-  export default {
-    data() {
-      return {
-        danger: 0,
-        warning: 0,
-        success: 0,
-        warningThreshold: 10,
-        dangerThreshold: 5,
-        error: false,
-        errorDetails: {
-          status: 200,
-          message: ''
+    export default {
+        methods: {
+            ...mapMutations('stats', ['subscribe', 'unsubscribe'])
+        },
+        mounted () {
+            this.subscribe({topic: 'disk_report.free_space'});
+        },
+        components: {
+            panel
         }
-      }
-    },
-    computed: {
-      total: function () {
-        return this.danger + this.warning + this.success;
-      }
-    },
-    mounted () {
-      this.axios.get(`/xapi/stats/diskreport/free_space`).then((response) => {
-        this.danger = response.data.danger;
-        this.warning = response.data.warning;
-        this.success = response.data.success;
-
-        this.warningThreshold = response.data.warningThreshold;
-        this.dangerThreshold = response.data.dangerThreshold;
-      }).catch((response) => {
-        this.error = true;
-        this.errorDetails.status = response.status;
-        this.errorDetails.message = response.message;
-      })
-    },
-    components: {
-      panel
     }
-  }
 </script>

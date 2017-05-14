@@ -25,6 +25,7 @@
 </template>
 
 <script>
+    import { mapMutations } from 'vuex';
     import panel from 'CoreDashboard/components/WidgetPanel.vue';
     
     export default {
@@ -32,8 +33,7 @@
             return {
                 ok: 0,
                 expire_soon: 0,
-                expired: 0,
-                url: '/certificates'
+                expired: 0
             }
         },
         computed: {
@@ -41,18 +41,8 @@
                 return this.ok + this.expire_soon + this.expired;
             }
         },
-        mounted () {
-            this.axios.get(`/xapi/stats/certificate`).then((response) => {
-                this.ok = response.data.ok;
-                this.expire_soon = response.data.expire_soon;
-                this.expired = response.data.expired;
-            }).catch((response) => {
-                this.error = true;
-                this.errorDetails = {
-                    status: response.status,
-                    message: response.message
-                };
-            });
+        methods: {
+            ...mapMutations('stats', ['subscribe', 'unsubscribe'])
         },
         components: {
             panel
