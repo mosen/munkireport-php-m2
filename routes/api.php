@@ -28,3 +28,8 @@ Route::resource('business_units', 'BusinessUnitController');
 Route::get('stats/report_data', 'ReportDataController@stats');
 Route::get('stats/uptime', 'ReportDataController@uptime');
 
+Route::group(['prefix' => 'v1'], function () {
+    Route::get('metrics', 'MetricController@index');
+});
+
+

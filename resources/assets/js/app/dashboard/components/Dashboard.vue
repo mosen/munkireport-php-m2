@@ -12,7 +12,7 @@
 </template>
 
 <script>
-    import {mapGetters, mapMutations} from 'vuex';
+    import {mapGetters, mapMutations, mapActions} from 'vuex';
     import Widget from './Widget';
     import * as Core from './widgets';
 
@@ -36,9 +36,11 @@
         methods: {
             ...mapMutations('dashboard', [
                 'removeWidget'
-            ])
+            ]),
+            ...mapActions('stats', ['fetchStats'])
         },
         computed: {
+            ...mapGetters('stats', ['topics']),
             ...mapGetters('dashboard', [
                 'widgets',
                 'page'
@@ -46,6 +48,9 @@
         },
         components: {
             Widget
+        },
+        mounted () {
+            this.fetchStats({ topics: this.topics });
         }
     }
 </script>
