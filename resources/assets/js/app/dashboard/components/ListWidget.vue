@@ -1,9 +1,12 @@
 <template>
-    <panel>
-        <div class="widget-padded">
-            <template slot="items"></template>
+    <div class="widget">
+        <div class="widget-heading" data-container="body">
+            <slot name="title"></slot>
         </div>
-    </panel>
+        <div class="widget-content scroll-box">
+            <slot></slot>
+        </div>
+    </div>
 </template>
 
 <script>

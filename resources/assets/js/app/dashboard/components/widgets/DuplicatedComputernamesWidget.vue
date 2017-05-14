@@ -1,22 +1,21 @@
 <template>
     <list-widget>
-
         <span slot="title">
             <span class="glyphicon glyphicon-warning-sign"></span>
             {{ $t('widget.duplicate_computernames.title') }}
         </span>
 
         <template v-if="items.length > 0" v-for="item in items">
-            <a v-if="!item.computer_name" class="list-group-item">
+            <div v-if="!item.computer_name" class="widget-list-item">
                 {{ $t('empty') }}
                 <span class="badge pull-right">{{ item.count }}</span>
-            </a>
-            <a v-else href="/show/listing/clients/computer_name" class="list-group-item">
+            </div>
+            <div v-else href="/show/listing/clients/computer_name" class="widget-list-item">
                 {{ item.computer_name }}
                 <span class="badge pull-right">{{ item.count }}</span>
-            </a>
+            </div>
         </template>
-        <span v-else class="list-group-item">{{ $t('widget.duplicate_computernames.notfound') }}</span>
+        <div v-else class="widget-list-item">{{ $t('widget.duplicate_computernames.notfound') }}</div>
     </list-widget>
 </template>
 

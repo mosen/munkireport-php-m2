@@ -16,7 +16,8 @@
         "rodneyrehm/plist": "^2.0",
         "teamtnt/laravel-scout-tntsearch-driver": "^2.0",
         "tymon/jwt-auth": "^0.5.10",
-        "webpatser/laravel-uuid": "^2.0"
+        "webpatser/laravel-uuid": "^2.0",
+        "workerman/workerman": "^3.4"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

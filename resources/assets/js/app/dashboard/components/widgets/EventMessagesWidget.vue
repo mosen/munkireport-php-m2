@@ -1,12 +1,11 @@
 <template>
-    <panel>
-
+    <list-widget>
         <span slot="title">
             <i class="glyphicon glyphicon-volume-up"></i>
             {{ $t('event_plural') }}
         </span>
 
-        <div class="widget-padded" style="max-height: 308px">
+        <div class="widget-content">
             <div v-if="items.length == 0" class="widget-list-item">No messages</div>
             <template v-else>
                 <message v-for="item in items"
@@ -20,16 +19,16 @@
                          v-bind:urlPrefix="urlPrefix"
                 ></message>
             </template>
-            <span v-if="error" class="list-group-item list-group-item-danger">Request Failed</span>
+            <div v-if="error" class="widget-list-item">Request Failed</div>
         </div>
-    </panel>
+    </list-widget>
 </template>
 
 <script>
     import { mapMutations } from 'vuex';
     import moment from 'moment';
     import Message from '../events/Message.vue';
-    import panel from '../WidgetPanel.vue';
+    import ListWidget from '../ListWidget.vue';
 
     export default {
         props: ['urlPrefix'],
@@ -54,7 +53,7 @@
         },
         components: {
             'message': Message,
-            panel
+            'list-widget': ListWidget
         }
     }
 </script>
