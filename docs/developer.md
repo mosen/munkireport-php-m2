@@ -32,7 +32,7 @@ This is my set up. You can use Homebrew to install most of the dependencies:
 
     $ brew install nginx php71 homebrew/php/composer nodejs
     
-I usually configure `php-fpm` to use a socket by editing `/usr/local/etc/php/X.Y/php-fpm.conf` and changing
+I usually configure `php-fpm` to use a socket by editing `/usr/local/etc/php/X.Y/php-fpm.d/www.conf` and changing
 
     listen = 127.0.0.1:9000
     
