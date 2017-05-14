@@ -15,6 +15,7 @@ import dashboard from '../app/dashboard/vuex';
 // TODO: Load dynamically
 
 import ard from 'MrModules/ARD/assets/js/vuex';
+import bluetooth from 'MrModules/Bluetooth/assets/js/vuex';
 
 Vue.use(Vuex);
 
@@ -28,7 +29,8 @@ export default new Vuex.Store({
         auth,
         stats,
         dashboard,
-        ard
+        ard,
+        bluetooth
     }
 });
 

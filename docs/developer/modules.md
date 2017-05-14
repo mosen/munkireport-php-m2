@@ -20,6 +20,7 @@ The directory structure looks something like this, but may not include everythin
                 ModulenameTable.vue - Listing table component
                 ModulenameTable.i18n.json - Listing table i18n
                 SomethingWidget.vue - A widget component
+              vuex - VueX state/getters/mutations etc.
                 
             scss - SASS stylesheets
             images
@@ -103,8 +104,8 @@ In your service provider you should add two methods for registering routes `mapA
 For simplicity, routes are added in the service provider, but you can create a separate `routes.php` if you feel like
 the service provider is getting too large to manage.
 
-Aggregate information such as the type used for widgets like counts usually comes under the `/xapi/stats/<modulename>`
-prefix.
+Widget data is fetched through a method not yet determined. 
+TODO: Document when spec is final. 
 
 Scripts
 -------
@@ -151,14 +152,7 @@ More information about the `.vue` component format can be found in the vue-loade
 ### Fetching data ###
 
 Use the axios instance available at `this.axios` to perform ajax requests.
+Widgets will use a different method to retrieve multiple stats over a single connection.
 
-### Error handling ###
-
-Two properties are defined on widgets to store state information about errors that happened during the data fetch
-process:
-
-- `error`: true or false
-- `errorDetails`: contains a message property which explains the last transport error.
-    also contains a status property with the HTTP status code.
  
 

@@ -17,9 +17,9 @@ Installing dependencies:
     $ composer install
     $ npm install
     
-To build front end assets:
+To run webpack hot module reload server on port 4000 run:
 
-    $ npm run dev
+    $ npm run hot
     
 ## Troubleshooting ##
 
