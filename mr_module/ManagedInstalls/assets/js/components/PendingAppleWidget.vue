@@ -21,28 +21,24 @@
 </template>
 
 <script>
+    import { mapMutations } from 'vuex';
     import panel from 'CoreDashboard/components/WidgetPanel.vue';
 
     export default {
         data() {
             return {
                 items: [],
-
-                error: false,
-                errorDetails: {
-                    status: 200,
-                    message: ''
-                }
+                error: false
             }
         },
-        created() {
-            this.axios.get(`/xapi/managedinstalls/applesus`).then((response) => {
-                this.items = response.data;
-            }).catch((response) => {
-                this.error = true;
-                this.errorDetails.status = response.status;
-                this.errorDetails.message = response.message;
-            });
+        methods: {
+            ...mapMutations('stats', ['subscribe', 'unsubscribe'])
+        },
+        mounted() {
+            this.subscribe('managedinstalls.applesus');
+        },
+        beforeDestroy() {
+            this.unsubscribe('managedinstalls.applesus');
         },
         components: {
             panel

@@ -1,5 +1,5 @@
 <template>
-    <panel>
+    <list-widget>
 
         <span slot="title">
             <span class="glyphicon glyphicon-warning-sign"></span>
@@ -17,39 +17,33 @@
             </a>
         </template>
         <span v-else class="list-group-item">{{ $t('widget.duplicate_computernames.notfound') }}</span>
-    </panel>
+    </list-widget>
 </template>
 
 <script>
-    import panel from '../WidgetPanel.vue';
+    import { mapMutations } from 'vuex';
+    import ListWidget from '../ListWidget.vue';
 
     export default {
         data() {
             return {
-                items: [],
-
-                error: false,
-                errorDetails: {
-                    status: 200,
-                    message: ''
-                }
+                items: []
             }
         },
-        components: {
-            panel
+        methods: {
+            ...mapMutations('stats', [
+                'subscribe',
+                'unsubscribe'
+            ])
         },
-        created() {
-            this.axios.get(`/xapi/stats/machine/duplicate_computernames`).then((response) => {
-                if (response.data) {
-                    this.items = response.data;
-                }
-            }).catch((response) => {
-                this.error = true;
-                this.errorDetails = {
-                    status: response.status,
-                    message: response.message
-                };
-            })
+        components: {
+            'list-widget': ListWidget
+        },
+        mounted () {
+            this.subscribe({ topic: 'core.machine.duplicate_computernames' });
+        },
+        beforeDestroy () {
+            this.unsubscribe({ topic: 'core.machine.duplicate_computernames' });
         }
     }
 </script>

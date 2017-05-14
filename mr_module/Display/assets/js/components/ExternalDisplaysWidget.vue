@@ -16,6 +16,7 @@
 </template>
 
 <script>
+    import { mapMutations } from 'vuex';
     import panel from 'CoreDashboard/components/WidgetPanel.vue';
     
     export default {
@@ -29,14 +30,11 @@
                 }
             }
         },
+        methods: {
+            ...mapMutations('stats', ['subscribe', 'unsubscribe'])
+        },
         mounted() {
-            this.axios.get(`/xapi/stats/display/external`).then((response) => {
-                this.total = response.data.total;
-            }).catch((response) => {
-                this.error = true;
-                this.errorDetails.status = response.status;
-                this.errorDetails.message = response.message;
-            });
+            this.subscribe({ topic: 'display.external' });
         },
         components: {
             panel

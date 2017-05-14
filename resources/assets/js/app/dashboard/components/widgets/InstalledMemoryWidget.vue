@@ -13,9 +13,21 @@
 </template>
 
 <script>
-  import panel from '../WidgetPanel.vue';
+    import { mapMutations } from 'vuex';
+    import panel from '../WidgetPanel.vue';
 
   export default {
+      data() {
+          return {
+              danger: 0
+          }
+      },
+      methods: {
+          ...mapMutations('stats', ['subscribe', 'unsubscribe'])
+      },
+      mounted() {
+          this.subscribe({ topic: 'core.installed_memory' });
+      },
     components: {
       panel
     }

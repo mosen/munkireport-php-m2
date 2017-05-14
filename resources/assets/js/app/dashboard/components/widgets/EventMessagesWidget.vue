@@ -26,7 +26,7 @@
 </template>
 
 <script>
-  const API_ROOT = '/api';
+    const API_ROOT = '/api';
     import moment from 'moment';
     import Message from '../events/Message.vue';
     import panel from '../WidgetPanel.vue';
@@ -55,7 +55,7 @@
         },
         components: {
             'message': Message,
-          panel
+            panel
         }
     }
 </script>

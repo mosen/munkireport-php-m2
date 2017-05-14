@@ -2,7 +2,8 @@
     <panel>
         <div class="widget-padded">
             <i slot="title" class="fa fa-code-fork"></i>
-            <span slot="title" data-i18n="widget.modified_computernames.title">{{ $t('widget.modified_computernames.title')
+            <span slot="title"
+                  data-i18n="widget.modified_computernames.title">{{ $t('widget.modified_computernames.title')
                 }}</span>
             <span slot="title" class="counter badge pull-right">{{ items.length }}</span>
 
@@ -18,28 +19,27 @@
 </template>
 
 <script>
-  import panel from 'CoreDashboard/components/WidgetPanel.vue';
+    import {mapMutations} from 'vuex';
+    import panel from 'CoreDashboard/components/WidgetPanel.vue';
 
-  export default {
-    data() {
-      return {
-        items: [],
-        error: false,
-        errorDetails: {
-          status: 200,
-          message: ''
+    export default {
+        data() {
+            return {
+                items: [],
+                error: false
+            }
+        },
+        methods: {
+            ...mapMutations('stats', [
+                'subscribe',
+                'unsubscribe'
+            ])
+        },
+        mounted() {
+            this.subscribe({topic: 'directoryservice.basic'});
+        },
+        components: {
+            panel
         }
-      }
-    },
-    computed: {},
-    mounted() {
-      this.axios.get(`/xapi/stats/directoryservice`).then((response) => {
-
-      }).catch((response) => {
-        this.error = true;
-        this.errorDetails.status = response.status;
-        this.errorDetails.message = response.message;
-      })
     }
-  }
 </script>

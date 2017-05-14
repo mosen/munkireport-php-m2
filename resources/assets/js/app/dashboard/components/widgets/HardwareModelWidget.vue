@@ -7,7 +7,7 @@
             </h3>
         </div>
         <div class="list-group scroll-box">
-            <template v-if="data.length > 0">
+            <template v-if="items.length > 0">
                 <a v-for="item in items" href="/show/listing/hardware/machine_desc" class="list-group-item">
                     {{ item.machine_desc }}
                     <span class="badge pull-right">{{ count }}</span>
@@ -19,31 +19,27 @@
 </template>
 
 <script>
-    export default {
-        data () {
-            return {
-                items: [],
+    import { mapMutations } from 'vuex';
 
-                error: false,
-                errorDetails: {
-                    status: 200,
-                    message: ''
-                }
+    export default {
+        data() {
+            return {
+                items: []
             }
         },
+        methods: {
+            ...mapMutations('stats', [
+                'subscribe',
+                'unsubscribe'
+            ])
+        },
 
-        beforeCreate () {
-            this.axios.get(`/xapi/stats/machine/hardware_models`).then((response) => {
-                if (response.data) {
-                    this.items = response.data;
-                }
-            }).catch((response) => {
-                this.error = true;
-                this.errorDetails = {
-                    status: response.status,
-                    message: response.message
-                };
-            })
+        mounted () {
+            this.subscribe({ topic: 'core.machine.hardware_models' });
+        },
+
+        beforeDestroy () {
+            this.unsubscribe({ topic: 'core.machine.hardware_models' });
         }
     }
 </script>

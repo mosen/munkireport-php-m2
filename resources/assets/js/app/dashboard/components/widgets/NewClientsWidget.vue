@@ -21,6 +21,7 @@
 </template>
 
 <script>
+    import { mapMutations } from 'vuex';
     import moment from 'moment';
     const API_ROOT = '/api';
     import panel from '../WidgetPanel.vue';
@@ -32,14 +33,14 @@
                 limit: 10
             }
         },
-
-        created () {
-            this.axios.get(`${API_ROOT}/machines?limit=${this.limit}&filter[created_at]=recent`).then((response) => {
-                this.clients = response.data;
-            })
+        mounted () {
+            this.subscribe({ topic: 'core.machines.recent' });
         },
-
+        beforeDestroy () {
+            this.unsubscribe({ topic: 'core.machines.recent' });
+        },
         methods: {
+            ...mapMutations('stats', ['subscribe, unsubscribe']),
             url (client) {
                 return `/client/detail/${client.serial_number}`;
             },
