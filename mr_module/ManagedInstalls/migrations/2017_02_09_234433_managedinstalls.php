@@ -16,11 +16,11 @@ class Managedinstalls extends Migration
         Schema::create('managedinstalls', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('serial_number')->unique();
+            $table->string('serial_number');
             $table->string('name');
             $table->string('display_name');
-            $table->string('version');
-            $table->integer('size');
+            $table->string('version')->nullable();
+            $table->integer('size')->nullable();
             $table->integer('installed');
             $table->string('status');
             $table->string('type');

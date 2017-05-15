@@ -21,7 +21,6 @@
     "bootstrap-sass": "^3.3.7",
     "cross-env": "^5.0.0",
     "css-loader": "^0.28.1",
-    "d3": "^3.4.4",
     "i18next": "^8.2.1",
     "json-loader": "^0.5.4",
     "lodash": "^4.17.4",
