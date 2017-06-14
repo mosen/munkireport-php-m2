@@ -30,6 +30,8 @@ Route::group(['prefix' => 'v1'], function () {
     Route::resource('machines', 'MachineController');
     Route::resource('report_data', 'ReportDataController');
     Route::resource('business_units', 'BusinessUnitController');
+
+    Route::post('webhook/endpoint', 'WebhookController@endpoint');
 });
 
 
