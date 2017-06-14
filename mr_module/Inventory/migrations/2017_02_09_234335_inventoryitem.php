@@ -16,7 +16,7 @@ class Inventoryitem extends Migration
         Schema::create('inventoryitem', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('serial_number')->unique();
+            $table->string('serial_number');
             $table->string('name');
             $table->string('version');
             $table->string('bundleid');

@@ -1,13 +1,13 @@
 <template>
     <div class="dashboard">
-        <div class="row" v-for="(row, ridx) in widgets(page)">
+        <template v-for="(row, ridx) in widgets(page)">
             <div class="widget-container" v-for="(widget, cidx) in row" :key="widget">
                 <div class="widget-controls">
                     <span class="glyphicon glyphicon-remove widget-close" aria-hidden="true" @click.prevent="removeWidget(ridx, cidx)"></span>
                 </div>
                 <Widget :widget="widget" :row="ridx" :column="cidx"/>
             </div>
-        </div>
+        </template>
     </div>
 </template>
 

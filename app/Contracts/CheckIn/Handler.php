@@ -5,12 +5,9 @@ namespace Mr\Contracts\CheckIn;
 interface Handler
 {
     /**
-     * Determine whether MunkiReport data with the given module name may be handled by this CheckInHandler.
-     *
-     * @param $moduleName string The short name of the class of data that needs to be handled.
-     * @return boolean
+     * Class must have a public static variable declaring the types of reports it can handle.
      */
-    public function canHandle($moduleName);
+    //abstract public static $handles = [];
 
     /**
      * @param $moduleName string The short name of the class of data that needs to be handled.

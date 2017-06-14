@@ -1,14 +1,19 @@
 <?php
 namespace Mr\CheckIn;
 
+use Illuminate\Support\Facades\Log;
 use CFPropertyList\CFPropertyList;
 use Mr\Contracts\CheckIn\Handler;
 use Mr\Machine;
 
 class MachineCheckInHandler implements Handler
 {
+    public static $handles = ['machine'];
+
     public function process($moduleName, $serialNumber, $data)
     {
+        Log::debug('processing machine check-in');
+
         $dataObj = new CFPropertyList;
         $dataObj->parse($data);
         $dataArr = $dataObj->toArray();
@@ -38,16 +43,5 @@ class MachineCheckInHandler implements Handler
 
         $machine->fill($dataArr);
         $machine->save();
-    }
-
-    /**
-     * Determine whether MunkiReport data with the given module name may be handled by this CheckInHandler.
-     *
-     * @param $moduleName
-     * @return boolean
-     */
-    public function canHandle($moduleName)
-    {
-        return $moduleName == 'machine';
     }
 }

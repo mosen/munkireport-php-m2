@@ -12,12 +12,21 @@ use Mr\Contracts\CheckIn\CheckInRouter as CheckInRouterInterface;
  */
 class CheckInRouter implements CheckInRouterInterface
 {
+    protected $handlers = [];
+
     /**
      * CheckInRouter constructor.
      * @param array $handlers An array of objects implementing the CheckIn\Handler interface.
      */
     public function __construct(array $handlers) {
-        
+        foreach ($handlers as $handlerClass) {
+            Log::debug(implode(',', $handlerClass::$handles));
+            if (!empty($handlerClass::$handles)) {
+                foreach ($handlerClass::$handles as $k) {
+                    $this->handlers[$k] = [$handlerClass];
+                }
+            }
+        }
     }
 
     /**
@@ -47,12 +56,12 @@ class CheckInRouter implements CheckInRouterInterface
      */
     public function route($moduleName, $serialNumber, $data) {
         Log::debug("Routing check in for {$moduleName}");
+        Log::debug("Have handlers for: " . implode(',', array_keys($this->handlers)));
 
         if (isset($this->handlers[$moduleName])) {
             foreach ($this->handlers[$moduleName] as $h) {
-                $cls = app($h);
-                Log::debug("Executing check-in handler ${h}");
-                $cls->process($moduleName, $serialNumber, $data);
+                Log::debug("Executing check-in handler ${moduleName}");
+                $h->process($moduleName, $serialNumber, $data);
             }
             return true;
         }

@@ -1,11 +1,9 @@
 .dashboard {
+  justify-content: center;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 
-
-.row {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
+.widget-size-2 {
+  flex-grow: 2;
 }

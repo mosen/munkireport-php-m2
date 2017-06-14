@@ -79,7 +79,7 @@ module.exports = {
           loader: 'file-loader',
           options: {
             outputPath: 'fonts/',
-            publicPath: 'http://localhost:4000/fonts/'
+            publicPath: 'http://localhost:4000/'
           }
         }]
       }

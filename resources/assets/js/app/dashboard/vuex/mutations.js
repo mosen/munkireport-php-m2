@@ -4,3 +4,7 @@ export const removeWidget = (state, { rowIndex, columnIndex }) => {
     console.log(`remove row ${rowIndex}, column ${columnIndex}`);
     state.pages[page].widgets[rowIndex] = state.pages[page].widgets[rowIndex].splice(columnIndex, 1)
 };
+
+export const fetchReportDataSuccess = (state, response) => {
+    console.log('success!');
+};

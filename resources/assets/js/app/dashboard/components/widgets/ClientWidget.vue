@@ -26,7 +26,7 @@
 </template>
 
 <script>
-    import {mapMutations} from 'vuex';
+    import {mapMutations, mapActions} from 'vuex';
     const API_ROOT = '/api';
     import panel from '../WidgetPanel.vue';
 
@@ -58,7 +58,10 @@
             ...mapMutations('stats', [
                 'subscribe',
                 'unsubscribe'
-            ])
+            ]),
+          ...mapActions('dashboard', [
+              'fetchReportData'
+          ])
         },
         computed: {
             active: function () {
@@ -75,10 +78,11 @@
             }
         },
         mounted () {
-            this.subscribe({ topic: 'core.report_data' });
+//            this.subscribe({ topic: 'core.report_data' });
+          this.fetchReportData();
         },
         beforeDestroy () {
-            this.unsubscribe({ topic: 'core.report_data' });
+//            this.unsubscribe({ topic: 'core.report_data' });
         },
         components: {
             panel

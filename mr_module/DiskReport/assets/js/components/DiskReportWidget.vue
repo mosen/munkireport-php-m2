@@ -36,15 +36,27 @@
 </template>
 
 <script>
-    import {mapMutations} from 'vuex';
+    import {mapMutations, mapActions, mapState, mapGetters} from 'vuex';
     import panel from 'CoreDashboard/components/WidgetPanel.vue';
 
     export default {
+      computed: {
+        ...mapGetters('disk_report', ['total']),
+        ...mapState('disk_report', {
+        danger: state => state.danger,
+        warning: state => state.warning,
+        success: state => state.success,
+        warningThreshold: state => state.warningThreshold,
+        dangerThreshold: state => state.dangerThreshold,
+        error: state => state.error
+      })},
         methods: {
-            ...mapMutations('stats', ['subscribe', 'unsubscribe'])
+          ...mapActions('disk_report', [
+            'fetchDiskReportSpace'
+          ])
         },
         mounted () {
-            this.subscribe({topic: 'disk_report.free_space'});
+            this.fetchDiskReportSpace({});
         },
         components: {
             panel

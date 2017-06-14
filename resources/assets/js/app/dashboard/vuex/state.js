@@ -44,5 +44,6 @@ export default {
         'wifi-widget-networks'
       ]
     ]
-  }]
+  }],
+  report_data: {}
 }
