@@ -22,6 +22,7 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 
 Route::get('stats/report_data', 'ReportDataController@stats');
 Route::get('stats/uptime', 'ReportDataController@uptime');
+Route::get('stats/new_clients', 'MachineController@new_clients');
 
 Route::group(['prefix' => 'v1'], function () {
     Route::get('metrics', 'MetricController@index');

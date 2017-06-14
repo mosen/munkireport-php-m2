@@ -18,7 +18,7 @@
 </template>
 
 <script>
-    import {mapMutations} from 'vuex';
+    import {mapMutations, mapActions} from 'vuex';
     import moment from 'moment';
     import ListWidget from '../ListWidget.vue';
 
@@ -30,13 +30,12 @@
             }
         },
         mounted () {
-            this.subscribe({topic: 'core.machines.recent'});
-        },
-        beforeDestroy () {
-            this.unsubscribe({topic: 'core.machines.recent'});
+            this.fetchNewClients();
         },
         methods: {
-            ...mapMutations('stats', ['subscribe, unsubscribe']),
+          ...mapActions('dashboard', [
+            'fetchNewClients'
+          ]),
             url (client) {
                 return `/clients/${client.serial_number}`;
             },

@@ -15,77 +15,68 @@
         ></vn-pie>
         <div class="text-muted text-center">
             <span>{{ $t('client.total') }}</span>:
-            <span class="total-clients">{{ stats.total }}</span>
+            <span class="total-clients">{{ total }}</span>
             <span class="total-change"></span>
             |
             <span>{{ $t('client.hour') }}</span>:
-            <span class="hour-clients">{{ stats.seen_last_hour }}</span>
+            <span class="hour-clients">{{ seen_last_hour }}</span>
             <span class="lasthour-change"></span>
         </div>
     </panel>
 </template>
 
 <script>
-    import {mapMutations, mapActions} from 'vuex';
-    const API_ROOT = '/api';
-    import panel from '../WidgetPanel.vue';
+  import {mapMutations, mapActions, mapGetters, mapState} from 'vuex';
+  import panel from '../WidgetPanel.vue';
 
-    export default {
-        data () {
-            // NOTE: these stats are not exclusive, so a client can be seen last day + last hour + last week etc.
-            // so we cannot use the sum of all to equal the total value.
-            return {
-                chart: {
-                    height: 258,
-                    width: 258,
-                    donutRatio: 0.45,
-                    donut: true,
-                    showLabels: false
-                },
-                stats: {
-                    total: 0,
-                    inactive_month: 0,
-                    inactive_three_months: 0,
-                    inactive_week: 0,
-                    seen_last_day: 0,
-                    seen_last_hour: 0,
-                    seen_last_month: 0,
-                    seen_last_week: 0
-                }
-            }
-        },
-        methods: {
-            ...mapMutations('stats', [
-                'subscribe',
-                'unsubscribe'
-            ]),
-          ...mapActions('dashboard', [
-              'fetchReportData'
-          ])
-        },
-        computed: {
-            active: function () {
-                return {
-                    label: this.$t('active'),
-                    value: this.stats.seen_last_month
-                };
-            },
-            inactive: function () {
-                return {
-                    label: this.$t('inactive'),
-                    value: this.stats.total - this.stats.seen_last_month
-                }
-            }
-        },
-        mounted () {
-//            this.subscribe({ topic: 'core.report_data' });
-          this.fetchReportData();
-        },
-        beforeDestroy () {
-//            this.unsubscribe({ topic: 'core.report_data' });
-        },
-        components: {
-            panel
+  export default {
+    data () {
+      // NOTE: these stats are not exclusive, so a client can be seen last day + last hour + last week etc.
+      // so we cannot use the sum of all to equal the total value.
+      return {
+        chart: {
+          height: 258,
+          width: 258,
+          donutRatio: 0.45,
+          donut: true,
+          showLabels: false
         }
+      }
+    },
+    methods: {
+      ...mapActions('dashboard', [
+        'fetchReportData'
+      ])
+    },
+    computed: {
+      ...mapState('dashboard', {
+        inactive_week: state => state.report_data.inactive_week,
+        inactive_month: state => state.report_data.inactive_month,
+        inactive_three_months: state => state.report_data.inactive_three_months,
+        seen_last_hour: state => state.report_data.seen_last_hour,
+        seen_last_day: state => state.report_data.seen_last_day,
+        seen_last_week: state => state.report_data.seen_last_week,
+        seen_last_month: state => state.report_data.seen_last_month,
+        total: state => state.report_data.total
+      }),
+      active: function () {
+        return {
+          label: this.$t('active'),
+          value: this.seen_last_month
+        };
+      },
+      inactive: function () {
+        return {
+          label: this.$t('inactive'),
+          value: this.total - this.seen_last_month
+        }
+      }
+    },
+    mounted () {
+      this.fetchReportData();
+    },
+    components: {
+      panel
     }
+  }
 </script>

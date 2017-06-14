@@ -5,6 +5,19 @@ export const removeWidget = (state, { rowIndex, columnIndex }) => {
     state.pages[page].widgets[rowIndex] = state.pages[page].widgets[rowIndex].splice(columnIndex, 1)
 };
 
+export const fetchReportDataRequest = (state) => {
+    state.report_data.loading = true;
+};
+
 export const fetchReportDataSuccess = (state, response) => {
-    console.log('success!');
+    const { data } = response;
+
+    state.report_data.inactive_month = data.inactive_month;
+    state.report_data.inactive_three_months = data.inactive_three_months;
+    state.report_data.inactive_week = data.inactive_week;
+    state.report_data.seen_last_day = data.seen_last_day;
+    state.report_data.seen_last_hour = data.seen_last_hour;
+    state.report_data.seen_last_month = data.seen_last_month;
+    state.report_data.seen_last_week = data.seen_last_week;
+    state.report_data.total = data.total;
 };

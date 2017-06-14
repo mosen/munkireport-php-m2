@@ -2,6 +2,7 @@
 namespace Mr;
 
 use Illuminate\Database\Eloquent\Model;
+use Mr\Scopes\CreatedSinceScope;
 
 class Machine extends Model
 {
@@ -79,5 +80,5 @@ class Machine extends Model
     }
 
     //// SCOPES
-    
+    use CreatedSinceScope;
 }

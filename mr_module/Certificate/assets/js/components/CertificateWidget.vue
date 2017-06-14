@@ -25,27 +25,28 @@
 </template>
 
 <script>
-    import { mapMutations } from 'vuex';
-    import panel from 'CoreDashboard/components/WidgetPanel.vue';
-    
-    export default {
-        data() {
-            return {
-                ok: 0,
-                expire_soon: 0,
-                expired: 0
-            }
-        },
-        computed: {
-            total: function() {
-                return this.ok + this.expire_soon + this.expired;
-            }
-        },
-        methods: {
-            ...mapMutations('stats', ['subscribe', 'unsubscribe'])
-        },
-        components: {
-            panel
-        }
+  import {mapMutations, mapActions, mapState} from 'vuex';
+  import panel from 'CoreDashboard/components/WidgetPanel.vue';
+
+  export default {
+    data() {
+      return {
+        url: '/listing/certificate'
+      };
+    },
+    computed: {
+      ...mapState('certificate', {
+        ok: state => state.ok,
+        expire_soon: state => state.expire_soon,
+        expired: state => state.expired,
+      }),
+      total: function () {
+        return this.ok + this.expire_soon + this.expired;
+      }
+    },
+    methods: {},
+    components: {
+      panel
     }
+  }
 </script>

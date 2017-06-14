@@ -41,4 +41,10 @@ class MachineController extends Controller
     public function listing() {
         return view('machine.listing');
     }
+
+    public function new_clients() {
+        $newClients = Machine::createdSince(new \DateInterval('P1W'));
+        
+        return $newClients->get()->toArray();
+    }
 }

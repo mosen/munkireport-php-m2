@@ -16,6 +16,7 @@ import dashboard from '../app/dashboard/vuex';
 
 import ard from 'MrModules/ARD/assets/js/vuex';
 import bluetooth from 'MrModules/Bluetooth/assets/js/vuex';
+import certificate from 'MrModules/Certificate/assets/js/vuex';
 import disk_report from 'MrModules/DiskReport/assets/js/vuex';
 
 Vue.use(Vuex);
@@ -32,6 +33,7 @@ export default new Vuex.Store({
         dashboard,
         ard,
         bluetooth,
+      certificate,
       disk_report,
     }
 });
