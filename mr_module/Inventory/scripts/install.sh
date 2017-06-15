@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # inventory controller
-DR_CTL="${BASEURL}index.php?/module/inventory/"
+DR_CTL="${BASEURL}/module/inventory/"
 
 # Find out where the munki directory is to set accordingly.
 munki_install_dir=$(/usr/bin/python -c 'import CoreFoundation; print CoreFoundation.CFPreferencesCopyAppValue("ManagedInstallDir", "ManagedInstalls")')

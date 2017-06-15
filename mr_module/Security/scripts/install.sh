@@ -4,7 +4,7 @@ MODULE_NAME="security"
 MODULESCRIPT="security.py"
 MODULE_CACHE_FILE="security.plist"
 
-CTL="${BASEURL}index.php?/module/${MODULE_NAME}/"
+CTL="${BASEURL}/module/${MODULE_NAME}/"
 
 # Remove old versions of the script and cache file
 if [ -f "${MUNKIPATH}preflight.d/security.sh" ]; then

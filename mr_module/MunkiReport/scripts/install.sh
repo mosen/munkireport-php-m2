@@ -5,7 +5,7 @@ rm -f "${MUNKIPATH}preflight.d/munkireport.py"
 rm -f "${MUNKIPATH}preflight.d/cache/munkireport.plist"
 
 # managedinstalls controller
-CTL="${BASEURL}index.php?/module/munkireport/"
+CTL="${BASEURL}/module/munkireport/"
 
 # Get the scripts in the proper directories
 ${CURL} "${CTL}get_script/munkireport.py" -o "${MUNKIPATH}postflight.d/munkireport.py"

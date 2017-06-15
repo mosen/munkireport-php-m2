@@ -2,7 +2,7 @@
 MODULE_NAME="backup2go"
 
 # backup2go controller
-CTL="${BASEURL}index.php?/module/backup2go/"
+CTL="${BASEURL}/module/backup2go/"
 
 # Get the scripts in the proper directories
 "${CURL[@]}" "${CTL}get_script/backup2go.sh" -o "${MUNKIPATH}preflight.d/backup2go.sh"

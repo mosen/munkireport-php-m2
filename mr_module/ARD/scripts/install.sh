@@ -4,7 +4,7 @@ MODULE_NAME="ard"
 MODULESCRIPT="init_ard"
 PREF_FILE="/Library/Preferences/com.apple.RemoteDesktop.plist"
 
-CTL="${BASEURL}index.php?/module/${MODULE_NAME}/"
+CTL="${BASEURL}/module/${MODULE_NAME}/"
 
 # Get the scripts in the proper directories
 "${CURL[@]}" "${CTL}get_script/${MODULESCRIPT}" -o "${MUNKIPATH}preflight.d/${MODULESCRIPT}"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # power controller
-CTL="${BASEURL}index.php?/module/power/"
+CTL="${BASEURL}/module/power/"
 
 # Get the scripts in the proper directories
 "${CURL[@]}" "${CTL}get_script/power.sh" -o "${MUNKIPATH}preflight.d/power.sh"

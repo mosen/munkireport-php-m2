@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # deploystudio controller
-CTL="${BASEURL}index.php?/module/deploystudio/"
+CTL="${BASEURL}/module/deploystudio/"
 
 # Get the scripts in the proper directories
 "${CURL[@]}" "${CTL}get_script/deploystudio" -o "${MUNKIPATH}preflight.d/deploystudio"

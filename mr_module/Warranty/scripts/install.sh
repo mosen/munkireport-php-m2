@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # warranty controller
-CTL="${BASEURL}index.php?/module/warranty/"
+CTL="${BASEURL}/module/warranty/"
 
 # Get the scripts in the proper directories
 "${CURL[@]}" "${CTL}get_script/warranty" -o "${MUNKIPATH}preflight.d/warranty"

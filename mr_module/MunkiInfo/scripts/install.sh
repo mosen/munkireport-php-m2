@@ -4,7 +4,7 @@ MODULE_NAME="munkiinfo"
 MODULESCRIPT="munkiinfo.py"
 MODULE_CACHE_FILE="munkiinfo.plist"
 
-CTL="${BASEURL}index.php?/module/${MODULE_NAME}/"
+CTL="${BASEURL}/module/${MODULE_NAME}/"
 
 # Get the scripts in the proper directories
 "${CURL[@]}" "${CTL}get_script/${MODULESCRIPT}" -o "${MUNKIPATH}preflight.d/${MODULESCRIPT}"

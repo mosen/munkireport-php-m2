@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # bluetooth controller
-CTL="${BASEURL}index.php?/module/bluetooth/"
+CTL="${BASEURL}/module/bluetooth/"
 
 # Get the scripts in the proper directories
 "${CURL[@]}" "${CTL}get_script/bluetooth.py" -o "${MUNKIPATH}preflight.d/bluetooth.py"
