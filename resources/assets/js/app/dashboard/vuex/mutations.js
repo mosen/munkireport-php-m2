@@ -21,3 +21,14 @@ export const fetchReportDataSuccess = (state, response) => {
     state.report_data.seen_last_week = data.seen_last_week;
     state.report_data.total = data.total;
 };
+
+export const fetchNewClientsRequest = (state) => {
+  state.new_clients.loading = true;
+};
+
+export const fetchNewClientsSuccess = (state, response) => {
+    const { data } = response;
+
+    state.new_clients.loading = false;
+    state.new_clients.items = data;
+};

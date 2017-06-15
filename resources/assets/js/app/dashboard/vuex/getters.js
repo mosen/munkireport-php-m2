@@ -5,3 +5,5 @@ export const reportDataTotal = state => (
   state.report_data.inactive_month +
   state.report_data.inactive_week +
   state.report_data.inactive_three_months);
+
+export const clients = state => state.new_clients.items;

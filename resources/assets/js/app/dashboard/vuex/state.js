@@ -55,5 +55,9 @@ export default {
     seen_last_day: 0,
     seen_last_week: 0,
     seen_last_month: 0
+  },
+  new_clients: {
+    loading: false,
+    items: [],
   }
 }
