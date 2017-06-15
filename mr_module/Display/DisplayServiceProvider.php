@@ -44,4 +44,12 @@ class DisplayServiceProvider extends ServiceProvider
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }
+
+    public function register() {
+        $this->app->bind('MrModule\Display\CheckInHandler', function ($app) {
+            return new CheckInHandler();
+        });
+
+        $this->app->tag('MrModule\Display\CheckInHandler', 'checkin');
+    }
 }

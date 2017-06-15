@@ -25,6 +25,7 @@ class CheckInHandler implements Handler
 
         $attrs = $this->parseTextRecord($data, ' = ', $this->translate);
         $fvstatus->fill($attrs);
+        $fvstatus->serial_number = $serialNumber;
 
         $fvstatus->save();
     }

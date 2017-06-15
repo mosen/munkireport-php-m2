@@ -17,7 +17,7 @@ class Location extends Migration
             $table->increments('id');
 
             $table->string('serial_number')->unique();
-            $table->string('address');
+            $table->string('address')->nullable();
             $table->integer('altitude')->default(0);
             $table->string('currentstatus');
             $table->boolean('ls_enabled')->default(false);
@@ -27,7 +27,7 @@ class Location extends Migration
             $table->integer('latitudeaccuracy')->default(0);
             $table->double('longitude')->default(0.0);
             $table->integer('longitudeaccuracy')->default(0);
-            $table->string('stalelocation');
+            $table->string('stalelocation')->nullable();
 
             $table->timestamps();
         });

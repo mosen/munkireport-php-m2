@@ -40,4 +40,12 @@ class NetworkServiceProvider extends ServiceProvider
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }
+
+    public function register() {
+        $this->app->bind('MrModule\Network\CheckInHandler', function ($app) {
+            return new CheckInHandler();
+        });
+
+        $this->app->tag('MrModule\Network\CheckInHandler', 'checkin');
+    }
 }

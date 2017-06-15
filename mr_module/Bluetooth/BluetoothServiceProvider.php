@@ -5,7 +5,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
 use Mr\Contracts\CheckIn\CheckInRouter;
 use Mr\Module\ModuleManager;
-use MrModule\Bluetooth\CheckInHandler;
+
 
 class BluetoothServiceProvider extends ServiceProvider
 {
@@ -43,5 +43,13 @@ class BluetoothServiceProvider extends ServiceProvider
 
         $this->mapApiRoutes();
         $this->mapWebRoutes();
+    }
+
+    public function register() {
+        $this->app->bind('MrModule\Bluetooth\CheckInHandler', function ($app) {
+            return new CheckInHandler();
+        });
+
+        $this->app->tag('MrModule\Bluetooth\CheckInHandler', 'checkin');
     }
 }
