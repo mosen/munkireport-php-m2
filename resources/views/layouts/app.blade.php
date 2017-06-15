@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     @if (env('APP_ENV') == 'production')
-        <link href="{{ mixp('/css/app.css', '', 4000) }}" rel="stylesheet">
+        <link href="/css/app.css" rel="stylesheet">
     @endif
 
     <!-- Scripts -->
@@ -27,10 +27,13 @@
         @yield('content')
     </div>
     @if (env('APP_ENV') == 'production')
-        <script src="{{ mixp('/js/manifest.js', '', 4000) }}"></script>
-        <script src="{{ mixp('/js/vendor.js', '', 4000) }}"></script>
+        <script src="/js/manifest.js"></script>
+        <script src="/js/vendor.js"></script>
+        <script src="/js/app.js"></script>
+    @else
+        <script src="http://localhost:4000/js/app.js"></script>
     @endif
-    <script src="{{ mixp('/js/app.js', '', 4000) }}"></script>
+
     @stack('scripts')
 </body>
 </html>
