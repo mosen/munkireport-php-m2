@@ -10,16 +10,7 @@ use MrModule\DiskReport\Events\SMARTFailureEvent;
 
 class CheckInHandler implements Handler
 {
-    /**
-     * Determine whether MunkiReport data with the given module name may be handled by this CheckInHandler.
-     *
-     * @param $moduleName string The short name of the class of data that needs to be handled.
-     * @return boolean
-     */
-    public function canHandle($moduleName)
-    {
-        return $moduleName == 'disk_report';
-    }
+    public static $handles = ['disk_report'];
 
     /**
      * @param $moduleName string The short name of the class of data that needs to be handled.

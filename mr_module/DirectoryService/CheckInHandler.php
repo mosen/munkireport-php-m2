@@ -38,16 +38,7 @@ class CheckInHandler implements Handler
         'Namespace mode' => 'namespacemode'
     ];
 
-    /**
-     * Determine whether MunkiReport data with the given module name may be handled by this CheckInHandler.
-     *
-     * @param $moduleName string The short name of the class of data that needs to be handled.
-     * @return boolean
-     */
-    public function canHandle($moduleName)
-    {
-        return $moduleName == 'directory_service';
-    }
+    public static $handles = ['directory_service'];
 
     /**
      * @param $moduleName string The short name of the class of data that needs to be handled.

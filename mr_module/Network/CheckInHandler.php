@@ -29,16 +29,7 @@ class CheckInHandler implements Handler
         'Manual Configuration' => 'manual'
     );
 
-    /**
-     * Determine whether MunkiReport data with the given module name may be handled by this CheckInHandler.
-     *
-     * @param $moduleName string The short name of the class of data that needs to be handled.
-     * @return boolean
-     */
-    public function canHandle($moduleName)
-    {
-        return $moduleName == 'network';
-    }
+    public static $handles = ['network'];
 
     /**
      * @param $moduleName string The short name of the class of data that needs to be handled.

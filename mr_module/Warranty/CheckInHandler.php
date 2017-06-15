@@ -19,16 +19,7 @@ class CheckInHandler implements Handler
         // warranty_helper
     }
 
-    /**
-     * Determine whether MunkiReport data with the given module name may be handled by this CheckInHandler.
-     *
-     * @param $moduleName string The short name of the class of data that needs to be handled.
-     * @return boolean
-     */
-    public function canHandle($moduleName)
-    {
-        return $moduleName == 'warranty';
-    }
+    public static $handles = ['warranty'];
 
     /**
      * @param $moduleName string The short name of the class of data that needs to be handled.
