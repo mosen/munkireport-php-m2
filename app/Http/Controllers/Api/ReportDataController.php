@@ -1,10 +1,10 @@
 <?php
-namespace Mr\Http\Controllers;
+namespace Mr\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use Mr\ReportData;
 use DB;
-
+use Mr\Http\Controllers\Controller;
 class ReportDataController extends Controller
 {
     public function index(Request $request) {

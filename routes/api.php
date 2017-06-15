@@ -20,17 +20,17 @@ Route::group(['middleware' => 'jwt.auth'], function () {
     Route::get('/me', 'Auth\AuthController@user');
 });
 
-Route::get('stats/report_data', 'ReportDataController@stats');
-Route::get('stats/uptime', 'ReportDataController@uptime');
-Route::get('stats/new_clients', 'MachineController@new_clients');
-
-Route::group(['prefix' => 'v1'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function () {
     Route::get('metrics', 'MetricController@index');
+    Route::get('stats/report_data', 'ReportDataController@stats');
+    Route::get('stats/uptime', 'ReportDataController@uptime');
+    Route::get('stats/new_clients', 'MachineController@new_clients');
 
     Route::resource('events', 'EventController');
     Route::resource('machines', 'MachineController');
     Route::resource('report_data', 'ReportDataController');
     Route::resource('business_units', 'BusinessUnitController');
+    Route::resource('clients', 'ClientController');
 
     Route::post('webhook/endpoint', 'WebhookController@endpoint');
 });

@@ -6,10 +6,11 @@
         </span>
 
         <template v-if="clients.length > 0">
-            <router-link v-for="client in clients" class="list-group-item" :to="url(client)">
+            <div v-for="client in clients" class="widget-list-item">
+                <router-link :to="url(client)">
                 {{ client.computer_name }}
-                <span class="pull-right">{{ age(client) }}</span>
-            </router-link>
+                <span class="pull-right">{{ age(client) }}</span></router-link>
+            </div>
         </template>
         <div v-else class="widget-list-item"><span>{{ $t('widget.new_clients.no_new_clients')
             }}</span></div>

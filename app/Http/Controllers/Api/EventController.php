@@ -1,9 +1,9 @@
 <?php
-namespace Mr\Http\Controllers;
+namespace Mr\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use Mr\Event;
-
+use Mr\Http\Controllers\Controller;
 /**
  * MunkiReport Events Controller
  * 

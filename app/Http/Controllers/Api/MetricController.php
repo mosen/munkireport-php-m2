@@ -1,9 +1,9 @@
 <?php
 
-namespace Mr\Http\Controllers;
+namespace Mr\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
-
+use Mr\Http\Controllers\Controller;
 /**
  * The MetricController class provides a single endpoint for widgets to fetch information from the system.
  * The client sends a list of metrics that it wants to receive, and each module processes and returns metrics for itself.

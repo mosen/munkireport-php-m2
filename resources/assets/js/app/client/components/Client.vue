@@ -1,8 +1,9 @@
 <template>
-    <div>
-    <h1>Client</h1>
+    <div class="container-fluid">
+    <h1>Client {{ data.serial_number }}</h1>
     <spinner v-if="loading" size="md" fixed></spinner>
-        <alert :show="error" type="danger">Could not load client</alert>
+
+        <span>{{ data.serial_number }}</span>
     </div>
 </template>
 
@@ -12,7 +13,7 @@
 
   export default {
     computed: {
-      ...mapState('client', ['loading', 'error'])
+      ...mapState('client', ['loading', 'error', 'data'])
     },
     mounted() {
       this.read(this.$route.params.serial_number);

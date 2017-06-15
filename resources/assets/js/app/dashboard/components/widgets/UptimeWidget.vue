@@ -36,7 +36,7 @@
 </template>
 
 <script>
-  const API_ROOT = '/api';
+  const API_ROOT = '/api/v1';
   import panel from '../WidgetPanel.vue';
 
   export default {

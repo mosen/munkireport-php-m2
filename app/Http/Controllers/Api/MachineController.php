@@ -1,9 +1,9 @@
 <?php
-namespace Mr\Http\Controllers;
+namespace Mr\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use Mr\Machine;
-
+use Mr\Http\Controllers\Controller;
 class MachineController extends Controller
 {
     public function index(Request $request) {
@@ -36,10 +36,6 @@ class MachineController extends Controller
     public function show($id) {
         $result = Machine::findOrFail($id);
         return response()->json($result);
-    }
-
-    public function listing() {
-        return view('machine.listing');
     }
 
     public function new_clients() {
