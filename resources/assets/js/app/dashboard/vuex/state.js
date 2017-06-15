@@ -4,7 +4,7 @@ export default {
     title: 'main',
     widgets: [
       [
-        'core-widget-client',
+        'core-widget-client-activity',
         'core-widget-duplicatednames',
         'core-widget-uptime'
       ]

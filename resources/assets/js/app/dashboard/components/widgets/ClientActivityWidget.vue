@@ -7,7 +7,6 @@
 
         <vn-pie
                 :height="chart.height"
-                :width="chart.width"
                 :model="[active, inactive]"
                 :donutRatio="chart.donutRatio"
                 :donut="chart.donut"

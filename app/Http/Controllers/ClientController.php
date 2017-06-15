@@ -22,4 +22,6 @@ class ClientController extends Controller
     public function listing() {
         return view('client.listing');
     }
+
+
 }

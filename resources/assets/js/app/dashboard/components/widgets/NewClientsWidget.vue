@@ -24,11 +24,6 @@
   import ListWidget from '../ListWidget.vue';
 
   export default {
-    data () {
-      return {
-        limit: 10
-      }
-    },
     mounted () {
       this.fetchNewClients();
     },
@@ -45,7 +40,7 @@
         return `/clients/${client.serial_number}`;
       },
       age (client) {
-        return moment(client.created_at).fromNow();
+        return moment(client.created_at).local().fromNow();
       }
     },
     components: {

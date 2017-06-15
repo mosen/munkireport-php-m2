@@ -1,6 +1,6 @@
 import Vue from 'vue';
 
-export const ClientWidget = Vue.component('core-widget-client', require('./ClientWidget.vue'));
+export const ClientWidgetActivity = Vue.component('core-widget-client-activity', require('./ClientActivityWidget.vue'));
 export const DuplicatedComputerNamesWidget = Vue.component('core-widget-duplicatednames', require('./DuplicatedComputernamesWidget.vue'));
 export const EventMessagesWidget = Vue.component('core-widget-events', require('./EventMessagesWidget.vue'));
 export const HardwareModelWidget = Vue.component('core-widget-hardwaremodel', require('./HardwareModelWidget.vue'));

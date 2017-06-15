@@ -36,8 +36,8 @@ class ReportDataController extends Controller
         return $query->get();
     }
 
-    public function show($id) {
-        return ReportData::findOrFail($id);
+    public function show($serial) {
+        return ReportData::where('serial_number', $serial)->firstOrFail();
     }
 
     public function update($id, Request $request) {

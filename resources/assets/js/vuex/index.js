@@ -10,6 +10,7 @@ import * as state from './state';
 import auth from '../app/auth/vuex'
 import stats from '../app/stats/vuex'
 import dashboard from '../app/dashboard/vuex';
+import client from '../app/client/vuex';
 
 // MrModules
 // TODO: Load dynamically
@@ -22,40 +23,41 @@ import disk_report from 'MrModules/DiskReport/assets/js/vuex';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-    actions,
-    getters,
-    mutations,
-    state,
-    modules: {
-        i18n: vuexI18n.store,
-        auth,
-        stats,
-        dashboard,
-        ard,
-        bluetooth,
-      certificate,
-      disk_report,
-    }
+  actions,
+  getters,
+  mutations,
+  state,
+  modules: {
+    i18n: vuexI18n.store,
+    auth,
+    stats,
+    dashboard,
+    client,
+    ard,
+    bluetooth,
+    certificate,
+    disk_report,
+  }
 });
 
 if (module.hot) {
-    // accept actions and mutations as hot modules
-    module.hot.accept(['./mutations', '../app/auth/vuex', '../app/stats/vuex', '../app/dashboard/vuex'], () => {
-        // require the updated modules
-        // have to add .default here due to babel 6 module output
-        const newMutations = require('./mutations').default;
-        const newAuth = require('../app/auth/vuex').default;
-        const newStats = require('../app/stats/vuex').default;
-        const newDashboard = require('../app/dashboard/vuex').default;
+  // accept actions and mutations as hot modules
+  module.hot.accept(['./mutations', '../app/auth/vuex', '../app/stats/vuex', '../app/dashboard/vuex'], () => {
+    // require the updated modules
+    // have to add .default here due to babel 6 module output
+    const newMutations = require('./mutations').default;
+    const newAuth = require('../app/auth/vuex').default;
+    const newStats = require('../app/stats/vuex').default;
+    const newDashboard = require('../app/dashboard/vuex').default;
 
-        // swap in the new actions and mutations
-        store.hotUpdate({
-            mutations: newMutations,
-            modules: {
-                auth: newAuth,
-                stats: newStats,
-                dashboard: newDashboard
-            }
-        })
+    // swap in the new actions and mutations
+    store.hotUpdate({
+      mutations: newMutations,
+      modules: {
+        auth: newAuth,
+        stats: newStats,
+        dashboard: newDashboard
+      }
     })
+  })
 }
