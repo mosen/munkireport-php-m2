@@ -1,6 +1,7 @@
 <?php
 namespace MrModule\Bluetooth;
 
+use Mr\Scopes\VueTableScope;
 use Mr\SerialNumberModel;
 
 class BluetoothInfo extends SerialNumberModel
@@ -15,6 +16,13 @@ class BluetoothInfo extends SerialNumberModel
     protected $casts = [
         'battery_percent' => 'integer'
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new VueTableScope());
+    }
 
     //// RELATIONSHIPS
 }

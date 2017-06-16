@@ -3,8 +3,9 @@ namespace MrModule\Network;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Mr\SerialNumberModel;
 
-class Network extends Model
+class Network extends SerialNumberModel
 {
     const STATUS_ENABLED = 1;
     const STATUS_DISABLED = 0;

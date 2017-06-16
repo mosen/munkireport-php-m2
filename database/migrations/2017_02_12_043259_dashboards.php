@@ -28,6 +28,6 @@ class Dashboards extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('dashboards');
     }
 }

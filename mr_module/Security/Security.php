@@ -1,10 +1,10 @@
 <?php
 namespace MrModule\Security;
 
+use Mr\Scopes\VueTableScope;
+use Mr\SerialNumberModel;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Security extends Model
+class Security extends SerialNumberModel
 {
     protected $table = 'security';
 
@@ -13,4 +13,18 @@ class Security extends Model
         'gatekeeper',
         'sip'
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new VueTableScope());
+    }
+
+    //// RELATIONSHIPS
+
+    public function diskreport()
+    {
+        
+    }
 }

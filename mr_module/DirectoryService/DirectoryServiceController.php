@@ -9,23 +9,8 @@ class DirectoryServiceController extends Controller
     public function index(Request $request) {
         $query = DirectoryService::with('reportdata', 'machine');
 
-        if ($request->has('query')) {
-            // TODO: query
-        }
-
-        if ($request->has('orderBy')) {
-            $order = (int)$request->input('ascending', 0) === 1 ? 'ASC' : 'DESC';
-            $query = $query->orderBy($request->input('orderBy'), $order);
-        }
-
-        $countQuery = clone $query;
-        $count = $countQuery->count();
-
-        $limit = $request->input('limit', 100);
-        $page = $request->input('page', 1);
-        $query = $query->forPage($page, $limit);
-
         $results = $query->get();
+        $count = $query->count();
 
         return response()->json([
             'data' => $results,
@@ -53,9 +38,5 @@ class DirectoryServiceController extends Controller
             'bound' => $bound,
             'unbound' => $unbound
         ];
-    }
-
-    public function listing() {
-        return view('directoryservice::listing');
     }
 }

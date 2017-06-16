@@ -3,8 +3,9 @@ namespace MrModule\Display;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Mr\SerialNumberModel;
 
-class Display extends Model
+class Display extends SerialNumberModel
 {
     const TYPE_INTERNAL = 0;
     const TYPE_EXTERNAL = 1;

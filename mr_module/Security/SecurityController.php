@@ -1,13 +1,22 @@
 <?php
 namespace MrModule\Security;
 
-use Mr\Http\Controllers\TableController;
+use Illuminate\Http\Request;
+use Mr\Http\Controllers\Controller;
 
-class SecurityController extends TableController
+class SecurityController extends Controller
 {
     protected $tableModel = '\MrModule\Security\Security';
 
-    public function listing() {
-        return view('security::listing');
+    public function index(Request $request) {
+        $query = Security::with('reportdata', 'machine');
+
+        $results = $query->get();
+        $count = $query->count();
+
+        return response()->json([
+            'data' => $results,
+            'count' => $count
+        ]);
     }
 }
