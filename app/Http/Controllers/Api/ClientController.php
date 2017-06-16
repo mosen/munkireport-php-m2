@@ -19,7 +19,7 @@ class ClientController extends Controller
         if ($request->has('filter')) {
             $filterRules = $request->input('filter');
         } else {
-            $query = ReportData::with('machine');
+            $query = ReportData::with('machine', 'munkireport', 'warranty');
         }
 
         if ($request->has('sort')) {
