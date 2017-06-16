@@ -19,3 +19,13 @@ export const fetchNewClients = ({ commit, state }) => {
     commit('fetchNewClientsFailure', response);
   });
 };
+
+export const fetch_uptime = ({ commit, state }) => {
+  commit('fetch_uptime_request');
+
+  return axios.get('/api/v1/stats/uptime').then((response) => {
+    commit('fetch_uptime_success', response);
+  }).catch((response) => {
+    commit('fetch_uptime_failure', response);
+  })
+};

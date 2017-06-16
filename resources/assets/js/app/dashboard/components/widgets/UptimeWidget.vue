@@ -9,25 +9,25 @@
         <div>
             <div class="widget-status">
                 <div class="widget-status-item widget-danger widget-padded">
-                    <a :href="url">
+                    <router-link to="/clients/uptime/longest">
                         <span class="bigger-150">{{ oneweekplus }}</span>
                         <br>
                         7 <span>{{ $t('date.day_plural') }}</span> +
-                    </a>
+                    </router-link>
                 </div>
                 <div class="widget-status-item widget-warning widget-padded">
-                    <a :href="url">
+                    <router-link to="/clients/uptime/longer">
                         <span class="bigger-150">{{ oneweek }}</span>
                         <br>
                         &lt; 7 <span>{{ $t('date.day_plural') }}</span>
-                    </a>
+                    </router-link>
                 </div>
                 <div class="widget-status-item widget-success widget-padded">
-                    <a :href="url">
+                    <router-link to="/clients/uptime/short">
                         <span class="bigger-150">{{ oneday }}</span>
                         <br>
                         &lt; 1 <span>{{ $t('date.day') }}</span>
-                    </a>
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -36,26 +36,22 @@
 </template>
 
 <script>
-  const API_ROOT = '/api/v1';
   import panel from '../WidgetPanel.vue';
+  import {mapActions, mapState} from 'vuex';
 
   export default {
-    data() {
-      return {
-        oneweekplus: 0,
-        oneweek: 0,
-        oneday: 0,
-        url: '/clients'
-      }
+    computed: {
+      ...mapState('dashboard', {
+        'oneday': state => state.uptime.oneday,
+        'oneweek': state => state.uptime.oneweek,
+        'oneweekplus': state => state.uptime.oneweekplus
+      })
+    },
+    methods: {
+      ...mapActions('dashboard', ['fetch_uptime'])
     },
     mounted () {
-      this.axios.get(`${API_ROOT}/stats/uptime`).then((response) => {
-        if (response.data) {
-          this.oneweekplus = response.data.oneweekplus;
-          this.oneweek = response.data.oneweek;
-          this.oneday = response.data.oneday;
-        }
-      })
+      this.fetch_uptime();
     },
     components: {
       panel

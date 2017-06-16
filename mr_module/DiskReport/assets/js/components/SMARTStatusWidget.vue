@@ -8,25 +8,25 @@
 
         <div class="widget-status">
             <div class="widget-status-item widget-danger widget-padded">
-                <a :href="url + '#failing'">
+                <router-link to="/x/disks/smart/failing">
                     <span class="bigger-150">{{ failing }}</span>
                     <br>
                     {{ $t('failing') }}
-                </a>
+                </router-link>
             </div>
             <div class="widget-status-item widget-success widget-padded">
-                <a :href="url + '#verified'">
+                <router-link to="/x/disks/smart/verified">
                     <span class="bigger-150">{{ verified }}</span>
                     <br>
                     {{ $t('verified') }}
-                </a>
+                </router-link>
             </div>
             <div class="widget-status-item widget-ok widget-padded">
-                <a :href="url + '#not supported'">
+                <router-link to="/x/disks/smart/unsupported">
                     <span class="bigger-150">{{ unsupported }}</span>
                     <br>
                     {{ $t('unsupported') }}
-                </a>
+                </router-link>
             </div>
         </div>
     </panel>
