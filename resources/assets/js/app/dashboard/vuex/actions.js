@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const fetchReportData = ({ commit, state }) => {
+export const fetch_report_data = ({ commit, state }) => {
   commit('fetchReportDataRequest');
 
   return axios.get('/api/v1/stats/report_data').then((response) => {
@@ -10,7 +10,7 @@ export const fetchReportData = ({ commit, state }) => {
   });
 };
 
-export const fetchNewClients = ({ commit, state }) => {
+export const fetch_new_clients = ({ commit, state }) => {
   commit('fetchNewClientsRequest');
 
   return axios.get('/api/v1/stats/new_clients').then((response) => {

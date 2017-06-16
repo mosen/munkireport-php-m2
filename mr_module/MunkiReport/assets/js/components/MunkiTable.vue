@@ -10,7 +10,8 @@
 
 <script>
   import locales from './MunkiTable.i18n.json';
-
+  import {computer_name} from 'Core/vue-table/columns.jsx';
+  
   export default {
     data() {
       return {
@@ -48,6 +49,9 @@
           },
           pagination: {
             dropdown: true
+          },
+          templates: {
+            computer_name
           }
         }
       }

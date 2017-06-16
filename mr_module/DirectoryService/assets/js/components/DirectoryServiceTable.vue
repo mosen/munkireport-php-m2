@@ -9,6 +9,8 @@
 </template>
 
 <script>
+  import {computer_name} from 'Core/vue-table/columns.jsx';
+  
     export default {
         data() {
             return {
@@ -37,14 +39,7 @@
                         dropdown: true
                     },
                     templates: {
-                        computer_name: function (h, row) {
-                            if (row.machine && row.machine.computer_name) {
-                                return h('span', {}, row.machine.computer_name);
-                            }
-                            else {
-                                return h('span', {}, 'N/A');
-                            }
-                        },
+                        computer_name,
                         username: function (h, row) {
                             if (row.reportdata && row.reportdata.long_username) {
                                 return h('span', {}, row.reportdata.long_username);

@@ -10,6 +10,7 @@
 
 <script>
     import locales from './ARDTable.i18n.json';
+    import {computer_name} from 'Core/vue-table/columns.jsx';
 
     export default {
         data() {
@@ -40,9 +41,10 @@
                         dropdown: true
                     },
                     templates: {
-                        computer_name: function (h, row) {
-                            return h('span', {}, row.machine.computer_name);
-                        },
+//                        computer_name: function (h, row) {
+//                            return h('span', {}, row.machine.computer_name);
+//                        },
+                        computer_name,
                         username: function (h, row) {
                             return h('span', {}, row.reportdata.long_username);
                         }

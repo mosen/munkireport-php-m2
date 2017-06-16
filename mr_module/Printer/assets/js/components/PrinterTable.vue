@@ -10,12 +10,13 @@
 
 <script>
     import locales from './PrinterTable.i18n.json';
-
+    import {computer_name} from 'Core/vue-table/columns.jsx';
+    
     export default {
         data() {
             return {
                 columns: [
-                    'machine.computer_name',
+                    'computer_name',
                     'serial_number',
                     'name',
                     'ppd',
@@ -30,7 +31,7 @@
                         loading: this.$t('listing.loading')
                     },
                     headings: {
-                        'machine.computer_name': this.$t('listing.computername'),
+                        'computer_name': this.$t('listing.computername'),
                         'serial_number': this.$t('serial'),
                         'name': this.$t('printer.name'),
                         'ppd': this.$t('printer.ppd'),
@@ -42,7 +43,10 @@
                     },
                     pagination: {
                         dropdown: true
-                    }
+                    },
+                  templates: {
+                      computer_name
+                  }
                 }
             }
         },
