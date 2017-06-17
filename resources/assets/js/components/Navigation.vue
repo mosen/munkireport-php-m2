@@ -1,6 +1,6 @@
 <template>
     <div>
-    <navbar placement="top" type="default">
+    <navbar placement="static" type="default">
         <router-link slot="brand" :to="{ name: 'dashboard' }" class="navbar-brand">{{ title }}</router-link>
 
         <li>
