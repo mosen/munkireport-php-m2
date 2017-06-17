@@ -17,7 +17,9 @@ module.exports = {
     extensions: ['.js', '.jsx', '.vue'],
     alias: {
       'vue$': 'vue/dist/vue.common.js',
-      MrModules: path.resolve('./mr_module/')
+      MrModules: path.resolve('./mr_module/'),
+      CoreDashboard: path.resolve('./resources/assets/js/app/dashboard/'),
+      Core: path.resolve('./resources/assets/js')
     }
   },
 

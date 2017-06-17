@@ -4,6 +4,7 @@
 namespace MrModule\DirectoryService;
 
 use Illuminate\Database\Query\Builder;
+use Mr\Scopes\VueTableScope;
 use Mr\SerialNumberModel;
 
 class DirectoryService extends SerialNumberModel
@@ -47,6 +48,13 @@ class DirectoryService extends SerialNumberModel
         'generatekerberosauth' => 'boolean',
         'authenticationfromanydomain' => 'boolean'
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new VueTableScope());
+    }
 
     //// RELATIONSHIPS
 

@@ -3,8 +3,9 @@ namespace MrModule\Power;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Mr\SerialNumberModel;
 
-class Power extends Model
+class Power extends SerialNumberModel
 {
     protected $table = 'power';
 

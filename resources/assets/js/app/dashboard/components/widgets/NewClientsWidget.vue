@@ -26,7 +26,7 @@
 
   export default {
     mounted () {
-      this.fetchNewClients();
+      this.fetch_new_clients();
     },
     computed: {
       ...mapGetters('dashboard', [
@@ -35,7 +35,7 @@
     },
     methods: {
       ...mapActions('dashboard', [
-        'fetchNewClients'
+        'fetch_new_clients'
       ]),
       url (client) {
         return `/clients/${client.serial_number}`;

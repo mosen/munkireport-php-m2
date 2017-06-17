@@ -40,13 +40,9 @@
             }
         },
         mounted () {
-            this.subscribe({ topic: 'core.events' });
-        },
-        beforeDestroy () {
-            this.unsubscribe({ topic: 'core.events' });
+
         },
         methods: {
-            ...mapMutations('stats', ['subscribe', 'unsubscribe']),
             fromNow: function (relativeDate) {
                 return moment(relativeDate).fromNow();
             }

@@ -6,17 +6,21 @@
             {{ $t('filevault.widget.title') }}
         </span>
 
-        <div class="panel-body text-center">
-            <a v-if="unencrypted > 0" class="btn btn-danger">
-                <span class="disk-count bigger-150">{{ unencrypted }}</span>
-                <br>
-                <span>{{ $t('unencrypted') }}</span>
-            </a>
-            <a v-if="encrypted > 0" class="btn btn-success">
+        <div class="widget-status">
+            <div v-if="unencrypted > 0" class="widget-status-item widget-danger widget-padded">
+                <router-link to="/x/disks/fv_status/unencrypted">
+                    <span class="disk-count bigger-150">{{ unencrypted }}</span>
+                    <br>
+                    <span>{{ $t('unencrypted') }}</span>
+                </router-link>
+            </div>
+            <div v-if="encrypted > 0" class="widget-status-item widget-success widget-padded">
+                <router-link to="/x/disks/fv_status/encrypted">
                 <span class="disk-count bigger-150">{{ encrypted }}</span>
                 <br>
                 <span>{{ $t('encrypted') }}</span>
-            </a>
+                </router-link>
+            </div>
             <span v-if="total === 0 && !error">{{ $t('no_clients') }}</span>
         </div>
     </panel>

@@ -9,17 +9,6 @@ class DiskReportServiceProvider extends ServiceProvider
 {
     protected $namespace = 'MrModule\DiskReport';
 
-    protected function mapWebRoutes()
-    {
-        Route::group([
-            'prefix' => 'x',
-            'middleware' => 'web',
-            'namespace' => $this->namespace
-        ], function () {
-            Route::get('diskreport/listing', 'DiskReportController@listing');
-        });
-    }
-
     protected function mapApiRoutes()
     {
         Route::group([
@@ -40,10 +29,9 @@ class DiskReportServiceProvider extends ServiceProvider
         ], 'config');
         
         $this->mapApiRoutes();
-        $this->mapWebRoutes();
         $this->loadMigrationsFrom(__DIR__.'/migrations');
 
-        $moduleManager->add('displays_info', __DIR__)
+        $moduleManager->add('disk_report', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }

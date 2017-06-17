@@ -59,5 +59,11 @@ export default {
   new_clients: {
     loading: false,
     items: [],
+  },
+  uptime: {
+    loading: false,
+    oneweekplus: 0,
+    oneweek: 0,
+    oneday: 0
   }
 }

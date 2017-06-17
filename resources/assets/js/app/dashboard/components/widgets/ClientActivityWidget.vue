@@ -44,7 +44,7 @@
     },
     methods: {
       ...mapActions('dashboard', [
-        'fetchReportData'
+        'fetch_report_data'
       ])
     },
     computed: {
@@ -72,7 +72,7 @@
       }
     },
     mounted () {
-      this.fetchReportData();
+      this.fetch_report_data();
     },
     components: {
       panel

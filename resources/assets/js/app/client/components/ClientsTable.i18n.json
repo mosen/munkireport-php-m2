@@ -1,0 +1,29 @@
+{
+  "en": {
+    "listing": {
+      "computername": "Name"
+    },
+    "serial": "Serial Number",
+    "buildversion": "Build Version",
+    "machine": {
+      "uptime": {
+        "title": "Uptime"
+      }
+    },
+    "os": {
+      "version": "OS Version"
+    },
+    "type": "Type",
+    "username": "Username",
+    "munkireport": {
+      "manifest": {
+        "manifest": "Manifest",
+        "name": "Manifest Name",
+        "title": "Manifests"
+      }
+    },
+    "warranty": {
+      "status": "Warranty Status"
+    }
+  }
+}

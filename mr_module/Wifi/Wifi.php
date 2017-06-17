@@ -3,8 +3,10 @@ namespace MrModule\Wifi;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Mr\Scopes\VueTableScope;
+use Mr\SerialNumberModel;
 
-class Wifi extends Model
+class Wifi extends SerialNumberModel
 {
     protected $table = 'wifi';
 
@@ -25,4 +27,22 @@ class Wifi extends Model
         'mcs',
         'channel'
     ];
+
+    protected $casts = [
+        'agrctlrssi' => 'integer',
+        'agrextrssi' => 'integer',
+        'agrctlnoise' => 'integer',
+        'agrextnoise' => 'integer',
+        'lasttxrate' => 'integer',
+        'maxrate' => 'integer'
+    ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new VueTableScope());
+    }
+
+    
 }

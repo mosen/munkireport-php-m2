@@ -7,11 +7,4 @@ class MunkiReportController extends TableController
 {
     protected $tableModel = '\MrModule\MunkiReport\MunkiReport';
 
-    public function listing() {
-        return view('munkireport::listing');
-    }
-
-    public function report() {
-        return view('munkireport::report');
-    }
 }

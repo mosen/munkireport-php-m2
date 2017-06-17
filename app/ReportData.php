@@ -34,6 +34,15 @@ class ReportData extends Model
         return $this->belongsTo('Mr\Machine', 'serial_number', 'serial_number');
     }
 
+    // Leaky abstractions
+    public function munkireport() {
+        return $this->belongsTo('MrModule\MunkiReport\MunkiReport', 'serial_number', 'serial_number');
+    }
+
+    public function warranty() {
+        return $this->belongsTo('MrModule\Warranty\Warranty', 'serial_number', 'serial_number');
+    }
+
     //// SCOPES
 
     use UpdatedSinceScope;

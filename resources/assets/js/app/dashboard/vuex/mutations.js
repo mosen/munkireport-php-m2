@@ -32,3 +32,21 @@ export const fetchNewClientsSuccess = (state, response) => {
     state.new_clients.loading = false;
     state.new_clients.items = data;
 };
+
+export const fetch_uptime_request = (state) => {
+    state.uptime.loading = true;
+};
+
+export const fetch_uptime_failure = (state, response) => {
+  state.uptime.loading = false;
+  state.uptime.error = true;
+};
+
+export const fetch_uptime_success = (state, response) => {
+  const { data } = response;
+
+  state.uptime.loading = false;
+  state.uptime.oneweekplus = data.oneweekplus;
+  state.uptime.oneweek = data.oneweek;
+  state.uptime.oneday = data.oneday;
+};

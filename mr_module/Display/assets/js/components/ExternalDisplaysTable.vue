@@ -9,9 +9,10 @@
 </template>
 
 <script>
-    import DisplayName from './DisplayName.vue';
-    import locales from './ExternalDisplaysTable.i18n.json';
-
+  import DisplayName from './DisplayName.vue';
+  import locales from './ExternalDisplaysTable.i18n.json';
+  import {computer_name} from 'Core/vue-table/columns.jsx';
+  
   export default {
     data() {
       return {
@@ -43,11 +44,14 @@
           },
           pagination: {
             dropdown: true
+          },
+          templates: {
+            computer_name
           }
         }
       }
     },
-      locales: locales,
+    locales: locales,
     methods: {
       onLoaded: function () {
 

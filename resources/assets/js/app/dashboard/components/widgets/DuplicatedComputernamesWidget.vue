@@ -30,19 +30,13 @@
             }
         },
         methods: {
-            ...mapMutations('stats', [
-                'subscribe',
-                'unsubscribe'
-            ])
+
         },
         components: {
             'list-widget': ListWidget
         },
         mounted () {
-            this.subscribe({ topic: 'core.machine.duplicate_computernames' });
-        },
-        beforeDestroy () {
-            this.unsubscribe({ topic: 'core.machine.duplicate_computernames' });
+        
         }
     }
 </script>
