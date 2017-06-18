@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # findmymac_manifest controller
-CTL="${BASEURL}index.php?/module/findmymac/"
+CTL="${BASEURL}/module/findmymac/"
 
 # Get the scripts in the proper directories
 "${CURL[@]}" "${CTL}get_script/findmymac.sh" -o "${MUNKIPATH}preflight.d/findmymac.sh"

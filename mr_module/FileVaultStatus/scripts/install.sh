@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # filevault_status_controller
-FV_CTL="${BASEURL}index.php?/module/filevault_status/"
+FV_CTL="${BASEURL}/module/filevault_status/"
 
 # Get the scripts in the proper directories
 "${CURL[@]}" "${FV_CTL}get_script/filevaultstatus" -o "${MUNKIPATH}preflight.d/filevaultstatus" \

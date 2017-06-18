@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # gsx controller
-CTL="${BASEURL}index.php?/module/gsx/"
+CTL="${BASEURL}/module/gsx/"
 
 # Get the scripts in the proper directories
 "${CURL[@]}" "${CTL}get_script/gsx" -o "${MUNKIPATH}preflight.d/gsx"

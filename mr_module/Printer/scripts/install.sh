@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # printer controller
-CTL="${BASEURL}index.php?/module/printer/"
+CTL="${BASEURL}/module/printer/"
 
 # Get the scripts in the proper directories
 "${CURL[@]}" "${CTL}get_script/printer.py" -o "${MUNKIPATH}preflight.d/printer.py"

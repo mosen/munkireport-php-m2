@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # directory service controller
-CTL="${BASEURL}index.php?/module/directory_service/"
+CTL="${BASEURL}/module/directory_service/"
 
 # Get the scripts in the proper directories
 "${CURL[@]}" "${CTL}get_script/directoryservice.sh" -o "${MUNKIPATH}preflight.d/directoryservice.sh"

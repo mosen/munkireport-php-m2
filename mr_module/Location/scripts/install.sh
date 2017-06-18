@@ -7,7 +7,7 @@ MODULESCRIPT="init_location"
 MODULE_NAME="location"
 
 # map controller
-CTL="${BASEURL}index.php?/module/${MODULE_NAME}/"
+CTL="${BASEURL}/module/${MODULE_NAME}/"
 
 # Get the scripts in the proper directories
 "${CURL[@]}" "${CTL}get_script/${MODULESCRIPT}" -o "${MUNKIPATH}preflight.d/${MODULESCRIPT}"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # profile controller
-CTL="${BASEURL}index.php?/module/profile/"
+CTL="${BASEURL}/module/profile/"
 
 # Get the scripts in the proper directories
 "${CURL[@]}" "${CTL}get_script/profile.py" -o "${MUNKIPATH}preflight.d/profile.py"

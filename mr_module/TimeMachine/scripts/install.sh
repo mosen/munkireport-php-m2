@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # servermetrics controller
-CTL="${BASEURL}index.php?/module/timemachine/"
+CTL="${BASEURL}/module/timemachine/"
 
 # Get the scripts in the proper directories
 "${CURL[@]}" "${CTL}get_script/timemachine.sh" -o "${MUNKIPATH}preflight.d/timemachine.sh"
