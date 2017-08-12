@@ -1,8 +1,8 @@
 <?php
-namespace Tests\ARD;
+namespace Tests\DiskReport;
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use MrModule\ARD\CheckInHandler;
+use MrModule\DiskReport\CheckInHandler;
 use Tests\TestCase;
 
 class CheckInHandlerTest extends TestCase
@@ -14,11 +14,11 @@ class CheckInHandlerTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $this->plistData = file_get_contents(__DIR__ . '/fixtures/com.apple.RemoteDesktop-10.12.5.plist');
+        $this->plistData = file_get_contents(__DIR__ . '/fixtures/disk.plist');
     }
 
     public function testProcess() {
         $handler = new CheckInHandler();
-        $handler->process('ard', 'ABC123', $this->plistData);
+        $handler->process('diskreport', 'ABC123', $this->plistData);
     }
 }

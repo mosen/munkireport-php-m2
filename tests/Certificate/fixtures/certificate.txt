@@ -1,0 +1,6 @@
+1623473320	Test Server Open Directory Certificate Authority	subject= CN = Test Server Open Directory Certificate Authority, O = Test Server, OU = MACOSX OpenDirectory Root CA, emailAddress = nobody@nowhere.com	issuer= CN = Test Server Open Directory Certificate Authority, O = Test Server, OU = MACOSX OpenDirectory Root CA, emailAddress = nobody@gmail.com	/Library/Keychains/System.keychain
+1510654050	jss.example.com	subject= C = Country, ST = State, L = Location, O = Company, OU = Mobile Device Management, CN = jss.example.com	issuer= C = Country, ST = State, L = Location, O = Company, OU = Mobile Device Management, CN = jss.example.com	/Library/Keychains/System.keychain
+1590835718	AddTrust External CA Root	subject= C = SE, O = AddTrust AB, OU = AddTrust External TTP Network, CN = AddTrust External CA Root	issuer= C = SE, O = AddTrust AB, OU = AddTrust External TTP Network, CN = AddTrust External CA Root	/Library/Keychains/System.keychain
+1781008186	Demo JSS Built-in Certificate Authority	subject= CN = Demo JSS Built-in Certificate Authority	issuer= CN = Demo JSS Built-in Certificate Authority	/Library/Keychains/System.keychain
+1654867005	VAGRANT-2016-CA	subject= DC = private, DC = contoso, CN = VAGRANT-2016-CA	issuer= DC = private, DC = contoso, CN = VAGRANT-2016-CA	/Library/Keychains/System.keychain
+

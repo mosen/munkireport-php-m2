@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>BusProtocol</key>
+		<string>SATA</string>
+		<key>Content</key>
+		<string>Apple_HFS</string>
+		<key>Ejectable</key>
+		<false/>
+		<key>FreeSpace</key>
+		<string>41339060224</string>
+		<key>Internal</key>
+		<true/>
+		<key>MountPoint</key>
+		<string>/</string>
+		<key>RAIDMaster</key>
+		<false/>
+		<key>SMARTStatus</key>
+		<string>Verified</string>
+		<key>SolidState</key>
+		<true/>
+		<key>TotalSize</key>
+		<string>498753077248</string>
+		<key>VolumeName</key>
+		<string>munkireport</string>
+	</dict>
+	<dict>
+		<key>BusProtocol</key>
+		<string>USB</string>
+		<key>Content</key>
+		<string>Apple_HFS</string>
+		<key>Ejectable</key>
+		<true/>
+		<key>FreeSpace</key>
+		<string>68182605824</string>
+		<key>Internal</key>
+		<false/>
+		<key>MountPoint</key>
+		<string>/Volumes/BACKUP</string>
+		<key>RAIDMaster</key>
+		<false/>
+		<key>SMARTStatus</key>
+		<string>Not Supported</string>
+		<key>TotalSize</key>
+		<string>499289948160</string>
+		<key>VolumeName</key>
+		<string>BACKUP</string>
+	</dict>
+</array>
+</plist>
