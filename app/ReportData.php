@@ -20,7 +20,8 @@ class ReportData extends Model
         'console_user',
         'long_username',
         'uptime',
-        'machine_group'
+        'machine_group',
+        'remote_ip'
     ];
 
     //// RELATIONSHIPS

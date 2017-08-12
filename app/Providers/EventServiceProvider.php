@@ -24,6 +24,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         'MrModule\Certificate\Events\CertExpiryWarningEvent' => [
             'Mr\Listeners\CertExpiryWarningEventListener'
+        ],
+        'Mr\Events\NewClientEvent' => [
+            'Mr\Listeners\CommonEventListener'
         ]
     ];
 

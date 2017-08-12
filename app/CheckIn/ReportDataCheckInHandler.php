@@ -3,6 +3,7 @@ namespace Mr\CheckIn;
 
 use CFPropertyList\CFPropertyList;
 use Mr\Contracts\CheckIn\Handler;
+use Mr\Events\NewClientEvent;
 use Mr\ReportData;
 
 class ReportDataCheckInHandler implements Handler
@@ -21,6 +22,9 @@ class ReportDataCheckInHandler implements Handler
         $dataArr = $dataObj->toArray();
 
         $rdata = ReportData::firstOrNew(['serial_number' => $serialNumber]);
+        if (!$rdata->exists) {
+            event(new NewClientEvent($serialNumber));
+        }
         $rdata->serial_number = $serialNumber;
 
         $rdata->fill($dataArr);
