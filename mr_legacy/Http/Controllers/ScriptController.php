@@ -21,7 +21,7 @@ class ScriptController extends Controller
     public function get($moduleName, $scriptName) {
         $m = $this->moduleManager->get($moduleName);
         if ($m->getPath() === null) abort(400);
-        if (strpos($scriptName, '.') !== false) abort(400); // Very rudimentary security
+        //if (strpos($scriptName, '.') !== false) abort(400); // Very rudimentary security
 
         $scriptName = preg_replace('/_(sh|py)/', '.$1', $scriptName);
 
