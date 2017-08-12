@@ -5,5 +5,5 @@ export const lastSeen = (state, getters) => {
 };
 
 export const uptime = (state) => {
-  return moment.duration(state.data.uptime).humanize();
+  return moment.duration(state.data.uptime, 'seconds').humanize();
 };

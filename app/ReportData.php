@@ -24,6 +24,10 @@ class ReportData extends Model
         'remote_ip'
     ];
 
+    protected $casts = [
+        'uptime' => 'integer'
+    ];
+
     //// RELATIONSHIPS
 
     /**
