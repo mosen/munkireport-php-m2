@@ -5,8 +5,14 @@
         <h2>{{ data.serial_number }}</h2>
 
         <dl>
-            <dt>Last Seen</dt>
+            <dt><span class="glyphicon glyphicon-heart"></span> Last Seen</dt>
             <dd>{{ lastSeen }}</dd>
+            <dt>Uptime</dt>
+            <dd>{{ uptime }}</dd>
+            <dt>CPU</dt>
+            <dd>{{ data.machine.cpu }} &times; {{ data.machine.number_processors }}</dd>
+            <dt>RAM</dt>
+            <dd>{{ data.machine.physical_memory }}</dd>
         </dl>
     <spinner v-if="loading" size="md" fixed></spinner>
 
@@ -22,7 +28,7 @@
   export default {
     computed: {
       ...mapState('client', ['loading', 'error', 'data']),
-      ...mapGetters('client', ['lastSeen'])
+      ...mapGetters('client', ['lastSeen', 'uptime'])
     },
     mounted() {
       this.read(this.$route.params.serial_number);
