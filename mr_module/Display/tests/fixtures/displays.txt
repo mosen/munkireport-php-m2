@@ -1,0 +1,7 @@
+Type = External
+Serial = XXXYYY11155L
+Vendor = 10ac
+Model = DELL UP2716D
+Manufactured = 2015-01
+Native = 2560 x 1440
+----------

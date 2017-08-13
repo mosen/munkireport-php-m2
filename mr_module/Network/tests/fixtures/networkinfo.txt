@@ -1,0 +1,35 @@
+Service: Ethernet
+DHCP Configuration
+Client ID: 
+IPv6: Automatic
+IPv6 IP address: none
+IPv6 Router: none
+Ethernet Address: 40:8d:5c:00:00:00
+Service: iPad USB
+DHCP Configuration
+Client ID: 
+IPv6: Automatic
+IPv6 IP address: none
+IPv6 Router: none
+Ethernet Address: (null)
+Service: Wi-Fi
+DHCP Configuration
+IP address: 192.168.1.37
+Subnet mask: 255.255.255.0
+Router: 192.168.1.1
+Client ID: 
+IPv6: Automatic
+IPv6 IP address: none
+IPv6 Router: none
+Wi-Fi ID: 14:cc:20:00:00:00
+Service: Bluetooth PAN
+DHCP Configuration
+Client ID: 
+IPv6: Automatic
+IPv6 IP address: none
+IPv6 Router: none
+Ethernet Address: (null)
+Service: VPN
+IPv6: Automatic
+IPv6 IP address: none
+IPv6 Router: none

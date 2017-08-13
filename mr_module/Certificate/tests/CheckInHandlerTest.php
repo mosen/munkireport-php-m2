@@ -1,24 +1,24 @@
 <?php
-namespace Tests\DiskReport;
+namespace MrModule\Certificate;
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use MrModule\DiskReport\CheckInHandler;
+use MrModule\Certificate\CheckInHandler;
 use Tests\TestCase;
 
 class CheckInHandlerTest extends TestCase
 {
     use DatabaseTransactions;
 
-    protected $plistData;
+    protected $data;
 
     public function setUp()
     {
         parent::setUp();
-        $this->plistData = file_get_contents(__DIR__ . '/fixtures/disk.plist');
+        $this->data = file_get_contents(__DIR__ . '/fixtures/certificate.txt');
     }
 
     public function testProcess() {
         $handler = new CheckInHandler();
-        $handler->process('diskreport', 'ABC123', $this->plistData);
+        $handler->process('certificate', 'ABC123', $this->data);
     }
 }

@@ -13,6 +13,8 @@
             <dd>{{ data.machine.cpu }} &times; {{ data.machine.number_processors }}</dd>
             <dt>RAM</dt>
             <dd>{{ data.machine.physical_memory }}</dd>
+            <dt>Model</dt>
+            <dd><a :href="'https://www.everymac.com/ultimate-mac-lookup/?search_keywords=' + data.machine.machine_model">{{ data.machine.machine_model }}</a></dd>
         </dl>
     <spinner v-if="loading" size="md" fixed></spinner>
 
