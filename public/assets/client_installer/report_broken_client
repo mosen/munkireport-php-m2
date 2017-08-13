@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+# 
 # Broken client reporter
 # First argument is the message
 # Second argument is the module that is reporting

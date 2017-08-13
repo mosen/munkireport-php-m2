@@ -62,7 +62,7 @@ def main():
             'reportdata': \
         {'hash':hashlib.md5(report_info_plist).hexdigest(), \
             'data':report_info_plist}}
-
+    
     # Read config file /Library/Preferences/Munkireport.plist
     config_items = reportcommon.pref('ReportItems') or {}
 
