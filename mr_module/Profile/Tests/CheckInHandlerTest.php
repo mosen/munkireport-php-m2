@@ -1,5 +1,5 @@
 <?php
-namespace MrModule\Certificate;
+namespace MrModule\Profile\Tests;
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use MrModule\Certificate\CheckInHandler;
@@ -14,11 +14,11 @@ class CheckInHandlerTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $this->data = file_get_contents(__DIR__ . '/fixtures/certificate.txt');
+        $this->data = file_get_contents(__DIR__ . '/fixtures/profile.txt');
     }
 
     public function testProcess() {
         $handler = new CheckInHandler();
-        $handler->process('certificate', 'ABC123', $this->data);
+        $handler->process('profile', 'ABC123', $this->data);
     }
 }

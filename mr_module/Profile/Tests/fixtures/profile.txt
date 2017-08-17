@@ -1,0 +1,7 @@
+ProfileUUID = 727f1bc0-8e47-0131-9799-48bcc8a30f0a
+ProfileName = Settings for VPN Settings
+ProfileRemovalDisallowed = no
+PayloadName = com.apple.security.root
+PayloadDisplayName = No Payload Display Name
+PayloadData = "No Payload Data"
+---------

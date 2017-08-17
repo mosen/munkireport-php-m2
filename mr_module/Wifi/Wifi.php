@@ -1,8 +1,6 @@
 <?php
 namespace MrModule\Wifi;
 
-
-use Illuminate\Database\Eloquent\Model;
 use Mr\Scopes\VueTableScope;
 use Mr\SerialNumberModel;
 
