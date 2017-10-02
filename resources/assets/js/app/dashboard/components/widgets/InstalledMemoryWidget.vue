@@ -23,10 +23,10 @@
           }
       },
       methods: {
-          ...mapMutations('stats', ['subscribe', 'unsubscribe'])
+
       },
       mounted() {
-          this.subscribe({ topic: 'core.installed_memory' });
+//          this.subscribe({ topic: 'core.installed_memory' });
       },
     components: {
       panel

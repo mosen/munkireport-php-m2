@@ -30,13 +30,10 @@
             }
         },
         methods: {
-            ...mapMutations('stats', [
-                'subscribe',
-                'unsubscribe'
-            ])
+
         },
         mounted() {
-            this.subscribe({topic: 'directoryservice.basic'});
+
         },
         components: {
             panel

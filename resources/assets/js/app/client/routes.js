@@ -1,4 +1,4 @@
-import { Clients, Client } from '../components';
+import { Clients, Client } from './components';
 
 export default [
   {

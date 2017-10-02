@@ -8,7 +8,6 @@ import * as mutations from './mutations';
 import * as state from './state';
 
 import auth from '../app/auth/vuex'
-import stats from '../app/stats/vuex'
 import dashboard from '../app/dashboard/vuex';
 import client from '../app/client/vuex';
 
@@ -30,7 +29,6 @@ export default new Vuex.Store({
   modules: {
     i18n: vuexI18n.store,
     auth,
-    stats,
     dashboard,
     client,
     ard,
@@ -42,12 +40,11 @@ export default new Vuex.Store({
 
 if (module.hot) {
   // accept actions and mutations as hot modules
-  module.hot.accept(['./mutations', '../app/auth/vuex', '../app/stats/vuex', '../app/dashboard/vuex'], () => {
+  module.hot.accept(['./mutations', '../app/auth/vuex', '../app/dashboard/vuex'], () => {
     // require the updated modules
     // have to add .default here due to babel 6 module output
     const newMutations = require('./mutations').default;
     const newAuth = require('../app/auth/vuex').default;
-    const newStats = require('../app/stats/vuex').default;
     const newDashboard = require('../app/dashboard/vuex').default;
 
     // swap in the new actions and mutations
@@ -55,7 +52,6 @@ if (module.hot) {
       mutations: newMutations,
       modules: {
         auth: newAuth,
-        stats: newStats,
         dashboard: newDashboard
       }
     })

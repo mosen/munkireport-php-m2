@@ -28,18 +28,14 @@
             }
         },
         methods: {
-            ...mapMutations('stats', [
-                'subscribe',
-                'unsubscribe'
-            ])
         },
 
         mounted () {
-            this.subscribe({topic: 'core.machine.hardware_models'});
+//            this.subscribe({topic: 'core.machine.hardware_models'});
         },
 
         beforeDestroy () {
-            this.unsubscribe({topic: 'core.machine.hardware_models'});
+//            this.unsubscribe({topic: 'core.machine.hardware_models'});
         },
         components: {
             'list-widget': ListWidget

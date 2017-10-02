@@ -32,13 +32,13 @@
             }
         },
         methods: {
-            ...mapMutations('stats', ['subscribe', 'unsubscribe'])
+
         },
         mounted() {
-            this.subscribe('managedinstalls.applesus');
+
         },
         beforeDestroy() {
-            this.unsubscribe('managedinstalls.applesus');
+
         },
         components: {
             panel

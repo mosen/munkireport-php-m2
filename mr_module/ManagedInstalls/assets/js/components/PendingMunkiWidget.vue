@@ -27,13 +27,13 @@
             }
         },
         methods: {
-            ...mapMutations('stats', ['subscribe', 'unsubscribe'])
+
         },
         mounted() {
-            this.subscribe('managedinstalls.munki');
+
         },
         beforeDestroy() {
-            this.unsubscribe('managedinstalls.munki');
+
         },
         components: {
             'list-widget': ListWidget

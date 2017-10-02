@@ -31,10 +31,10 @@
             }
         },
         methods: {
-            ...mapMutations('stats', ['subscribe', 'unsubscribe'])
+
         },
         mounted() {
-            this.subscribe({ topic: 'display.external' });
+
         },
         components: {
             panel

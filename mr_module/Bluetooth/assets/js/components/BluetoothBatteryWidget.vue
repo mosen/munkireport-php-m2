@@ -28,16 +28,16 @@
             }
         },
         mounted () {
-            this.subscribe({ topic: 'bluetooth.metrics' });
+
         },
         beforeDestroy () {
-            this.unsubscribe({ topic: 'bluetooth.metrics' });
+
         },
         computed: {
             
         },
         methods: {
-            ...mapMutations('stats', ['subscribe', 'unsubscribe'])
+
         },
         components: {
             panel

@@ -38,16 +38,13 @@
             }
         },
         methods: {
-            ...mapMutations('stats', [
-                'subscribe',
-                'unsubscribe'
-            ])
+
         },
         mounted() {
-            this.subscribe({ topic: 'directoryservice.bound' });
+
         },
         beforeDestroy() {
-            this.unsubscribe({ topic: 'directoryservice.bound' });
+
         },
         components: {
             panel
