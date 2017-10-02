@@ -13,12 +13,4 @@ class ManagedInstallsServiceProvider extends ServiceProvider
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }
-
-    public function register() {
-        $this->app->bind('MrModule\ManagedInstalls\CheckInHandler', function ($app) {
-            return new CheckInHandler();
-        });
-
-        $this->app->tag('MrModule\ManagedInstalls\CheckInHandler', 'checkin');
-    }
 }

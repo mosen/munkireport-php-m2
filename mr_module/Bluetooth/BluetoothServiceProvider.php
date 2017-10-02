@@ -44,12 +44,4 @@ class BluetoothServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
         $this->mapWebRoutes();
     }
-
-    public function register() {
-        $this->app->bind('MrModule\Bluetooth\CheckInHandler', function ($app) {
-            return new CheckInHandler();
-        });
-
-        $this->app->tag('MrModule\Bluetooth\CheckInHandler', 'checkin');
-    }
 }

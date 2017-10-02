@@ -14,12 +14,4 @@ class ProfileServiceProvider extends ServiceProvider
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }
-
-    public function register() {
-        $this->app->bind('MrModule\Profile\CheckInHandler', function ($app) {
-            return new CheckInHandler();
-        });
-
-        $this->app->tag('MrModule\Profile\CheckInHandler', 'checkin');
-    }
 }

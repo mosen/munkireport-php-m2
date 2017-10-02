@@ -41,12 +41,4 @@ class DirectoryServiceProvider extends ServiceProvider
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }
-
-    public function register() {
-        $this->app->bind('MrModule\DirectoryService\CheckInHandler', function ($app) {
-            return new CheckInHandler();
-        });
-
-        $this->app->tag('MrModule\DirectoryService\CheckInHandler', 'checkin');
-    }
 }

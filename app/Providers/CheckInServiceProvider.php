@@ -32,7 +32,7 @@ class CheckInServiceProvider extends ServiceProvider
 
 
         $this->app->singleton('Mr\CheckIn\CheckInRouter', function ($app) {
-            return new CheckInRouter($app->tagged('checkin'));
+            return new CheckInRouter(config('mr_modules.checkin'));
         });
 
         $this->app->bind(

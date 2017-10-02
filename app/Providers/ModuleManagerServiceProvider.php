@@ -14,7 +14,9 @@ class ModuleManagerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->publishes([
+            __DIR__.'/../config/mr_modules.php' => config_path('mr_modules.php'),
+        ]);
     }
 
     /**

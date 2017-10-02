@@ -33,7 +33,7 @@ class DisplayServiceProvider extends ServiceProvider
 
     public function boot(ModuleManager $moduleManager) {
         $this->publishes([
-            __DIR__.'/../config/mr_displays.php' => config_path('mr_displays.php')
+            __DIR__.'/config/mr_displays.php' => config_path('mr_displays.php')
         ], 'config');
 
         $this->mapApiRoutes();
@@ -43,13 +43,5 @@ class DisplayServiceProvider extends ServiceProvider
         $moduleManager->add('displays_info', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
-    }
-
-    public function register() {
-        $this->app->bind('MrModule\Display\CheckInHandler', function ($app) {
-            return new CheckInHandler();
-        });
-
-        $this->app->tag('MrModule\Display\CheckInHandler', 'checkin');
     }
 }

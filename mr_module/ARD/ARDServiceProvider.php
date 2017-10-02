@@ -45,10 +45,6 @@ class ARDServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
         $this->loadMigrationsFrom(__DIR__.'/migrations');
 
-        $this->publishes([
-            __DIR__.'/public' => public_path('x/ard'),
-        ], 'public');
-
         $moduleManager->add('ard', __DIR__)
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
@@ -56,12 +52,6 @@ class ARDServiceProvider extends ServiceProvider
     }
 
     public function register() {
-        $this->app->bind('MrModule\ARD\CheckInHandler', function ($app) {
-            return new CheckInHandler();
-        });
-
-        $this->app->tag('MrModule\ARD\CheckInHandler', 'checkin');
-
         $this->app->bind(Metadata::class, function ($app) {
             return new Metadata;
         });

@@ -13,11 +13,4 @@ class InventoryServiceProvider extends ServiceProvider
             ->installs('scripts/install.sh');
     }
 
-    public function register() {
-        $this->app->bind('MrModule\Inventory\CheckInHandler', function ($app) {
-            return new CheckInHandler();
-        });
-
-        $this->app->tag('MrModule\Inventory\CheckInHandler', 'checkin');
-    }
 }

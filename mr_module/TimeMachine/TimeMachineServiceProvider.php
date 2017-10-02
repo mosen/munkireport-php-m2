@@ -42,12 +42,4 @@ class TimeMachineServiceProvider extends ServiceProvider
             ->installs('scripts/install.sh')
             ->uninstalls('scripts/uninstall.sh');
     }
-
-    public function register() {
-        $this->app->bind('MrModule\TimeMachine\CheckInHandler', function ($app) {
-            return new CheckInHandler();
-        });
-
-        $this->app->tag('MrModule\TimeMachine\CheckInHandler', 'checkin');
-    }
 }

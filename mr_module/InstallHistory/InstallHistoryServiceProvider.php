@@ -11,12 +11,4 @@ class InstallHistoryServiceProvider extends ServiceProvider
         $moduleManager->add('installhistory', __DIR__)
             ->installs('scripts/install.sh');
     }
-
-    public function register() {
-        $this->app->bind('MrModule\InstallHistory\CheckInHandler', function ($app) {
-            return new CheckInHandler();
-        });
-
-        $this->app->tag('MrModule\InstallHistory\CheckInHandler', 'checkin');
-    }
 }
