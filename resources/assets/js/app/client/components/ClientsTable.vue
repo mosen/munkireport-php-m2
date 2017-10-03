@@ -46,11 +46,11 @@
             computer_name,
             'machine.machine_name': machine_name,
             'machine.os_version': os_version,
-            'machine.buildversion': (h, row) => (<span>{row.machine.buildversion}</span>),
+            'machine.buildversion': (h, row) => (<span>{row.machine ? row.machine.buildversion : ''}</span>),
             'updated_at': from_now('updated_at'),
             'uptime': unix_duration('uptime'),
             'warranty.status': (h, row) => (<span>{row.warranty && row.warranty.status}</span>),
-            'munkireport.manifestname': (h, row) => (<span>{row.munkireport.manifestname}</span>)
+            'munkireport.manifestname': (h, row) => (<span>{row.munkireport ? row.munkireport.manifestname : ''}</span>)
           }
         }
       }

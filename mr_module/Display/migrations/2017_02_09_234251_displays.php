@@ -17,7 +17,7 @@ class Displays extends Migration
             $table->increments('id');
 
             $table->integer('type');
-            $table->string('display_serial')->unique();
+            $table->string('display_serial');
             $table->string('serial_number');
             $table->string('vendor');
             $table->string('model');
@@ -25,6 +25,7 @@ class Displays extends Migration
             $table->string('native');
 //            $table->integer('timestamp');
 
+            $table->unique(['serial_number', 'display_serial'], 'displays_serial_number_display_serial_unique');
             $table->timestamps();
         });
     }

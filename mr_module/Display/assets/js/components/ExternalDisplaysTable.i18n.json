@@ -1,13 +1,59 @@
 {
   "en": {
     "displays": {
-      "type": "Type",
-      "vendor": "Vendor",
+      "detected": "Detected",
+      "machineserial": "Machine Serial",
       "model": "Model",
-      "display_serial": "Serial number",
-      "manufactured": "Manufactured",
-      "native": "Native resolution",
-      "timestamp": "Detected"
+      "nativeresolution": "Native Resolution",
+      "internal": "Built-In",
+      "displays": "Displays",
+      "display_serial": "Serial",
+      "external": "External",
+      "vendor": "Vendor",
+      "manufactured": "Manufacture Date",
+      "native": "Native Resolution",
+      "timestamp": "Was Last Connected",
+      "type": "Type",
+      "widget_info": "Total number of known external displays",
+      "widget_title": "External Displays Count"
+    }
+  },
+  "de": {
+    "displays": {
+      "detected": "Erkannt",
+      "machineserial": "Maschinen-Seriennummer",
+      "nativeresolution": "Native Auflösung",
+      "internal": "Eingebaut",
+      "displays": "Bildschirme",
+      "display_serial": "Seriennummer",
+      "external": "Extern",
+      "vendor": "Hersteller",
+      "model": "Modell",
+      "manufactured": "Herstellungsdatum",
+      "native": "Native Auflösung",
+      "timestamp": "Zuletzt verbunden",
+      "type": "Typ",
+      "widget_info": "Gesamtanzahl bekannter externer Bildschirme",
+      "widget_title": "Anzahl externer Bildschirme"
+    }
+  },
+  "fr": {
+    "displays": {
+      "detected": "Détecté",
+      "machineserial": "N° de série",
+      "nativeresolution": "Résolution native",
+      "internal": "Built-In",
+      "displays": "Moniteurs",
+      "display_serial": "Numéro de série",
+      "external": "Externe",
+      "vendor": "Vendeur",
+      "model": "Modèle",
+      "manufactured": "Date de fabrication",
+      "native": "NRésolution native",
+      "timestamp": "Dernière connexion",
+      "type": "Type",
+      "widget_info": "Nombre total d'écrans externes connus",
+      "widget_title": "Nombre d'écrans"
     }
   }
 }

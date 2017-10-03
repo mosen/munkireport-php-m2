@@ -31,6 +31,10 @@ class Machine extends Model
             'buildversion'
         ];
 
+    protected $casts = [
+        'number_processors' => 'integer'
+    ];
+
     public function getRouteKeyName()
     {
         return 'serial_number';
