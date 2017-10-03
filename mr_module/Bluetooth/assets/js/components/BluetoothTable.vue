@@ -10,6 +10,7 @@
 
 <script>
   import {computer_name} from 'Core/vue-table/columns.jsx';
+  import locales from './BluetoothTable.i18n.json';
 
   export default {
     data() {
@@ -24,6 +25,18 @@
           'trackpad'
         ],
         options: {
+          texts: {
+            loading: this.$t('listing.loading')
+          },
+          headings: {
+            'computer_name': this.$t('listing.computername'),
+            'serial_number': this.$t('serial'),
+            'username': this.$t('username'),
+            'status': this.$t('bluetooth.status'),
+            'keyboard': this.$t('bluetooth.keyboard'),
+            'mouse': this.$t('bluetooth.mouse'),
+            'trackpad': this.$t('bluetooth.trackpad')
+          },
           pagination: {
             dropdown: true
           },
@@ -42,6 +55,7 @@
         }
       }
     },
+    locales: locales,
     methods: {
       onLoaded: function () {
 
