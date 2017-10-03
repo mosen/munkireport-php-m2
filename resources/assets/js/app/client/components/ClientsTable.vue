@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import locales from './ClientsTable.i18n.json';
+  import i18n from './ClientsTable.i18n.json';
   import {computer_name, machine_name, os_version, from_now, unix_duration} from 'Core/vue-table/columns.jsx';
 
   export default {
@@ -30,11 +30,11 @@
           headings: {
             'computer_name': this.$t('listing.computername'),
             'serial_number': this.$t('serial'),
-            'username': this.$t('username'),
+            'long_username': this.$t('username'),
             'machine.os_version': this.$t('os.version'),
             'machine.buildversion': this.$t('buildversion'),
             'machine.machine_name': this.$t('type'),
-            'warranty_status': this.$t('warranty.status'),
+            'warranty.status': this.$t('warranty.status'),
             'uptime': this.$t('uptime'),
             'updated_at': this.$t('listing.checkin'),
             'munkireport.manifestname': this.$t('munkireport.manifest.manifest')
@@ -55,6 +55,8 @@
         }
       }
     },
-    locales: locales
+    created: function() {
+      this.$i18n.add('en', i18n.en);
+    }
   }
 </script>

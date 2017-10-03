@@ -15,6 +15,7 @@ import axios from 'axios';
 import VueAxios from 'vue-axios';
 import VueD3 from 'vue-d3';
 import VueNVD3 from 'vue-nvd3';
+// import VueI18n from 'vue-i18n';
 import {ServerTable, ClientTable, Event} from 'vue-tables-2';
 
 Vue.use(vuexI18n.plugin, store);
