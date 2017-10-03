@@ -38,8 +38,8 @@ class CrashPlanServiceProvider extends ServiceProvider
         $this->mapWebRoutes();
         $this->loadMigrationsFrom(__DIR__.'/migrations');
 
-        $moduleManager->add('crashplan', __DIR__)
-            ->installs('scripts/install.sh')
-            ->uninstalls('scripts/uninstall.sh');
+//        $moduleManager->add('crashplan', __DIR__)
+//            ->installs('scripts/install.sh')
+//            ->uninstalls('scripts/uninstall.sh');
     }
 }

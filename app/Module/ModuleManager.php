@@ -10,8 +10,8 @@ class ModuleManager
      */
     protected $modules = [];
 
-    public function __construct($moduleProviders) {
-        //print_r($moduleProviders);
+    public function __construct() {
+
     }
 
     /**
@@ -24,7 +24,7 @@ class ModuleManager
     public function add($moduleName, $modulePath) {
         $module = new Metadata($moduleName, $modulePath);
         $this->modules[$moduleName] = $module;
-        Log::debug("Registered module: {$moduleName}");
+
         return $module;
     }
 

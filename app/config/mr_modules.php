@@ -13,8 +13,10 @@ return [
 
     'checkin' => [
         'ard' => \MrModule\ARD\CheckInHandler::class,
+        'backup2go' => \MrModule\Backup2Go\CheckInHandler::class,
         'bluetooth' => \MrModule\Bluetooth\CheckInHandler::class,
         'certificate' => \MrModule\Certificate\CheckInHandler::class,
+        'deploystudio' => \MrModule\DeployStudio\CheckInHandler::class,
         'directory_service' => \MrModule\DirectoryService\CheckInHandler::class,
         'disk_report' => \MrModule\DiskReport\CheckInHandler::class,
         'displays_info' => \MrModule\Display\CheckInHandler::class,

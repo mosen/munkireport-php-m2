@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASEURL="{{ url('/') }}"
+BASEURL="{{ url('/') }}/"
 TPL_BASE="${BASEURL}/assets/client_installer/"
 MUNKIPATH="/usr/local/munki/" # TODO read munkipath from munki config
 CACHEPATH="${MUNKIPATH}preflight.d/cache/"
